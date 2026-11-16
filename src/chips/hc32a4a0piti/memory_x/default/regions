@@ -1,0 +1,2 @@
+FLASH 0x00000000 2097152 rwx flash
+SRAM 0x1ffe0000 524288 rwx ram

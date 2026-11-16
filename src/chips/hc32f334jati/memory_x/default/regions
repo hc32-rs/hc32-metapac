@@ -1,0 +1,2 @@
+FLASH 0x00000000 131072 rwx flash
+SRAM 0x1fffc000 36864 rwx ram

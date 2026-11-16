@@ -1,0 +1,198 @@
+
+                    use crate::metadata::ir::*;
+                    pub(crate) static REGISTERS: IR = IR {
+    blocks: &[
+        Block {
+            name: "Keyscan",
+            extends: None,
+            description: Some(
+                "desc KEYSCAN.",
+            ),
+            items: &[
+                BlockItem {
+                    name: "scr",
+                    description: Some(
+                        "desc SCR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Scr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ser",
+                    description: Some(
+                        "desc SER.",
+                    ),
+                    array: None,
+                    byte_offset: 0x4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ser",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ssr",
+                    description: Some(
+                        "desc SSR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ssr",
+                            ),
+                        },
+                    ),
+                },
+            ],
+        },
+    ],
+    fieldsets: &[
+        FieldSet {
+            name: "Scr",
+            extends: None,
+            description: Some(
+                "desc SCR.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "keyinsel",
+                    description: Some(
+                        "desc KEYINSEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "keyoutsel",
+                    description: Some(
+                        "desc KEYOUTSEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cksel",
+                    description: Some(
+                        "desc CKSEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "t_llevel",
+                    description: Some(
+                        "desc T_LLEVEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
+                    bit_size: 5,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "t_hiz",
+                    description: Some(
+                        "desc T_HIZ.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ser",
+            extends: None,
+            description: Some(
+                "desc SER.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "sen",
+                    description: Some(
+                        "desc SEN.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ssr",
+            extends: None,
+            description: Some(
+                "desc SSR.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "index",
+                    description: Some(
+                        "desc INDEX.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+    ],
+    enums: &[],
+};
+                

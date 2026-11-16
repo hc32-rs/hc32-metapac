@@ -1,0 +1,5878 @@
+
+                    use crate::metadata::ir::*;
+                    pub(crate) static REGISTERS: IR = IR {
+    blocks: &[
+        Block {
+            name: "Gpio",
+            extends: None,
+            description: Some(
+                "desc GPIO.",
+            ),
+            items: &[
+                BlockItem {
+                    name: "p01_sel",
+                    description: Some(
+                        "desc P01_SEL.",
+                    ),
+                    array: None,
+                    byte_offset: 0x4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P01Sel",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p02_sel",
+                    description: Some(
+                        "desc P02_SEL.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P02Sel",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p03_sel",
+                    description: Some(
+                        "desc P03_SEL.",
+                    ),
+                    array: None,
+                    byte_offset: 0xc,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P03Sel",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p14_sel",
+                    description: Some(
+                        "desc P14_SEL.",
+                    ),
+                    array: None,
+                    byte_offset: 0x50,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P14Sel",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p15_sel",
+                    description: Some(
+                        "desc P15_SEL.",
+                    ),
+                    array: None,
+                    byte_offset: 0x54,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P15Sel",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p23_sel",
+                    description: Some(
+                        "desc P23_SEL.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P23Sel",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p24_sel",
+                    description: Some(
+                        "desc P24_SEL.",
+                    ),
+                    array: None,
+                    byte_offset: 0x90,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P24Sel",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p25_sel",
+                    description: Some(
+                        "desc P25_SEL.",
+                    ),
+                    array: None,
+                    byte_offset: 0x94,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P25Sel",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p26_sel",
+                    description: Some(
+                        "desc P26_SEL.",
+                    ),
+                    array: None,
+                    byte_offset: 0x98,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P26Sel",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p27_sel",
+                    description: Some(
+                        "desc P27_SEL.",
+                    ),
+                    array: None,
+                    byte_offset: 0x9c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P27Sel",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p31_sel",
+                    description: Some(
+                        "desc P31_SEL.",
+                    ),
+                    array: None,
+                    byte_offset: 0xc4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P31Sel",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p32_sel",
+                    description: Some(
+                        "desc P32_SEL.",
+                    ),
+                    array: None,
+                    byte_offset: 0xc8,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P32Sel",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p33_sel",
+                    description: Some(
+                        "desc P33_SEL.",
+                    ),
+                    array: None,
+                    byte_offset: 0xcc,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P33Sel",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p34_sel",
+                    description: Some(
+                        "desc P34_SEL.",
+                    ),
+                    array: None,
+                    byte_offset: 0xd0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P34Sel",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p35_sel",
+                    description: Some(
+                        "desc P35_SEL.",
+                    ),
+                    array: None,
+                    byte_offset: 0xd4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P35Sel",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p36_sel",
+                    description: Some(
+                        "desc P36_SEL.",
+                    ),
+                    array: None,
+                    byte_offset: 0xd8,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P36Sel",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p0dir",
+                    description: Some(
+                        "desc P0DIR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x100,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P0dir",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p0in",
+                    description: Some(
+                        "desc P0IN.",
+                    ),
+                    array: None,
+                    byte_offset: 0x104,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P0in",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p0out",
+                    description: Some(
+                        "desc P0OUT.",
+                    ),
+                    array: None,
+                    byte_offset: 0x108,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P0out",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p0ads",
+                    description: Some(
+                        "desc P0ADS.",
+                    ),
+                    array: None,
+                    byte_offset: 0x10c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P0ads",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p0dr",
+                    description: Some(
+                        "desc P0DR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x11c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P0dr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p0pu",
+                    description: Some(
+                        "desc P0PU.",
+                    ),
+                    array: None,
+                    byte_offset: 0x120,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P0pu",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p0pd",
+                    description: Some(
+                        "desc P0PD.",
+                    ),
+                    array: None,
+                    byte_offset: 0x124,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P0pd",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p0od",
+                    description: Some(
+                        "desc P0OD.",
+                    ),
+                    array: None,
+                    byte_offset: 0x12c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P0od",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p0hie",
+                    description: Some(
+                        "desc P0HIE.",
+                    ),
+                    array: None,
+                    byte_offset: 0x130,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P0hie",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p0lie",
+                    description: Some(
+                        "desc P0LIE.",
+                    ),
+                    array: None,
+                    byte_offset: 0x134,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P0lie",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p0rie",
+                    description: Some(
+                        "desc P0RIE.",
+                    ),
+                    array: None,
+                    byte_offset: 0x138,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P0rie",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p0fie",
+                    description: Some(
+                        "desc P0FIE.",
+                    ),
+                    array: None,
+                    byte_offset: 0x13c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P0fie",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p1dir",
+                    description: Some(
+                        "desc P1DIR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x140,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P1dir",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p1in",
+                    description: Some(
+                        "desc P1IN.",
+                    ),
+                    array: None,
+                    byte_offset: 0x144,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P1in",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p1out",
+                    description: Some(
+                        "desc P1OUT.",
+                    ),
+                    array: None,
+                    byte_offset: 0x148,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P1out",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p1ads",
+                    description: Some(
+                        "desc P1ADS.",
+                    ),
+                    array: None,
+                    byte_offset: 0x14c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P1ads",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p1dr",
+                    description: Some(
+                        "desc P1DR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x15c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P1dr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p1pu",
+                    description: Some(
+                        "desc P1PU.",
+                    ),
+                    array: None,
+                    byte_offset: 0x160,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P1pu",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p1pd",
+                    description: Some(
+                        "desc P1PD.",
+                    ),
+                    array: None,
+                    byte_offset: 0x164,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P1pd",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p1od",
+                    description: Some(
+                        "desc P1OD.",
+                    ),
+                    array: None,
+                    byte_offset: 0x16c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P1od",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p1hie",
+                    description: Some(
+                        "desc P1HIE.",
+                    ),
+                    array: None,
+                    byte_offset: 0x170,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P1hie",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p1lie",
+                    description: Some(
+                        "desc P1LIE.",
+                    ),
+                    array: None,
+                    byte_offset: 0x174,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P1lie",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p1rie",
+                    description: Some(
+                        "desc P1RIE.",
+                    ),
+                    array: None,
+                    byte_offset: 0x178,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P1rie",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p1fie",
+                    description: Some(
+                        "desc P1FIE.",
+                    ),
+                    array: None,
+                    byte_offset: 0x17c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P1fie",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p2dir",
+                    description: Some(
+                        "desc P2DIR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x180,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P2dir",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p2in",
+                    description: Some(
+                        "desc P2IN.",
+                    ),
+                    array: None,
+                    byte_offset: 0x184,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P2in",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p2out",
+                    description: Some(
+                        "desc P2OUT.",
+                    ),
+                    array: None,
+                    byte_offset: 0x188,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P2out",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p2ads",
+                    description: Some(
+                        "desc P2ADS.",
+                    ),
+                    array: None,
+                    byte_offset: 0x18c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P2ads",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p2dr",
+                    description: Some(
+                        "desc P2DR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x19c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P2dr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p2pu",
+                    description: Some(
+                        "desc P2PU.",
+                    ),
+                    array: None,
+                    byte_offset: 0x1a0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P2pu",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p2pd",
+                    description: Some(
+                        "desc P2PD.",
+                    ),
+                    array: None,
+                    byte_offset: 0x1a4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P2pd",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p2od",
+                    description: Some(
+                        "desc P2OD.",
+                    ),
+                    array: None,
+                    byte_offset: 0x1ac,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P2od",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p2hie",
+                    description: Some(
+                        "desc P2HIE.",
+                    ),
+                    array: None,
+                    byte_offset: 0x1b0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P2hie",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p2lie",
+                    description: Some(
+                        "desc P2LIE.",
+                    ),
+                    array: None,
+                    byte_offset: 0x1b4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P2lie",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p2rie",
+                    description: Some(
+                        "desc P2RIE.",
+                    ),
+                    array: None,
+                    byte_offset: 0x1b8,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P2rie",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p2fie",
+                    description: Some(
+                        "desc P2FIE.",
+                    ),
+                    array: None,
+                    byte_offset: 0x1bc,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P2fie",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p3dir",
+                    description: Some(
+                        "desc P3DIR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x1c0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P3dir",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p3in",
+                    description: Some(
+                        "desc P3IN.",
+                    ),
+                    array: None,
+                    byte_offset: 0x1c4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P3in",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p3out",
+                    description: Some(
+                        "desc P3OUT.",
+                    ),
+                    array: None,
+                    byte_offset: 0x1c8,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P3out",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p3ads",
+                    description: Some(
+                        "desc P3ADS.",
+                    ),
+                    array: None,
+                    byte_offset: 0x1cc,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P3ads",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p3dr",
+                    description: Some(
+                        "desc P3DR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x1dc,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P3dr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p3pu",
+                    description: Some(
+                        "desc P3PU.",
+                    ),
+                    array: None,
+                    byte_offset: 0x1e0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P3pu",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p3pd",
+                    description: Some(
+                        "desc P3PD.",
+                    ),
+                    array: None,
+                    byte_offset: 0x1e4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P3pd",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p3od",
+                    description: Some(
+                        "desc P3OD.",
+                    ),
+                    array: None,
+                    byte_offset: 0x1ec,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P3od",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p3hie",
+                    description: Some(
+                        "desc P3HIE.",
+                    ),
+                    array: None,
+                    byte_offset: 0x1f0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P3hie",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p3lie",
+                    description: Some(
+                        "desc P3LIE.",
+                    ),
+                    array: None,
+                    byte_offset: 0x1f4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P3lie",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p3rie",
+                    description: Some(
+                        "desc P3RIE.",
+                    ),
+                    array: None,
+                    byte_offset: 0x1f8,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P3rie",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p3fie",
+                    description: Some(
+                        "desc P3FIE.",
+                    ),
+                    array: None,
+                    byte_offset: 0x1fc,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P3fie",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p0stat",
+                    description: Some(
+                        "desc P0STAT.",
+                    ),
+                    array: None,
+                    byte_offset: 0x200,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P0stat",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p0iclr",
+                    description: Some(
+                        "desc P0ICLR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x210,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P0iclr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p1stat",
+                    description: Some(
+                        "desc P1STAT.",
+                    ),
+                    array: None,
+                    byte_offset: 0x240,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P1stat",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p1iclr",
+                    description: Some(
+                        "desc P1ICLR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x250,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P1iclr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p2stat",
+                    description: Some(
+                        "desc P2STAT.",
+                    ),
+                    array: None,
+                    byte_offset: 0x280,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P2stat",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p2iclr",
+                    description: Some(
+                        "desc P2ICLR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x290,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P2iclr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p3stat",
+                    description: Some(
+                        "desc P3STAT.",
+                    ),
+                    array: None,
+                    byte_offset: 0x2c0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P3stat",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "p3iclr",
+                    description: Some(
+                        "desc P3ICLR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x2d0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "P3iclr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ctrl0",
+                    description: Some(
+                        "desc CTRL0.",
+                    ),
+                    array: None,
+                    byte_offset: 0x300,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ctrl0",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ctrl1",
+                    description: Some(
+                        "desc CTRL1.",
+                    ),
+                    array: None,
+                    byte_offset: 0x304,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ctrl1",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ctrl2",
+                    description: Some(
+                        "desc CTRL2.",
+                    ),
+                    array: None,
+                    byte_offset: 0x308,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ctrl2",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ctrl3",
+                    description: Some(
+                        "desc CTRL3.",
+                    ),
+                    array: None,
+                    byte_offset: 0x30c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ctrl3",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ctrl4",
+                    description: Some(
+                        "desc CTRL4.",
+                    ),
+                    array: None,
+                    byte_offset: 0x310,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ctrl4",
+                            ),
+                        },
+                    ),
+                },
+            ],
+        },
+    ],
+    fieldsets: &[
+        FieldSet {
+            name: "Ctrl0",
+            extends: None,
+            description: Some(
+                "desc CTRL0.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "iesel",
+                    description: Some(
+                        "desc IESEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ctrl1",
+            extends: None,
+            description: Some(
+                "desc CTRL1.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ext_clk_sel",
+                    description: Some(
+                        "desc EXT_CLK_SEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ssn_sel",
+                    description: Some(
+                        "desc SSN_SEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pclk_sel",
+                    description: Some(
+                        "desc PCLK_SEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "hclk_sel",
+                    description: Some(
+                        "desc HCLK_SEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pclk_en",
+                    description: Some(
+                        "desc PCLK_EN.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "hclk_en",
+                    description: Some(
+                        "desc HCLK_EN.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ir_pol",
+                    description: Some(
+                        "desc IR_POL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ctrl2",
+            extends: None,
+            description: Some(
+                "desc CTRL2.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "pca_cap0_sel",
+                    description: Some(
+                        "desc PCA_CAP0_SEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pca_cap1_sel",
+                    description: Some(
+                        "desc PCA_CAP1_SEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pca_cap2_sel",
+                    description: Some(
+                        "desc PCA_CAP2_SEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pca_cap3_sel",
+                    description: Some(
+                        "desc PCA_CAP3_SEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pca_cap4_sel",
+                    description: Some(
+                        "desc PCA_CAP4_SEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ctrl3",
+            extends: None,
+            description: Some(
+                "desc CTRL3.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tm4_b_sel",
+                    description: Some(
+                        "desc TM4_B_SEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tm5_b_sel",
+                    description: Some(
+                        "desc TM5_B_SEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tm6_b_sel",
+                    description: Some(
+                        "desc TM6_B_SEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tm4_a_sel",
+                    description: Some(
+                        "desc TM4_A_SEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tm5_a_sel",
+                    description: Some(
+                        "desc TM5_A_SEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tm6_a_sel",
+                    description: Some(
+                        "desc TM6_A_SEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ctrl4",
+            extends: None,
+            description: Some(
+                "desc CTRL4.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tm0_gate_sel",
+                    description: Some(
+                        "desc TM0_GATE_SEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tm1_gate_sel",
+                    description: Some(
+                        "desc TM1_GATE_SEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tm2_gate_sel",
+                    description: Some(
+                        "desc TM2_GATE_SEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tm3_gate_sel",
+                    description: Some(
+                        "desc TM3_GATE_SEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P01Sel",
+            extends: None,
+            description: Some(
+                "desc P01_SEL.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "sel",
+                    description: Some(
+                        "desc SEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P02Sel",
+            extends: None,
+            description: Some(
+                "desc P02_SEL.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "sel",
+                    description: Some(
+                        "desc SEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P03Sel",
+            extends: None,
+            description: Some(
+                "desc P03_SEL.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "sel",
+                    description: Some(
+                        "desc SEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P0ads",
+            extends: None,
+            description: Some(
+                "desc P0ADS.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p01",
+                    description: Some(
+                        "desc P01.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p02",
+                    description: Some(
+                        "desc P02.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p03",
+                    description: Some(
+                        "desc P03.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P0dir",
+            extends: None,
+            description: Some(
+                "desc P0DIR.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p01",
+                    description: Some(
+                        "desc P01.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p02",
+                    description: Some(
+                        "desc P02.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p03",
+                    description: Some(
+                        "desc P03.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P0dr",
+            extends: None,
+            description: Some(
+                "desc P0DR.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p01",
+                    description: Some(
+                        "desc P01.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p02",
+                    description: Some(
+                        "desc P02.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p03",
+                    description: Some(
+                        "desc P03.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P0fie",
+            extends: None,
+            description: Some(
+                "desc P0FIE.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p00",
+                    description: Some(
+                        "desc P00.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p01",
+                    description: Some(
+                        "desc P01.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p02",
+                    description: Some(
+                        "desc P02.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p03",
+                    description: Some(
+                        "desc P03.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P0hie",
+            extends: None,
+            description: Some(
+                "desc P0HIE.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p00",
+                    description: Some(
+                        "desc P00.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p01",
+                    description: Some(
+                        "desc P01.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p02",
+                    description: Some(
+                        "desc P02.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p03",
+                    description: Some(
+                        "desc P03.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P0iclr",
+            extends: None,
+            description: Some(
+                "desc P0ICLR.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p00",
+                    description: Some(
+                        "desc P00.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p01",
+                    description: Some(
+                        "desc P01.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p02",
+                    description: Some(
+                        "desc P02.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p03",
+                    description: Some(
+                        "desc P03.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P0in",
+            extends: None,
+            description: Some(
+                "desc P0IN.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p00",
+                    description: Some(
+                        "desc P00.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p01",
+                    description: Some(
+                        "desc P01.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p02",
+                    description: Some(
+                        "desc P02.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p03",
+                    description: Some(
+                        "desc P03.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P0lie",
+            extends: None,
+            description: Some(
+                "desc P0LIE.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p00",
+                    description: Some(
+                        "desc P00.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p01",
+                    description: Some(
+                        "desc P01.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p02",
+                    description: Some(
+                        "desc P02.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p03",
+                    description: Some(
+                        "desc P03.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P0od",
+            extends: None,
+            description: Some(
+                "desc P0OD.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p01",
+                    description: Some(
+                        "desc P01.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p02",
+                    description: Some(
+                        "desc P02.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p03",
+                    description: Some(
+                        "desc P03.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P0out",
+            extends: None,
+            description: Some(
+                "desc P0OUT.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p01",
+                    description: Some(
+                        "desc P01.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p02",
+                    description: Some(
+                        "desc P02.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p03",
+                    description: Some(
+                        "desc P03.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P0pd",
+            extends: None,
+            description: Some(
+                "desc P0PD.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p01",
+                    description: Some(
+                        "desc P01.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p02",
+                    description: Some(
+                        "desc P02.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p03",
+                    description: Some(
+                        "desc P03.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P0pu",
+            extends: None,
+            description: Some(
+                "desc P0PU.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p01",
+                    description: Some(
+                        "desc P01.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p02",
+                    description: Some(
+                        "desc P02.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p03",
+                    description: Some(
+                        "desc P03.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P0rie",
+            extends: None,
+            description: Some(
+                "desc P0RIE.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p00",
+                    description: Some(
+                        "desc P00.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p01",
+                    description: Some(
+                        "desc P01.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p02",
+                    description: Some(
+                        "desc P02.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p03",
+                    description: Some(
+                        "desc P03.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P0stat",
+            extends: None,
+            description: Some(
+                "desc P0STAT.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p00",
+                    description: Some(
+                        "desc P00.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p01",
+                    description: Some(
+                        "desc P01.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p02",
+                    description: Some(
+                        "desc P02.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p03",
+                    description: Some(
+                        "desc P03.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P14Sel",
+            extends: None,
+            description: Some(
+                "desc P14_SEL.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "sel",
+                    description: Some(
+                        "desc SEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P15Sel",
+            extends: None,
+            description: Some(
+                "desc P15_SEL.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "sel",
+                    description: Some(
+                        "desc SEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P1ads",
+            extends: None,
+            description: Some(
+                "desc P1ADS.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p14",
+                    description: Some(
+                        "desc P14.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p15",
+                    description: Some(
+                        "desc P15.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P1dir",
+            extends: None,
+            description: Some(
+                "desc P1DIR.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p14",
+                    description: Some(
+                        "desc P14.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p15",
+                    description: Some(
+                        "desc P15.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P1dr",
+            extends: None,
+            description: Some(
+                "desc P1DR.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p14",
+                    description: Some(
+                        "desc P14.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p15",
+                    description: Some(
+                        "desc P15.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P1fie",
+            extends: None,
+            description: Some(
+                "desc P1FIE.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p14",
+                    description: Some(
+                        "desc P14.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p15",
+                    description: Some(
+                        "desc P15.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P1hie",
+            extends: None,
+            description: Some(
+                "desc P1HIE.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p14",
+                    description: Some(
+                        "desc P14.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p15",
+                    description: Some(
+                        "desc P15.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P1iclr",
+            extends: None,
+            description: Some(
+                "desc P1ICLR.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p14",
+                    description: Some(
+                        "desc P14.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p15",
+                    description: Some(
+                        "desc P15.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P1in",
+            extends: None,
+            description: Some(
+                "desc P1IN.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p14",
+                    description: Some(
+                        "desc P14.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p15",
+                    description: Some(
+                        "desc P15.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P1lie",
+            extends: None,
+            description: Some(
+                "desc P1LIE.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p14",
+                    description: Some(
+                        "desc P14.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p15",
+                    description: Some(
+                        "desc P15.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P1od",
+            extends: None,
+            description: Some(
+                "desc P1OD.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p14",
+                    description: Some(
+                        "desc P14.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p15",
+                    description: Some(
+                        "desc P15.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P1out",
+            extends: None,
+            description: Some(
+                "desc P1OUT.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p14",
+                    description: Some(
+                        "desc P14.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p15",
+                    description: Some(
+                        "desc P15.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P1pd",
+            extends: None,
+            description: Some(
+                "desc P1PD.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p14",
+                    description: Some(
+                        "desc P14.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p15",
+                    description: Some(
+                        "desc P15.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P1pu",
+            extends: None,
+            description: Some(
+                "desc P1PU.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p14",
+                    description: Some(
+                        "desc P14.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p15",
+                    description: Some(
+                        "desc P15.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P1rie",
+            extends: None,
+            description: Some(
+                "desc P1RIE.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p14",
+                    description: Some(
+                        "desc P14.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p15",
+                    description: Some(
+                        "desc P15.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P1stat",
+            extends: None,
+            description: Some(
+                "desc P1STAT.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p14",
+                    description: Some(
+                        "desc P14.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p15",
+                    description: Some(
+                        "desc P15.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P23Sel",
+            extends: None,
+            description: Some(
+                "desc P23_SEL.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "sel",
+                    description: Some(
+                        "desc SEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P24Sel",
+            extends: None,
+            description: Some(
+                "desc P24_SEL.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "sel",
+                    description: Some(
+                        "desc SEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P25Sel",
+            extends: None,
+            description: Some(
+                "desc P25_SEL.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "sel",
+                    description: Some(
+                        "desc SEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P26Sel",
+            extends: None,
+            description: Some(
+                "desc P26_SEL.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "sel",
+                    description: Some(
+                        "desc SEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P27Sel",
+            extends: None,
+            description: Some(
+                "desc P27_SEL.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "sel",
+                    description: Some(
+                        "desc SEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P2ads",
+            extends: None,
+            description: Some(
+                "desc P2ADS.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p23",
+                    description: Some(
+                        "desc P23.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p24",
+                    description: Some(
+                        "desc P24.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p25",
+                    description: Some(
+                        "desc P25.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p26",
+                    description: Some(
+                        "desc P26.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p27",
+                    description: Some(
+                        "desc P27.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P2dir",
+            extends: None,
+            description: Some(
+                "desc P2DIR.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p23",
+                    description: Some(
+                        "desc P23.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p24",
+                    description: Some(
+                        "desc P24.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p25",
+                    description: Some(
+                        "desc P25.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p26",
+                    description: Some(
+                        "desc P26.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p27",
+                    description: Some(
+                        "desc P27.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P2dr",
+            extends: None,
+            description: Some(
+                "desc P2DR.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p23",
+                    description: Some(
+                        "desc P23.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p24",
+                    description: Some(
+                        "desc P24.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p25",
+                    description: Some(
+                        "desc P25.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p26",
+                    description: Some(
+                        "desc P26.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p27",
+                    description: Some(
+                        "desc P27.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P2fie",
+            extends: None,
+            description: Some(
+                "desc P2FIE.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p23",
+                    description: Some(
+                        "desc P23.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p24",
+                    description: Some(
+                        "desc P24.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p25",
+                    description: Some(
+                        "desc P25.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p26",
+                    description: Some(
+                        "desc P26.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p27",
+                    description: Some(
+                        "desc P27.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P2hie",
+            extends: None,
+            description: Some(
+                "desc P2HIE.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p23",
+                    description: Some(
+                        "desc P23.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p24",
+                    description: Some(
+                        "desc P24.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p25",
+                    description: Some(
+                        "desc P25.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p26",
+                    description: Some(
+                        "desc P26.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p27",
+                    description: Some(
+                        "desc P27.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P2iclr",
+            extends: None,
+            description: Some(
+                "desc P2ICLR.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p23",
+                    description: Some(
+                        "desc P23.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p24",
+                    description: Some(
+                        "desc P24.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p25",
+                    description: Some(
+                        "desc P25.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p26",
+                    description: Some(
+                        "desc P26.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p27",
+                    description: Some(
+                        "desc P27.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P2in",
+            extends: None,
+            description: Some(
+                "desc P2IN.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p23",
+                    description: Some(
+                        "desc P23.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p24",
+                    description: Some(
+                        "desc P24.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p25",
+                    description: Some(
+                        "desc P25.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p26",
+                    description: Some(
+                        "desc P26.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p27",
+                    description: Some(
+                        "desc P27.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P2lie",
+            extends: None,
+            description: Some(
+                "desc P2LIE.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p23",
+                    description: Some(
+                        "desc P23.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p24",
+                    description: Some(
+                        "desc P24.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p25",
+                    description: Some(
+                        "desc P25.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p26",
+                    description: Some(
+                        "desc P26.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p27",
+                    description: Some(
+                        "desc P27.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P2od",
+            extends: None,
+            description: Some(
+                "desc P2OD.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p23",
+                    description: Some(
+                        "desc P23.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p24",
+                    description: Some(
+                        "desc P24.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p25",
+                    description: Some(
+                        "desc P25.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p26",
+                    description: Some(
+                        "desc P26.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p27",
+                    description: Some(
+                        "desc P27.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P2out",
+            extends: None,
+            description: Some(
+                "desc P2OUT.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p23",
+                    description: Some(
+                        "desc P23.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p24",
+                    description: Some(
+                        "desc P24.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p25",
+                    description: Some(
+                        "desc P25.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p26",
+                    description: Some(
+                        "desc P26.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p27",
+                    description: Some(
+                        "desc P27.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P2pd",
+            extends: None,
+            description: Some(
+                "desc P2PD.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p23",
+                    description: Some(
+                        "desc P23.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p24",
+                    description: Some(
+                        "desc P24.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p25",
+                    description: Some(
+                        "desc P25.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p26",
+                    description: Some(
+                        "desc P26.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p27",
+                    description: Some(
+                        "desc P27.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P2pu",
+            extends: None,
+            description: Some(
+                "desc P2PU.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p23",
+                    description: Some(
+                        "desc P23.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p24",
+                    description: Some(
+                        "desc P24.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p25",
+                    description: Some(
+                        "desc P25.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p26",
+                    description: Some(
+                        "desc P26.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p27",
+                    description: Some(
+                        "desc P27.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P2rie",
+            extends: None,
+            description: Some(
+                "desc P2RIE.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p23",
+                    description: Some(
+                        "desc P23.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p24",
+                    description: Some(
+                        "desc P24.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p25",
+                    description: Some(
+                        "desc P25.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p26",
+                    description: Some(
+                        "desc P26.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p27",
+                    description: Some(
+                        "desc P27.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P2stat",
+            extends: None,
+            description: Some(
+                "desc P2STAT.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p23",
+                    description: Some(
+                        "desc P23.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p24",
+                    description: Some(
+                        "desc P24.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p25",
+                    description: Some(
+                        "desc P25.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p26",
+                    description: Some(
+                        "desc P26.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p27",
+                    description: Some(
+                        "desc P27.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P31Sel",
+            extends: None,
+            description: Some(
+                "desc P31_SEL.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "sel",
+                    description: Some(
+                        "desc SEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P32Sel",
+            extends: None,
+            description: Some(
+                "desc P32_SEL.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "sel",
+                    description: Some(
+                        "desc SEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P33Sel",
+            extends: None,
+            description: Some(
+                "desc P33_SEL.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "sel",
+                    description: Some(
+                        "desc SEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P34Sel",
+            extends: None,
+            description: Some(
+                "desc P34_SEL.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "sel",
+                    description: Some(
+                        "desc SEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P35Sel",
+            extends: None,
+            description: Some(
+                "desc P35_SEL.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "sel",
+                    description: Some(
+                        "desc SEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P36Sel",
+            extends: None,
+            description: Some(
+                "desc P36_SEL.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "sel",
+                    description: Some(
+                        "desc SEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P3ads",
+            extends: None,
+            description: Some(
+                "desc P3ADS.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p31",
+                    description: Some(
+                        "desc P31.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p32",
+                    description: Some(
+                        "desc P32.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p33",
+                    description: Some(
+                        "desc P33.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p34",
+                    description: Some(
+                        "desc P34.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p35",
+                    description: Some(
+                        "desc P35.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p36",
+                    description: Some(
+                        "desc P36.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P3dir",
+            extends: None,
+            description: Some(
+                "desc P3DIR.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p31",
+                    description: Some(
+                        "desc P31.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p32",
+                    description: Some(
+                        "desc P32.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p33",
+                    description: Some(
+                        "desc P33.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p34",
+                    description: Some(
+                        "desc P34.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p35",
+                    description: Some(
+                        "desc P35.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p36",
+                    description: Some(
+                        "desc P36.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P3dr",
+            extends: None,
+            description: Some(
+                "desc P3DR.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p31",
+                    description: Some(
+                        "desc P31.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p32",
+                    description: Some(
+                        "desc P32.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p33",
+                    description: Some(
+                        "desc P33.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p34",
+                    description: Some(
+                        "desc P34.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p35",
+                    description: Some(
+                        "desc P35.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p36",
+                    description: Some(
+                        "desc P36.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P3fie",
+            extends: None,
+            description: Some(
+                "desc P3FIE.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p31",
+                    description: Some(
+                        "desc P31.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p32",
+                    description: Some(
+                        "desc P32.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p33",
+                    description: Some(
+                        "desc P33.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p34",
+                    description: Some(
+                        "desc P34.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p35",
+                    description: Some(
+                        "desc P35.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p36",
+                    description: Some(
+                        "desc P36.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P3hie",
+            extends: None,
+            description: Some(
+                "desc P3HIE.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p31",
+                    description: Some(
+                        "desc P31.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p32",
+                    description: Some(
+                        "desc P32.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p33",
+                    description: Some(
+                        "desc P33.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p34",
+                    description: Some(
+                        "desc P34.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p35",
+                    description: Some(
+                        "desc P35.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p36",
+                    description: Some(
+                        "desc P36.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P3iclr",
+            extends: None,
+            description: Some(
+                "desc P3ICLR.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p31",
+                    description: Some(
+                        "desc P31.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p32",
+                    description: Some(
+                        "desc P32.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p33",
+                    description: Some(
+                        "desc P33.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p34",
+                    description: Some(
+                        "desc P34.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p35",
+                    description: Some(
+                        "desc P35.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p36",
+                    description: Some(
+                        "desc P36.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P3in",
+            extends: None,
+            description: Some(
+                "desc P3IN.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p31",
+                    description: Some(
+                        "desc P31.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p32",
+                    description: Some(
+                        "desc P32.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p33",
+                    description: Some(
+                        "desc P33.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p34",
+                    description: Some(
+                        "desc P34.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p35",
+                    description: Some(
+                        "desc P35.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p36",
+                    description: Some(
+                        "desc P36.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P3lie",
+            extends: None,
+            description: Some(
+                "desc P3LIE.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p31",
+                    description: Some(
+                        "desc P31.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p32",
+                    description: Some(
+                        "desc P32.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p33",
+                    description: Some(
+                        "desc P33.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p34",
+                    description: Some(
+                        "desc P34.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p35",
+                    description: Some(
+                        "desc P35.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p36",
+                    description: Some(
+                        "desc P36.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P3od",
+            extends: None,
+            description: Some(
+                "desc P3OD.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p31",
+                    description: Some(
+                        "desc P31.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p32",
+                    description: Some(
+                        "desc P32.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p33",
+                    description: Some(
+                        "desc P33.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p34",
+                    description: Some(
+                        "desc P34.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p35",
+                    description: Some(
+                        "desc P35.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p36",
+                    description: Some(
+                        "desc P36.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P3out",
+            extends: None,
+            description: Some(
+                "desc P3OUT.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p31",
+                    description: Some(
+                        "desc P31.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p32",
+                    description: Some(
+                        "desc P32.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p33",
+                    description: Some(
+                        "desc P33.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p34",
+                    description: Some(
+                        "desc P34.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p35",
+                    description: Some(
+                        "desc P35.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p36",
+                    description: Some(
+                        "desc P36.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P3pd",
+            extends: None,
+            description: Some(
+                "desc P3PD.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p31",
+                    description: Some(
+                        "desc P31.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p32",
+                    description: Some(
+                        "desc P32.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p33",
+                    description: Some(
+                        "desc P33.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p34",
+                    description: Some(
+                        "desc P34.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p35",
+                    description: Some(
+                        "desc P35.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p36",
+                    description: Some(
+                        "desc P36.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P3pu",
+            extends: None,
+            description: Some(
+                "desc P3PU.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p31",
+                    description: Some(
+                        "desc P31.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p32",
+                    description: Some(
+                        "desc P32.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p33",
+                    description: Some(
+                        "desc P33.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p34",
+                    description: Some(
+                        "desc P34.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p35",
+                    description: Some(
+                        "desc P35.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p36",
+                    description: Some(
+                        "desc P36.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P3rie",
+            extends: None,
+            description: Some(
+                "desc P3RIE.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p31",
+                    description: Some(
+                        "desc P31.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p32",
+                    description: Some(
+                        "desc P32.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p33",
+                    description: Some(
+                        "desc P33.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p34",
+                    description: Some(
+                        "desc P34.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p35",
+                    description: Some(
+                        "desc P35.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p36",
+                    description: Some(
+                        "desc P36.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "P3stat",
+            extends: None,
+            description: Some(
+                "desc P3STAT.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "p31",
+                    description: Some(
+                        "desc P31.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p32",
+                    description: Some(
+                        "desc P32.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p33",
+                    description: Some(
+                        "desc P33.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p34",
+                    description: Some(
+                        "desc P34.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p35",
+                    description: Some(
+                        "desc P35.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "p36",
+                    description: Some(
+                        "desc P36.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+    ],
+    enums: &[],
+};
+                

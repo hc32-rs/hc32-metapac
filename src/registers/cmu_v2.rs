@@ -1,0 +1,1482 @@
+
+                    use crate::metadata::ir::*;
+                    pub(crate) static REGISTERS: IR = IR {
+    blocks: &[
+        Block {
+            name: "Cmu",
+            extends: None,
+            description: Some(
+                "desc CMU.",
+            ),
+            items: &[
+                BlockItem {
+                    name: "pericksel",
+                    description: Some(
+                        "desc PERICKSEL.",
+                    ),
+                    array: None,
+                    byte_offset: 0x10,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 16,
+                            fieldset: Some(
+                                "Pericksel",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "i2scksel",
+                    description: Some(
+                        "desc I2SCKSEL.",
+                    ),
+                    array: None,
+                    byte_offset: 0x12,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 16,
+                            fieldset: Some(
+                                "I2scksel",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "scfgr",
+                    description: Some(
+                        "desc SCFGR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x20,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Scfgr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "usbckcfgr",
+                    description: Some(
+                        "desc USBCKCFGR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x24,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 8,
+                            fieldset: Some(
+                                "Usbckcfgr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ckswr",
+                    description: Some(
+                        "desc CKSWR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x26,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 8,
+                            fieldset: Some(
+                                "Ckswr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "pllcr",
+                    description: Some(
+                        "desc PLLCR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x2a,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 8,
+                            fieldset: Some(
+                                "Pllcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "upllcr",
+                    description: Some(
+                        "desc UPLLCR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x2e,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 8,
+                            fieldset: Some(
+                                "Upllcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "xtalcr",
+                    description: Some(
+                        "desc XTALCR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x32,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 8,
+                            fieldset: Some(
+                                "Xtalcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "hrccr",
+                    description: Some(
+                        "desc HRCCR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x36,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 8,
+                            fieldset: Some(
+                                "Hrccr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "mrccr",
+                    description: Some(
+                        "desc MRCCR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x38,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 8,
+                            fieldset: Some(
+                                "Mrccr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "oscstbsr",
+                    description: Some(
+                        "desc OSCSTBSR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x3c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 8,
+                            fieldset: Some(
+                                "Oscstbsr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "mco1cfgr",
+                    description: Some(
+                        "desc MCO1CFGR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x3d,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 8,
+                            fieldset: Some(
+                                "Mco1cfgr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "mco2cfgr",
+                    description: Some(
+                        "desc MCO2CFGR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x3e,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 8,
+                            fieldset: Some(
+                                "Mco2cfgr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "tpiuckcfgr",
+                    description: Some(
+                        "desc TPIUCKCFGR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x3f,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 8,
+                            fieldset: Some(
+                                "Tpiuckcfgr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "xtalstdcr",
+                    description: Some(
+                        "desc XTALSTDCR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x40,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 8,
+                            fieldset: Some(
+                                "Xtalstdcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "xtalstdsr",
+                    description: Some(
+                        "desc XTALSTDSR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x41,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 8,
+                            fieldset: Some(
+                                "Xtalstdsr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "mrctrm",
+                    description: Some(
+                        "desc MRCTRM.",
+                    ),
+                    array: None,
+                    byte_offset: 0x61,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 8,
+                            fieldset: None,
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "hrctrm",
+                    description: Some(
+                        "desc HRCTRM.",
+                    ),
+                    array: None,
+                    byte_offset: 0x62,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 8,
+                            fieldset: None,
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "xtalstbcr",
+                    description: Some(
+                        "desc XTALSTBCR.",
+                    ),
+                    array: None,
+                    byte_offset: 0xa2,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 8,
+                            fieldset: Some(
+                                "Xtalstbcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "pllcfgr",
+                    description: Some(
+                        "desc PLLCFGR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x100,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Pllcfgr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "upllcfgr",
+                    description: Some(
+                        "desc UPLLCFGR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x104,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Upllcfgr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "xtalcfgr",
+                    description: Some(
+                        "desc XTALCFGR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x410,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 8,
+                            fieldset: Some(
+                                "Xtalcfgr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "xtal32cr",
+                    description: Some(
+                        "desc XTAL32CR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x420,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 8,
+                            fieldset: Some(
+                                "Xtal32cr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "xtal32cfgr",
+                    description: Some(
+                        "desc XTAL32CFGR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x421,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 8,
+                            fieldset: Some(
+                                "Xtal32cfgr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "xtal32nfr",
+                    description: Some(
+                        "desc XTAL32NFR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x425,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 8,
+                            fieldset: Some(
+                                "Xtal32nfr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "lrccr",
+                    description: Some(
+                        "desc LRCCR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x427,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 8,
+                            fieldset: Some(
+                                "Lrccr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "lrctrm",
+                    description: Some(
+                        "desc LRCTRM.",
+                    ),
+                    array: None,
+                    byte_offset: 0x429,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 8,
+                            fieldset: None,
+                        },
+                    ),
+                },
+            ],
+        },
+    ],
+    fieldsets: &[
+        FieldSet {
+            name: "Ckswr",
+            extends: None,
+            description: Some(
+                "desc CKSWR.",
+            ),
+            bit_size: 8,
+            fields: &[
+                Field {
+                    name: "cksw",
+                    description: Some(
+                        "desc CKSW.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Hrccr",
+            extends: None,
+            description: Some(
+                "desc HRCCR.",
+            ),
+            bit_size: 8,
+            fields: &[
+                Field {
+                    name: "hrcstp",
+                    description: Some(
+                        "desc HRCSTP.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "I2scksel",
+            extends: None,
+            description: Some(
+                "desc I2SCKSEL.",
+            ),
+            bit_size: 16,
+            fields: &[
+                Field {
+                    name: "i2s1cksel",
+                    description: Some(
+                        "desc I2S1CKSEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "i2s2cksel",
+                    description: Some(
+                        "desc I2S2CKSEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "i2s3cksel",
+                    description: Some(
+                        "desc I2S3CKSEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "i2s4cksel",
+                    description: Some(
+                        "desc I2S4CKSEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Lrccr",
+            extends: None,
+            description: Some(
+                "desc LRCCR.",
+            ),
+            bit_size: 8,
+            fields: &[
+                Field {
+                    name: "lrcstp",
+                    description: Some(
+                        "desc LRCSTP.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Mco1cfgr",
+            extends: None,
+            description: Some(
+                "desc MCO1CFGR.",
+            ),
+            bit_size: 8,
+            fields: &[
+                Field {
+                    name: "mcosel",
+                    description: Some(
+                        "desc MCOSEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "mcodiv",
+                    description: Some(
+                        "desc MCODIV.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "mcoen",
+                    description: Some(
+                        "desc MCOEN.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Mco2cfgr",
+            extends: None,
+            description: Some(
+                "desc MCO2CFGR.",
+            ),
+            bit_size: 8,
+            fields: &[
+                Field {
+                    name: "mcosel",
+                    description: Some(
+                        "desc MCOSEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "mcodiv",
+                    description: Some(
+                        "desc MCODIV.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "mcoen",
+                    description: Some(
+                        "desc MCOEN.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Mrccr",
+            extends: None,
+            description: Some(
+                "desc MRCCR.",
+            ),
+            bit_size: 8,
+            fields: &[
+                Field {
+                    name: "mrcstp",
+                    description: Some(
+                        "desc MRCSTP.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Oscstbsr",
+            extends: None,
+            description: Some(
+                "desc OSCSTBSR.",
+            ),
+            bit_size: 8,
+            fields: &[
+                Field {
+                    name: "hrcstbf",
+                    description: Some(
+                        "desc HRCSTBF.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "xtalstbf",
+                    description: Some(
+                        "desc XTALSTBF.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "mpllstbf",
+                    description: Some(
+                        "desc MPLLSTBF.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "upllstbf",
+                    description: Some(
+                        "desc UPLLSTBF.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Pericksel",
+            extends: None,
+            description: Some(
+                "desc PERICKSEL.",
+            ),
+            bit_size: 16,
+            fields: &[
+                Field {
+                    name: "pericksel",
+                    description: Some(
+                        "desc PERICKSEL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Pllcfgr",
+            extends: None,
+            description: Some(
+                "desc PLLCFGR.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "mpllm",
+                    description: Some(
+                        "desc MPLLM.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 5,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pllsrc",
+                    description: Some(
+                        "desc PLLSRC.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "mplln",
+                    description: Some(
+                        "desc MPLLN.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
+                    bit_size: 9,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "mpllr",
+                    description: Some(
+                        "desc MPLLR.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "mpllq",
+                    description: Some(
+                        "desc MPLLQ.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "mpllp",
+                    description: Some(
+                        "desc MPLLP.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Pllcr",
+            extends: None,
+            description: Some(
+                "desc PLLCR.",
+            ),
+            bit_size: 8,
+            fields: &[
+                Field {
+                    name: "mplloff",
+                    description: Some(
+                        "desc MPLLOFF.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Scfgr",
+            extends: None,
+            description: Some(
+                "desc SCFGR.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "pclk0s",
+                    description: Some(
+                        "desc PCLK0S.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pclk1s",
+                    description: Some(
+                        "desc PCLK1S.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pclk2s",
+                    description: Some(
+                        "desc PCLK2S.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pclk3s",
+                    description: Some(
+                        "desc PCLK3S.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pclk4s",
+                    description: Some(
+                        "desc PCLK4S.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "excks",
+                    description: Some(
+                        "desc EXCKS.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "hclks",
+                    description: Some(
+                        "desc HCLKS.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Tpiuckcfgr",
+            extends: None,
+            description: Some(
+                "desc TPIUCKCFGR.",
+            ),
+            bit_size: 8,
+            fields: &[
+                Field {
+                    name: "tpiucks",
+                    description: Some(
+                        "desc TPIUCKS.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tpiuckoe",
+                    description: Some(
+                        "desc TPIUCKOE.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Upllcfgr",
+            extends: None,
+            description: Some(
+                "desc UPLLCFGR.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "upllm",
+                    description: Some(
+                        "desc UPLLM.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 5,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "uplln",
+                    description: Some(
+                        "desc UPLLN.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
+                    bit_size: 9,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "upllr",
+                    description: Some(
+                        "desc UPLLR.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "upllq",
+                    description: Some(
+                        "desc UPLLQ.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "upllp",
+                    description: Some(
+                        "desc UPLLP.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Upllcr",
+            extends: None,
+            description: Some(
+                "desc UPLLCR.",
+            ),
+            bit_size: 8,
+            fields: &[
+                Field {
+                    name: "uplloff",
+                    description: Some(
+                        "desc UPLLOFF.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Usbckcfgr",
+            extends: None,
+            description: Some(
+                "desc USBCKCFGR.",
+            ),
+            bit_size: 8,
+            fields: &[
+                Field {
+                    name: "usbcks",
+                    description: Some(
+                        "desc USBCKS.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Xtal32cfgr",
+            extends: None,
+            description: Some(
+                "desc XTAL32CFGR.",
+            ),
+            bit_size: 8,
+            fields: &[
+                Field {
+                    name: "xtal32drv",
+                    description: Some(
+                        "desc XTAL32DRV.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Xtal32cr",
+            extends: None,
+            description: Some(
+                "desc XTAL32CR.",
+            ),
+            bit_size: 8,
+            fields: &[
+                Field {
+                    name: "xtal32stp",
+                    description: Some(
+                        "desc XTAL32STP.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Xtal32nfr",
+            extends: None,
+            description: Some(
+                "desc XTAL32NFR.",
+            ),
+            bit_size: 8,
+            fields: &[
+                Field {
+                    name: "xtal32nf",
+                    description: Some(
+                        "desc XTAL32NF.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Xtalcfgr",
+            extends: None,
+            description: Some(
+                "desc XTALCFGR.",
+            ),
+            bit_size: 8,
+            fields: &[
+                Field {
+                    name: "xtaldrv",
+                    description: Some(
+                        "desc XTALDRV.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "xtalms",
+                    description: Some(
+                        "desc XTALMS.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "supdrv",
+                    description: Some(
+                        "desc SUPDRV.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Xtalcr",
+            extends: None,
+            description: Some(
+                "desc XTALCR.",
+            ),
+            bit_size: 8,
+            fields: &[
+                Field {
+                    name: "xtalstp",
+                    description: Some(
+                        "desc XTALSTP.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Xtalstbcr",
+            extends: None,
+            description: Some(
+                "desc XTALSTBCR.",
+            ),
+            bit_size: 8,
+            fields: &[
+                Field {
+                    name: "xtalstb",
+                    description: Some(
+                        "desc XTALSTB.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Xtalstdcr",
+            extends: None,
+            description: Some(
+                "desc XTALSTDCR.",
+            ),
+            bit_size: 8,
+            fields: &[
+                Field {
+                    name: "xtalstdie",
+                    description: Some(
+                        "desc XTALSTDIE.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "xtalstdre",
+                    description: Some(
+                        "desc XTALSTDRE.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "xtalstdris",
+                    description: Some(
+                        "desc XTALSTDRIS.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "xtalstde",
+                    description: Some(
+                        "desc XTALSTDE.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Xtalstdsr",
+            extends: None,
+            description: Some(
+                "desc XTALSTDSR.",
+            ),
+            bit_size: 8,
+            fields: &[
+                Field {
+                    name: "xtalstdf",
+                    description: Some(
+                        "desc XTALSTDF.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+    ],
+    enums: &[],
+};
+                

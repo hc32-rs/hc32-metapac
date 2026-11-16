@@ -1,0 +1,307 @@
+
+                    use crate::metadata::ir::*;
+                    pub(crate) static REGISTERS: IR = IR {
+    blocks: &[
+        Block {
+            name: "Sram",
+            extends: None,
+            description: Some(
+                "desc SRAM.",
+            ),
+            items: &[
+                BlockItem {
+                    name: "erraddr",
+                    description: Some(
+                        "desc ERRADDR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Erraddr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "sr",
+                    description: Some(
+                        "desc SR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Sr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "iclr",
+                    description: Some(
+                        "desc ICLR.",
+                    ),
+                    array: None,
+                    byte_offset: 0xc,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Write,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Iclr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ier",
+                    description: Some(
+                        "desc IER.",
+                    ),
+                    array: None,
+                    byte_offset: 0x10,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ier",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "lock",
+                    description: Some(
+                        "desc LOCK.",
+                    ),
+                    array: None,
+                    byte_offset: 0x14,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Write,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Lock",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "wprot",
+                    description: Some(
+                        "desc WPROT.",
+                    ),
+                    array: None,
+                    byte_offset: 0x18,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Wprot",
+                            ),
+                        },
+                    ),
+                },
+            ],
+        },
+    ],
+    fieldsets: &[
+        FieldSet {
+            name: "Erraddr",
+            extends: None,
+            description: Some(
+                "desc ERRADDR.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "erraddr",
+                    description: Some(
+                        "desc ERRADDR.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Iclr",
+            extends: None,
+            description: Some(
+                "desc ICLR.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "parityerr",
+                    description: Some(
+                        "desc PARITYERR.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wproterr",
+                    description: Some(
+                        "desc WPROTERR.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ier",
+            extends: None,
+            description: Some(
+                "desc IER.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "wproterr",
+                    description: Some(
+                        "desc WPROTERR.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "parityerr",
+                    description: Some(
+                        "desc PARITYERR.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Lock",
+            extends: None,
+            description: Some(
+                "desc LOCK.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "key",
+                    description: Some(
+                        "desc KEY.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Sr",
+            extends: None,
+            description: Some(
+                "desc SR.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "parityerr",
+                    description: Some(
+                        "desc PARITYERR.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wproterr",
+                    description: Some(
+                        "desc WPROTERR.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Wprot",
+            extends: None,
+            description: Some(
+                "desc WPROT.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "wprotsize",
+                    description: Some(
+                        "desc WPROTSIZE.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 6,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+    ],
+    enums: &[],
+};
+                
