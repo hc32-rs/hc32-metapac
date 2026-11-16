@@ -1,0 +1,5503 @@
+
+                    use crate::metadata::ir::*;
+                    pub(crate) static REGISTERS: IR = IR {
+    blocks: &[
+        Block {
+            name: "Nfc",
+            extends: None,
+            description: Some(
+                "desc NFC.",
+            ),
+            items: &[
+                BlockItem {
+                    name: "datr_base",
+                    description: Some(
+                        "desc DATR_BASE.",
+                    ),
+                    array: None,
+                    byte_offset: 0x0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: None,
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cmdr",
+                    description: Some(
+                        "desc CMDR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8000,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cmdr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "idxr0",
+                    description: Some(
+                        "desc IDXR0.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8004,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: None,
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ienr",
+                    description: Some(
+                        "desc IENR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8030,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ienr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "istr",
+                    description: Some(
+                        "desc ISTR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8034,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Istr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "irsr",
+                    description: Some(
+                        "desc IRSR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8038,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Irsr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "idxr1",
+                    description: Some(
+                        "desc IDXR1.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8048,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Idxr1",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "tmcr0",
+                    description: Some(
+                        "desc TMCR0.",
+                    ),
+                    array: None,
+                    byte_offset: 0x804c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Tmcr0",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "tmcr1",
+                    description: Some(
+                        "desc TMCR1.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8050,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Tmcr1",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "bacr",
+                    description: Some(
+                        "desc BACR.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8054,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Bacr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "tmcr2",
+                    description: Some(
+                        "desc TMCR2.",
+                    ),
+                    array: None,
+                    byte_offset: 0x805c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Tmcr2",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "eccr0",
+                    description: Some(
+                        "desc ECCR0.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8060,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Eccr0",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "eccr1",
+                    description: Some(
+                        "desc ECCR1.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8064,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Eccr1",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "eccr2",
+                    description: Some(
+                        "desc ECCR2.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8068,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Eccr2",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "eccr3",
+                    description: Some(
+                        "desc ECCR3.",
+                    ),
+                    array: None,
+                    byte_offset: 0x806c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Eccr3",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "eccr4",
+                    description: Some(
+                        "desc ECCR4.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8070,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Eccr4",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "eccr5",
+                    description: Some(
+                        "desc ECCR5.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8074,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Eccr5",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "eccr6",
+                    description: Some(
+                        "desc ECCR6.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8078,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Eccr6",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "eccr7",
+                    description: Some(
+                        "desc ECCR7.",
+                    ),
+                    array: None,
+                    byte_offset: 0x807c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Eccr7",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_stat",
+                    description: Some(
+                        "desc ECC_STAT.",
+                    ),
+                    array: None,
+                    byte_offset: 0x807c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccStat",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "eccr8",
+                    description: Some(
+                        "desc ECCR8.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8080,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Eccr8",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section0_synd12",
+                    description: Some(
+                        "desc ECC_SECTION0_SYND12.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8080,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection0Synd12",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "eccr9",
+                    description: Some(
+                        "desc ECCR9.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8084,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Eccr9",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section0_synd34",
+                    description: Some(
+                        "desc ECC_SECTION0_SYND34.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8084,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection0Synd34",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "eccr10",
+                    description: Some(
+                        "desc ECCR10.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8088,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Eccr10",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section0_synd56",
+                    description: Some(
+                        "desc ECC_SECTION0_SYND56.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8088,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection0Synd56",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "eccr11",
+                    description: Some(
+                        "desc ECCR11.",
+                    ),
+                    array: None,
+                    byte_offset: 0x808c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Eccr11",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section0_synd78",
+                    description: Some(
+                        "desc ECC_SECTION0_SYND78.",
+                    ),
+                    array: None,
+                    byte_offset: 0x808c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection0Synd78",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "eccr12",
+                    description: Some(
+                        "desc ECCR12.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8090,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Eccr12",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section1_synd12",
+                    description: Some(
+                        "desc ECC_SECTION1_SYND12.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8090,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection1Synd12",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "eccr13",
+                    description: Some(
+                        "desc ECCR13.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8094,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Eccr13",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section1_synd34",
+                    description: Some(
+                        "desc ECC_SECTION1_SYND34.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8094,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection1Synd34",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "eccr14",
+                    description: Some(
+                        "desc ECCR14.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8098,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Eccr14",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section1_synd56",
+                    description: Some(
+                        "desc ECC_SECTION1_SYND56.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8098,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection1Synd56",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "eccr15",
+                    description: Some(
+                        "desc ECCR15.",
+                    ),
+                    array: None,
+                    byte_offset: 0x809c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Eccr15",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section1_synd78",
+                    description: Some(
+                        "desc ECC_SECTION1_SYND78.",
+                    ),
+                    array: None,
+                    byte_offset: 0x809c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection1Synd78",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section2_synd12",
+                    description: Some(
+                        "desc ECC_SECTION2_SYND12.",
+                    ),
+                    array: None,
+                    byte_offset: 0x80a0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection2Synd12",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section2_synd34",
+                    description: Some(
+                        "desc ECC_SECTION2_SYND34.",
+                    ),
+                    array: None,
+                    byte_offset: 0x80a4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection2Synd34",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section2_synd56",
+                    description: Some(
+                        "desc ECC_SECTION2_SYND56.",
+                    ),
+                    array: None,
+                    byte_offset: 0x80a8,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection2Synd56",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section2_synd78",
+                    description: Some(
+                        "desc ECC_SECTION2_SYND78.",
+                    ),
+                    array: None,
+                    byte_offset: 0x80ac,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection2Synd78",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section3_synd12",
+                    description: Some(
+                        "desc ECC_SECTION3_SYND12.",
+                    ),
+                    array: None,
+                    byte_offset: 0x80b0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection3Synd12",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section3_synd34",
+                    description: Some(
+                        "desc ECC_SECTION3_SYND34.",
+                    ),
+                    array: None,
+                    byte_offset: 0x80b4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection3Synd34",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section3_synd56",
+                    description: Some(
+                        "desc ECC_SECTION3_SYND56.",
+                    ),
+                    array: None,
+                    byte_offset: 0x80b8,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection3Synd56",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section3_synd78",
+                    description: Some(
+                        "desc ECC_SECTION3_SYND78.",
+                    ),
+                    array: None,
+                    byte_offset: 0x80bc,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection3Synd78",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section4_synd12",
+                    description: Some(
+                        "desc ECC_SECTION4_SYND12.",
+                    ),
+                    array: None,
+                    byte_offset: 0x80c0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection4Synd12",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section4_synd34",
+                    description: Some(
+                        "desc ECC_SECTION4_SYND34.",
+                    ),
+                    array: None,
+                    byte_offset: 0x80c4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection4Synd34",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section4_synd56",
+                    description: Some(
+                        "desc ECC_SECTION4_SYND56.",
+                    ),
+                    array: None,
+                    byte_offset: 0x80c8,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection4Synd56",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section4_synd78",
+                    description: Some(
+                        "desc ECC_SECTION4_SYND78.",
+                    ),
+                    array: None,
+                    byte_offset: 0x80cc,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection4Synd78",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section5_synd12",
+                    description: Some(
+                        "desc ECC_SECTION5_SYND12.",
+                    ),
+                    array: None,
+                    byte_offset: 0x80d0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection5Synd12",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section5_synd34",
+                    description: Some(
+                        "desc ECC_SECTION5_SYND34.",
+                    ),
+                    array: None,
+                    byte_offset: 0x80d4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection5Synd34",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section5_synd56",
+                    description: Some(
+                        "desc ECC_SECTION5_SYND56.",
+                    ),
+                    array: None,
+                    byte_offset: 0x80d8,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection5Synd56",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section5_synd78",
+                    description: Some(
+                        "desc ECC_SECTION5_SYND78.",
+                    ),
+                    array: None,
+                    byte_offset: 0x80dc,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection5Synd78",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section6_synd12",
+                    description: Some(
+                        "desc ECC_SECTION6_SYND12.",
+                    ),
+                    array: None,
+                    byte_offset: 0x80e0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection6Synd12",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section6_synd34",
+                    description: Some(
+                        "desc ECC_SECTION6_SYND34.",
+                    ),
+                    array: None,
+                    byte_offset: 0x80e4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection6Synd34",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section6_synd56",
+                    description: Some(
+                        "desc ECC_SECTION6_SYND56.",
+                    ),
+                    array: None,
+                    byte_offset: 0x80e8,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection6Synd56",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section6_synd78",
+                    description: Some(
+                        "desc ECC_SECTION6_SYND78.",
+                    ),
+                    array: None,
+                    byte_offset: 0x80ec,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection6Synd78",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section7_synd12",
+                    description: Some(
+                        "desc ECC_SECTION7_SYND12.",
+                    ),
+                    array: None,
+                    byte_offset: 0x80f0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection7Synd12",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section7_synd34",
+                    description: Some(
+                        "desc ECC_SECTION7_SYND34.",
+                    ),
+                    array: None,
+                    byte_offset: 0x80f4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection7Synd34",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section7_synd56",
+                    description: Some(
+                        "desc ECC_SECTION7_SYND56.",
+                    ),
+                    array: None,
+                    byte_offset: 0x80f8,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection7Synd56",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section7_synd78",
+                    description: Some(
+                        "desc ECC_SECTION7_SYND78.",
+                    ),
+                    array: None,
+                    byte_offset: 0x80fc,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection7Synd78",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section8_synd12",
+                    description: Some(
+                        "desc ECC_SECTION8_SYND12.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8100,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection8Synd12",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section8_synd34",
+                    description: Some(
+                        "desc ECC_SECTION8_SYND34.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8104,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection8Synd34",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section8_synd56",
+                    description: Some(
+                        "desc ECC_SECTION8_SYND56.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8108,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection8Synd56",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section8_synd78",
+                    description: Some(
+                        "desc ECC_SECTION8_SYND78.",
+                    ),
+                    array: None,
+                    byte_offset: 0x810c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection8Synd78",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section9_synd12",
+                    description: Some(
+                        "desc ECC_SECTION9_SYND12.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8110,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection9Synd12",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section9_synd34",
+                    description: Some(
+                        "desc ECC_SECTION9_SYND34.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8114,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection9Synd34",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section9_synd56",
+                    description: Some(
+                        "desc ECC_SECTION9_SYND56.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8118,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection9Synd56",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section9_synd78",
+                    description: Some(
+                        "desc ECC_SECTION9_SYND78.",
+                    ),
+                    array: None,
+                    byte_offset: 0x811c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection9Synd78",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section10_synd12",
+                    description: Some(
+                        "desc ECC_SECTION10_SYND12.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8120,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection10Synd12",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section10_synd34",
+                    description: Some(
+                        "desc ECC_SECTION10_SYND34.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8124,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection10Synd34",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section10_synd56",
+                    description: Some(
+                        "desc ECC_SECTION10_SYND56.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8128,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection10Synd56",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section10_synd78",
+                    description: Some(
+                        "desc ECC_SECTION10_SYND78.",
+                    ),
+                    array: None,
+                    byte_offset: 0x812c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection10Synd78",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section11_synd12",
+                    description: Some(
+                        "desc ECC_SECTION11_SYND12.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8130,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection11Synd12",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section11_synd34",
+                    description: Some(
+                        "desc ECC_SECTION11_SYND34.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8134,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection11Synd34",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section11_synd56",
+                    description: Some(
+                        "desc ECC_SECTION11_SYND56.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8138,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection11Synd56",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section11_synd78",
+                    description: Some(
+                        "desc ECC_SECTION11_SYND78.",
+                    ),
+                    array: None,
+                    byte_offset: 0x813c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection11Synd78",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section12_synd12",
+                    description: Some(
+                        "desc ECC_SECTION12_SYND12.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8140,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection12Synd12",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section12_synd34",
+                    description: Some(
+                        "desc ECC_SECTION12_SYND34.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8144,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection12Synd34",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section12_synd56",
+                    description: Some(
+                        "desc ECC_SECTION12_SYND56.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8148,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection12Synd56",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section12_synd78",
+                    description: Some(
+                        "desc ECC_SECTION12_SYND78.",
+                    ),
+                    array: None,
+                    byte_offset: 0x814c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection12Synd78",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section13_synd12",
+                    description: Some(
+                        "desc ECC_SECTION13_SYND12.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8150,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection13Synd12",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section13_synd34",
+                    description: Some(
+                        "desc ECC_SECTION13_SYND34.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8154,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection13Synd34",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section13_synd56",
+                    description: Some(
+                        "desc ECC_SECTION13_SYND56.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8158,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection13Synd56",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section13_synd78",
+                    description: Some(
+                        "desc ECC_SECTION13_SYND78.",
+                    ),
+                    array: None,
+                    byte_offset: 0x815c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection13Synd78",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section14_synd12",
+                    description: Some(
+                        "desc ECC_SECTION14_SYND12.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8160,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection14Synd12",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section14_synd34",
+                    description: Some(
+                        "desc ECC_SECTION14_SYND34.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8164,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection14Synd34",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section14_synd56",
+                    description: Some(
+                        "desc ECC_SECTION14_SYND56.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8168,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection14Synd56",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section14_synd78",
+                    description: Some(
+                        "desc ECC_SECTION14_SYND78.",
+                    ),
+                    array: None,
+                    byte_offset: 0x816c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection14Synd78",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section15_synd12",
+                    description: Some(
+                        "desc ECC_SECTION15_SYND12.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8170,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection15Synd12",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section15_synd34",
+                    description: Some(
+                        "desc ECC_SECTION15_SYND34.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8174,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection15Synd34",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section15_synd56",
+                    description: Some(
+                        "desc ECC_SECTION15_SYND56.",
+                    ),
+                    array: None,
+                    byte_offset: 0x8178,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection15Synd56",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ecc_section15_synd78",
+                    description: Some(
+                        "desc ECC_SECTION15_SYND78.",
+                    ),
+                    array: None,
+                    byte_offset: 0x817c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "EccSection15Synd78",
+                            ),
+                        },
+                    ),
+                },
+            ],
+        },
+    ],
+    fieldsets: &[
+        FieldSet {
+            name: "Bacr",
+            extends: None,
+            description: Some(
+                "desc BACR.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "size",
+                    description: Some(
+                        "desc SIZE.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "b16bit",
+                    description: Some(
+                        "desc B16BIT.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "bank",
+                    description: Some(
+                        "desc BANK.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "page",
+                    description: Some(
+                        "desc PAGE.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wp",
+                    description: Some(
+                        "desc WP.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "eccm",
+                    description: Some(
+                        "desc ECCM.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rac",
+                    description: Some(
+                        "desc RAC.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "scs",
+                    description: Some(
+                        "desc SCS.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cmdr",
+            extends: None,
+            description: Some(
+                "desc CMDR.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "cmd",
+                    description: Some(
+                        "desc CMD.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "arg",
+                    description: Some(
+                        "desc ARG.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
+                    bit_size: 24,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection0Synd12",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION0_SYND12.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s1",
+                    description: Some(
+                        "desc S1.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s2",
+                    description: Some(
+                        "desc S2.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection0Synd34",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION0_SYND34.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s3",
+                    description: Some(
+                        "desc S3.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s4",
+                    description: Some(
+                        "desc S4.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection0Synd56",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION0_SYND56.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s5",
+                    description: Some(
+                        "desc S5.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s6",
+                    description: Some(
+                        "desc S6.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection0Synd78",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION0_SYND78.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s7",
+                    description: Some(
+                        "desc S7.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s8",
+                    description: Some(
+                        "desc S8.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection10Synd12",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION10_SYND12.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s1",
+                    description: Some(
+                        "desc S1.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s2",
+                    description: Some(
+                        "desc S2.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection10Synd34",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION10_SYND34.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s3",
+                    description: Some(
+                        "desc S3.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s4",
+                    description: Some(
+                        "desc S4.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection10Synd56",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION10_SYND56.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s5",
+                    description: Some(
+                        "desc S5.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s6",
+                    description: Some(
+                        "desc S6.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection10Synd78",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION10_SYND78.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s7",
+                    description: Some(
+                        "desc S7.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s8",
+                    description: Some(
+                        "desc S8.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection11Synd12",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION11_SYND12.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s1",
+                    description: Some(
+                        "desc S1.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s2",
+                    description: Some(
+                        "desc S2.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection11Synd34",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION11_SYND34.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s3",
+                    description: Some(
+                        "desc S3.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s4",
+                    description: Some(
+                        "desc S4.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection11Synd56",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION11_SYND56.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s5",
+                    description: Some(
+                        "desc S5.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s6",
+                    description: Some(
+                        "desc S6.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection11Synd78",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION11_SYND78.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s7",
+                    description: Some(
+                        "desc S7.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s8",
+                    description: Some(
+                        "desc S8.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection12Synd12",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION12_SYND12.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s1",
+                    description: Some(
+                        "desc S1.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s2",
+                    description: Some(
+                        "desc S2.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection12Synd34",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION12_SYND34.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s3",
+                    description: Some(
+                        "desc S3.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s4",
+                    description: Some(
+                        "desc S4.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection12Synd56",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION12_SYND56.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s5",
+                    description: Some(
+                        "desc S5.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s6",
+                    description: Some(
+                        "desc S6.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection12Synd78",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION12_SYND78.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s7",
+                    description: Some(
+                        "desc S7.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s8",
+                    description: Some(
+                        "desc S8.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection13Synd12",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION13_SYND12.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s1",
+                    description: Some(
+                        "desc S1.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s2",
+                    description: Some(
+                        "desc S2.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection13Synd34",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION13_SYND34.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s3",
+                    description: Some(
+                        "desc S3.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s4",
+                    description: Some(
+                        "desc S4.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection13Synd56",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION13_SYND56.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s5",
+                    description: Some(
+                        "desc S5.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s6",
+                    description: Some(
+                        "desc S6.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection13Synd78",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION13_SYND78.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s7",
+                    description: Some(
+                        "desc S7.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s8",
+                    description: Some(
+                        "desc S8.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection14Synd12",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION14_SYND12.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s1",
+                    description: Some(
+                        "desc S1.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s2",
+                    description: Some(
+                        "desc S2.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection14Synd34",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION14_SYND34.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s3",
+                    description: Some(
+                        "desc S3.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s4",
+                    description: Some(
+                        "desc S4.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection14Synd56",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION14_SYND56.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s5",
+                    description: Some(
+                        "desc S5.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s6",
+                    description: Some(
+                        "desc S6.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection14Synd78",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION14_SYND78.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s7",
+                    description: Some(
+                        "desc S7.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s8",
+                    description: Some(
+                        "desc S8.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection15Synd12",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION15_SYND12.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s1",
+                    description: Some(
+                        "desc S1.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s2",
+                    description: Some(
+                        "desc S2.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection15Synd34",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION15_SYND34.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s3",
+                    description: Some(
+                        "desc S3.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s4",
+                    description: Some(
+                        "desc S4.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection15Synd56",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION15_SYND56.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s5",
+                    description: Some(
+                        "desc S5.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s6",
+                    description: Some(
+                        "desc S6.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection15Synd78",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION15_SYND78.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s7",
+                    description: Some(
+                        "desc S7.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s8",
+                    description: Some(
+                        "desc S8.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection1Synd12",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION1_SYND12.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s1",
+                    description: Some(
+                        "desc S1.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s2",
+                    description: Some(
+                        "desc S2.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection1Synd34",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION1_SYND34.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s3",
+                    description: Some(
+                        "desc S3.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s4",
+                    description: Some(
+                        "desc S4.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection1Synd56",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION1_SYND56.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s5",
+                    description: Some(
+                        "desc S5.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s6",
+                    description: Some(
+                        "desc S6.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection1Synd78",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION1_SYND78.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s7",
+                    description: Some(
+                        "desc S7.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s8",
+                    description: Some(
+                        "desc S8.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection2Synd12",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION2_SYND12.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s1",
+                    description: Some(
+                        "desc S1.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s2",
+                    description: Some(
+                        "desc S2.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection2Synd34",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION2_SYND34.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s3",
+                    description: Some(
+                        "desc S3.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s4",
+                    description: Some(
+                        "desc S4.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection2Synd56",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION2_SYND56.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s5",
+                    description: Some(
+                        "desc S5.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s6",
+                    description: Some(
+                        "desc S6.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection2Synd78",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION2_SYND78.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s7",
+                    description: Some(
+                        "desc S7.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s8",
+                    description: Some(
+                        "desc S8.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection3Synd12",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION3_SYND12.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s1",
+                    description: Some(
+                        "desc S1.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s2",
+                    description: Some(
+                        "desc S2.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection3Synd34",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION3_SYND34.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s3",
+                    description: Some(
+                        "desc S3.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s4",
+                    description: Some(
+                        "desc S4.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection3Synd56",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION3_SYND56.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s5",
+                    description: Some(
+                        "desc S5.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s6",
+                    description: Some(
+                        "desc S6.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection3Synd78",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION3_SYND78.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s7",
+                    description: Some(
+                        "desc S7.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s8",
+                    description: Some(
+                        "desc S8.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection4Synd12",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION4_SYND12.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s1",
+                    description: Some(
+                        "desc S1.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s2",
+                    description: Some(
+                        "desc S2.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection4Synd34",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION4_SYND34.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s3",
+                    description: Some(
+                        "desc S3.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s4",
+                    description: Some(
+                        "desc S4.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection4Synd56",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION4_SYND56.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s5",
+                    description: Some(
+                        "desc S5.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s6",
+                    description: Some(
+                        "desc S6.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection4Synd78",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION4_SYND78.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s7",
+                    description: Some(
+                        "desc S7.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s8",
+                    description: Some(
+                        "desc S8.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection5Synd12",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION5_SYND12.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s1",
+                    description: Some(
+                        "desc S1.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s2",
+                    description: Some(
+                        "desc S2.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection5Synd34",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION5_SYND34.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s3",
+                    description: Some(
+                        "desc S3.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s4",
+                    description: Some(
+                        "desc S4.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection5Synd56",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION5_SYND56.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s5",
+                    description: Some(
+                        "desc S5.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s6",
+                    description: Some(
+                        "desc S6.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection5Synd78",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION5_SYND78.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s7",
+                    description: Some(
+                        "desc S7.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s8",
+                    description: Some(
+                        "desc S8.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection6Synd12",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION6_SYND12.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s1",
+                    description: Some(
+                        "desc S1.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s2",
+                    description: Some(
+                        "desc S2.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection6Synd34",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION6_SYND34.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s3",
+                    description: Some(
+                        "desc S3.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s4",
+                    description: Some(
+                        "desc S4.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection6Synd56",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION6_SYND56.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s5",
+                    description: Some(
+                        "desc S5.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s6",
+                    description: Some(
+                        "desc S6.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection6Synd78",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION6_SYND78.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s7",
+                    description: Some(
+                        "desc S7.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s8",
+                    description: Some(
+                        "desc S8.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection7Synd12",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION7_SYND12.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s1",
+                    description: Some(
+                        "desc S1.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s2",
+                    description: Some(
+                        "desc S2.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection7Synd34",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION7_SYND34.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s3",
+                    description: Some(
+                        "desc S3.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s4",
+                    description: Some(
+                        "desc S4.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection7Synd56",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION7_SYND56.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s5",
+                    description: Some(
+                        "desc S5.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s6",
+                    description: Some(
+                        "desc S6.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection7Synd78",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION7_SYND78.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s7",
+                    description: Some(
+                        "desc S7.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s8",
+                    description: Some(
+                        "desc S8.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection8Synd12",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION8_SYND12.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s1",
+                    description: Some(
+                        "desc S1.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s2",
+                    description: Some(
+                        "desc S2.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection8Synd34",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION8_SYND34.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s3",
+                    description: Some(
+                        "desc S3.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s4",
+                    description: Some(
+                        "desc S4.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection8Synd56",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION8_SYND56.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s5",
+                    description: Some(
+                        "desc S5.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s6",
+                    description: Some(
+                        "desc S6.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection8Synd78",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION8_SYND78.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s7",
+                    description: Some(
+                        "desc S7.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s8",
+                    description: Some(
+                        "desc S8.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection9Synd12",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION9_SYND12.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s1",
+                    description: Some(
+                        "desc S1.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s2",
+                    description: Some(
+                        "desc S2.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection9Synd34",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION9_SYND34.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s3",
+                    description: Some(
+                        "desc S3.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s4",
+                    description: Some(
+                        "desc S4.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection9Synd56",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION9_SYND56.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s5",
+                    description: Some(
+                        "desc S5.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s6",
+                    description: Some(
+                        "desc S6.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccSection9Synd78",
+            extends: None,
+            description: Some(
+                "desc ECC_SECTION9_SYND78.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "s7",
+                    description: Some(
+                        "desc S7.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "s8",
+                    description: Some(
+                        "desc S8.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 13,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "EccStat",
+            extends: None,
+            description: Some(
+                "desc ECC_STAT.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "errsec",
+                    description: Some(
+                        "desc ERRSEC.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Eccr0",
+            extends: None,
+            description: Some(
+                "desc ECCR0.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "errloc",
+                    description: Some(
+                        "desc ERRLOC.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 12,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "se",
+                    description: Some(
+                        "desc SE.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "me",
+                    description: Some(
+                        "desc ME.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Eccr1",
+            extends: None,
+            description: Some(
+                "desc ECCR1.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "errloc",
+                    description: Some(
+                        "desc ERRLOC.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 12,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "se",
+                    description: Some(
+                        "desc SE.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "me",
+                    description: Some(
+                        "desc ME.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Eccr10",
+            extends: None,
+            description: Some(
+                "desc ECCR10.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "errloc",
+                    description: Some(
+                        "desc ERRLOC.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 12,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "se",
+                    description: Some(
+                        "desc SE.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "me",
+                    description: Some(
+                        "desc ME.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Eccr11",
+            extends: None,
+            description: Some(
+                "desc ECCR11.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "errloc",
+                    description: Some(
+                        "desc ERRLOC.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 12,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "se",
+                    description: Some(
+                        "desc SE.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "me",
+                    description: Some(
+                        "desc ME.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Eccr12",
+            extends: None,
+            description: Some(
+                "desc ECCR12.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "errloc",
+                    description: Some(
+                        "desc ERRLOC.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 12,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "se",
+                    description: Some(
+                        "desc SE.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "me",
+                    description: Some(
+                        "desc ME.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Eccr13",
+            extends: None,
+            description: Some(
+                "desc ECCR13.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "errloc",
+                    description: Some(
+                        "desc ERRLOC.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 12,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "se",
+                    description: Some(
+                        "desc SE.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "me",
+                    description: Some(
+                        "desc ME.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Eccr14",
+            extends: None,
+            description: Some(
+                "desc ECCR14.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "errloc",
+                    description: Some(
+                        "desc ERRLOC.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 12,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "se",
+                    description: Some(
+                        "desc SE.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "me",
+                    description: Some(
+                        "desc ME.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Eccr15",
+            extends: None,
+            description: Some(
+                "desc ECCR15.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "errloc",
+                    description: Some(
+                        "desc ERRLOC.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 12,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "se",
+                    description: Some(
+                        "desc SE.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "me",
+                    description: Some(
+                        "desc ME.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Eccr2",
+            extends: None,
+            description: Some(
+                "desc ECCR2.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "errloc",
+                    description: Some(
+                        "desc ERRLOC.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 12,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "se",
+                    description: Some(
+                        "desc SE.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "me",
+                    description: Some(
+                        "desc ME.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Eccr3",
+            extends: None,
+            description: Some(
+                "desc ECCR3.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "errloc",
+                    description: Some(
+                        "desc ERRLOC.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 12,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "se",
+                    description: Some(
+                        "desc SE.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "me",
+                    description: Some(
+                        "desc ME.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Eccr4",
+            extends: None,
+            description: Some(
+                "desc ECCR4.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "errloc",
+                    description: Some(
+                        "desc ERRLOC.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 12,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "se",
+                    description: Some(
+                        "desc SE.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "me",
+                    description: Some(
+                        "desc ME.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Eccr5",
+            extends: None,
+            description: Some(
+                "desc ECCR5.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "errloc",
+                    description: Some(
+                        "desc ERRLOC.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 12,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "se",
+                    description: Some(
+                        "desc SE.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "me",
+                    description: Some(
+                        "desc ME.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Eccr6",
+            extends: None,
+            description: Some(
+                "desc ECCR6.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "errloc",
+                    description: Some(
+                        "desc ERRLOC.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 12,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "se",
+                    description: Some(
+                        "desc SE.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "me",
+                    description: Some(
+                        "desc ME.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Eccr7",
+            extends: None,
+            description: Some(
+                "desc ECCR7.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "errloc",
+                    description: Some(
+                        "desc ERRLOC.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 12,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "se",
+                    description: Some(
+                        "desc SE.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "me",
+                    description: Some(
+                        "desc ME.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Eccr8",
+            extends: None,
+            description: Some(
+                "desc ECCR8.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "errloc",
+                    description: Some(
+                        "desc ERRLOC.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 12,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "se",
+                    description: Some(
+                        "desc SE.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "me",
+                    description: Some(
+                        "desc ME.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Eccr9",
+            extends: None,
+            description: Some(
+                "desc ECCR9.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "errloc",
+                    description: Some(
+                        "desc ERRLOC.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 12,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "se",
+                    description: Some(
+                        "desc SE.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "me",
+                    description: Some(
+                        "desc ME.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Idxr1",
+            extends: None,
+            description: Some(
+                "desc IDXR1.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "idx1",
+                    description: Some(
+                        "desc IDX1.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ienr",
+            extends: None,
+            description: Some(
+                "desc IENR.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ecceuen",
+                    description: Some(
+                        "desc ECCEUEN.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "eccecen",
+                    description: Some(
+                        "desc ECCECEN.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ecccen",
+                    description: Some(
+                        "desc ECCCEN.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ecceen",
+                    description: Some(
+                        "desc ECCEEN.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "eccdis",
+                    description: Some(
+                        "desc ECCDIS.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rben",
+                    description: Some(
+                        "desc RBEN.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Irsr",
+            extends: None,
+            description: Some(
+                "desc IRSR.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ecceurs",
+                    description: Some(
+                        "desc ECCEURS.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "eccecrs",
+                    description: Some(
+                        "desc ECCECRS.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ecccrs",
+                    description: Some(
+                        "desc ECCCRS.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "eccers",
+                    description: Some(
+                        "desc ECCERS.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rbrs",
+                    description: Some(
+                        "desc RBRS.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Istr",
+            extends: None,
+            description: Some(
+                "desc ISTR.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ecceust",
+                    description: Some(
+                        "desc ECCEUST.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "eccecst",
+                    description: Some(
+                        "desc ECCECST.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ecccst",
+                    description: Some(
+                        "desc ECCCST.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "eccest",
+                    description: Some(
+                        "desc ECCEST.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rbst",
+                    description: Some(
+                        "desc RBST.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Tmcr0",
+            extends: None,
+            description: Some(
+                "desc TMCR0.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ts",
+                    description: Some(
+                        "desc TS.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "twp",
+                    description: Some(
+                        "desc TWP.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "trp",
+                    description: Some(
+                        "desc TRP.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "th",
+                    description: Some(
+                        "desc TH.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Tmcr1",
+            extends: None,
+            description: Some(
+                "desc TMCR1.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "twh",
+                    description: Some(
+                        "desc TWH.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "trh",
+                    description: Some(
+                        "desc TRH.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "trr",
+                    description: Some(
+                        "desc TRR.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "twb",
+                    description: Some(
+                        "desc TWB.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Tmcr2",
+            extends: None,
+            description: Some(
+                "desc TMCR2.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tccs",
+                    description: Some(
+                        "desc TCCS.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "twtr",
+                    description: Some(
+                        "desc TWTR.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "trtw",
+                    description: Some(
+                        "desc TRTW.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tadl",
+                    description: Some(
+                        "desc TADL.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+    ],
+    enums: &[],
+};
+                
