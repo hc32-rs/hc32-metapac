@@ -1,0 +1,210 @@
+#![allow(clippy::missing_safety_doc)]
+#![allow(clippy::identity_op)]
+#![allow(clippy::unnecessary_cast)]
+#![allow(clippy::erasing_op)]
+
+#[doc = "desc TMR6_COMMON."]
+#[derive(Copy, Clone, Eq, PartialEq)]
+pub struct Tmr {
+    ptr: *mut u8,
+}
+unsafe impl Send for Tmr {}
+unsafe impl Sync for Tmr {}
+impl Tmr {
+    #[inline(always)]
+    pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
+        Self { ptr: ptr as _ }
+    }
+    #[inline(always)]
+    pub const fn as_ptr(&self) -> *mut () {
+        self.ptr as _
+    }
+    #[doc = "desc SSTAR."]
+    #[inline(always)]
+    pub const fn sstar(self) -> crate::common::Reg<regs::Sstar, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xf4usize) as _) }
+    }
+    #[doc = "desc SSTPR."]
+    #[inline(always)]
+    pub const fn sstpr(self) -> crate::common::Reg<regs::Sstpr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xf8usize) as _) }
+    }
+    #[doc = "desc SCLRR."]
+    #[inline(always)]
+    pub const fn sclrr(self) -> crate::common::Reg<regs::Sclrr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xfcusize) as _) }
+    }
+}
+pub mod regs {
+    #[doc = "desc SCLRR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Sclrr(pub u32);
+    impl Sclrr {
+        #[doc = "desc SCLE1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn scle1(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SCLE1."]
+        #[inline(always)]
+        pub const fn set_scle1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc SCLE2."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn scle2(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SCLE2."]
+        #[inline(always)]
+        pub const fn set_scle2(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc SCLE3."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn scle3(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SCLE3."]
+        #[inline(always)]
+        pub const fn set_scle3(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+    }
+    impl Default for Sclrr {
+        #[inline(always)]
+        fn default() -> Sclrr {
+            Sclrr(0)
+        }
+    }
+    impl core::fmt::Debug for Sclrr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sclrr")
+                .field("scle1", &self.scle1())
+                .field("scle2", &self.scle2())
+                .field("scle3", &self.scle3())
+                .finish()
+        }
+    }
+    #[doc = "desc SSTAR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Sstar(pub u32);
+    impl Sstar {
+        #[doc = "desc SSTA1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ssta1(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SSTA1."]
+        #[inline(always)]
+        pub const fn set_ssta1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc SSTA2."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ssta2(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SSTA2."]
+        #[inline(always)]
+        pub const fn set_ssta2(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc SSTA3."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ssta3(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SSTA3."]
+        #[inline(always)]
+        pub const fn set_ssta3(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+    }
+    impl Default for Sstar {
+        #[inline(always)]
+        fn default() -> Sstar {
+            Sstar(0)
+        }
+    }
+    impl core::fmt::Debug for Sstar {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sstar")
+                .field("ssta1", &self.ssta1())
+                .field("ssta2", &self.ssta2())
+                .field("ssta3", &self.ssta3())
+                .finish()
+        }
+    }
+    #[doc = "desc SSTPR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Sstpr(pub u32);
+    impl Sstpr {
+        #[doc = "desc SSTP1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sstp1(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SSTP1."]
+        #[inline(always)]
+        pub const fn set_sstp1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc SSTP2."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sstp2(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SSTP2."]
+        #[inline(always)]
+        pub const fn set_sstp2(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc SSTP3."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sstp3(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SSTP3."]
+        #[inline(always)]
+        pub const fn set_sstp3(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+    }
+    impl Default for Sstpr {
+        #[inline(always)]
+        fn default() -> Sstpr {
+            Sstpr(0)
+        }
+    }
+    impl core::fmt::Debug for Sstpr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sstpr")
+                .field("sstp1", &self.sstp1())
+                .field("sstp2", &self.sstp2())
+                .field("sstp3", &self.sstp3())
+                .finish()
+        }
+    }
+}

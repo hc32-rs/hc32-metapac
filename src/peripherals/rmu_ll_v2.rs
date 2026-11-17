@@ -1,0 +1,304 @@
+#![allow(clippy::missing_safety_doc)]
+#![allow(clippy::identity_op)]
+#![allow(clippy::unnecessary_cast)]
+#![allow(clippy::erasing_op)]
+
+#[doc = "desc RMU."]
+#[derive(Copy, Clone, Eq, PartialEq)]
+pub struct Rmu {
+    ptr: *mut u8,
+}
+unsafe impl Send for Rmu {}
+unsafe impl Sync for Rmu {}
+impl Rmu {
+    #[inline(always)]
+    pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
+        Self { ptr: ptr as _ }
+    }
+    #[inline(always)]
+    pub const fn as_ptr(&self) -> *mut () {
+        self.ptr as _
+    }
+    #[doc = "desc PRSTCR0."]
+    #[inline(always)]
+    pub const fn prstcr0(self) -> crate::common::Reg<regs::Prstcr0, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xf8usize) as _) }
+    }
+    #[doc = "desc RSTF0."]
+    #[inline(always)]
+    pub const fn rstf0(self) -> crate::common::Reg<regs::Rstf0, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xfcusize) as _) }
+    }
+}
+pub mod regs {
+    #[doc = "desc PRSTCR0."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Prstcr0(pub u8);
+    impl Prstcr0 {
+        #[doc = "desc LKUPREN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn lkupren(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc LKUPREN."]
+        #[inline(always)]
+        pub const fn set_lkupren(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u8) & 0x01) << 5usize);
+        }
+    }
+    impl Default for Prstcr0 {
+        #[inline(always)]
+        fn default() -> Prstcr0 {
+            Prstcr0(0)
+        }
+    }
+    impl core::fmt::Debug for Prstcr0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Prstcr0")
+                .field("lkupren", &self.lkupren())
+                .finish()
+        }
+    }
+    #[doc = "desc RSTF0."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rstf0(pub u32);
+    impl Rstf0 {
+        #[doc = "desc PORF."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn porf(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc PORF."]
+        #[inline(always)]
+        pub const fn set_porf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc PINRF."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pinrf(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc PINRF."]
+        #[inline(always)]
+        pub const fn set_pinrf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc BORF."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn borf(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc BORF."]
+        #[inline(always)]
+        pub const fn set_borf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc PVD1RF."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pvd1rf(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc PVD1RF."]
+        #[inline(always)]
+        pub const fn set_pvd1rf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc PVD2RF."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pvd2rf(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc PVD2RF."]
+        #[inline(always)]
+        pub const fn set_pvd2rf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc WDRF."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn wdrf(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc WDRF."]
+        #[inline(always)]
+        pub const fn set_wdrf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "desc SWDRF."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn swdrf(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SWDRF."]
+        #[inline(always)]
+        pub const fn set_swdrf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+        #[doc = "desc PDRF."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pdrf(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc PDRF."]
+        #[inline(always)]
+        pub const fn set_pdrf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "desc SWRF."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn swrf(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SWRF."]
+        #[inline(always)]
+        pub const fn set_swrf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "desc MPUERF."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mpuerf(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc MPUERF."]
+        #[inline(always)]
+        pub const fn set_mpuerf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
+        #[doc = "desc RAPERF."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn raperf(&self) -> bool {
+            let val = (self.0 >> 10usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RAPERF."]
+        #[inline(always)]
+        pub const fn set_raperf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
+        }
+        #[doc = "desc RAECRF."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn raecrf(&self) -> bool {
+            let val = (self.0 >> 11usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RAECRF."]
+        #[inline(always)]
+        pub const fn set_raecrf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
+        }
+        #[doc = "desc CKFERF."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ckferf(&self) -> bool {
+            let val = (self.0 >> 12usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc CKFERF."]
+        #[inline(always)]
+        pub const fn set_ckferf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        }
+        #[doc = "desc XTALERF."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn xtalerf(&self) -> bool {
+            let val = (self.0 >> 13usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc XTALERF."]
+        #[inline(always)]
+        pub const fn set_xtalerf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
+        }
+        #[doc = "desc LKUPRF."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn lkuprf(&self) -> bool {
+            let val = (self.0 >> 14usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc LKUPRF."]
+        #[inline(always)]
+        pub const fn set_lkuprf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
+        }
+        #[doc = "desc MULTIRF."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn multirf(&self) -> bool {
+            let val = (self.0 >> 30usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc MULTIRF."]
+        #[inline(always)]
+        pub const fn set_multirf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
+        }
+        #[doc = "desc CLRF."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn clrf(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc CLRF."]
+        #[inline(always)]
+        pub const fn set_clrf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Rstf0 {
+        #[inline(always)]
+        fn default() -> Rstf0 {
+            Rstf0(0)
+        }
+    }
+    impl core::fmt::Debug for Rstf0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rstf0")
+                .field("porf", &self.porf())
+                .field("pinrf", &self.pinrf())
+                .field("borf", &self.borf())
+                .field("pvd1rf", &self.pvd1rf())
+                .field("pvd2rf", &self.pvd2rf())
+                .field("wdrf", &self.wdrf())
+                .field("swdrf", &self.swdrf())
+                .field("pdrf", &self.pdrf())
+                .field("swrf", &self.swrf())
+                .field("mpuerf", &self.mpuerf())
+                .field("raperf", &self.raperf())
+                .field("raecrf", &self.raecrf())
+                .field("ckferf", &self.ckferf())
+                .field("xtalerf", &self.xtalerf())
+                .field("lkuprf", &self.lkuprf())
+                .field("multirf", &self.multirf())
+                .field("clrf", &self.clrf())
+                .finish()
+        }
+    }
+}

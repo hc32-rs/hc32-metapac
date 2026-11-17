@@ -1,0 +1,429 @@
+#![allow(clippy::missing_safety_doc)]
+#![allow(clippy::identity_op)]
+#![allow(clippy::unnecessary_cast)]
+#![allow(clippy::erasing_op)]
+
+#[doc = "desc DFM."]
+#[derive(Copy, Clone, Eq, PartialEq)]
+pub struct Dfm {
+    ptr: *mut u8,
+}
+unsafe impl Send for Dfm {}
+unsafe impl Sync for Dfm {}
+impl Dfm {
+    #[inline(always)]
+    pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
+        Self { ptr: ptr as _ }
+    }
+    #[inline(always)]
+    pub const fn as_ptr(&self) -> *mut () {
+        self.ptr as _
+    }
+    #[doc = "desc CR."]
+    #[inline(always)]
+    pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
+    }
+    #[doc = "desc LP."]
+    #[inline(always)]
+    pub const fn lp(self) -> crate::common::Reg<regs::Lp, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
+    }
+    #[doc = "desc IER."]
+    #[inline(always)]
+    pub const fn ier(self) -> crate::common::Reg<regs::Ier, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
+    }
+    #[doc = "desc IFR."]
+    #[inline(always)]
+    pub const fn ifr(self) -> crate::common::Reg<regs::Ifr, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize) as _) }
+    }
+    #[doc = "desc ICR."]
+    #[inline(always)]
+    pub const fn icr(self) -> crate::common::Reg<regs::Icr, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x18usize) as _) }
+    }
+    #[doc = "desc BYPASS."]
+    #[inline(always)]
+    pub const fn bypass(self) -> crate::common::Reg<regs::Bypass, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2cusize) as _) }
+    }
+    #[doc = "desc SLOCK0."]
+    #[inline(always)]
+    pub const fn slock0(self) -> crate::common::Reg<u32, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x30usize) as _) }
+    }
+    #[doc = "desc SLOCK1."]
+    #[inline(always)]
+    pub const fn slock1(self) -> crate::common::Reg<u32, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x34usize) as _) }
+    }
+    #[doc = "desc SLOCK2."]
+    #[inline(always)]
+    pub const fn slock2(self) -> crate::common::Reg<u32, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x38usize) as _) }
+    }
+    #[doc = "desc SLOCK3."]
+    #[inline(always)]
+    pub const fn slock3(self) -> crate::common::Reg<u32, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3cusize) as _) }
+    }
+}
+pub mod regs {
+    #[doc = "desc BYPASS."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Bypass(pub u32);
+    impl Bypass {
+        #[doc = "desc BYSEQ."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn byseq(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "desc BYSEQ."]
+        #[inline(always)]
+        pub const fn set_byseq(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Bypass {
+        #[inline(always)]
+        fn default() -> Bypass {
+            Bypass(0)
+        }
+    }
+    impl core::fmt::Debug for Bypass {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Bypass")
+                .field("byseq", &self.byseq())
+                .finish()
+        }
+    }
+    #[doc = "desc CR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cr(pub u32);
+    impl Cr {
+        #[doc = "desc OP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn op(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x07;
+            val as u8
+        }
+        #[doc = "desc OP."]
+        #[inline(always)]
+        pub const fn set_op(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
+        }
+        #[doc = "desc WAIT."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn wait(&self) -> u8 {
+            let val = (self.0 >> 8usize) & 0x0f;
+            val as u8
+        }
+        #[doc = "desc WAIT."]
+        #[inline(always)]
+        pub const fn set_wait(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 8usize)) | (((val as u32) & 0x0f) << 8usize);
+        }
+        #[doc = "desc READ_ONLY."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn read_only(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc READ_ONLY."]
+        #[inline(always)]
+        pub const fn set_read_only(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+    }
+    impl Default for Cr {
+        #[inline(always)]
+        fn default() -> Cr {
+            Cr(0)
+        }
+    }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("op", &self.op())
+                .field("wait", &self.wait())
+                .field("read_only", &self.read_only())
+                .finish()
+        }
+    }
+    #[doc = "desc ICR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Icr(pub u32);
+    impl Icr {
+        #[doc = "desc PROT_CLR."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn prot_clr(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc PROT_CLR."]
+        #[inline(always)]
+        pub const fn set_prot_clr(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc PE_DONE_CLR."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pe_done_clr(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc PE_DONE_CLR."]
+        #[inline(always)]
+        pub const fn set_pe_done_clr(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+    }
+    impl Default for Icr {
+        #[inline(always)]
+        fn default() -> Icr {
+            Icr(0)
+        }
+    }
+    impl core::fmt::Debug for Icr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Icr")
+                .field("prot_clr", &self.prot_clr())
+                .field("pe_done_clr", &self.pe_done_clr())
+                .finish()
+        }
+    }
+    #[doc = "desc IER."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ier(pub u32);
+    impl Ier {
+        #[doc = "desc PROT_IE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn prot_ie(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc PROT_IE."]
+        #[inline(always)]
+        pub const fn set_prot_ie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc PE_DONE_IE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pe_done_ie(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc PE_DONE_IE."]
+        #[inline(always)]
+        pub const fn set_pe_done_ie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+    }
+    impl Default for Ier {
+        #[inline(always)]
+        fn default() -> Ier {
+            Ier(0)
+        }
+    }
+    impl core::fmt::Debug for Ier {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ier")
+                .field("prot_ie", &self.prot_ie())
+                .field("pe_done_ie", &self.pe_done_ie())
+                .finish()
+        }
+    }
+    #[doc = "desc IFR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ifr(pub u32);
+    impl Ifr {
+        #[doc = "desc PROT."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn prot(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc PROT."]
+        #[inline(always)]
+        pub const fn set_prot(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc PE_DONE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pe_done(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc PE_DONE."]
+        #[inline(always)]
+        pub const fn set_pe_done(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc BUSY."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn busy(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc BUSY."]
+        #[inline(always)]
+        pub const fn set_busy(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "desc LP_STAT."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn lp_stat(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc LP_STAT."]
+        #[inline(always)]
+        pub const fn set_lp_stat(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
+        #[doc = "desc ACC_ERR0."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn acc_err0(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ACC_ERR0."]
+        #[inline(always)]
+        pub const fn set_acc_err0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "desc ACC_ERR1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn acc_err1(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ACC_ERR1."]
+        #[inline(always)]
+        pub const fn set_acc_err1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
+        #[doc = "desc ACC_ERR2."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn acc_err2(&self) -> bool {
+            let val = (self.0 >> 18usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ACC_ERR2."]
+        #[inline(always)]
+        pub const fn set_acc_err2(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
+        }
+        #[doc = "desc ACC_ERR3."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn acc_err3(&self) -> bool {
+            let val = (self.0 >> 19usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ACC_ERR3."]
+        #[inline(always)]
+        pub const fn set_acc_err3(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
+        }
+        #[doc = "desc ACC_ERR4."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn acc_err4(&self) -> bool {
+            let val = (self.0 >> 20usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ACC_ERR4."]
+        #[inline(always)]
+        pub const fn set_acc_err4(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
+        }
+    }
+    impl Default for Ifr {
+        #[inline(always)]
+        fn default() -> Ifr {
+            Ifr(0)
+        }
+    }
+    impl core::fmt::Debug for Ifr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ifr")
+                .field("prot", &self.prot())
+                .field("pe_done", &self.pe_done())
+                .field("busy", &self.busy())
+                .field("lp_stat", &self.lp_stat())
+                .field("acc_err0", &self.acc_err0())
+                .field("acc_err1", &self.acc_err1())
+                .field("acc_err2", &self.acc_err2())
+                .field("acc_err3", &self.acc_err3())
+                .field("acc_err4", &self.acc_err4())
+                .finish()
+        }
+    }
+    #[doc = "desc LP."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Lp(pub u32);
+    impl Lp {
+        #[doc = "desc LP_REQ."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn lp_req(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc LP_REQ."]
+        #[inline(always)]
+        pub const fn set_lp_req(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc DPSTB_EN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dpstb_en(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc DPSTB_EN."]
+        #[inline(always)]
+        pub const fn set_dpstb_en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+    }
+    impl Default for Lp {
+        #[inline(always)]
+        fn default() -> Lp {
+            Lp(0)
+        }
+    }
+    impl core::fmt::Debug for Lp {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Lp")
+                .field("lp_req", &self.lp_req())
+                .field("dpstb_en", &self.dpstb_en())
+                .finish()
+        }
+    }
+}
