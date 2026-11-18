@@ -1,0 +1,2518 @@
+#![allow(clippy::missing_safety_doc)]
+#![allow(clippy::identity_op)]
+#![allow(clippy::unnecessary_cast)]
+#![allow(clippy::erasing_op)]
+
+#[doc = "desc SYSCTRL."]
+#[derive(Copy, Clone, Eq, PartialEq)]
+pub struct Sysctrl {
+    ptr: *mut u8,
+}
+unsafe impl Send for Sysctrl {}
+unsafe impl Sync for Sysctrl {}
+impl Sysctrl {
+    #[inline(always)]
+    pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
+        Self { ptr: ptr as _ }
+    }
+    #[inline(always)]
+    pub const fn as_ptr(&self) -> *mut () {
+        self.ptr as _
+    }
+    #[doc = "desc CR0."]
+    #[inline(always)]
+    pub const fn cr0(self) -> crate::common::Reg<regs::Cr0, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
+    }
+    #[doc = "desc CR1."]
+    #[inline(always)]
+    pub const fn cr1(self) -> crate::common::Reg<regs::Cr1, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
+    }
+    #[doc = "desc CR2."]
+    #[inline(always)]
+    pub const fn cr2(self) -> crate::common::Reg<regs::Cr2, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
+    }
+    #[doc = "desc CR3."]
+    #[inline(always)]
+    pub const fn cr3(self) -> crate::common::Reg<regs::Cr3, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
+    }
+    #[doc = "desc RCHCR."]
+    #[inline(always)]
+    pub const fn rchcr(self) -> crate::common::Reg<regs::Rchcr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
+    }
+    #[doc = "desc XTHCR."]
+    #[inline(always)]
+    pub const fn xthcr(self) -> crate::common::Reg<regs::Xthcr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize) as _) }
+    }
+    #[doc = "desc RCLCR."]
+    #[inline(always)]
+    pub const fn rclcr(self) -> crate::common::Reg<regs::Rclcr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x18usize) as _) }
+    }
+    #[doc = "desc XTLCR."]
+    #[inline(always)]
+    pub const fn xtlcr(self) -> crate::common::Reg<regs::Xtlcr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1cusize) as _) }
+    }
+    #[doc = "desc PLLCR."]
+    #[inline(always)]
+    pub const fn pllcr(self) -> crate::common::Reg<regs::Pllcr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20usize) as _) }
+    }
+    #[doc = "desc RCHTRIM."]
+    #[inline(always)]
+    pub const fn rchtrim(self) -> crate::common::Reg<regs::Rchtrim, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x24usize) as _) }
+    }
+    #[doc = "desc RCLTRIM."]
+    #[inline(always)]
+    pub const fn rcltrim(self) -> crate::common::Reg<regs::Rcltrim, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x28usize) as _) }
+    }
+    #[doc = "desc STATE."]
+    #[inline(always)]
+    pub const fn state(self) -> crate::common::Reg<regs::State, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2cusize) as _) }
+    }
+    #[doc = "desc PERICLKEN0."]
+    #[inline(always)]
+    pub const fn periclken0(self) -> crate::common::Reg<regs::Periclken0, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x30usize) as _) }
+    }
+    #[doc = "desc PERICLKEN1."]
+    #[inline(always)]
+    pub const fn periclken1(self) -> crate::common::Reg<regs::Periclken1, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x34usize) as _) }
+    }
+    #[doc = "desc PERIRESET0."]
+    #[inline(always)]
+    pub const fn perireset0(self) -> crate::common::Reg<regs::Perireset0, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x38usize) as _) }
+    }
+    #[doc = "desc PERIRESET1."]
+    #[inline(always)]
+    pub const fn perireset1(self) -> crate::common::Reg<regs::Perireset1, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3cusize) as _) }
+    }
+    #[doc = "desc RSTFLAG."]
+    #[inline(always)]
+    pub const fn rstflag(self) -> crate::common::Reg<regs::Rstflag, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x40usize) as _) }
+    }
+    #[doc = "desc DBGSTOP."]
+    #[inline(always)]
+    pub const fn dbgstop(self) -> crate::common::Reg<regs::Dbgstop, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x44usize) as _) }
+    }
+}
+pub mod regs {
+    #[doc = "desc CR0."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cr0(pub u32);
+    impl Cr0 {
+        #[doc = "desc CLKSRC."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn clksrc(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x07;
+            val as u8
+        }
+        #[doc = "desc CLKSRC."]
+        #[inline(always)]
+        pub const fn set_clksrc(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
+        }
+        #[doc = "desc HCLKPRS."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn hclkprs(&self) -> u8 {
+            let val = (self.0 >> 3usize) & 0x07;
+            val as u8
+        }
+        #[doc = "desc HCLKPRS."]
+        #[inline(always)]
+        pub const fn set_hclkprs(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 3usize)) | (((val as u32) & 0x07) << 3usize);
+        }
+        #[doc = "desc PCLKPRS."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pclkprs(&self) -> u8 {
+            let val = (self.0 >> 6usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc PCLKPRS."]
+        #[inline(always)]
+        pub const fn set_pclkprs(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 6usize)) | (((val as u32) & 0x03) << 6usize);
+        }
+        #[doc = "desc RSV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rsv(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RSV."]
+        #[inline(always)]
+        pub const fn set_rsv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Cr0 {
+        #[inline(always)]
+        fn default() -> Cr0 {
+            Cr0(0)
+        }
+    }
+    impl core::fmt::Debug for Cr0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr0")
+                .field("clksrc", &self.clksrc())
+                .field("hclkprs", &self.hclkprs())
+                .field("pclkprs", &self.pclkprs())
+                .field("rsv", &self.rsv())
+                .finish()
+        }
+    }
+    #[doc = "desc CR1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cr1(pub u32);
+    impl Cr1 {
+        #[doc = "desc SWDUSEIO."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn swduseio(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SWDUSEIO."]
+        #[inline(always)]
+        pub const fn set_swduseio(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc LOCKUP_EN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn lockup_en(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc LOCKUP_EN."]
+        #[inline(always)]
+        pub const fn set_lockup_en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc WAKEUPBYRCH."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn wakeupbyrch(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc WAKEUPBYRCH."]
+        #[inline(always)]
+        pub const fn set_wakeupbyrch(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc RTCLPW."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rtclpw(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RTCLPW."]
+        #[inline(always)]
+        pub const fn set_rtclpw(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc RTCADJ."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rtcadj(&self) -> u8 {
+            let val = (self.0 >> 4usize) & 0x07;
+            val as u8
+        }
+        #[doc = "desc RTCADJ."]
+        #[inline(always)]
+        pub const fn set_rtcadj(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 4usize)) | (((val as u32) & 0x07) << 4usize);
+        }
+        #[doc = "desc AUTOSWITCH."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn autoswitch(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc AUTOSWITCH."]
+        #[inline(always)]
+        pub const fn set_autoswitch(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "desc SPIPCTRL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn spipctrl(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SPIPCTRL."]
+        #[inline(always)]
+        pub const fn set_spipctrl(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "desc XTHFLT."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn xthflt(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc XTHFLT."]
+        #[inline(always)]
+        pub const fn set_xthflt(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
+        #[doc = "desc GTIM0CFG."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn gtim0cfg(&self) -> bool {
+            let val = (self.0 >> 10usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc GTIM0CFG."]
+        #[inline(always)]
+        pub const fn set_gtim0cfg(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
+        }
+        #[doc = "desc GTIM1CFG."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn gtim1cfg(&self) -> bool {
+            let val = (self.0 >> 11usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc GTIM1CFG."]
+        #[inline(always)]
+        pub const fn set_gtim1cfg(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
+        }
+        #[doc = "desc FASTIOENB."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fastioenb(&self) -> bool {
+            let val = (self.0 >> 12usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FASTIOENB."]
+        #[inline(always)]
+        pub const fn set_fastioenb(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        }
+        #[doc = "desc RSV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rsv(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RSV."]
+        #[inline(always)]
+        pub const fn set_rsv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Cr1 {
+        #[inline(always)]
+        fn default() -> Cr1 {
+            Cr1(0)
+        }
+    }
+    impl core::fmt::Debug for Cr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr1")
+                .field("swduseio", &self.swduseio())
+                .field("lockup_en", &self.lockup_en())
+                .field("wakeupbyrch", &self.wakeupbyrch())
+                .field("rtclpw", &self.rtclpw())
+                .field("rtcadj", &self.rtcadj())
+                .field("autoswitch", &self.autoswitch())
+                .field("spipctrl", &self.spipctrl())
+                .field("xthflt", &self.xthflt())
+                .field("gtim0cfg", &self.gtim0cfg())
+                .field("gtim1cfg", &self.gtim1cfg())
+                .field("fastioenb", &self.fastioenb())
+                .field("rsv", &self.rsv())
+                .finish()
+        }
+    }
+    #[doc = "desc CR2."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cr2(pub u32);
+    impl Cr2 {
+        #[doc = "desc RCH."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rch(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RCH."]
+        #[inline(always)]
+        pub const fn set_rch(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc XTH."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn xth(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc XTH."]
+        #[inline(always)]
+        pub const fn set_xth(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc RCL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rcl(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RCL."]
+        #[inline(always)]
+        pub const fn set_rcl(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc XTL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn xtl(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc XTL."]
+        #[inline(always)]
+        pub const fn set_xtl(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc PLL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pll(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc PLL."]
+        #[inline(always)]
+        pub const fn set_pll(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc EXXTH."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn exxth(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc EXXTH."]
+        #[inline(always)]
+        pub const fn set_exxth(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "desc EXXTL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn exxtl(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc EXXTL."]
+        #[inline(always)]
+        pub const fn set_exxtl(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+        #[doc = "desc XTLLOCK."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn xtllock(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc XTLLOCK."]
+        #[inline(always)]
+        pub const fn set_xtllock(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "desc RSV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rsv(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RSV."]
+        #[inline(always)]
+        pub const fn set_rsv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Cr2 {
+        #[inline(always)]
+        fn default() -> Cr2 {
+            Cr2(0)
+        }
+    }
+    impl core::fmt::Debug for Cr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr2")
+                .field("rch", &self.rch())
+                .field("xth", &self.xth())
+                .field("rcl", &self.rcl())
+                .field("xtl", &self.xtl())
+                .field("pll", &self.pll())
+                .field("exxth", &self.exxth())
+                .field("exxtl", &self.exxtl())
+                .field("xtllock", &self.xtllock())
+                .field("rsv", &self.rsv())
+                .finish()
+        }
+    }
+    #[doc = "desc CR3."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cr3(pub u32);
+    impl Cr3 {
+        #[doc = "desc CR3."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn cr3(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "desc CR3."]
+        #[inline(always)]
+        pub const fn set_cr3(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+        #[doc = "desc RSV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rsv(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RSV."]
+        #[inline(always)]
+        pub const fn set_rsv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Cr3 {
+        #[inline(always)]
+        fn default() -> Cr3 {
+            Cr3(0)
+        }
+    }
+    impl core::fmt::Debug for Cr3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr3")
+                .field("cr3", &self.cr3())
+                .field("rsv", &self.rsv())
+                .finish()
+        }
+    }
+    #[doc = "desc DBGSTOP."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Dbgstop(pub u32);
+    impl Dbgstop {
+        #[doc = "desc ATIM0."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn atim0(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ATIM0."]
+        #[inline(always)]
+        pub const fn set_atim0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc ATIM1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn atim1(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ATIM1."]
+        #[inline(always)]
+        pub const fn set_atim1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc ATIM2."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn atim2(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ATIM2."]
+        #[inline(always)]
+        pub const fn set_atim2(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc LPTIM."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn lptim(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc LPTIM."]
+        #[inline(always)]
+        pub const fn set_lptim(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc GTIM0."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn gtim0(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc GTIM0."]
+        #[inline(always)]
+        pub const fn set_gtim0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc GTIM1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn gtim1(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc GTIM1."]
+        #[inline(always)]
+        pub const fn set_gtim1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "desc CTRIM."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ctrim(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc CTRIM."]
+        #[inline(always)]
+        pub const fn set_ctrim(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "desc IWDT."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn iwdt(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc IWDT."]
+        #[inline(always)]
+        pub const fn set_iwdt(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "desc RTC."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rtc(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RTC."]
+        #[inline(always)]
+        pub const fn set_rtc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
+        #[doc = "desc TICK."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tick(&self) -> bool {
+            let val = (self.0 >> 10usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc TICK."]
+        #[inline(always)]
+        pub const fn set_tick(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
+        }
+        #[doc = "desc ATIM3."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn atim3(&self) -> bool {
+            let val = (self.0 >> 11usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ATIM3."]
+        #[inline(always)]
+        pub const fn set_atim3(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
+        }
+        #[doc = "desc WWDT."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn wwdt(&self) -> bool {
+            let val = (self.0 >> 12usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc WWDT."]
+        #[inline(always)]
+        pub const fn set_wwdt(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        }
+        #[doc = "desc RSV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rsv(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RSV."]
+        #[inline(always)]
+        pub const fn set_rsv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Dbgstop {
+        #[inline(always)]
+        fn default() -> Dbgstop {
+            Dbgstop(0)
+        }
+    }
+    impl core::fmt::Debug for Dbgstop {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dbgstop")
+                .field("atim0", &self.atim0())
+                .field("atim1", &self.atim1())
+                .field("atim2", &self.atim2())
+                .field("lptim", &self.lptim())
+                .field("gtim0", &self.gtim0())
+                .field("gtim1", &self.gtim1())
+                .field("ctrim", &self.ctrim())
+                .field("iwdt", &self.iwdt())
+                .field("rtc", &self.rtc())
+                .field("tick", &self.tick())
+                .field("atim3", &self.atim3())
+                .field("wwdt", &self.wwdt())
+                .field("rsv", &self.rsv())
+                .finish()
+        }
+    }
+    #[doc = "desc PERICLKEN0."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Periclken0(pub u32);
+    impl Periclken0 {
+        #[doc = "desc USART0."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn usart0(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc USART0."]
+        #[inline(always)]
+        pub const fn set_usart0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc USART1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn usart1(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc USART1."]
+        #[inline(always)]
+        pub const fn set_usart1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc LPUART0."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn lpuart0(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc LPUART0."]
+        #[inline(always)]
+        pub const fn set_lpuart0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc LPUART1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn lpuart1(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc LPUART1."]
+        #[inline(always)]
+        pub const fn set_lpuart1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc I2C0."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn i2c0(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc I2C0."]
+        #[inline(always)]
+        pub const fn set_i2c0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc I2C1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn i2c1(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc I2C1."]
+        #[inline(always)]
+        pub const fn set_i2c1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "desc SPI0."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn spi0(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SPI0."]
+        #[inline(always)]
+        pub const fn set_spi0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+        #[doc = "desc SPI1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn spi1(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SPI1."]
+        #[inline(always)]
+        pub const fn set_spi1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "desc ATIM0."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn atim0(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ATIM0."]
+        #[inline(always)]
+        pub const fn set_atim0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "desc LPTIM."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn lptim(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc LPTIM."]
+        #[inline(always)]
+        pub const fn set_lptim(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
+        #[doc = "desc ATIM1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn atim1(&self) -> bool {
+            let val = (self.0 >> 10usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ATIM1."]
+        #[inline(always)]
+        pub const fn set_atim1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
+        }
+        #[doc = "desc ATIM3."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn atim3(&self) -> bool {
+            let val = (self.0 >> 11usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ATIM3."]
+        #[inline(always)]
+        pub const fn set_atim3(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
+        }
+        #[doc = "desc ATIM2."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn atim2(&self) -> bool {
+            let val = (self.0 >> 12usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ATIM2."]
+        #[inline(always)]
+        pub const fn set_atim2(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        }
+        #[doc = "desc OPA."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn opa(&self) -> bool {
+            let val = (self.0 >> 13usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc OPA."]
+        #[inline(always)]
+        pub const fn set_opa(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
+        }
+        #[doc = "desc WWDT."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn wwdt(&self) -> bool {
+            let val = (self.0 >> 14usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc WWDT."]
+        #[inline(always)]
+        pub const fn set_wwdt(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
+        }
+        #[doc = "desc IWDT."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn iwdt(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc IWDT."]
+        #[inline(always)]
+        pub const fn set_iwdt(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        }
+        #[doc = "desc ADC."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn adc(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ADC."]
+        #[inline(always)]
+        pub const fn set_adc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "desc VCLVD."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn vclvd(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc VCLVD."]
+        #[inline(always)]
+        pub const fn set_vclvd(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
+        #[doc = "desc I2CSLV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn i2cslv(&self) -> bool {
+            let val = (self.0 >> 18usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc I2CSLV."]
+        #[inline(always)]
+        pub const fn set_i2cslv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
+        }
+        #[doc = "desc RTC."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rtc(&self) -> bool {
+            let val = (self.0 >> 20usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RTC."]
+        #[inline(always)]
+        pub const fn set_rtc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
+        }
+        #[doc = "desc CTRIM."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ctrim(&self) -> bool {
+            let val = (self.0 >> 21usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc CTRIM."]
+        #[inline(always)]
+        pub const fn set_ctrim(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
+        }
+        #[doc = "desc TICK."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tick(&self) -> bool {
+            let val = (self.0 >> 24usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc TICK."]
+        #[inline(always)]
+        pub const fn set_tick(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
+        }
+        #[doc = "desc SWD."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn swd(&self) -> bool {
+            let val = (self.0 >> 25usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SWD."]
+        #[inline(always)]
+        pub const fn set_swd(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
+        }
+        #[doc = "desc CRC."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn crc(&self) -> bool {
+            let val = (self.0 >> 26usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc CRC."]
+        #[inline(always)]
+        pub const fn set_crc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
+        }
+        #[doc = "desc DMA."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dma(&self) -> bool {
+            let val = (self.0 >> 29usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc DMA."]
+        #[inline(always)]
+        pub const fn set_dma(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
+        }
+        #[doc = "desc EAU."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn eau(&self) -> bool {
+            let val = (self.0 >> 30usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc EAU."]
+        #[inline(always)]
+        pub const fn set_eau(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
+        }
+        #[doc = "desc FLASH."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn flash(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FLASH."]
+        #[inline(always)]
+        pub const fn set_flash(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Periclken0 {
+        #[inline(always)]
+        fn default() -> Periclken0 {
+            Periclken0(0)
+        }
+    }
+    impl core::fmt::Debug for Periclken0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Periclken0")
+                .field("usart0", &self.usart0())
+                .field("usart1", &self.usart1())
+                .field("lpuart0", &self.lpuart0())
+                .field("lpuart1", &self.lpuart1())
+                .field("i2c0", &self.i2c0())
+                .field("i2c1", &self.i2c1())
+                .field("spi0", &self.spi0())
+                .field("spi1", &self.spi1())
+                .field("atim0", &self.atim0())
+                .field("lptim", &self.lptim())
+                .field("atim1", &self.atim1())
+                .field("atim3", &self.atim3())
+                .field("atim2", &self.atim2())
+                .field("opa", &self.opa())
+                .field("wwdt", &self.wwdt())
+                .field("iwdt", &self.iwdt())
+                .field("adc", &self.adc())
+                .field("vclvd", &self.vclvd())
+                .field("i2cslv", &self.i2cslv())
+                .field("rtc", &self.rtc())
+                .field("ctrim", &self.ctrim())
+                .field("tick", &self.tick())
+                .field("swd", &self.swd())
+                .field("crc", &self.crc())
+                .field("dma", &self.dma())
+                .field("eau", &self.eau())
+                .field("flash", &self.flash())
+                .finish()
+        }
+    }
+    #[doc = "desc PERICLKEN1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Periclken1(pub u32);
+    impl Periclken1 {
+        #[doc = "desc GPIOA."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn gpioa(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc GPIOA."]
+        #[inline(always)]
+        pub const fn set_gpioa(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc GPIOB."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn gpiob(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc GPIOB."]
+        #[inline(always)]
+        pub const fn set_gpiob(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc GPIOC."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn gpioc(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc GPIOC."]
+        #[inline(always)]
+        pub const fn set_gpioc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc GPIOD."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn gpiod(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc GPIOD."]
+        #[inline(always)]
+        pub const fn set_gpiod(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc CAN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn can(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc CAN."]
+        #[inline(always)]
+        pub const fn set_can(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "desc GTIM0."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn gtim0(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc GTIM0."]
+        #[inline(always)]
+        pub const fn set_gtim0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "desc GTIM1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn gtim1(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc GTIM1."]
+        #[inline(always)]
+        pub const fn set_gtim1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
+        #[doc = "desc RSV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rsv(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RSV."]
+        #[inline(always)]
+        pub const fn set_rsv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Periclken1 {
+        #[inline(always)]
+        fn default() -> Periclken1 {
+            Periclken1(0)
+        }
+    }
+    impl core::fmt::Debug for Periclken1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Periclken1")
+                .field("gpioa", &self.gpioa())
+                .field("gpiob", &self.gpiob())
+                .field("gpioc", &self.gpioc())
+                .field("gpiod", &self.gpiod())
+                .field("can", &self.can())
+                .field("gtim0", &self.gtim0())
+                .field("gtim1", &self.gtim1())
+                .field("rsv", &self.rsv())
+                .finish()
+        }
+    }
+    #[doc = "desc PERIRESET0."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Perireset0(pub u32);
+    impl Perireset0 {
+        #[doc = "desc USART0."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn usart0(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc USART0."]
+        #[inline(always)]
+        pub const fn set_usart0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc USART1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn usart1(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc USART1."]
+        #[inline(always)]
+        pub const fn set_usart1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc LPUART0."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn lpuart0(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc LPUART0."]
+        #[inline(always)]
+        pub const fn set_lpuart0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc LPUART1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn lpuart1(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc LPUART1."]
+        #[inline(always)]
+        pub const fn set_lpuart1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc I2C0."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn i2c0(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc I2C0."]
+        #[inline(always)]
+        pub const fn set_i2c0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc I2C1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn i2c1(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc I2C1."]
+        #[inline(always)]
+        pub const fn set_i2c1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "desc SPI0."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn spi0(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SPI0."]
+        #[inline(always)]
+        pub const fn set_spi0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+        #[doc = "desc SPI1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn spi1(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SPI1."]
+        #[inline(always)]
+        pub const fn set_spi1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "desc ATIM0."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn atim0(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ATIM0."]
+        #[inline(always)]
+        pub const fn set_atim0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "desc LPTIM."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn lptim(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc LPTIM."]
+        #[inline(always)]
+        pub const fn set_lptim(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
+        #[doc = "desc ATIM1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn atim1(&self) -> bool {
+            let val = (self.0 >> 10usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ATIM1."]
+        #[inline(always)]
+        pub const fn set_atim1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
+        }
+        #[doc = "desc ATIM3."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn atim3(&self) -> bool {
+            let val = (self.0 >> 11usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ATIM3."]
+        #[inline(always)]
+        pub const fn set_atim3(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
+        }
+        #[doc = "desc ATIM2."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn atim2(&self) -> bool {
+            let val = (self.0 >> 12usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ATIM2."]
+        #[inline(always)]
+        pub const fn set_atim2(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        }
+        #[doc = "desc OPA."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn opa(&self) -> bool {
+            let val = (self.0 >> 13usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc OPA."]
+        #[inline(always)]
+        pub const fn set_opa(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
+        }
+        #[doc = "desc WWDT."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn wwdt(&self) -> bool {
+            let val = (self.0 >> 14usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc WWDT."]
+        #[inline(always)]
+        pub const fn set_wwdt(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
+        }
+        #[doc = "desc IWDT."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn iwdt(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc IWDT."]
+        #[inline(always)]
+        pub const fn set_iwdt(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        }
+        #[doc = "desc ADC."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn adc(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ADC."]
+        #[inline(always)]
+        pub const fn set_adc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "desc VCLVD."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn vclvd(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc VCLVD."]
+        #[inline(always)]
+        pub const fn set_vclvd(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
+        #[doc = "desc I2CSLV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn i2cslv(&self) -> bool {
+            let val = (self.0 >> 18usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc I2CSLV."]
+        #[inline(always)]
+        pub const fn set_i2cslv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
+        }
+        #[doc = "desc RTC."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rtc(&self) -> bool {
+            let val = (self.0 >> 20usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RTC."]
+        #[inline(always)]
+        pub const fn set_rtc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
+        }
+        #[doc = "desc CTRIM."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ctrim(&self) -> bool {
+            let val = (self.0 >> 21usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc CTRIM."]
+        #[inline(always)]
+        pub const fn set_ctrim(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
+        }
+        #[doc = "desc TICK."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tick(&self) -> bool {
+            let val = (self.0 >> 24usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc TICK."]
+        #[inline(always)]
+        pub const fn set_tick(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
+        }
+        #[doc = "desc SWD."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn swd(&self) -> bool {
+            let val = (self.0 >> 25usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SWD."]
+        #[inline(always)]
+        pub const fn set_swd(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
+        }
+        #[doc = "desc CRC."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn crc(&self) -> bool {
+            let val = (self.0 >> 26usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc CRC."]
+        #[inline(always)]
+        pub const fn set_crc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
+        }
+        #[doc = "desc DMA."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dma(&self) -> bool {
+            let val = (self.0 >> 29usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc DMA."]
+        #[inline(always)]
+        pub const fn set_dma(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
+        }
+        #[doc = "desc EAU."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn eau(&self) -> bool {
+            let val = (self.0 >> 30usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc EAU."]
+        #[inline(always)]
+        pub const fn set_eau(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
+        }
+        #[doc = "desc RSV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rsv(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RSV."]
+        #[inline(always)]
+        pub const fn set_rsv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Perireset0 {
+        #[inline(always)]
+        fn default() -> Perireset0 {
+            Perireset0(0)
+        }
+    }
+    impl core::fmt::Debug for Perireset0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Perireset0")
+                .field("usart0", &self.usart0())
+                .field("usart1", &self.usart1())
+                .field("lpuart0", &self.lpuart0())
+                .field("lpuart1", &self.lpuart1())
+                .field("i2c0", &self.i2c0())
+                .field("i2c1", &self.i2c1())
+                .field("spi0", &self.spi0())
+                .field("spi1", &self.spi1())
+                .field("atim0", &self.atim0())
+                .field("lptim", &self.lptim())
+                .field("atim1", &self.atim1())
+                .field("atim3", &self.atim3())
+                .field("atim2", &self.atim2())
+                .field("opa", &self.opa())
+                .field("wwdt", &self.wwdt())
+                .field("iwdt", &self.iwdt())
+                .field("adc", &self.adc())
+                .field("vclvd", &self.vclvd())
+                .field("i2cslv", &self.i2cslv())
+                .field("rtc", &self.rtc())
+                .field("ctrim", &self.ctrim())
+                .field("tick", &self.tick())
+                .field("swd", &self.swd())
+                .field("crc", &self.crc())
+                .field("dma", &self.dma())
+                .field("eau", &self.eau())
+                .field("rsv", &self.rsv())
+                .finish()
+        }
+    }
+    #[doc = "desc PERIRESET1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Perireset1(pub u32);
+    impl Perireset1 {
+        #[doc = "desc GPIOA."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn gpioa(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc GPIOA."]
+        #[inline(always)]
+        pub const fn set_gpioa(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc GPIOB."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn gpiob(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc GPIOB."]
+        #[inline(always)]
+        pub const fn set_gpiob(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc GPIOC."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn gpioc(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc GPIOC."]
+        #[inline(always)]
+        pub const fn set_gpioc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc GPIOD."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn gpiod(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc GPIOD."]
+        #[inline(always)]
+        pub const fn set_gpiod(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc CAN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn can(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc CAN."]
+        #[inline(always)]
+        pub const fn set_can(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "desc GTIM0."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn gtim0(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc GTIM0."]
+        #[inline(always)]
+        pub const fn set_gtim0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "desc GTIM1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn gtim1(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc GTIM1."]
+        #[inline(always)]
+        pub const fn set_gtim1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
+        #[doc = "desc RSV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rsv(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RSV."]
+        #[inline(always)]
+        pub const fn set_rsv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Perireset1 {
+        #[inline(always)]
+        fn default() -> Perireset1 {
+            Perireset1(0)
+        }
+    }
+    impl core::fmt::Debug for Perireset1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Perireset1")
+                .field("gpioa", &self.gpioa())
+                .field("gpiob", &self.gpiob())
+                .field("gpioc", &self.gpioc())
+                .field("gpiod", &self.gpiod())
+                .field("can", &self.can())
+                .field("gtim0", &self.gtim0())
+                .field("gtim1", &self.gtim1())
+                .field("rsv", &self.rsv())
+                .finish()
+        }
+    }
+    #[doc = "desc PLLCR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pllcr(pub u32);
+    impl Pllcr {
+        #[doc = "desc SRC."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn src(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc SRC."]
+        #[inline(always)]
+        pub const fn set_src(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u32) & 0x03) << 0usize);
+        }
+        #[doc = "desc DIVR."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn divr(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc DIVR."]
+        #[inline(always)]
+        pub const fn set_divr(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc WAITCYCLE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn waitcycle(&self) -> u8 {
+            let val = (self.0 >> 4usize) & 0x07;
+            val as u8
+        }
+        #[doc = "desc WAITCYCLE."]
+        #[inline(always)]
+        pub const fn set_waitcycle(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 4usize)) | (((val as u32) & 0x07) << 4usize);
+        }
+        #[doc = "desc DIVN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn divn(&self) -> u8 {
+            let val = (self.0 >> 8usize) & 0x7f;
+            val as u8
+        }
+        #[doc = "desc DIVN."]
+        #[inline(always)]
+        pub const fn set_divn(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 8usize)) | (((val as u32) & 0x7f) << 8usize);
+        }
+        #[doc = "desc DIVF."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn divf(&self) -> u8 {
+            let val = (self.0 >> 16usize) & 0x07;
+            val as u8
+        }
+        #[doc = "desc DIVF."]
+        #[inline(always)]
+        pub const fn set_divf(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 16usize)) | (((val as u32) & 0x07) << 16usize);
+        }
+        #[doc = "desc POSTDIV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn postdiv(&self) -> u8 {
+            let val = (self.0 >> 20usize) & 0x0f;
+            val as u8
+        }
+        #[doc = "desc POSTDIV."]
+        #[inline(always)]
+        pub const fn set_postdiv(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 20usize)) | (((val as u32) & 0x0f) << 20usize);
+        }
+        #[doc = "desc RSV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rsv(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RSV."]
+        #[inline(always)]
+        pub const fn set_rsv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Pllcr {
+        #[inline(always)]
+        fn default() -> Pllcr {
+            Pllcr(0)
+        }
+    }
+    impl core::fmt::Debug for Pllcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pllcr")
+                .field("src", &self.src())
+                .field("divr", &self.divr())
+                .field("waitcycle", &self.waitcycle())
+                .field("divn", &self.divn())
+                .field("divf", &self.divf())
+                .field("postdiv", &self.postdiv())
+                .field("rsv", &self.rsv())
+                .finish()
+        }
+    }
+    #[doc = "desc RCHCR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rchcr(pub u32);
+    impl Rchcr {
+        #[doc = "desc DIV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn div(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x07;
+            val as u8
+        }
+        #[doc = "desc DIV."]
+        #[inline(always)]
+        pub const fn set_div(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
+        }
+        #[doc = "desc RSV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rsv(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RSV."]
+        #[inline(always)]
+        pub const fn set_rsv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Rchcr {
+        #[inline(always)]
+        fn default() -> Rchcr {
+            Rchcr(0)
+        }
+    }
+    impl core::fmt::Debug for Rchcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rchcr")
+                .field("div", &self.div())
+                .field("rsv", &self.rsv())
+                .finish()
+        }
+    }
+    #[doc = "desc RCHTRIM."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rchtrim(pub u32);
+    impl Rchtrim {
+        #[doc = "desc TRIML."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn triml(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x3f;
+            val as u8
+        }
+        #[doc = "desc TRIML."]
+        #[inline(always)]
+        pub const fn set_triml(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
+        }
+        #[doc = "desc TRIMH."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn trimh(&self) -> u8 {
+            let val = (self.0 >> 6usize) & 0x1f;
+            val as u8
+        }
+        #[doc = "desc TRIMH."]
+        #[inline(always)]
+        pub const fn set_trimh(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x1f << 6usize)) | (((val as u32) & 0x1f) << 6usize);
+        }
+        #[doc = "desc RSV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rsv(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RSV."]
+        #[inline(always)]
+        pub const fn set_rsv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Rchtrim {
+        #[inline(always)]
+        fn default() -> Rchtrim {
+            Rchtrim(0)
+        }
+    }
+    impl core::fmt::Debug for Rchtrim {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rchtrim")
+                .field("triml", &self.triml())
+                .field("trimh", &self.trimh())
+                .field("rsv", &self.rsv())
+                .finish()
+        }
+    }
+    #[doc = "desc RCLCR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rclcr(pub u32);
+    impl Rclcr {
+        #[doc = "desc STARTUP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn startup(&self) -> u8 {
+            let val = (self.0 >> 10usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc STARTUP."]
+        #[inline(always)]
+        pub const fn set_startup(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 10usize)) | (((val as u32) & 0x03) << 10usize);
+        }
+        #[doc = "desc RSV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rsv(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RSV."]
+        #[inline(always)]
+        pub const fn set_rsv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Rclcr {
+        #[inline(always)]
+        fn default() -> Rclcr {
+            Rclcr(0)
+        }
+    }
+    impl core::fmt::Debug for Rclcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rclcr")
+                .field("startup", &self.startup())
+                .field("rsv", &self.rsv())
+                .finish()
+        }
+    }
+    #[doc = "desc RCLTRIM."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rcltrim(pub u32);
+    impl Rcltrim {
+        #[doc = "desc TRIM."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn trim(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x03ff;
+            val as u16
+        }
+        #[doc = "desc TRIM."]
+        #[inline(always)]
+        pub const fn set_trim(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x03ff << 0usize)) | (((val as u32) & 0x03ff) << 0usize);
+        }
+        #[doc = "desc RSV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rsv(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RSV."]
+        #[inline(always)]
+        pub const fn set_rsv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Rcltrim {
+        #[inline(always)]
+        fn default() -> Rcltrim {
+            Rcltrim(0)
+        }
+    }
+    impl core::fmt::Debug for Rcltrim {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rcltrim")
+                .field("trim", &self.trim())
+                .field("rsv", &self.rsv())
+                .finish()
+        }
+    }
+    #[doc = "desc RSTFLAG."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rstflag(pub u32);
+    impl Rstflag {
+        #[doc = "desc POR5V."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn por5v(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc POR5V."]
+        #[inline(always)]
+        pub const fn set_por5v(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc POR12V."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn por12v(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc POR12V."]
+        #[inline(always)]
+        pub const fn set_por12v(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc LVD."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn lvd(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc LVD."]
+        #[inline(always)]
+        pub const fn set_lvd(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc IWDT."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn iwdt(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc IWDT."]
+        #[inline(always)]
+        pub const fn set_iwdt(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc WWDT."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn wwdt(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc WWDT."]
+        #[inline(always)]
+        pub const fn set_wwdt(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc LOCKUP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn lockup(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc LOCKUP."]
+        #[inline(always)]
+        pub const fn set_lockup(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "desc SYSREQ."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sysreq(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SYSREQ."]
+        #[inline(always)]
+        pub const fn set_sysreq(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+        #[doc = "desc RSTB."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rstb(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RSTB."]
+        #[inline(always)]
+        pub const fn set_rstb(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "desc RSV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rsv(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RSV."]
+        #[inline(always)]
+        pub const fn set_rsv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Rstflag {
+        #[inline(always)]
+        fn default() -> Rstflag {
+            Rstflag(0)
+        }
+    }
+    impl core::fmt::Debug for Rstflag {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rstflag")
+                .field("por5v", &self.por5v())
+                .field("por12v", &self.por12v())
+                .field("lvd", &self.lvd())
+                .field("iwdt", &self.iwdt())
+                .field("wwdt", &self.wwdt())
+                .field("lockup", &self.lockup())
+                .field("sysreq", &self.sysreq())
+                .field("rstb", &self.rstb())
+                .field("rsv", &self.rsv())
+                .finish()
+        }
+    }
+    #[doc = "desc STATE."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct State(pub u32);
+    impl State {
+        #[doc = "desc RCH."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rch(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RCH."]
+        #[inline(always)]
+        pub const fn set_rch(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc XTH."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn xth(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc XTH."]
+        #[inline(always)]
+        pub const fn set_xth(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc RCL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rcl(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RCL."]
+        #[inline(always)]
+        pub const fn set_rcl(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc XTL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn xtl(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc XTL."]
+        #[inline(always)]
+        pub const fn set_xtl(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc PLL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pll(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc PLL."]
+        #[inline(always)]
+        pub const fn set_pll(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc PLLLOCK."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn plllock(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc PLLLOCK."]
+        #[inline(always)]
+        pub const fn set_plllock(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "desc XTHFAIL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn xthfail(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc XTHFAIL."]
+        #[inline(always)]
+        pub const fn set_xthfail(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "desc XTHFAULT."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn xthfault(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc XTHFAULT."]
+        #[inline(always)]
+        pub const fn set_xthfault(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
+        #[doc = "desc XTLFAIL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn xtlfail(&self) -> bool {
+            let val = (self.0 >> 10usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc XTLFAIL."]
+        #[inline(always)]
+        pub const fn set_xtlfail(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
+        }
+        #[doc = "desc XTLFAULT."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn xtlfault(&self) -> bool {
+            let val = (self.0 >> 11usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc XTLFAULT."]
+        #[inline(always)]
+        pub const fn set_xtlfault(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
+        }
+        #[doc = "desc RSV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rsv(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RSV."]
+        #[inline(always)]
+        pub const fn set_rsv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for State {
+        #[inline(always)]
+        fn default() -> State {
+            State(0)
+        }
+    }
+    impl core::fmt::Debug for State {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("State")
+                .field("rch", &self.rch())
+                .field("xth", &self.xth())
+                .field("rcl", &self.rcl())
+                .field("xtl", &self.xtl())
+                .field("pll", &self.pll())
+                .field("plllock", &self.plllock())
+                .field("xthfail", &self.xthfail())
+                .field("xthfault", &self.xthfault())
+                .field("xtlfail", &self.xtlfail())
+                .field("xtlfault", &self.xtlfault())
+                .field("rsv", &self.rsv())
+                .finish()
+        }
+    }
+    #[doc = "desc XTHCR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Xthcr(pub u32);
+    impl Xthcr {
+        #[doc = "desc DRIVER."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn driver(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc DRIVER."]
+        #[inline(always)]
+        pub const fn set_driver(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u32) & 0x03) << 0usize);
+        }
+        #[doc = "desc RANGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn range(&self) -> u8 {
+            let val = (self.0 >> 2usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc RANGE."]
+        #[inline(always)]
+        pub const fn set_range(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u32) & 0x03) << 2usize);
+        }
+        #[doc = "desc STARTUP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn startup(&self) -> u8 {
+            let val = (self.0 >> 4usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc STARTUP."]
+        #[inline(always)]
+        pub const fn set_startup(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
+        }
+        #[doc = "desc DETEN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn deten(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc DETEN."]
+        #[inline(always)]
+        pub const fn set_deten(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+        #[doc = "desc DETTIME."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dettime(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc DETTIME."]
+        #[inline(always)]
+        pub const fn set_dettime(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "desc DETIE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn detie(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc DETIE."]
+        #[inline(always)]
+        pub const fn set_detie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "desc RSV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rsv(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RSV."]
+        #[inline(always)]
+        pub const fn set_rsv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Xthcr {
+        #[inline(always)]
+        fn default() -> Xthcr {
+            Xthcr(0)
+        }
+    }
+    impl core::fmt::Debug for Xthcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Xthcr")
+                .field("driver", &self.driver())
+                .field("range", &self.range())
+                .field("startup", &self.startup())
+                .field("deten", &self.deten())
+                .field("dettime", &self.dettime())
+                .field("detie", &self.detie())
+                .field("rsv", &self.rsv())
+                .finish()
+        }
+    }
+    #[doc = "desc XTLCR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Xtlcr(pub u32);
+    impl Xtlcr {
+        #[doc = "desc DRIVER."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn driver(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc DRIVER."]
+        #[inline(always)]
+        pub const fn set_driver(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u32) & 0x03) << 0usize);
+        }
+        #[doc = "desc AMP_SEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn amp_sel(&self) -> u8 {
+            let val = (self.0 >> 2usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc AMP_SEL."]
+        #[inline(always)]
+        pub const fn set_amp_sel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u32) & 0x03) << 2usize);
+        }
+        #[doc = "desc STARTUP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn startup(&self) -> u8 {
+            let val = (self.0 >> 4usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc STARTUP."]
+        #[inline(always)]
+        pub const fn set_startup(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
+        }
+        #[doc = "desc DETEN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn deten(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc DETEN."]
+        #[inline(always)]
+        pub const fn set_deten(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+        #[doc = "desc DETTIME."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dettime(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc DETTIME."]
+        #[inline(always)]
+        pub const fn set_dettime(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "desc DETIE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn detie(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc DETIE."]
+        #[inline(always)]
+        pub const fn set_detie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "desc RSV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rsv(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RSV."]
+        #[inline(always)]
+        pub const fn set_rsv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Xtlcr {
+        #[inline(always)]
+        fn default() -> Xtlcr {
+            Xtlcr(0)
+        }
+    }
+    impl core::fmt::Debug for Xtlcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Xtlcr")
+                .field("driver", &self.driver())
+                .field("amp_sel", &self.amp_sel())
+                .field("startup", &self.startup())
+                .field("deten", &self.deten())
+                .field("dettime", &self.dettime())
+                .field("detie", &self.detie())
+                .field("rsv", &self.rsv())
+                .finish()
+        }
+    }
+}

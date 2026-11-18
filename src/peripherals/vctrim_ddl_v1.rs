@@ -1,0 +1,86 @@
+#![allow(clippy::missing_safety_doc)]
+#![allow(clippy::identity_op)]
+#![allow(clippy::unnecessary_cast)]
+#![allow(clippy::erasing_op)]
+
+#[doc = "desc VCTRIM."]
+#[derive(Copy, Clone, Eq, PartialEq)]
+pub struct Vctrim {
+    ptr: *mut u8,
+}
+unsafe impl Send for Vctrim {}
+unsafe impl Sync for Vctrim {}
+impl Vctrim {
+    #[inline(always)]
+    pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
+        Self { ptr: ptr as _ }
+    }
+    #[inline(always)]
+    pub const fn as_ptr(&self) -> *mut () {
+        self.ptr as _
+    }
+    #[doc = "desc VCTRIM."]
+    #[inline(always)]
+    pub const fn vctrim(self) -> crate::common::Reg<regs::Vctrim, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
+    }
+}
+pub mod regs {
+    #[doc = "desc VCTRIM."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Vctrim(pub u32);
+    impl Vctrim {
+        #[doc = "desc TRIM0."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn trim0(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x0f;
+            val as u8
+        }
+        #[doc = "desc TRIM0."]
+        #[inline(always)]
+        pub const fn set_trim0(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+        }
+        #[doc = "desc TRIM1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn trim1(&self) -> u8 {
+            let val = (self.0 >> 8usize) & 0x0f;
+            val as u8
+        }
+        #[doc = "desc TRIM1."]
+        #[inline(always)]
+        pub const fn set_trim1(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 8usize)) | (((val as u32) & 0x0f) << 8usize);
+        }
+        #[doc = "desc RSV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rsv(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RSV."]
+        #[inline(always)]
+        pub const fn set_rsv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Vctrim {
+        #[inline(always)]
+        fn default() -> Vctrim {
+            Vctrim(0)
+        }
+    }
+    impl core::fmt::Debug for Vctrim {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Vctrim")
+                .field("trim0", &self.trim0())
+                .field("trim1", &self.trim1())
+                .field("rsv", &self.rsv())
+                .finish()
+        }
+    }
+}

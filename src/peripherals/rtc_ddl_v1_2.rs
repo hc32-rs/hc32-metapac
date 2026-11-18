@@ -1,0 +1,983 @@
+#![allow(clippy::missing_safety_doc)]
+#![allow(clippy::identity_op)]
+#![allow(clippy::unnecessary_cast)]
+#![allow(clippy::erasing_op)]
+
+#[doc = "desc RTC."]
+#[derive(Copy, Clone, Eq, PartialEq)]
+pub struct Rtc {
+    ptr: *mut u8,
+}
+unsafe impl Send for Rtc {}
+unsafe impl Sync for Rtc {}
+impl Rtc {
+    #[inline(always)]
+    pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
+        Self { ptr: ptr as _ }
+    }
+    #[inline(always)]
+    pub const fn as_ptr(&self) -> *mut () {
+        self.ptr as _
+    }
+    #[doc = "desc CR0."]
+    #[inline(always)]
+    pub const fn cr0(self) -> crate::common::Reg<regs::Cr0, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
+    }
+    #[doc = "desc CR1."]
+    #[inline(always)]
+    pub const fn cr1(self) -> crate::common::Reg<regs::Cr1, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
+    }
+    #[doc = "desc SEC."]
+    #[inline(always)]
+    pub const fn sec(self) -> crate::common::Reg<regs::Sec, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
+    }
+    #[doc = "desc MIN."]
+    #[inline(always)]
+    pub const fn min(self) -> crate::common::Reg<regs::Min, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
+    }
+    #[doc = "desc HOUR."]
+    #[inline(always)]
+    pub const fn hour(self) -> crate::common::Reg<regs::Hour, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
+    }
+    #[doc = "desc WEEK."]
+    #[inline(always)]
+    pub const fn week(self) -> crate::common::Reg<regs::Week, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize) as _) }
+    }
+    #[doc = "desc DAY."]
+    #[inline(always)]
+    pub const fn day(self) -> crate::common::Reg<regs::Day, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x18usize) as _) }
+    }
+    #[doc = "desc MON."]
+    #[inline(always)]
+    pub const fn mon(self) -> crate::common::Reg<regs::Mon, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1cusize) as _) }
+    }
+    #[doc = "desc YEAR."]
+    #[inline(always)]
+    pub const fn year(self) -> crate::common::Reg<regs::Year, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20usize) as _) }
+    }
+    #[doc = "desc ALMMIN."]
+    #[inline(always)]
+    pub const fn almmin(self) -> crate::common::Reg<regs::Almmin, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x24usize) as _) }
+    }
+    #[doc = "desc ALMHOUR."]
+    #[inline(always)]
+    pub const fn almhour(self) -> crate::common::Reg<regs::Almhour, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x28usize) as _) }
+    }
+    #[doc = "desc ALMWEEK."]
+    #[inline(always)]
+    pub const fn almweek(self) -> crate::common::Reg<regs::Almweek, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2cusize) as _) }
+    }
+    #[doc = "desc COMPEN."]
+    #[inline(always)]
+    pub const fn compen(self) -> crate::common::Reg<regs::Compen, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x30usize) as _) }
+    }
+    #[doc = "desc ALMSEC."]
+    #[inline(always)]
+    pub const fn almsec(self) -> crate::common::Reg<regs::Almsec, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x34usize) as _) }
+    }
+}
+pub mod regs {
+    #[doc = "desc ALMHOUR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Almhour(pub u32);
+    impl Almhour {
+        #[doc = "desc ALMHOURL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn almhourl(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x0f;
+            val as u8
+        }
+        #[doc = "desc ALMHOURL."]
+        #[inline(always)]
+        pub const fn set_almhourl(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+        }
+        #[doc = "desc ALMHOURH."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn almhourh(&self) -> u8 {
+            let val = (self.0 >> 4usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc ALMHOURH."]
+        #[inline(always)]
+        pub const fn set_almhourh(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
+        }
+        #[doc = "desc RSV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rsv(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RSV."]
+        #[inline(always)]
+        pub const fn set_rsv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Almhour {
+        #[inline(always)]
+        fn default() -> Almhour {
+            Almhour(0)
+        }
+    }
+    impl core::fmt::Debug for Almhour {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Almhour")
+                .field("almhourl", &self.almhourl())
+                .field("almhourh", &self.almhourh())
+                .field("rsv", &self.rsv())
+                .finish()
+        }
+    }
+    #[doc = "desc ALMMIN."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Almmin(pub u32);
+    impl Almmin {
+        #[doc = "desc ALMMINL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn almminl(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x0f;
+            val as u8
+        }
+        #[doc = "desc ALMMINL."]
+        #[inline(always)]
+        pub const fn set_almminl(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+        }
+        #[doc = "desc ALMMINH."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn almminh(&self) -> u8 {
+            let val = (self.0 >> 4usize) & 0x07;
+            val as u8
+        }
+        #[doc = "desc ALMMINH."]
+        #[inline(always)]
+        pub const fn set_almminh(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 4usize)) | (((val as u32) & 0x07) << 4usize);
+        }
+        #[doc = "desc RSV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rsv(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RSV."]
+        #[inline(always)]
+        pub const fn set_rsv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Almmin {
+        #[inline(always)]
+        fn default() -> Almmin {
+            Almmin(0)
+        }
+    }
+    impl core::fmt::Debug for Almmin {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Almmin")
+                .field("almminl", &self.almminl())
+                .field("almminh", &self.almminh())
+                .field("rsv", &self.rsv())
+                .finish()
+        }
+    }
+    #[doc = "desc ALMSEC."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Almsec(pub u32);
+    impl Almsec {
+        #[doc = "desc ALMSECL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn almsecl(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x0f;
+            val as u8
+        }
+        #[doc = "desc ALMSECL."]
+        #[inline(always)]
+        pub const fn set_almsecl(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+        }
+        #[doc = "desc ALMSECH."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn almsech(&self) -> u8 {
+            let val = (self.0 >> 4usize) & 0x07;
+            val as u8
+        }
+        #[doc = "desc ALMSECH."]
+        #[inline(always)]
+        pub const fn set_almsech(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 4usize)) | (((val as u32) & 0x07) << 4usize);
+        }
+        #[doc = "desc RSV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rsv(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RSV."]
+        #[inline(always)]
+        pub const fn set_rsv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Almsec {
+        #[inline(always)]
+        fn default() -> Almsec {
+            Almsec(0)
+        }
+    }
+    impl core::fmt::Debug for Almsec {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Almsec")
+                .field("almsecl", &self.almsecl())
+                .field("almsech", &self.almsech())
+                .field("rsv", &self.rsv())
+                .finish()
+        }
+    }
+    #[doc = "desc ALMWEEK."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Almweek(pub u32);
+    impl Almweek {
+        #[doc = "desc ALMWEEK."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn almweek(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x7f;
+            val as u8
+        }
+        #[doc = "desc ALMWEEK."]
+        #[inline(always)]
+        pub const fn set_almweek(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
+        }
+        #[doc = "desc RSV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rsv(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RSV."]
+        #[inline(always)]
+        pub const fn set_rsv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Almweek {
+        #[inline(always)]
+        fn default() -> Almweek {
+            Almweek(0)
+        }
+    }
+    impl core::fmt::Debug for Almweek {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Almweek")
+                .field("almweek", &self.almweek())
+                .field("rsv", &self.rsv())
+                .finish()
+        }
+    }
+    #[doc = "desc COMPEN."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Compen(pub u32);
+    impl Compen {
+        #[doc = "desc CR."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn cr(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x01ff;
+            val as u16
+        }
+        #[doc = "desc CR."]
+        #[inline(always)]
+        pub const fn set_cr(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x01ff << 0usize)) | (((val as u32) & 0x01ff) << 0usize);
+        }
+        #[doc = "desc EN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn en(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc EN."]
+        #[inline(always)]
+        pub const fn set_en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        }
+        #[doc = "desc RSV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rsv(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RSV."]
+        #[inline(always)]
+        pub const fn set_rsv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Compen {
+        #[inline(always)]
+        fn default() -> Compen {
+            Compen(0)
+        }
+    }
+    impl core::fmt::Debug for Compen {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Compen")
+                .field("cr", &self.cr())
+                .field("en", &self.en())
+                .field("rsv", &self.rsv())
+                .finish()
+        }
+    }
+    #[doc = "desc CR0."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cr0(pub u32);
+    impl Cr0 {
+        #[doc = "desc PRDS."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn prds(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x07;
+            val as u8
+        }
+        #[doc = "desc PRDS."]
+        #[inline(always)]
+        pub const fn set_prds(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
+        }
+        #[doc = "desc AMPM."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ampm(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc AMPM."]
+        #[inline(always)]
+        pub const fn set_ampm(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc HZ1OE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn hz1oe(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc HZ1OE."]
+        #[inline(always)]
+        pub const fn set_hz1oe(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "desc HZ1SEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn hz1sel(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc HZ1SEL."]
+        #[inline(always)]
+        pub const fn set_hz1sel(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+        #[doc = "desc START."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn start(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc START."]
+        #[inline(always)]
+        pub const fn set_start(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "desc PRDX."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn prdx(&self) -> u8 {
+            let val = (self.0 >> 8usize) & 0x3f;
+            val as u8
+        }
+        #[doc = "desc PRDX."]
+        #[inline(always)]
+        pub const fn set_prdx(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x3f << 8usize)) | (((val as u32) & 0x3f) << 8usize);
+        }
+        #[doc = "desc PRDSEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn prdsel(&self) -> bool {
+            let val = (self.0 >> 14usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc PRDSEL."]
+        #[inline(always)]
+        pub const fn set_prdsel(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
+        }
+        #[doc = "desc RSV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rsv(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RSV."]
+        #[inline(always)]
+        pub const fn set_rsv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Cr0 {
+        #[inline(always)]
+        fn default() -> Cr0 {
+            Cr0(0)
+        }
+    }
+    impl core::fmt::Debug for Cr0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr0")
+                .field("prds", &self.prds())
+                .field("ampm", &self.ampm())
+                .field("hz1oe", &self.hz1oe())
+                .field("hz1sel", &self.hz1sel())
+                .field("start", &self.start())
+                .field("prdx", &self.prdx())
+                .field("prdsel", &self.prdsel())
+                .field("rsv", &self.rsv())
+                .finish()
+        }
+    }
+    #[doc = "desc CR1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cr1(pub u32);
+    impl Cr1 {
+        #[doc = "desc WAIT."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn wait(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc WAIT."]
+        #[inline(always)]
+        pub const fn set_wait(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc WAITF."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn waitf(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc WAITF."]
+        #[inline(always)]
+        pub const fn set_waitf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc PRDF."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn prdf(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc PRDF."]
+        #[inline(always)]
+        pub const fn set_prdf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc ALMF."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn almf(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ALMF."]
+        #[inline(always)]
+        pub const fn set_almf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc ALMIE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn almie(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ALMIE."]
+        #[inline(always)]
+        pub const fn set_almie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+        #[doc = "desc ALMEN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn almen(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ALMEN."]
+        #[inline(always)]
+        pub const fn set_almen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "desc CKSEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn cksel(&self) -> u8 {
+            let val = (self.0 >> 8usize) & 0x07;
+            val as u8
+        }
+        #[doc = "desc CKSEL."]
+        #[inline(always)]
+        pub const fn set_cksel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 8usize)) | (((val as u32) & 0x07) << 8usize);
+        }
+        #[doc = "desc RSV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rsv(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RSV."]
+        #[inline(always)]
+        pub const fn set_rsv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Cr1 {
+        #[inline(always)]
+        fn default() -> Cr1 {
+            Cr1(0)
+        }
+    }
+    impl core::fmt::Debug for Cr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr1")
+                .field("wait", &self.wait())
+                .field("waitf", &self.waitf())
+                .field("prdf", &self.prdf())
+                .field("almf", &self.almf())
+                .field("almie", &self.almie())
+                .field("almen", &self.almen())
+                .field("cksel", &self.cksel())
+                .field("rsv", &self.rsv())
+                .finish()
+        }
+    }
+    #[doc = "desc DAY."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Day(pub u32);
+    impl Day {
+        #[doc = "desc DAYL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dayl(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x0f;
+            val as u8
+        }
+        #[doc = "desc DAYL."]
+        #[inline(always)]
+        pub const fn set_dayl(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+        }
+        #[doc = "desc DAYH."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dayh(&self) -> u8 {
+            let val = (self.0 >> 4usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc DAYH."]
+        #[inline(always)]
+        pub const fn set_dayh(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
+        }
+        #[doc = "desc RSV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rsv(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RSV."]
+        #[inline(always)]
+        pub const fn set_rsv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Day {
+        #[inline(always)]
+        fn default() -> Day {
+            Day(0)
+        }
+    }
+    impl core::fmt::Debug for Day {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Day")
+                .field("dayl", &self.dayl())
+                .field("dayh", &self.dayh())
+                .field("rsv", &self.rsv())
+                .finish()
+        }
+    }
+    #[doc = "desc HOUR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Hour(pub u32);
+    impl Hour {
+        #[doc = "desc HOURL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn hourl(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x0f;
+            val as u8
+        }
+        #[doc = "desc HOURL."]
+        #[inline(always)]
+        pub const fn set_hourl(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+        }
+        #[doc = "desc HOURH."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn hourh(&self) -> u8 {
+            let val = (self.0 >> 4usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc HOURH."]
+        #[inline(always)]
+        pub const fn set_hourh(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
+        }
+        #[doc = "desc RSV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rsv(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RSV."]
+        #[inline(always)]
+        pub const fn set_rsv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Hour {
+        #[inline(always)]
+        fn default() -> Hour {
+            Hour(0)
+        }
+    }
+    impl core::fmt::Debug for Hour {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Hour")
+                .field("hourl", &self.hourl())
+                .field("hourh", &self.hourh())
+                .field("rsv", &self.rsv())
+                .finish()
+        }
+    }
+    #[doc = "desc MIN."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Min(pub u32);
+    impl Min {
+        #[doc = "desc MINL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn minl(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x0f;
+            val as u8
+        }
+        #[doc = "desc MINL."]
+        #[inline(always)]
+        pub const fn set_minl(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+        }
+        #[doc = "desc MINH."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn minh(&self) -> u8 {
+            let val = (self.0 >> 4usize) & 0x07;
+            val as u8
+        }
+        #[doc = "desc MINH."]
+        #[inline(always)]
+        pub const fn set_minh(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 4usize)) | (((val as u32) & 0x07) << 4usize);
+        }
+        #[doc = "desc RSV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rsv(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RSV."]
+        #[inline(always)]
+        pub const fn set_rsv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Min {
+        #[inline(always)]
+        fn default() -> Min {
+            Min(0)
+        }
+    }
+    impl core::fmt::Debug for Min {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Min")
+                .field("minl", &self.minl())
+                .field("minh", &self.minh())
+                .field("rsv", &self.rsv())
+                .finish()
+        }
+    }
+    #[doc = "desc MON."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Mon(pub u32);
+    impl Mon {
+        #[doc = "desc MON."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mon(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x1f;
+            val as u8
+        }
+        #[doc = "desc MON."]
+        #[inline(always)]
+        pub const fn set_mon(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
+        }
+        #[doc = "desc RSV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rsv(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RSV."]
+        #[inline(always)]
+        pub const fn set_rsv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Mon {
+        #[inline(always)]
+        fn default() -> Mon {
+            Mon(0)
+        }
+    }
+    impl core::fmt::Debug for Mon {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Mon")
+                .field("mon", &self.mon())
+                .field("rsv", &self.rsv())
+                .finish()
+        }
+    }
+    #[doc = "desc SEC."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Sec(pub u32);
+    impl Sec {
+        #[doc = "desc SECL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn secl(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x0f;
+            val as u8
+        }
+        #[doc = "desc SECL."]
+        #[inline(always)]
+        pub const fn set_secl(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+        }
+        #[doc = "desc SECH."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sech(&self) -> u8 {
+            let val = (self.0 >> 4usize) & 0x07;
+            val as u8
+        }
+        #[doc = "desc SECH."]
+        #[inline(always)]
+        pub const fn set_sech(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 4usize)) | (((val as u32) & 0x07) << 4usize);
+        }
+        #[doc = "desc RSV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rsv(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RSV."]
+        #[inline(always)]
+        pub const fn set_rsv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Sec {
+        #[inline(always)]
+        fn default() -> Sec {
+            Sec(0)
+        }
+    }
+    impl core::fmt::Debug for Sec {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sec")
+                .field("secl", &self.secl())
+                .field("sech", &self.sech())
+                .field("rsv", &self.rsv())
+                .finish()
+        }
+    }
+    #[doc = "desc WEEK."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Week(pub u32);
+    impl Week {
+        #[doc = "desc WEEK."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn week(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x07;
+            val as u8
+        }
+        #[doc = "desc WEEK."]
+        #[inline(always)]
+        pub const fn set_week(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
+        }
+        #[doc = "desc RSV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rsv(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RSV."]
+        #[inline(always)]
+        pub const fn set_rsv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Week {
+        #[inline(always)]
+        fn default() -> Week {
+            Week(0)
+        }
+    }
+    impl core::fmt::Debug for Week {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Week")
+                .field("week", &self.week())
+                .field("rsv", &self.rsv())
+                .finish()
+        }
+    }
+    #[doc = "desc YEAR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Year(pub u32);
+    impl Year {
+        #[doc = "desc YEARL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn yearl(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x0f;
+            val as u8
+        }
+        #[doc = "desc YEARL."]
+        #[inline(always)]
+        pub const fn set_yearl(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+        }
+        #[doc = "desc YEARH."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn yearh(&self) -> u8 {
+            let val = (self.0 >> 4usize) & 0x0f;
+            val as u8
+        }
+        #[doc = "desc YEARH."]
+        #[inline(always)]
+        pub const fn set_yearh(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
+        }
+        #[doc = "desc RSV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rsv(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RSV."]
+        #[inline(always)]
+        pub const fn set_rsv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Year {
+        #[inline(always)]
+        fn default() -> Year {
+            Year(0)
+        }
+    }
+    impl core::fmt::Debug for Year {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Year")
+                .field("yearl", &self.yearl())
+                .field("yearh", &self.yearh())
+                .field("rsv", &self.rsv())
+                .finish()
+        }
+    }
+}
