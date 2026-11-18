@@ -1,0 +1,275 @@
+#![allow(clippy::missing_safety_doc)]
+#![allow(clippy::identity_op)]
+#![allow(clippy::unnecessary_cast)]
+#![allow(clippy::erasing_op)]
+
+#[doc = "desc OPA."]
+#[derive(Copy, Clone, Eq, PartialEq)]
+pub struct Opa {
+    ptr: *mut u8,
+}
+unsafe impl Send for Opa {}
+unsafe impl Sync for Opa {}
+impl Opa {
+    #[inline(always)]
+    pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
+        Self { ptr: ptr as _ }
+    }
+    #[inline(always)]
+    pub const fn as_ptr(&self) -> *mut () {
+        self.ptr as _
+    }
+    #[doc = "desc CR0."]
+    #[inline(always)]
+    pub const fn cr0(self) -> crate::common::Reg<regs::Cr0, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
+    }
+    #[doc = "desc CR1."]
+    #[inline(always)]
+    pub const fn cr1(self) -> crate::common::Reg<regs::Cr1, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
+    }
+    #[doc = "desc AZ."]
+    #[inline(always)]
+    pub const fn az(self) -> crate::common::Reg<regs::Az, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
+    }
+}
+pub mod regs {
+    #[doc = "desc AZ."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Az(pub u32);
+    impl Az {
+        #[doc = "desc ADCTREN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn adctren(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ADCTREN."]
+        #[inline(always)]
+        pub const fn set_adctren(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc TRIGGER."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn trigger(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc TRIGGER."]
+        #[inline(always)]
+        pub const fn set_trigger(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc AZPULSE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn azpulse(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc AZPULSE."]
+        #[inline(always)]
+        pub const fn set_azpulse(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc CLKSWSET."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn clkswset(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc CLKSWSET."]
+        #[inline(always)]
+        pub const fn set_clkswset(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc CLKSEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn clksel(&self) -> u8 {
+            let val = (self.0 >> 4usize) & 0x0f;
+            val as u8
+        }
+        #[doc = "desc CLKSEL."]
+        #[inline(always)]
+        pub const fn set_clksel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
+        }
+        #[doc = "desc RSV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rsv(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RSV."]
+        #[inline(always)]
+        pub const fn set_rsv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Az {
+        #[inline(always)]
+        fn default() -> Az {
+            Az(0)
+        }
+    }
+    impl core::fmt::Debug for Az {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Az")
+                .field("adctren", &self.adctren())
+                .field("trigger", &self.trigger())
+                .field("azpulse", &self.azpulse())
+                .field("clkswset", &self.clkswset())
+                .field("clksel", &self.clksel())
+                .field("rsv", &self.rsv())
+                .finish()
+        }
+    }
+    #[doc = "desc CR0."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cr0(pub u32);
+    impl Cr0 {
+        #[doc = "desc OPAEN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn opaen(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc OPAEN."]
+        #[inline(always)]
+        pub const fn set_opaen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc AZEN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn azen(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc AZEN."]
+        #[inline(always)]
+        pub const fn set_azen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc BIASSEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn biassel(&self) -> u8 {
+            let val = (self.0 >> 7usize) & 0x07;
+            val as u8
+        }
+        #[doc = "desc BIASSEL."]
+        #[inline(always)]
+        pub const fn set_biassel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 7usize)) | (((val as u32) & 0x07) << 7usize);
+        }
+        #[doc = "desc RSV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rsv(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RSV."]
+        #[inline(always)]
+        pub const fn set_rsv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Cr0 {
+        #[inline(always)]
+        fn default() -> Cr0 {
+            Cr0(0)
+        }
+    }
+    impl core::fmt::Debug for Cr0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr0")
+                .field("opaen", &self.opaen())
+                .field("azen", &self.azen())
+                .field("biassel", &self.biassel())
+                .field("rsv", &self.rsv())
+                .finish()
+        }
+    }
+    #[doc = "desc CR1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cr1(pub u32);
+    impl Cr1 {
+        #[doc = "desc OPAEN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn opaen(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc OPAEN."]
+        #[inline(always)]
+        pub const fn set_opaen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc AZEN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn azen(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc AZEN."]
+        #[inline(always)]
+        pub const fn set_azen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc BIASSEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn biassel(&self) -> u8 {
+            let val = (self.0 >> 7usize) & 0x07;
+            val as u8
+        }
+        #[doc = "desc BIASSEL."]
+        #[inline(always)]
+        pub const fn set_biassel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 7usize)) | (((val as u32) & 0x07) << 7usize);
+        }
+        #[doc = "desc RSV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rsv(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RSV."]
+        #[inline(always)]
+        pub const fn set_rsv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Cr1 {
+        #[inline(always)]
+        fn default() -> Cr1 {
+            Cr1(0)
+        }
+    }
+    impl core::fmt::Debug for Cr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr1")
+                .field("opaen", &self.opaen())
+                .field("azen", &self.azen())
+                .field("biassel", &self.biassel())
+                .field("rsv", &self.rsv())
+                .finish()
+        }
+    }
+}

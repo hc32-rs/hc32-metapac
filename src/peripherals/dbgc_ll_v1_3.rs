@@ -1,0 +1,278 @@
+#![allow(clippy::missing_safety_doc)]
+#![allow(clippy::identity_op)]
+#![allow(clippy::unnecessary_cast)]
+#![allow(clippy::erasing_op)]
+
+#[doc = "desc DBGC."]
+#[derive(Copy, Clone, Eq, PartialEq)]
+pub struct Dbgc {
+    ptr: *mut u8,
+}
+unsafe impl Send for Dbgc {}
+unsafe impl Sync for Dbgc {}
+impl Dbgc {
+    #[inline(always)]
+    pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
+        Self { ptr: ptr as _ }
+    }
+    #[inline(always)]
+    pub const fn as_ptr(&self) -> *mut () {
+        self.ptr as _
+    }
+    #[doc = "desc MCUDBGSTAT."]
+    #[inline(always)]
+    pub const fn mcudbgstat(self) -> crate::common::Reg<regs::Mcudbgstat, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
+    }
+    #[doc = "desc MCUSTPCTL."]
+    #[inline(always)]
+    pub const fn mcustpctl(self) -> crate::common::Reg<regs::Mcustpctl, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
+    }
+}
+pub mod regs {
+    #[doc = "desc MCUDBGSTAT."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Mcudbgstat(pub u32);
+    impl Mcudbgstat {
+        #[doc = "desc CDBGPWRUPREQ."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn cdbgpwrupreq(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc CDBGPWRUPREQ."]
+        #[inline(always)]
+        pub const fn set_cdbgpwrupreq(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc CDBGPWRUPACK."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn cdbgpwrupack(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc CDBGPWRUPACK."]
+        #[inline(always)]
+        pub const fn set_cdbgpwrupack(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+    }
+    impl Default for Mcudbgstat {
+        #[inline(always)]
+        fn default() -> Mcudbgstat {
+            Mcudbgstat(0)
+        }
+    }
+    impl core::fmt::Debug for Mcudbgstat {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Mcudbgstat")
+                .field("cdbgpwrupreq", &self.cdbgpwrupreq())
+                .field("cdbgpwrupack", &self.cdbgpwrupack())
+                .finish()
+        }
+    }
+    #[doc = "desc MCUSTPCTL."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Mcustpctl(pub u32);
+    impl Mcustpctl {
+        #[doc = "desc SWDTSTP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn swdtstp(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SWDTSTP."]
+        #[inline(always)]
+        pub const fn set_swdtstp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc RTCSTP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rtcstp(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RTCSTP."]
+        #[inline(always)]
+        pub const fn set_rtcstp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc TMR01STP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tmr01stp(&self) -> bool {
+            let val = (self.0 >> 14usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc TMR01STP."]
+        #[inline(always)]
+        pub const fn set_tmr01stp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
+        }
+        #[doc = "desc TMR21STP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tmr21stp(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc TMR21STP."]
+        #[inline(always)]
+        pub const fn set_tmr21stp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
+        #[doc = "desc TMR41STP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tmr41stp(&self) -> bool {
+            let val = (self.0 >> 20usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc TMR41STP."]
+        #[inline(always)]
+        pub const fn set_tmr41stp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
+        }
+        #[doc = "desc TMRA1STP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tmra1stp(&self) -> bool {
+            let val = (self.0 >> 23usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc TMRA1STP."]
+        #[inline(always)]
+        pub const fn set_tmra1stp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
+        }
+        #[doc = "desc TMRB1STP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tmrb1stp(&self) -> bool {
+            let val = (self.0 >> 24usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc TMRB1STP."]
+        #[inline(always)]
+        pub const fn set_tmrb1stp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
+        }
+        #[doc = "desc TMRB2STP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tmrb2stp(&self) -> bool {
+            let val = (self.0 >> 25usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc TMRB2STP."]
+        #[inline(always)]
+        pub const fn set_tmrb2stp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
+        }
+        #[doc = "desc TMRB3STP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tmrb3stp(&self) -> bool {
+            let val = (self.0 >> 26usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc TMRB3STP."]
+        #[inline(always)]
+        pub const fn set_tmrb3stp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
+        }
+        #[doc = "desc TMRB4STP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tmrb4stp(&self) -> bool {
+            let val = (self.0 >> 27usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc TMRB4STP."]
+        #[inline(always)]
+        pub const fn set_tmrb4stp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
+        }
+        #[doc = "desc TMRB5STP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tmrb5stp(&self) -> bool {
+            let val = (self.0 >> 28usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc TMRB5STP."]
+        #[inline(always)]
+        pub const fn set_tmrb5stp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
+        }
+        #[doc = "desc TMRB6STP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tmrb6stp(&self) -> bool {
+            let val = (self.0 >> 29usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc TMRB6STP."]
+        #[inline(always)]
+        pub const fn set_tmrb6stp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
+        }
+        #[doc = "desc TMRB7STP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tmrb7stp(&self) -> bool {
+            let val = (self.0 >> 30usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc TMRB7STP."]
+        #[inline(always)]
+        pub const fn set_tmrb7stp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
+        }
+        #[doc = "desc TMRB8STP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tmrb8stp(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc TMRB8STP."]
+        #[inline(always)]
+        pub const fn set_tmrb8stp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Mcustpctl {
+        #[inline(always)]
+        fn default() -> Mcustpctl {
+            Mcustpctl(0)
+        }
+    }
+    impl core::fmt::Debug for Mcustpctl {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Mcustpctl")
+                .field("swdtstp", &self.swdtstp())
+                .field("rtcstp", &self.rtcstp())
+                .field("tmr01stp", &self.tmr01stp())
+                .field("tmr21stp", &self.tmr21stp())
+                .field("tmr41stp", &self.tmr41stp())
+                .field("tmra1stp", &self.tmra1stp())
+                .field("tmrb1stp", &self.tmrb1stp())
+                .field("tmrb2stp", &self.tmrb2stp())
+                .field("tmrb3stp", &self.tmrb3stp())
+                .field("tmrb4stp", &self.tmrb4stp())
+                .field("tmrb5stp", &self.tmrb5stp())
+                .field("tmrb6stp", &self.tmrb6stp())
+                .field("tmrb7stp", &self.tmrb7stp())
+                .field("tmrb8stp", &self.tmrb8stp())
+                .finish()
+        }
+    }
+}

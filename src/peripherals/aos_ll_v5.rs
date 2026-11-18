@@ -1,0 +1,1983 @@
+#![allow(clippy::missing_safety_doc)]
+#![allow(clippy::identity_op)]
+#![allow(clippy::unnecessary_cast)]
+#![allow(clippy::erasing_op)]
+
+#[doc = "desc AOS."]
+#[derive(Copy, Clone, Eq, PartialEq)]
+pub struct Aos {
+    ptr: *mut u8,
+}
+unsafe impl Send for Aos {}
+unsafe impl Sync for Aos {}
+impl Aos {
+    #[inline(always)]
+    pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
+        Self { ptr: ptr as _ }
+    }
+    #[inline(always)]
+    pub const fn as_ptr(&self) -> *mut () {
+        self.ptr as _
+    }
+    #[doc = "desc INTSFTTRG."]
+    #[inline(always)]
+    pub const fn intsfttrg(self) -> crate::common::Reg<regs::Intsfttrg, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
+    }
+    #[doc = "desc TMR0_TRGSEL."]
+    #[inline(always)]
+    pub const fn tmr0_trgsel(self) -> crate::common::Reg<regs::Tmr0Trgsel, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
+    }
+    #[doc = "desc TMR2_TRGSEL0."]
+    #[inline(always)]
+    pub const fn tmr2_trgsel0(self) -> crate::common::Reg<regs::Tmr2Trgsel0, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
+    }
+    #[doc = "desc TMR2_TRGSEL1."]
+    #[inline(always)]
+    pub const fn tmr2_trgsel1(self) -> crate::common::Reg<regs::Tmr2Trgsel1, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
+    }
+    #[doc = "desc TMR4_TRGSEL."]
+    #[inline(always)]
+    pub const fn tmr4_trgsel(self) -> crate::common::Reg<regs::Tmr4Trgsel, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
+    }
+    #[doc = "desc TMRA_TRGSEL0."]
+    #[inline(always)]
+    pub const fn tmra_trgsel0(self) -> crate::common::Reg<regs::TmraTrgsel0, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize) as _) }
+    }
+    #[doc = "desc TMRA_TRGSEL1."]
+    #[inline(always)]
+    pub const fn tmra_trgsel1(self) -> crate::common::Reg<regs::TmraTrgsel1, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x18usize) as _) }
+    }
+    #[doc = "desc ADC_TRGSEL0."]
+    #[inline(always)]
+    pub const fn adc_trgsel0(self) -> crate::common::Reg<regs::AdcTrgsel0, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1cusize) as _) }
+    }
+    #[doc = "desc ADC_TRGSEL1."]
+    #[inline(always)]
+    pub const fn adc_trgsel1(self) -> crate::common::Reg<regs::AdcTrgsel1, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20usize) as _) }
+    }
+    #[doc = "desc DMA_TRGSEL0."]
+    #[inline(always)]
+    pub const fn dma_trgsel0(self) -> crate::common::Reg<regs::DmaTrgsel0, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x24usize) as _) }
+    }
+    #[doc = "desc DMA_TRGSEL1."]
+    #[inline(always)]
+    pub const fn dma_trgsel1(self) -> crate::common::Reg<regs::DmaTrgsel1, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x28usize) as _) }
+    }
+    #[doc = "desc DMA_TRGSEL2."]
+    #[inline(always)]
+    pub const fn dma_trgsel2(self) -> crate::common::Reg<regs::DmaTrgsel2, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2cusize) as _) }
+    }
+    #[doc = "desc DMA_TRGSEL3."]
+    #[inline(always)]
+    pub const fn dma_trgsel3(self) -> crate::common::Reg<regs::DmaTrgsel3, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x30usize) as _) }
+    }
+    #[doc = "desc PEVNT_TRGSEL12."]
+    #[inline(always)]
+    pub const fn pevnt_trgsel12(
+        self,
+    ) -> crate::common::Reg<regs::PevntTrgsel12, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x34usize) as _) }
+    }
+    #[doc = "desc PEVNT_TRGSEL34."]
+    #[inline(always)]
+    pub const fn pevnt_trgsel34(
+        self,
+    ) -> crate::common::Reg<regs::PevntTrgsel34, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x38usize) as _) }
+    }
+    #[doc = "desc COMTRGSEL1."]
+    #[inline(always)]
+    pub const fn comtrgsel1(self) -> crate::common::Reg<regs::Comtrgsel1, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3cusize) as _) }
+    }
+    #[doc = "desc COMTRGSEL2."]
+    #[inline(always)]
+    pub const fn comtrgsel2(self) -> crate::common::Reg<regs::Comtrgsel2, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x40usize) as _) }
+    }
+    #[doc = "desc PEVNTDIRR1."]
+    #[inline(always)]
+    pub const fn pevntdirr1(self) -> crate::common::Reg<regs::Pevntdirr1, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0100usize) as _) }
+    }
+    #[doc = "desc PEVNTIDR1."]
+    #[inline(always)]
+    pub const fn pevntidr1(self) -> crate::common::Reg<regs::Pevntidr1, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0104usize) as _) }
+    }
+    #[doc = "desc PEVNTODR1."]
+    #[inline(always)]
+    pub const fn pevntodr1(self) -> crate::common::Reg<regs::Pevntodr1, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0108usize) as _) }
+    }
+    #[doc = "desc PEVNTORR1."]
+    #[inline(always)]
+    pub const fn pevntorr1(self) -> crate::common::Reg<regs::Pevntorr1, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x010cusize) as _) }
+    }
+    #[doc = "desc PEVNTOSR1."]
+    #[inline(always)]
+    pub const fn pevntosr1(self) -> crate::common::Reg<regs::Pevntosr1, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0110usize) as _) }
+    }
+    #[doc = "desc PEVNTRISR1."]
+    #[inline(always)]
+    pub const fn pevntrisr1(self) -> crate::common::Reg<regs::Pevntrisr1, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0114usize) as _) }
+    }
+    #[doc = "desc PEVNTFALR1."]
+    #[inline(always)]
+    pub const fn pevntfalr1(self) -> crate::common::Reg<regs::Pevntfalr1, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0118usize) as _) }
+    }
+    #[doc = "desc PEVNTDIRR2."]
+    #[inline(always)]
+    pub const fn pevntdirr2(self) -> crate::common::Reg<regs::Pevntdirr2, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x011cusize) as _) }
+    }
+    #[doc = "desc PEVNTIDR2."]
+    #[inline(always)]
+    pub const fn pevntidr2(self) -> crate::common::Reg<regs::Pevntidr2, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0120usize) as _) }
+    }
+    #[doc = "desc PEVNTODR2."]
+    #[inline(always)]
+    pub const fn pevntodr2(self) -> crate::common::Reg<regs::Pevntodr2, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0124usize) as _) }
+    }
+    #[doc = "desc PEVNTORR2."]
+    #[inline(always)]
+    pub const fn pevntorr2(self) -> crate::common::Reg<regs::Pevntorr2, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0128usize) as _) }
+    }
+    #[doc = "desc PEVNTOSR2."]
+    #[inline(always)]
+    pub const fn pevntosr2(self) -> crate::common::Reg<regs::Pevntosr2, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x012cusize) as _) }
+    }
+    #[doc = "desc PEVNTRISR2."]
+    #[inline(always)]
+    pub const fn pevntrisr2(self) -> crate::common::Reg<regs::Pevntrisr2, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0130usize) as _) }
+    }
+    #[doc = "desc PEVNTFALR2."]
+    #[inline(always)]
+    pub const fn pevntfalr2(self) -> crate::common::Reg<regs::Pevntfalr2, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0134usize) as _) }
+    }
+    #[doc = "desc PEVNTDIRR3."]
+    #[inline(always)]
+    pub const fn pevntdirr3(self) -> crate::common::Reg<regs::Pevntdirr3, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0138usize) as _) }
+    }
+    #[doc = "desc PEVNTIDR3."]
+    #[inline(always)]
+    pub const fn pevntidr3(self) -> crate::common::Reg<regs::Pevntidr3, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x013cusize) as _) }
+    }
+    #[doc = "desc PEVNTODR3."]
+    #[inline(always)]
+    pub const fn pevntodr3(self) -> crate::common::Reg<regs::Pevntodr3, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0140usize) as _) }
+    }
+    #[doc = "desc PEVNTORR3."]
+    #[inline(always)]
+    pub const fn pevntorr3(self) -> crate::common::Reg<regs::Pevntorr3, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0144usize) as _) }
+    }
+    #[doc = "desc PEVNTOSR3."]
+    #[inline(always)]
+    pub const fn pevntosr3(self) -> crate::common::Reg<regs::Pevntosr3, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0148usize) as _) }
+    }
+    #[doc = "desc PEVNTRISR3."]
+    #[inline(always)]
+    pub const fn pevntrisr3(self) -> crate::common::Reg<regs::Pevntrisr3, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x014cusize) as _) }
+    }
+    #[doc = "desc PEVNTFALR3."]
+    #[inline(always)]
+    pub const fn pevntfalr3(self) -> crate::common::Reg<regs::Pevntfalr3, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0150usize) as _) }
+    }
+    #[doc = "desc PEVNTDIRR4."]
+    #[inline(always)]
+    pub const fn pevntdirr4(self) -> crate::common::Reg<regs::Pevntdirr4, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0154usize) as _) }
+    }
+    #[doc = "desc PEVNTIDR4."]
+    #[inline(always)]
+    pub const fn pevntidr4(self) -> crate::common::Reg<regs::Pevntidr4, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0158usize) as _) }
+    }
+    #[doc = "desc PEVNTODR4."]
+    #[inline(always)]
+    pub const fn pevntodr4(self) -> crate::common::Reg<regs::Pevntodr4, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x015cusize) as _) }
+    }
+    #[doc = "desc PEVNTORR4."]
+    #[inline(always)]
+    pub const fn pevntorr4(self) -> crate::common::Reg<regs::Pevntorr4, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0160usize) as _) }
+    }
+    #[doc = "desc PEVNTOSR4."]
+    #[inline(always)]
+    pub const fn pevntosr4(self) -> crate::common::Reg<regs::Pevntosr4, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0164usize) as _) }
+    }
+    #[doc = "desc PEVNTRISR4."]
+    #[inline(always)]
+    pub const fn pevntrisr4(self) -> crate::common::Reg<regs::Pevntrisr4, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0168usize) as _) }
+    }
+    #[doc = "desc PEVNTFALR4."]
+    #[inline(always)]
+    pub const fn pevntfalr4(self) -> crate::common::Reg<regs::Pevntfalr4, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x016cusize) as _) }
+    }
+    #[doc = "desc PEVNTNFCR."]
+    #[inline(always)]
+    pub const fn pevntnfcr(self) -> crate::common::Reg<regs::Pevntnfcr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0170usize) as _) }
+    }
+}
+pub mod regs {
+    #[doc = "desc ADC_TRGSEL0."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct AdcTrgsel0(pub u32);
+    impl AdcTrgsel0 {
+        #[doc = "desc TRGSEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn trgsel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x7f;
+            val as u8
+        }
+        #[doc = "desc TRGSEL."]
+        #[inline(always)]
+        pub const fn set_trgsel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
+        }
+        #[doc = "desc COMEN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn comen(&self) -> u8 {
+            let val = (self.0 >> 30usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc COMEN."]
+        #[inline(always)]
+        pub const fn set_comen(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 30usize)) | (((val as u32) & 0x03) << 30usize);
+        }
+    }
+    impl Default for AdcTrgsel0 {
+        #[inline(always)]
+        fn default() -> AdcTrgsel0 {
+            AdcTrgsel0(0)
+        }
+    }
+    impl core::fmt::Debug for AdcTrgsel0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("AdcTrgsel0")
+                .field("trgsel", &self.trgsel())
+                .field("comen", &self.comen())
+                .finish()
+        }
+    }
+    #[doc = "desc ADC_TRGSEL1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct AdcTrgsel1(pub u32);
+    impl AdcTrgsel1 {
+        #[doc = "desc TRGSEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn trgsel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x7f;
+            val as u8
+        }
+        #[doc = "desc TRGSEL."]
+        #[inline(always)]
+        pub const fn set_trgsel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
+        }
+        #[doc = "desc COMEN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn comen(&self) -> u8 {
+            let val = (self.0 >> 30usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc COMEN."]
+        #[inline(always)]
+        pub const fn set_comen(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 30usize)) | (((val as u32) & 0x03) << 30usize);
+        }
+    }
+    impl Default for AdcTrgsel1 {
+        #[inline(always)]
+        fn default() -> AdcTrgsel1 {
+            AdcTrgsel1(0)
+        }
+    }
+    impl core::fmt::Debug for AdcTrgsel1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("AdcTrgsel1")
+                .field("trgsel", &self.trgsel())
+                .field("comen", &self.comen())
+                .finish()
+        }
+    }
+    #[doc = "desc COMTRGSEL1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Comtrgsel1(pub u32);
+    impl Comtrgsel1 {
+        #[doc = "desc TRGSEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn trgsel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x7f;
+            val as u8
+        }
+        #[doc = "desc TRGSEL."]
+        #[inline(always)]
+        pub const fn set_trgsel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
+        }
+        #[doc = "desc COMEN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn comen(&self) -> u8 {
+            let val = (self.0 >> 30usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc COMEN."]
+        #[inline(always)]
+        pub const fn set_comen(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 30usize)) | (((val as u32) & 0x03) << 30usize);
+        }
+    }
+    impl Default for Comtrgsel1 {
+        #[inline(always)]
+        fn default() -> Comtrgsel1 {
+            Comtrgsel1(0)
+        }
+    }
+    impl core::fmt::Debug for Comtrgsel1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Comtrgsel1")
+                .field("trgsel", &self.trgsel())
+                .field("comen", &self.comen())
+                .finish()
+        }
+    }
+    #[doc = "desc COMTRGSEL2."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Comtrgsel2(pub u32);
+    impl Comtrgsel2 {
+        #[doc = "desc TRGSEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn trgsel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x7f;
+            val as u8
+        }
+        #[doc = "desc TRGSEL."]
+        #[inline(always)]
+        pub const fn set_trgsel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
+        }
+        #[doc = "desc COMEN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn comen(&self) -> u8 {
+            let val = (self.0 >> 30usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc COMEN."]
+        #[inline(always)]
+        pub const fn set_comen(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 30usize)) | (((val as u32) & 0x03) << 30usize);
+        }
+    }
+    impl Default for Comtrgsel2 {
+        #[inline(always)]
+        fn default() -> Comtrgsel2 {
+            Comtrgsel2(0)
+        }
+    }
+    impl core::fmt::Debug for Comtrgsel2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Comtrgsel2")
+                .field("trgsel", &self.trgsel())
+                .field("comen", &self.comen())
+                .finish()
+        }
+    }
+    #[doc = "desc DMA_TRGSEL0."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct DmaTrgsel0(pub u32);
+    impl DmaTrgsel0 {
+        #[doc = "desc TRGSEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn trgsel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x7f;
+            val as u8
+        }
+        #[doc = "desc TRGSEL."]
+        #[inline(always)]
+        pub const fn set_trgsel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
+        }
+        #[doc = "desc COMEN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn comen(&self) -> u8 {
+            let val = (self.0 >> 30usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc COMEN."]
+        #[inline(always)]
+        pub const fn set_comen(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 30usize)) | (((val as u32) & 0x03) << 30usize);
+        }
+    }
+    impl Default for DmaTrgsel0 {
+        #[inline(always)]
+        fn default() -> DmaTrgsel0 {
+            DmaTrgsel0(0)
+        }
+    }
+    impl core::fmt::Debug for DmaTrgsel0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DmaTrgsel0")
+                .field("trgsel", &self.trgsel())
+                .field("comen", &self.comen())
+                .finish()
+        }
+    }
+    #[doc = "desc DMA_TRGSEL1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct DmaTrgsel1(pub u32);
+    impl DmaTrgsel1 {
+        #[doc = "desc TRGSEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn trgsel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x7f;
+            val as u8
+        }
+        #[doc = "desc TRGSEL."]
+        #[inline(always)]
+        pub const fn set_trgsel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
+        }
+        #[doc = "desc COMEN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn comen(&self) -> u8 {
+            let val = (self.0 >> 30usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc COMEN."]
+        #[inline(always)]
+        pub const fn set_comen(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 30usize)) | (((val as u32) & 0x03) << 30usize);
+        }
+    }
+    impl Default for DmaTrgsel1 {
+        #[inline(always)]
+        fn default() -> DmaTrgsel1 {
+            DmaTrgsel1(0)
+        }
+    }
+    impl core::fmt::Debug for DmaTrgsel1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DmaTrgsel1")
+                .field("trgsel", &self.trgsel())
+                .field("comen", &self.comen())
+                .finish()
+        }
+    }
+    #[doc = "desc DMA_TRGSEL2."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct DmaTrgsel2(pub u32);
+    impl DmaTrgsel2 {
+        #[doc = "desc TRGSEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn trgsel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x7f;
+            val as u8
+        }
+        #[doc = "desc TRGSEL."]
+        #[inline(always)]
+        pub const fn set_trgsel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
+        }
+        #[doc = "desc COMEN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn comen(&self) -> u8 {
+            let val = (self.0 >> 30usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc COMEN."]
+        #[inline(always)]
+        pub const fn set_comen(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 30usize)) | (((val as u32) & 0x03) << 30usize);
+        }
+    }
+    impl Default for DmaTrgsel2 {
+        #[inline(always)]
+        fn default() -> DmaTrgsel2 {
+            DmaTrgsel2(0)
+        }
+    }
+    impl core::fmt::Debug for DmaTrgsel2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DmaTrgsel2")
+                .field("trgsel", &self.trgsel())
+                .field("comen", &self.comen())
+                .finish()
+        }
+    }
+    #[doc = "desc DMA_TRGSEL3."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct DmaTrgsel3(pub u32);
+    impl DmaTrgsel3 {
+        #[doc = "desc TRGSEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn trgsel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x7f;
+            val as u8
+        }
+        #[doc = "desc TRGSEL."]
+        #[inline(always)]
+        pub const fn set_trgsel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
+        }
+        #[doc = "desc COMEN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn comen(&self) -> u8 {
+            let val = (self.0 >> 30usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc COMEN."]
+        #[inline(always)]
+        pub const fn set_comen(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 30usize)) | (((val as u32) & 0x03) << 30usize);
+        }
+    }
+    impl Default for DmaTrgsel3 {
+        #[inline(always)]
+        fn default() -> DmaTrgsel3 {
+            DmaTrgsel3(0)
+        }
+    }
+    impl core::fmt::Debug for DmaTrgsel3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DmaTrgsel3")
+                .field("trgsel", &self.trgsel())
+                .field("comen", &self.comen())
+                .finish()
+        }
+    }
+    #[doc = "desc INTSFTTRG."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Intsfttrg(pub u32);
+    impl Intsfttrg {
+        #[doc = "desc STRG."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn strg(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc STRG."]
+        #[inline(always)]
+        pub const fn set_strg(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+    }
+    impl Default for Intsfttrg {
+        #[inline(always)]
+        fn default() -> Intsfttrg {
+            Intsfttrg(0)
+        }
+    }
+    impl core::fmt::Debug for Intsfttrg {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Intsfttrg")
+                .field("strg", &self.strg())
+                .finish()
+        }
+    }
+    #[doc = "desc PEVNT_TRGSEL12."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct PevntTrgsel12(pub u32);
+    impl PevntTrgsel12 {
+        #[doc = "desc TRGSEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn trgsel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x7f;
+            val as u8
+        }
+        #[doc = "desc TRGSEL."]
+        #[inline(always)]
+        pub const fn set_trgsel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
+        }
+        #[doc = "desc COMEN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn comen(&self) -> u8 {
+            let val = (self.0 >> 30usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc COMEN."]
+        #[inline(always)]
+        pub const fn set_comen(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 30usize)) | (((val as u32) & 0x03) << 30usize);
+        }
+    }
+    impl Default for PevntTrgsel12 {
+        #[inline(always)]
+        fn default() -> PevntTrgsel12 {
+            PevntTrgsel12(0)
+        }
+    }
+    impl core::fmt::Debug for PevntTrgsel12 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PevntTrgsel12")
+                .field("trgsel", &self.trgsel())
+                .field("comen", &self.comen())
+                .finish()
+        }
+    }
+    #[doc = "desc PEVNT_TRGSEL34."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct PevntTrgsel34(pub u32);
+    impl PevntTrgsel34 {
+        #[doc = "desc TRGSEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn trgsel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x7f;
+            val as u8
+        }
+        #[doc = "desc TRGSEL."]
+        #[inline(always)]
+        pub const fn set_trgsel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
+        }
+        #[doc = "desc COMEN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn comen(&self) -> u8 {
+            let val = (self.0 >> 30usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc COMEN."]
+        #[inline(always)]
+        pub const fn set_comen(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 30usize)) | (((val as u32) & 0x03) << 30usize);
+        }
+    }
+    impl Default for PevntTrgsel34 {
+        #[inline(always)]
+        fn default() -> PevntTrgsel34 {
+            PevntTrgsel34(0)
+        }
+    }
+    impl core::fmt::Debug for PevntTrgsel34 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("PevntTrgsel34")
+                .field("trgsel", &self.trgsel())
+                .field("comen", &self.comen())
+                .finish()
+        }
+    }
+    #[doc = "desc PEVNTDIRR1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pevntdirr1(pub u32);
+    impl Pevntdirr1 {
+        #[doc = "desc PDIR."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pdir(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "desc PDIR."]
+        #[inline(always)]
+        pub const fn set_pdir(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Pevntdirr1 {
+        #[inline(always)]
+        fn default() -> Pevntdirr1 {
+            Pevntdirr1(0)
+        }
+    }
+    impl core::fmt::Debug for Pevntdirr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pevntdirr1")
+                .field("pdir", &self.pdir())
+                .finish()
+        }
+    }
+    #[doc = "desc PEVNTDIRR2."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pevntdirr2(pub u32);
+    impl Pevntdirr2 {
+        #[doc = "desc PDIR."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pdir(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "desc PDIR."]
+        #[inline(always)]
+        pub const fn set_pdir(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Pevntdirr2 {
+        #[inline(always)]
+        fn default() -> Pevntdirr2 {
+            Pevntdirr2(0)
+        }
+    }
+    impl core::fmt::Debug for Pevntdirr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pevntdirr2")
+                .field("pdir", &self.pdir())
+                .finish()
+        }
+    }
+    #[doc = "desc PEVNTDIRR3."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pevntdirr3(pub u32);
+    impl Pevntdirr3 {
+        #[doc = "desc PDIR."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pdir(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "desc PDIR."]
+        #[inline(always)]
+        pub const fn set_pdir(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Pevntdirr3 {
+        #[inline(always)]
+        fn default() -> Pevntdirr3 {
+            Pevntdirr3(0)
+        }
+    }
+    impl core::fmt::Debug for Pevntdirr3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pevntdirr3")
+                .field("pdir", &self.pdir())
+                .finish()
+        }
+    }
+    #[doc = "desc PEVNTDIRR4."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pevntdirr4(pub u32);
+    impl Pevntdirr4 {
+        #[doc = "desc PDIR."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pdir(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "desc PDIR."]
+        #[inline(always)]
+        pub const fn set_pdir(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Pevntdirr4 {
+        #[inline(always)]
+        fn default() -> Pevntdirr4 {
+            Pevntdirr4(0)
+        }
+    }
+    impl core::fmt::Debug for Pevntdirr4 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pevntdirr4")
+                .field("pdir", &self.pdir())
+                .finish()
+        }
+    }
+    #[doc = "desc PEVNTFALR1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pevntfalr1(pub u32);
+    impl Pevntfalr1 {
+        #[doc = "desc FAL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fal(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "desc FAL."]
+        #[inline(always)]
+        pub const fn set_fal(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Pevntfalr1 {
+        #[inline(always)]
+        fn default() -> Pevntfalr1 {
+            Pevntfalr1(0)
+        }
+    }
+    impl core::fmt::Debug for Pevntfalr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pevntfalr1")
+                .field("fal", &self.fal())
+                .finish()
+        }
+    }
+    #[doc = "desc PEVNTFALR2."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pevntfalr2(pub u32);
+    impl Pevntfalr2 {
+        #[doc = "desc FAL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fal(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "desc FAL."]
+        #[inline(always)]
+        pub const fn set_fal(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Pevntfalr2 {
+        #[inline(always)]
+        fn default() -> Pevntfalr2 {
+            Pevntfalr2(0)
+        }
+    }
+    impl core::fmt::Debug for Pevntfalr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pevntfalr2")
+                .field("fal", &self.fal())
+                .finish()
+        }
+    }
+    #[doc = "desc PEVNTFALR3."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pevntfalr3(pub u32);
+    impl Pevntfalr3 {
+        #[doc = "desc FAL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fal(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "desc FAL."]
+        #[inline(always)]
+        pub const fn set_fal(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Pevntfalr3 {
+        #[inline(always)]
+        fn default() -> Pevntfalr3 {
+            Pevntfalr3(0)
+        }
+    }
+    impl core::fmt::Debug for Pevntfalr3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pevntfalr3")
+                .field("fal", &self.fal())
+                .finish()
+        }
+    }
+    #[doc = "desc PEVNTFALR4."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pevntfalr4(pub u32);
+    impl Pevntfalr4 {
+        #[doc = "desc FAL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fal(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "desc FAL."]
+        #[inline(always)]
+        pub const fn set_fal(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Pevntfalr4 {
+        #[inline(always)]
+        fn default() -> Pevntfalr4 {
+            Pevntfalr4(0)
+        }
+    }
+    impl core::fmt::Debug for Pevntfalr4 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pevntfalr4")
+                .field("fal", &self.fal())
+                .finish()
+        }
+    }
+    #[doc = "desc PEVNTIDR1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pevntidr1(pub u32);
+    impl Pevntidr1 {
+        #[doc = "desc PIN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pin(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "desc PIN."]
+        #[inline(always)]
+        pub const fn set_pin(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Pevntidr1 {
+        #[inline(always)]
+        fn default() -> Pevntidr1 {
+            Pevntidr1(0)
+        }
+    }
+    impl core::fmt::Debug for Pevntidr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pevntidr1")
+                .field("pin", &self.pin())
+                .finish()
+        }
+    }
+    #[doc = "desc PEVNTIDR2."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pevntidr2(pub u32);
+    impl Pevntidr2 {
+        #[doc = "desc PIN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pin(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "desc PIN."]
+        #[inline(always)]
+        pub const fn set_pin(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Pevntidr2 {
+        #[inline(always)]
+        fn default() -> Pevntidr2 {
+            Pevntidr2(0)
+        }
+    }
+    impl core::fmt::Debug for Pevntidr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pevntidr2")
+                .field("pin", &self.pin())
+                .finish()
+        }
+    }
+    #[doc = "desc PEVNTIDR3."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pevntidr3(pub u32);
+    impl Pevntidr3 {
+        #[doc = "desc PIN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pin(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "desc PIN."]
+        #[inline(always)]
+        pub const fn set_pin(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Pevntidr3 {
+        #[inline(always)]
+        fn default() -> Pevntidr3 {
+            Pevntidr3(0)
+        }
+    }
+    impl core::fmt::Debug for Pevntidr3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pevntidr3")
+                .field("pin", &self.pin())
+                .finish()
+        }
+    }
+    #[doc = "desc PEVNTIDR4."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pevntidr4(pub u32);
+    impl Pevntidr4 {
+        #[doc = "desc PIN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pin(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "desc PIN."]
+        #[inline(always)]
+        pub const fn set_pin(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Pevntidr4 {
+        #[inline(always)]
+        fn default() -> Pevntidr4 {
+            Pevntidr4(0)
+        }
+    }
+    impl core::fmt::Debug for Pevntidr4 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pevntidr4")
+                .field("pin", &self.pin())
+                .finish()
+        }
+    }
+    #[doc = "desc PEVNTNFCR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pevntnfcr(pub u32);
+    impl Pevntnfcr {
+        #[doc = "desc NFEN1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn nfen1(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc NFEN1."]
+        #[inline(always)]
+        pub const fn set_nfen1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc DIVS1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn divs1(&self) -> u8 {
+            let val = (self.0 >> 1usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc DIVS1."]
+        #[inline(always)]
+        pub const fn set_divs1(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 1usize)) | (((val as u32) & 0x03) << 1usize);
+        }
+        #[doc = "desc NFEN2."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn nfen2(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc NFEN2."]
+        #[inline(always)]
+        pub const fn set_nfen2(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "desc DIVS2."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn divs2(&self) -> u8 {
+            let val = (self.0 >> 9usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc DIVS2."]
+        #[inline(always)]
+        pub const fn set_divs2(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 9usize)) | (((val as u32) & 0x03) << 9usize);
+        }
+        #[doc = "desc NFEN3."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn nfen3(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc NFEN3."]
+        #[inline(always)]
+        pub const fn set_nfen3(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "desc DIVS3."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn divs3(&self) -> u8 {
+            let val = (self.0 >> 17usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc DIVS3."]
+        #[inline(always)]
+        pub const fn set_divs3(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 17usize)) | (((val as u32) & 0x03) << 17usize);
+        }
+        #[doc = "desc NFEN4."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn nfen4(&self) -> bool {
+            let val = (self.0 >> 24usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc NFEN4."]
+        #[inline(always)]
+        pub const fn set_nfen4(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
+        }
+        #[doc = "desc DIVS4."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn divs4(&self) -> u8 {
+            let val = (self.0 >> 25usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc DIVS4."]
+        #[inline(always)]
+        pub const fn set_divs4(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 25usize)) | (((val as u32) & 0x03) << 25usize);
+        }
+    }
+    impl Default for Pevntnfcr {
+        #[inline(always)]
+        fn default() -> Pevntnfcr {
+            Pevntnfcr(0)
+        }
+    }
+    impl core::fmt::Debug for Pevntnfcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pevntnfcr")
+                .field("nfen1", &self.nfen1())
+                .field("divs1", &self.divs1())
+                .field("nfen2", &self.nfen2())
+                .field("divs2", &self.divs2())
+                .field("nfen3", &self.nfen3())
+                .field("divs3", &self.divs3())
+                .field("nfen4", &self.nfen4())
+                .field("divs4", &self.divs4())
+                .finish()
+        }
+    }
+    #[doc = "desc PEVNTODR1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pevntodr1(pub u32);
+    impl Pevntodr1 {
+        #[doc = "desc POUT."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pout(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "desc POUT."]
+        #[inline(always)]
+        pub const fn set_pout(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Pevntodr1 {
+        #[inline(always)]
+        fn default() -> Pevntodr1 {
+            Pevntodr1(0)
+        }
+    }
+    impl core::fmt::Debug for Pevntodr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pevntodr1")
+                .field("pout", &self.pout())
+                .finish()
+        }
+    }
+    #[doc = "desc PEVNTODR2."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pevntodr2(pub u32);
+    impl Pevntodr2 {
+        #[doc = "desc POUT."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pout(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "desc POUT."]
+        #[inline(always)]
+        pub const fn set_pout(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Pevntodr2 {
+        #[inline(always)]
+        fn default() -> Pevntodr2 {
+            Pevntodr2(0)
+        }
+    }
+    impl core::fmt::Debug for Pevntodr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pevntodr2")
+                .field("pout", &self.pout())
+                .finish()
+        }
+    }
+    #[doc = "desc PEVNTODR3."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pevntodr3(pub u32);
+    impl Pevntodr3 {
+        #[doc = "desc POUT."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pout(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "desc POUT."]
+        #[inline(always)]
+        pub const fn set_pout(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Pevntodr3 {
+        #[inline(always)]
+        fn default() -> Pevntodr3 {
+            Pevntodr3(0)
+        }
+    }
+    impl core::fmt::Debug for Pevntodr3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pevntodr3")
+                .field("pout", &self.pout())
+                .finish()
+        }
+    }
+    #[doc = "desc PEVNTODR4."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pevntodr4(pub u32);
+    impl Pevntodr4 {
+        #[doc = "desc POUT."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pout(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "desc POUT."]
+        #[inline(always)]
+        pub const fn set_pout(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Pevntodr4 {
+        #[inline(always)]
+        fn default() -> Pevntodr4 {
+            Pevntodr4(0)
+        }
+    }
+    impl core::fmt::Debug for Pevntodr4 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pevntodr4")
+                .field("pout", &self.pout())
+                .finish()
+        }
+    }
+    #[doc = "desc PEVNTORR1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pevntorr1(pub u32);
+    impl Pevntorr1 {
+        #[doc = "desc POR."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn por(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "desc POR."]
+        #[inline(always)]
+        pub const fn set_por(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Pevntorr1 {
+        #[inline(always)]
+        fn default() -> Pevntorr1 {
+            Pevntorr1(0)
+        }
+    }
+    impl core::fmt::Debug for Pevntorr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pevntorr1")
+                .field("por", &self.por())
+                .finish()
+        }
+    }
+    #[doc = "desc PEVNTORR2."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pevntorr2(pub u32);
+    impl Pevntorr2 {
+        #[doc = "desc POR."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn por(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "desc POR."]
+        #[inline(always)]
+        pub const fn set_por(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Pevntorr2 {
+        #[inline(always)]
+        fn default() -> Pevntorr2 {
+            Pevntorr2(0)
+        }
+    }
+    impl core::fmt::Debug for Pevntorr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pevntorr2")
+                .field("por", &self.por())
+                .finish()
+        }
+    }
+    #[doc = "desc PEVNTORR3."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pevntorr3(pub u32);
+    impl Pevntorr3 {
+        #[doc = "desc POR."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn por(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "desc POR."]
+        #[inline(always)]
+        pub const fn set_por(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Pevntorr3 {
+        #[inline(always)]
+        fn default() -> Pevntorr3 {
+            Pevntorr3(0)
+        }
+    }
+    impl core::fmt::Debug for Pevntorr3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pevntorr3")
+                .field("por", &self.por())
+                .finish()
+        }
+    }
+    #[doc = "desc PEVNTORR4."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pevntorr4(pub u32);
+    impl Pevntorr4 {
+        #[doc = "desc POR."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn por(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "desc POR."]
+        #[inline(always)]
+        pub const fn set_por(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Pevntorr4 {
+        #[inline(always)]
+        fn default() -> Pevntorr4 {
+            Pevntorr4(0)
+        }
+    }
+    impl core::fmt::Debug for Pevntorr4 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pevntorr4")
+                .field("por", &self.por())
+                .finish()
+        }
+    }
+    #[doc = "desc PEVNTOSR1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pevntosr1(pub u32);
+    impl Pevntosr1 {
+        #[doc = "desc POS."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pos(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "desc POS."]
+        #[inline(always)]
+        pub const fn set_pos(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Pevntosr1 {
+        #[inline(always)]
+        fn default() -> Pevntosr1 {
+            Pevntosr1(0)
+        }
+    }
+    impl core::fmt::Debug for Pevntosr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pevntosr1")
+                .field("pos", &self.pos())
+                .finish()
+        }
+    }
+    #[doc = "desc PEVNTOSR2."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pevntosr2(pub u32);
+    impl Pevntosr2 {
+        #[doc = "desc POS."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pos(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "desc POS."]
+        #[inline(always)]
+        pub const fn set_pos(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Pevntosr2 {
+        #[inline(always)]
+        fn default() -> Pevntosr2 {
+            Pevntosr2(0)
+        }
+    }
+    impl core::fmt::Debug for Pevntosr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pevntosr2")
+                .field("pos", &self.pos())
+                .finish()
+        }
+    }
+    #[doc = "desc PEVNTOSR3."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pevntosr3(pub u32);
+    impl Pevntosr3 {
+        #[doc = "desc POS."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pos(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "desc POS."]
+        #[inline(always)]
+        pub const fn set_pos(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Pevntosr3 {
+        #[inline(always)]
+        fn default() -> Pevntosr3 {
+            Pevntosr3(0)
+        }
+    }
+    impl core::fmt::Debug for Pevntosr3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pevntosr3")
+                .field("pos", &self.pos())
+                .finish()
+        }
+    }
+    #[doc = "desc PEVNTOSR4."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pevntosr4(pub u32);
+    impl Pevntosr4 {
+        #[doc = "desc POS."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pos(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "desc POS."]
+        #[inline(always)]
+        pub const fn set_pos(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Pevntosr4 {
+        #[inline(always)]
+        fn default() -> Pevntosr4 {
+            Pevntosr4(0)
+        }
+    }
+    impl core::fmt::Debug for Pevntosr4 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pevntosr4")
+                .field("pos", &self.pos())
+                .finish()
+        }
+    }
+    #[doc = "desc PEVNTRISR1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pevntrisr1(pub u32);
+    impl Pevntrisr1 {
+        #[doc = "desc RIS."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ris(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "desc RIS."]
+        #[inline(always)]
+        pub const fn set_ris(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Pevntrisr1 {
+        #[inline(always)]
+        fn default() -> Pevntrisr1 {
+            Pevntrisr1(0)
+        }
+    }
+    impl core::fmt::Debug for Pevntrisr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pevntrisr1")
+                .field("ris", &self.ris())
+                .finish()
+        }
+    }
+    #[doc = "desc PEVNTRISR2."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pevntrisr2(pub u32);
+    impl Pevntrisr2 {
+        #[doc = "desc RIS."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ris(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "desc RIS."]
+        #[inline(always)]
+        pub const fn set_ris(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Pevntrisr2 {
+        #[inline(always)]
+        fn default() -> Pevntrisr2 {
+            Pevntrisr2(0)
+        }
+    }
+    impl core::fmt::Debug for Pevntrisr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pevntrisr2")
+                .field("ris", &self.ris())
+                .finish()
+        }
+    }
+    #[doc = "desc PEVNTRISR3."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pevntrisr3(pub u32);
+    impl Pevntrisr3 {
+        #[doc = "desc RIS."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ris(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "desc RIS."]
+        #[inline(always)]
+        pub const fn set_ris(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Pevntrisr3 {
+        #[inline(always)]
+        fn default() -> Pevntrisr3 {
+            Pevntrisr3(0)
+        }
+    }
+    impl core::fmt::Debug for Pevntrisr3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pevntrisr3")
+                .field("ris", &self.ris())
+                .finish()
+        }
+    }
+    #[doc = "desc PEVNTRISR4."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pevntrisr4(pub u32);
+    impl Pevntrisr4 {
+        #[doc = "desc RIS."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ris(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "desc RIS."]
+        #[inline(always)]
+        pub const fn set_ris(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Pevntrisr4 {
+        #[inline(always)]
+        fn default() -> Pevntrisr4 {
+            Pevntrisr4(0)
+        }
+    }
+    impl core::fmt::Debug for Pevntrisr4 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pevntrisr4")
+                .field("ris", &self.ris())
+                .finish()
+        }
+    }
+    #[doc = "desc TMR0_TRGSEL."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Tmr0Trgsel(pub u32);
+    impl Tmr0Trgsel {
+        #[doc = "desc TRGSEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn trgsel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x7f;
+            val as u8
+        }
+        #[doc = "desc TRGSEL."]
+        #[inline(always)]
+        pub const fn set_trgsel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
+        }
+        #[doc = "desc COMEN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn comen(&self) -> u8 {
+            let val = (self.0 >> 30usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc COMEN."]
+        #[inline(always)]
+        pub const fn set_comen(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 30usize)) | (((val as u32) & 0x03) << 30usize);
+        }
+    }
+    impl Default for Tmr0Trgsel {
+        #[inline(always)]
+        fn default() -> Tmr0Trgsel {
+            Tmr0Trgsel(0)
+        }
+    }
+    impl core::fmt::Debug for Tmr0Trgsel {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Tmr0Trgsel")
+                .field("trgsel", &self.trgsel())
+                .field("comen", &self.comen())
+                .finish()
+        }
+    }
+    #[doc = "desc TMR2_TRGSEL0."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Tmr2Trgsel0(pub u32);
+    impl Tmr2Trgsel0 {
+        #[doc = "desc TRGSEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn trgsel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x7f;
+            val as u8
+        }
+        #[doc = "desc TRGSEL."]
+        #[inline(always)]
+        pub const fn set_trgsel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
+        }
+        #[doc = "desc COMEN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn comen(&self) -> u8 {
+            let val = (self.0 >> 30usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc COMEN."]
+        #[inline(always)]
+        pub const fn set_comen(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 30usize)) | (((val as u32) & 0x03) << 30usize);
+        }
+    }
+    impl Default for Tmr2Trgsel0 {
+        #[inline(always)]
+        fn default() -> Tmr2Trgsel0 {
+            Tmr2Trgsel0(0)
+        }
+    }
+    impl core::fmt::Debug for Tmr2Trgsel0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Tmr2Trgsel0")
+                .field("trgsel", &self.trgsel())
+                .field("comen", &self.comen())
+                .finish()
+        }
+    }
+    #[doc = "desc TMR2_TRGSEL1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Tmr2Trgsel1(pub u32);
+    impl Tmr2Trgsel1 {
+        #[doc = "desc TRGSEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn trgsel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x7f;
+            val as u8
+        }
+        #[doc = "desc TRGSEL."]
+        #[inline(always)]
+        pub const fn set_trgsel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
+        }
+        #[doc = "desc COMEN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn comen(&self) -> u8 {
+            let val = (self.0 >> 30usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc COMEN."]
+        #[inline(always)]
+        pub const fn set_comen(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 30usize)) | (((val as u32) & 0x03) << 30usize);
+        }
+    }
+    impl Default for Tmr2Trgsel1 {
+        #[inline(always)]
+        fn default() -> Tmr2Trgsel1 {
+            Tmr2Trgsel1(0)
+        }
+    }
+    impl core::fmt::Debug for Tmr2Trgsel1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Tmr2Trgsel1")
+                .field("trgsel", &self.trgsel())
+                .field("comen", &self.comen())
+                .finish()
+        }
+    }
+    #[doc = "desc TMR4_TRGSEL."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Tmr4Trgsel(pub u32);
+    impl Tmr4Trgsel {
+        #[doc = "desc TRGSEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn trgsel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x7f;
+            val as u8
+        }
+        #[doc = "desc TRGSEL."]
+        #[inline(always)]
+        pub const fn set_trgsel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
+        }
+        #[doc = "desc COMEN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn comen(&self) -> u8 {
+            let val = (self.0 >> 30usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc COMEN."]
+        #[inline(always)]
+        pub const fn set_comen(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 30usize)) | (((val as u32) & 0x03) << 30usize);
+        }
+    }
+    impl Default for Tmr4Trgsel {
+        #[inline(always)]
+        fn default() -> Tmr4Trgsel {
+            Tmr4Trgsel(0)
+        }
+    }
+    impl core::fmt::Debug for Tmr4Trgsel {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Tmr4Trgsel")
+                .field("trgsel", &self.trgsel())
+                .field("comen", &self.comen())
+                .finish()
+        }
+    }
+    #[doc = "desc TMRA_TRGSEL0."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct TmraTrgsel0(pub u32);
+    impl TmraTrgsel0 {
+        #[doc = "desc TRGSEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn trgsel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x7f;
+            val as u8
+        }
+        #[doc = "desc TRGSEL."]
+        #[inline(always)]
+        pub const fn set_trgsel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
+        }
+        #[doc = "desc COMEN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn comen(&self) -> u8 {
+            let val = (self.0 >> 30usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc COMEN."]
+        #[inline(always)]
+        pub const fn set_comen(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 30usize)) | (((val as u32) & 0x03) << 30usize);
+        }
+    }
+    impl Default for TmraTrgsel0 {
+        #[inline(always)]
+        fn default() -> TmraTrgsel0 {
+            TmraTrgsel0(0)
+        }
+    }
+    impl core::fmt::Debug for TmraTrgsel0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("TmraTrgsel0")
+                .field("trgsel", &self.trgsel())
+                .field("comen", &self.comen())
+                .finish()
+        }
+    }
+    #[doc = "desc TMRA_TRGSEL1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct TmraTrgsel1(pub u32);
+    impl TmraTrgsel1 {
+        #[doc = "desc TRGSEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn trgsel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x7f;
+            val as u8
+        }
+        #[doc = "desc TRGSEL."]
+        #[inline(always)]
+        pub const fn set_trgsel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
+        }
+        #[doc = "desc COMEN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn comen(&self) -> u8 {
+            let val = (self.0 >> 30usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc COMEN."]
+        #[inline(always)]
+        pub const fn set_comen(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 30usize)) | (((val as u32) & 0x03) << 30usize);
+        }
+    }
+    impl Default for TmraTrgsel1 {
+        #[inline(always)]
+        fn default() -> TmraTrgsel1 {
+            TmraTrgsel1(0)
+        }
+    }
+    impl core::fmt::Debug for TmraTrgsel1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("TmraTrgsel1")
+                .field("trgsel", &self.trgsel())
+                .field("comen", &self.comen())
+                .finish()
+        }
+    }
+}

@@ -1,0 +1,4910 @@
+#![allow(clippy::missing_safety_doc)]
+#![allow(clippy::identity_op)]
+#![allow(clippy::unnecessary_cast)]
+#![allow(clippy::erasing_op)]
+
+#[doc = "desc NFC."]
+#[derive(Copy, Clone, Eq, PartialEq)]
+pub struct Nfc {
+    ptr: *mut u8,
+}
+unsafe impl Send for Nfc {}
+unsafe impl Sync for Nfc {}
+impl Nfc {
+    #[inline(always)]
+    pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
+        Self { ptr: ptr as _ }
+    }
+    #[inline(always)]
+    pub const fn as_ptr(&self) -> *mut () {
+        self.ptr as _
+    }
+    #[doc = "desc DATR_BASE."]
+    #[inline(always)]
+    pub const fn datr_base(self) -> crate::common::Reg<u32, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
+    }
+    #[doc = "desc CMDR."]
+    #[inline(always)]
+    pub const fn cmdr(self) -> crate::common::Reg<regs::Cmdr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8000usize) as _) }
+    }
+    #[doc = "desc IDXR0."]
+    #[inline(always)]
+    pub const fn idxr0(self) -> crate::common::Reg<u32, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8004usize) as _) }
+    }
+    #[doc = "desc IENR."]
+    #[inline(always)]
+    pub const fn ienr(self) -> crate::common::Reg<regs::Ienr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8030usize) as _) }
+    }
+    #[doc = "desc ISTR."]
+    #[inline(always)]
+    pub const fn istr(self) -> crate::common::Reg<regs::Istr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8034usize) as _) }
+    }
+    #[doc = "desc IRSR."]
+    #[inline(always)]
+    pub const fn irsr(self) -> crate::common::Reg<regs::Irsr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8038usize) as _) }
+    }
+    #[doc = "desc IDXR1."]
+    #[inline(always)]
+    pub const fn idxr1(self) -> crate::common::Reg<regs::Idxr1, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8048usize) as _) }
+    }
+    #[doc = "desc TMCR0."]
+    #[inline(always)]
+    pub const fn tmcr0(self) -> crate::common::Reg<regs::Tmcr0, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x804cusize) as _) }
+    }
+    #[doc = "desc TMCR1."]
+    #[inline(always)]
+    pub const fn tmcr1(self) -> crate::common::Reg<regs::Tmcr1, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8050usize) as _) }
+    }
+    #[doc = "desc BACR."]
+    #[inline(always)]
+    pub const fn bacr(self) -> crate::common::Reg<regs::Bacr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8054usize) as _) }
+    }
+    #[doc = "desc TMCR2."]
+    #[inline(always)]
+    pub const fn tmcr2(self) -> crate::common::Reg<regs::Tmcr2, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x805cusize) as _) }
+    }
+    #[doc = "desc ECCR0."]
+    #[inline(always)]
+    pub const fn eccr0(self) -> crate::common::Reg<regs::Eccr0, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8060usize) as _) }
+    }
+    #[doc = "desc ECCR1."]
+    #[inline(always)]
+    pub const fn eccr1(self) -> crate::common::Reg<regs::Eccr1, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8064usize) as _) }
+    }
+    #[doc = "desc ECCR2."]
+    #[inline(always)]
+    pub const fn eccr2(self) -> crate::common::Reg<regs::Eccr2, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8068usize) as _) }
+    }
+    #[doc = "desc ECCR3."]
+    #[inline(always)]
+    pub const fn eccr3(self) -> crate::common::Reg<regs::Eccr3, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x806cusize) as _) }
+    }
+    #[doc = "desc ECCR4."]
+    #[inline(always)]
+    pub const fn eccr4(self) -> crate::common::Reg<regs::Eccr4, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8070usize) as _) }
+    }
+    #[doc = "desc ECCR5."]
+    #[inline(always)]
+    pub const fn eccr5(self) -> crate::common::Reg<regs::Eccr5, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8074usize) as _) }
+    }
+    #[doc = "desc ECCR6."]
+    #[inline(always)]
+    pub const fn eccr6(self) -> crate::common::Reg<regs::Eccr6, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8078usize) as _) }
+    }
+    #[doc = "desc ECC_STAT."]
+    #[inline(always)]
+    pub const fn ecc_stat(self) -> crate::common::Reg<regs::EccStat, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x807cusize) as _) }
+    }
+    #[doc = "desc ECCR7."]
+    #[inline(always)]
+    pub const fn eccr7(self) -> crate::common::Reg<regs::Eccr7, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x807cusize) as _) }
+    }
+    #[doc = "desc ECC_SYND0_0."]
+    #[inline(always)]
+    pub const fn ecc_synd0_0(self) -> crate::common::Reg<regs::EccSynd00, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8080usize) as _) }
+    }
+    #[doc = "desc ECCR8."]
+    #[inline(always)]
+    pub const fn eccr8(self) -> crate::common::Reg<regs::Eccr8, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8080usize) as _) }
+    }
+    #[doc = "desc ECC_SYND0_1."]
+    #[inline(always)]
+    pub const fn ecc_synd0_1(self) -> crate::common::Reg<regs::EccSynd01, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8084usize) as _) }
+    }
+    #[doc = "desc ECCR9."]
+    #[inline(always)]
+    pub const fn eccr9(self) -> crate::common::Reg<regs::Eccr9, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8084usize) as _) }
+    }
+    #[doc = "desc ECC_SYND0_2."]
+    #[inline(always)]
+    pub const fn ecc_synd0_2(self) -> crate::common::Reg<regs::EccSynd02, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8088usize) as _) }
+    }
+    #[doc = "desc ECCR10."]
+    #[inline(always)]
+    pub const fn eccr10(self) -> crate::common::Reg<regs::Eccr10, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8088usize) as _) }
+    }
+    #[doc = "desc ECC_SYND0_3."]
+    #[inline(always)]
+    pub const fn ecc_synd0_3(self) -> crate::common::Reg<regs::EccSynd03, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x808cusize) as _) }
+    }
+    #[doc = "desc ECCR11."]
+    #[inline(always)]
+    pub const fn eccr11(self) -> crate::common::Reg<regs::Eccr11, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x808cusize) as _) }
+    }
+    #[doc = "desc ECC_SYND1_0."]
+    #[inline(always)]
+    pub const fn ecc_synd1_0(self) -> crate::common::Reg<regs::EccSynd10, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8090usize) as _) }
+    }
+    #[doc = "desc ECCR12."]
+    #[inline(always)]
+    pub const fn eccr12(self) -> crate::common::Reg<regs::Eccr12, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8090usize) as _) }
+    }
+    #[doc = "desc ECC_SYND1_1."]
+    #[inline(always)]
+    pub const fn ecc_synd1_1(self) -> crate::common::Reg<regs::EccSynd11, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8094usize) as _) }
+    }
+    #[doc = "desc ECCR13."]
+    #[inline(always)]
+    pub const fn eccr13(self) -> crate::common::Reg<regs::Eccr13, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8094usize) as _) }
+    }
+    #[doc = "desc ECC_SYND1_2."]
+    #[inline(always)]
+    pub const fn ecc_synd1_2(self) -> crate::common::Reg<regs::EccSynd12, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8098usize) as _) }
+    }
+    #[doc = "desc ECCR14."]
+    #[inline(always)]
+    pub const fn eccr14(self) -> crate::common::Reg<regs::Eccr14, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8098usize) as _) }
+    }
+    #[doc = "desc ECC_SYND1_3."]
+    #[inline(always)]
+    pub const fn ecc_synd1_3(self) -> crate::common::Reg<regs::EccSynd13, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x809cusize) as _) }
+    }
+    #[doc = "desc ECCR15."]
+    #[inline(always)]
+    pub const fn eccr15(self) -> crate::common::Reg<regs::Eccr15, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x809cusize) as _) }
+    }
+    #[doc = "desc ECC_SYND2_0."]
+    #[inline(always)]
+    pub const fn ecc_synd2_0(self) -> crate::common::Reg<regs::EccSynd20, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x80a0usize) as _) }
+    }
+    #[doc = "desc ECC_SYND2_1."]
+    #[inline(always)]
+    pub const fn ecc_synd2_1(self) -> crate::common::Reg<regs::EccSynd21, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x80a4usize) as _) }
+    }
+    #[doc = "desc ECC_SYND2_2."]
+    #[inline(always)]
+    pub const fn ecc_synd2_2(self) -> crate::common::Reg<regs::EccSynd22, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x80a8usize) as _) }
+    }
+    #[doc = "desc ECC_SYND2_3."]
+    #[inline(always)]
+    pub const fn ecc_synd2_3(self) -> crate::common::Reg<regs::EccSynd23, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x80acusize) as _) }
+    }
+    #[doc = "desc ECC_SYND3_0."]
+    #[inline(always)]
+    pub const fn ecc_synd3_0(self) -> crate::common::Reg<regs::EccSynd30, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x80b0usize) as _) }
+    }
+    #[doc = "desc ECC_SYND3_1."]
+    #[inline(always)]
+    pub const fn ecc_synd3_1(self) -> crate::common::Reg<regs::EccSynd31, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x80b4usize) as _) }
+    }
+    #[doc = "desc ECC_SYND3_2."]
+    #[inline(always)]
+    pub const fn ecc_synd3_2(self) -> crate::common::Reg<regs::EccSynd32, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x80b8usize) as _) }
+    }
+    #[doc = "desc ECC_SYND3_3."]
+    #[inline(always)]
+    pub const fn ecc_synd3_3(self) -> crate::common::Reg<regs::EccSynd33, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x80bcusize) as _) }
+    }
+    #[doc = "desc ECC_SYND4_0."]
+    #[inline(always)]
+    pub const fn ecc_synd4_0(self) -> crate::common::Reg<regs::EccSynd40, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x80c0usize) as _) }
+    }
+    #[doc = "desc ECC_SYND4_1."]
+    #[inline(always)]
+    pub const fn ecc_synd4_1(self) -> crate::common::Reg<regs::EccSynd41, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x80c4usize) as _) }
+    }
+    #[doc = "desc ECC_SYND4_2."]
+    #[inline(always)]
+    pub const fn ecc_synd4_2(self) -> crate::common::Reg<regs::EccSynd42, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x80c8usize) as _) }
+    }
+    #[doc = "desc ECC_SYND4_3."]
+    #[inline(always)]
+    pub const fn ecc_synd4_3(self) -> crate::common::Reg<regs::EccSynd43, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x80ccusize) as _) }
+    }
+    #[doc = "desc ECC_SYND5_0."]
+    #[inline(always)]
+    pub const fn ecc_synd5_0(self) -> crate::common::Reg<regs::EccSynd50, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x80d0usize) as _) }
+    }
+    #[doc = "desc ECC_SYND5_1."]
+    #[inline(always)]
+    pub const fn ecc_synd5_1(self) -> crate::common::Reg<regs::EccSynd51, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x80d4usize) as _) }
+    }
+    #[doc = "desc ECC_SYND5_2."]
+    #[inline(always)]
+    pub const fn ecc_synd5_2(self) -> crate::common::Reg<regs::EccSynd52, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x80d8usize) as _) }
+    }
+    #[doc = "desc ECC_SYND5_3."]
+    #[inline(always)]
+    pub const fn ecc_synd5_3(self) -> crate::common::Reg<regs::EccSynd53, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x80dcusize) as _) }
+    }
+    #[doc = "desc ECC_SYND6_0."]
+    #[inline(always)]
+    pub const fn ecc_synd6_0(self) -> crate::common::Reg<regs::EccSynd60, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x80e0usize) as _) }
+    }
+    #[doc = "desc ECC_SYND6_1."]
+    #[inline(always)]
+    pub const fn ecc_synd6_1(self) -> crate::common::Reg<regs::EccSynd61, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x80e4usize) as _) }
+    }
+    #[doc = "desc ECC_SYND6_2."]
+    #[inline(always)]
+    pub const fn ecc_synd6_2(self) -> crate::common::Reg<regs::EccSynd62, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x80e8usize) as _) }
+    }
+    #[doc = "desc ECC_SYND6_3."]
+    #[inline(always)]
+    pub const fn ecc_synd6_3(self) -> crate::common::Reg<regs::EccSynd63, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x80ecusize) as _) }
+    }
+    #[doc = "desc ECC_SYND7_0."]
+    #[inline(always)]
+    pub const fn ecc_synd7_0(self) -> crate::common::Reg<regs::EccSynd70, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x80f0usize) as _) }
+    }
+    #[doc = "desc ECC_SYND7_1."]
+    #[inline(always)]
+    pub const fn ecc_synd7_1(self) -> crate::common::Reg<regs::EccSynd71, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x80f4usize) as _) }
+    }
+    #[doc = "desc ECC_SYND7_2."]
+    #[inline(always)]
+    pub const fn ecc_synd7_2(self) -> crate::common::Reg<regs::EccSynd72, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x80f8usize) as _) }
+    }
+    #[doc = "desc ECC_SYND7_3."]
+    #[inline(always)]
+    pub const fn ecc_synd7_3(self) -> crate::common::Reg<regs::EccSynd73, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x80fcusize) as _) }
+    }
+    #[doc = "desc ECC_SYND8_0."]
+    #[inline(always)]
+    pub const fn ecc_synd8_0(self) -> crate::common::Reg<regs::EccSynd80, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8100usize) as _) }
+    }
+    #[doc = "desc ECC_SYND8_1."]
+    #[inline(always)]
+    pub const fn ecc_synd8_1(self) -> crate::common::Reg<regs::EccSynd81, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8104usize) as _) }
+    }
+    #[doc = "desc ECC_SYND8_2."]
+    #[inline(always)]
+    pub const fn ecc_synd8_2(self) -> crate::common::Reg<regs::EccSynd82, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8108usize) as _) }
+    }
+    #[doc = "desc ECC_SYND8_3."]
+    #[inline(always)]
+    pub const fn ecc_synd8_3(self) -> crate::common::Reg<regs::EccSynd83, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x810cusize) as _) }
+    }
+    #[doc = "desc ECC_SYND9_0."]
+    #[inline(always)]
+    pub const fn ecc_synd9_0(self) -> crate::common::Reg<regs::EccSynd90, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8110usize) as _) }
+    }
+    #[doc = "desc ECC_SYND9_1."]
+    #[inline(always)]
+    pub const fn ecc_synd9_1(self) -> crate::common::Reg<regs::EccSynd91, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8114usize) as _) }
+    }
+    #[doc = "desc ECC_SYND9_2."]
+    #[inline(always)]
+    pub const fn ecc_synd9_2(self) -> crate::common::Reg<regs::EccSynd92, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8118usize) as _) }
+    }
+    #[doc = "desc ECC_SYND9_3."]
+    #[inline(always)]
+    pub const fn ecc_synd9_3(self) -> crate::common::Reg<regs::EccSynd93, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x811cusize) as _) }
+    }
+    #[doc = "desc ECC_SYND10_0."]
+    #[inline(always)]
+    pub const fn ecc_synd10_0(self) -> crate::common::Reg<regs::EccSynd100, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8120usize) as _) }
+    }
+    #[doc = "desc ECC_SYND10_1."]
+    #[inline(always)]
+    pub const fn ecc_synd10_1(self) -> crate::common::Reg<regs::EccSynd101, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8124usize) as _) }
+    }
+    #[doc = "desc ECC_SYND10_2."]
+    #[inline(always)]
+    pub const fn ecc_synd10_2(self) -> crate::common::Reg<regs::EccSynd102, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8128usize) as _) }
+    }
+    #[doc = "desc ECC_SYND10_3."]
+    #[inline(always)]
+    pub const fn ecc_synd10_3(self) -> crate::common::Reg<regs::EccSynd103, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x812cusize) as _) }
+    }
+    #[doc = "desc ECC_SYND11_0."]
+    #[inline(always)]
+    pub const fn ecc_synd11_0(self) -> crate::common::Reg<regs::EccSynd110, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8130usize) as _) }
+    }
+    #[doc = "desc ECC_SYND11_1."]
+    #[inline(always)]
+    pub const fn ecc_synd11_1(self) -> crate::common::Reg<regs::EccSynd111, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8134usize) as _) }
+    }
+    #[doc = "desc ECC_SYND11_2."]
+    #[inline(always)]
+    pub const fn ecc_synd11_2(self) -> crate::common::Reg<regs::EccSynd112, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8138usize) as _) }
+    }
+    #[doc = "desc ECC_SYND11_3."]
+    #[inline(always)]
+    pub const fn ecc_synd11_3(self) -> crate::common::Reg<regs::EccSynd113, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x813cusize) as _) }
+    }
+    #[doc = "desc ECC_SYND12_0."]
+    #[inline(always)]
+    pub const fn ecc_synd12_0(self) -> crate::common::Reg<regs::EccSynd120, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8140usize) as _) }
+    }
+    #[doc = "desc ECC_SYND12_1."]
+    #[inline(always)]
+    pub const fn ecc_synd12_1(self) -> crate::common::Reg<regs::EccSynd121, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8144usize) as _) }
+    }
+    #[doc = "desc ECC_SYND12_2."]
+    #[inline(always)]
+    pub const fn ecc_synd12_2(self) -> crate::common::Reg<regs::EccSynd122, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8148usize) as _) }
+    }
+    #[doc = "desc ECC_SYND12_3."]
+    #[inline(always)]
+    pub const fn ecc_synd12_3(self) -> crate::common::Reg<regs::EccSynd123, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x814cusize) as _) }
+    }
+    #[doc = "desc ECC_SYND13_0."]
+    #[inline(always)]
+    pub const fn ecc_synd13_0(self) -> crate::common::Reg<regs::EccSynd130, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8150usize) as _) }
+    }
+    #[doc = "desc ECC_SYND13_1."]
+    #[inline(always)]
+    pub const fn ecc_synd13_1(self) -> crate::common::Reg<regs::EccSynd131, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8154usize) as _) }
+    }
+    #[doc = "desc ECC_SYND13_2."]
+    #[inline(always)]
+    pub const fn ecc_synd13_2(self) -> crate::common::Reg<regs::EccSynd132, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8158usize) as _) }
+    }
+    #[doc = "desc ECC_SYND13_3."]
+    #[inline(always)]
+    pub const fn ecc_synd13_3(self) -> crate::common::Reg<regs::EccSynd133, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x815cusize) as _) }
+    }
+    #[doc = "desc ECC_SYND14_0."]
+    #[inline(always)]
+    pub const fn ecc_synd14_0(self) -> crate::common::Reg<regs::EccSynd140, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8160usize) as _) }
+    }
+    #[doc = "desc ECC_SYND14_1."]
+    #[inline(always)]
+    pub const fn ecc_synd14_1(self) -> crate::common::Reg<regs::EccSynd141, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8164usize) as _) }
+    }
+    #[doc = "desc ECC_SYND14_2."]
+    #[inline(always)]
+    pub const fn ecc_synd14_2(self) -> crate::common::Reg<regs::EccSynd142, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8168usize) as _) }
+    }
+    #[doc = "desc ECC_SYND14_3."]
+    #[inline(always)]
+    pub const fn ecc_synd14_3(self) -> crate::common::Reg<regs::EccSynd143, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x816cusize) as _) }
+    }
+    #[doc = "desc ECC_SYND15_0."]
+    #[inline(always)]
+    pub const fn ecc_synd15_0(self) -> crate::common::Reg<regs::EccSynd150, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8170usize) as _) }
+    }
+    #[doc = "desc ECC_SYND15_1."]
+    #[inline(always)]
+    pub const fn ecc_synd15_1(self) -> crate::common::Reg<regs::EccSynd151, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8174usize) as _) }
+    }
+    #[doc = "desc ECC_SYND15_2."]
+    #[inline(always)]
+    pub const fn ecc_synd15_2(self) -> crate::common::Reg<regs::EccSynd152, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8178usize) as _) }
+    }
+    #[doc = "desc ECC_SYND15_3."]
+    #[inline(always)]
+    pub const fn ecc_synd15_3(self) -> crate::common::Reg<regs::EccSynd153, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x817cusize) as _) }
+    }
+}
+pub mod regs {
+    #[doc = "desc BACR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Bacr(pub u32);
+    impl Bacr {
+        #[doc = "desc SIZE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn size(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x07;
+            val as u8
+        }
+        #[doc = "desc SIZE."]
+        #[inline(always)]
+        pub const fn set_size(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
+        }
+        #[doc = "desc B16BIT."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn b16bit(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc B16BIT."]
+        #[inline(always)]
+        pub const fn set_b16bit(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc BANK."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn bank(&self) -> u8 {
+            let val = (self.0 >> 6usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc BANK."]
+        #[inline(always)]
+        pub const fn set_bank(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 6usize)) | (((val as u32) & 0x03) << 6usize);
+        }
+        #[doc = "desc PAGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn page(&self) -> u8 {
+            let val = (self.0 >> 8usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc PAGE."]
+        #[inline(always)]
+        pub const fn set_page(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 8usize)) | (((val as u32) & 0x03) << 8usize);
+        }
+        #[doc = "desc WP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn wp(&self) -> bool {
+            let val = (self.0 >> 10usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc WP."]
+        #[inline(always)]
+        pub const fn set_wp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
+        }
+        #[doc = "desc ECCM."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn eccm(&self) -> u8 {
+            let val = (self.0 >> 11usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc ECCM."]
+        #[inline(always)]
+        pub const fn set_eccm(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 11usize)) | (((val as u32) & 0x03) << 11usize);
+        }
+        #[doc = "desc RAC."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rac(&self) -> bool {
+            let val = (self.0 >> 13usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RAC."]
+        #[inline(always)]
+        pub const fn set_rac(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
+        }
+        #[doc = "desc SCS."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn scs(&self) -> u8 {
+            let val = (self.0 >> 16usize) & 0xff;
+            val as u8
+        }
+        #[doc = "desc SCS."]
+        #[inline(always)]
+        pub const fn set_scs(&mut self, val: u8) {
+            self.0 = (self.0 & !(0xff << 16usize)) | (((val as u32) & 0xff) << 16usize);
+        }
+    }
+    impl Default for Bacr {
+        #[inline(always)]
+        fn default() -> Bacr {
+            Bacr(0)
+        }
+    }
+    impl core::fmt::Debug for Bacr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Bacr")
+                .field("size", &self.size())
+                .field("b16bit", &self.b16bit())
+                .field("bank", &self.bank())
+                .field("page", &self.page())
+                .field("wp", &self.wp())
+                .field("eccm", &self.eccm())
+                .field("rac", &self.rac())
+                .field("scs", &self.scs())
+                .finish()
+        }
+    }
+    #[doc = "desc CMDR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cmdr(pub u32);
+    impl Cmdr {
+        #[doc = "desc CMD."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn cmd(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0xff;
+            val as u8
+        }
+        #[doc = "desc CMD."]
+        #[inline(always)]
+        pub const fn set_cmd(&mut self, val: u8) {
+            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
+        }
+        #[doc = "desc ARG."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn arg(&self) -> u32 {
+            let val = (self.0 >> 8usize) & 0x00ff_ffff;
+            val as u32
+        }
+        #[doc = "desc ARG."]
+        #[inline(always)]
+        pub const fn set_arg(&mut self, val: u32) {
+            self.0 = (self.0 & !(0x00ff_ffff << 8usize)) | (((val as u32) & 0x00ff_ffff) << 8usize);
+        }
+    }
+    impl Default for Cmdr {
+        #[inline(always)]
+        fn default() -> Cmdr {
+            Cmdr(0)
+        }
+    }
+    impl core::fmt::Debug for Cmdr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cmdr")
+                .field("cmd", &self.cmd())
+                .field("arg", &self.arg())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_STAT."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccStat(pub u32);
+    impl EccStat {
+        #[doc = "desc ERRSEC."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn errsec(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "desc ERRSEC."]
+        #[inline(always)]
+        pub const fn set_errsec(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for EccStat {
+        #[inline(always)]
+        fn default() -> EccStat {
+            EccStat(0)
+        }
+    }
+    impl core::fmt::Debug for EccStat {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccStat")
+                .field("errsec", &self.errsec())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND0_0."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd00(pub u32);
+    impl EccSynd00 {
+        #[doc = "desc S1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S1."]
+        #[inline(always)]
+        pub const fn set_s1(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S2."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S2."]
+        #[inline(always)]
+        pub const fn set_s2(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd00 {
+        #[inline(always)]
+        fn default() -> EccSynd00 {
+            EccSynd00(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd00 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd00")
+                .field("s1", &self.s1())
+                .field("s2", &self.s2())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND0_1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd01(pub u32);
+    impl EccSynd01 {
+        #[doc = "desc S3."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s3(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S3."]
+        #[inline(always)]
+        pub const fn set_s3(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S4."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s4(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S4."]
+        #[inline(always)]
+        pub const fn set_s4(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd01 {
+        #[inline(always)]
+        fn default() -> EccSynd01 {
+            EccSynd01(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd01 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd01")
+                .field("s3", &self.s3())
+                .field("s4", &self.s4())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND0_2."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd02(pub u32);
+    impl EccSynd02 {
+        #[doc = "desc S5."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s5(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S5."]
+        #[inline(always)]
+        pub const fn set_s5(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S6."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s6(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S6."]
+        #[inline(always)]
+        pub const fn set_s6(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd02 {
+        #[inline(always)]
+        fn default() -> EccSynd02 {
+            EccSynd02(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd02 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd02")
+                .field("s5", &self.s5())
+                .field("s6", &self.s6())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND0_3."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd03(pub u32);
+    impl EccSynd03 {
+        #[doc = "desc S7."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s7(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S7."]
+        #[inline(always)]
+        pub const fn set_s7(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S8."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s8(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S8."]
+        #[inline(always)]
+        pub const fn set_s8(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd03 {
+        #[inline(always)]
+        fn default() -> EccSynd03 {
+            EccSynd03(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd03 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd03")
+                .field("s7", &self.s7())
+                .field("s8", &self.s8())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND1_0."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd10(pub u32);
+    impl EccSynd10 {
+        #[doc = "desc S1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S1."]
+        #[inline(always)]
+        pub const fn set_s1(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S2."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S2."]
+        #[inline(always)]
+        pub const fn set_s2(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd10 {
+        #[inline(always)]
+        fn default() -> EccSynd10 {
+            EccSynd10(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd10 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd10")
+                .field("s1", &self.s1())
+                .field("s2", &self.s2())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND10_0."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd100(pub u32);
+    impl EccSynd100 {
+        #[doc = "desc S1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S1."]
+        #[inline(always)]
+        pub const fn set_s1(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S2."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S2."]
+        #[inline(always)]
+        pub const fn set_s2(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd100 {
+        #[inline(always)]
+        fn default() -> EccSynd100 {
+            EccSynd100(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd100 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd100")
+                .field("s1", &self.s1())
+                .field("s2", &self.s2())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND10_1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd101(pub u32);
+    impl EccSynd101 {
+        #[doc = "desc S3."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s3(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S3."]
+        #[inline(always)]
+        pub const fn set_s3(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S4."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s4(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S4."]
+        #[inline(always)]
+        pub const fn set_s4(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd101 {
+        #[inline(always)]
+        fn default() -> EccSynd101 {
+            EccSynd101(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd101 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd101")
+                .field("s3", &self.s3())
+                .field("s4", &self.s4())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND10_2."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd102(pub u32);
+    impl EccSynd102 {
+        #[doc = "desc S5."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s5(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S5."]
+        #[inline(always)]
+        pub const fn set_s5(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S6."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s6(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S6."]
+        #[inline(always)]
+        pub const fn set_s6(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd102 {
+        #[inline(always)]
+        fn default() -> EccSynd102 {
+            EccSynd102(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd102 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd102")
+                .field("s5", &self.s5())
+                .field("s6", &self.s6())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND10_3."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd103(pub u32);
+    impl EccSynd103 {
+        #[doc = "desc S7."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s7(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S7."]
+        #[inline(always)]
+        pub const fn set_s7(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S8."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s8(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S8."]
+        #[inline(always)]
+        pub const fn set_s8(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd103 {
+        #[inline(always)]
+        fn default() -> EccSynd103 {
+            EccSynd103(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd103 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd103")
+                .field("s7", &self.s7())
+                .field("s8", &self.s8())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND1_1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd11(pub u32);
+    impl EccSynd11 {
+        #[doc = "desc S3."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s3(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S3."]
+        #[inline(always)]
+        pub const fn set_s3(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S4."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s4(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S4."]
+        #[inline(always)]
+        pub const fn set_s4(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd11 {
+        #[inline(always)]
+        fn default() -> EccSynd11 {
+            EccSynd11(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd11 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd11")
+                .field("s3", &self.s3())
+                .field("s4", &self.s4())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND11_0."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd110(pub u32);
+    impl EccSynd110 {
+        #[doc = "desc S1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S1."]
+        #[inline(always)]
+        pub const fn set_s1(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S2."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S2."]
+        #[inline(always)]
+        pub const fn set_s2(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd110 {
+        #[inline(always)]
+        fn default() -> EccSynd110 {
+            EccSynd110(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd110 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd110")
+                .field("s1", &self.s1())
+                .field("s2", &self.s2())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND11_1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd111(pub u32);
+    impl EccSynd111 {
+        #[doc = "desc S3."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s3(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S3."]
+        #[inline(always)]
+        pub const fn set_s3(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S4."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s4(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S4."]
+        #[inline(always)]
+        pub const fn set_s4(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd111 {
+        #[inline(always)]
+        fn default() -> EccSynd111 {
+            EccSynd111(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd111 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd111")
+                .field("s3", &self.s3())
+                .field("s4", &self.s4())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND11_2."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd112(pub u32);
+    impl EccSynd112 {
+        #[doc = "desc S5."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s5(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S5."]
+        #[inline(always)]
+        pub const fn set_s5(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S6."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s6(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S6."]
+        #[inline(always)]
+        pub const fn set_s6(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd112 {
+        #[inline(always)]
+        fn default() -> EccSynd112 {
+            EccSynd112(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd112 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd112")
+                .field("s5", &self.s5())
+                .field("s6", &self.s6())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND11_3."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd113(pub u32);
+    impl EccSynd113 {
+        #[doc = "desc S7."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s7(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S7."]
+        #[inline(always)]
+        pub const fn set_s7(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S8."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s8(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S8."]
+        #[inline(always)]
+        pub const fn set_s8(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd113 {
+        #[inline(always)]
+        fn default() -> EccSynd113 {
+            EccSynd113(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd113 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd113")
+                .field("s7", &self.s7())
+                .field("s8", &self.s8())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND1_2."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd12(pub u32);
+    impl EccSynd12 {
+        #[doc = "desc S5."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s5(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S5."]
+        #[inline(always)]
+        pub const fn set_s5(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S6."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s6(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S6."]
+        #[inline(always)]
+        pub const fn set_s6(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd12 {
+        #[inline(always)]
+        fn default() -> EccSynd12 {
+            EccSynd12(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd12 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd12")
+                .field("s5", &self.s5())
+                .field("s6", &self.s6())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND12_0."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd120(pub u32);
+    impl EccSynd120 {
+        #[doc = "desc S1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S1."]
+        #[inline(always)]
+        pub const fn set_s1(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S2."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S2."]
+        #[inline(always)]
+        pub const fn set_s2(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd120 {
+        #[inline(always)]
+        fn default() -> EccSynd120 {
+            EccSynd120(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd120 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd120")
+                .field("s1", &self.s1())
+                .field("s2", &self.s2())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND12_1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd121(pub u32);
+    impl EccSynd121 {
+        #[doc = "desc S3."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s3(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S3."]
+        #[inline(always)]
+        pub const fn set_s3(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S4."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s4(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S4."]
+        #[inline(always)]
+        pub const fn set_s4(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd121 {
+        #[inline(always)]
+        fn default() -> EccSynd121 {
+            EccSynd121(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd121 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd121")
+                .field("s3", &self.s3())
+                .field("s4", &self.s4())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND12_2."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd122(pub u32);
+    impl EccSynd122 {
+        #[doc = "desc S5."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s5(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S5."]
+        #[inline(always)]
+        pub const fn set_s5(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S6."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s6(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S6."]
+        #[inline(always)]
+        pub const fn set_s6(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd122 {
+        #[inline(always)]
+        fn default() -> EccSynd122 {
+            EccSynd122(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd122 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd122")
+                .field("s5", &self.s5())
+                .field("s6", &self.s6())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND12_3."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd123(pub u32);
+    impl EccSynd123 {
+        #[doc = "desc S7."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s7(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S7."]
+        #[inline(always)]
+        pub const fn set_s7(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S8."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s8(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S8."]
+        #[inline(always)]
+        pub const fn set_s8(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd123 {
+        #[inline(always)]
+        fn default() -> EccSynd123 {
+            EccSynd123(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd123 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd123")
+                .field("s7", &self.s7())
+                .field("s8", &self.s8())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND1_3."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd13(pub u32);
+    impl EccSynd13 {
+        #[doc = "desc S7."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s7(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S7."]
+        #[inline(always)]
+        pub const fn set_s7(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S8."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s8(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S8."]
+        #[inline(always)]
+        pub const fn set_s8(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd13 {
+        #[inline(always)]
+        fn default() -> EccSynd13 {
+            EccSynd13(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd13 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd13")
+                .field("s7", &self.s7())
+                .field("s8", &self.s8())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND13_0."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd130(pub u32);
+    impl EccSynd130 {
+        #[doc = "desc S1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S1."]
+        #[inline(always)]
+        pub const fn set_s1(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S2."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S2."]
+        #[inline(always)]
+        pub const fn set_s2(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd130 {
+        #[inline(always)]
+        fn default() -> EccSynd130 {
+            EccSynd130(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd130 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd130")
+                .field("s1", &self.s1())
+                .field("s2", &self.s2())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND13_1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd131(pub u32);
+    impl EccSynd131 {
+        #[doc = "desc S3."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s3(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S3."]
+        #[inline(always)]
+        pub const fn set_s3(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S4."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s4(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S4."]
+        #[inline(always)]
+        pub const fn set_s4(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd131 {
+        #[inline(always)]
+        fn default() -> EccSynd131 {
+            EccSynd131(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd131 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd131")
+                .field("s3", &self.s3())
+                .field("s4", &self.s4())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND13_2."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd132(pub u32);
+    impl EccSynd132 {
+        #[doc = "desc S5."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s5(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S5."]
+        #[inline(always)]
+        pub const fn set_s5(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S6."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s6(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S6."]
+        #[inline(always)]
+        pub const fn set_s6(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd132 {
+        #[inline(always)]
+        fn default() -> EccSynd132 {
+            EccSynd132(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd132 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd132")
+                .field("s5", &self.s5())
+                .field("s6", &self.s6())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND13_3."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd133(pub u32);
+    impl EccSynd133 {
+        #[doc = "desc S7."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s7(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S7."]
+        #[inline(always)]
+        pub const fn set_s7(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S8."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s8(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S8."]
+        #[inline(always)]
+        pub const fn set_s8(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd133 {
+        #[inline(always)]
+        fn default() -> EccSynd133 {
+            EccSynd133(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd133 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd133")
+                .field("s7", &self.s7())
+                .field("s8", &self.s8())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND14_0."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd140(pub u32);
+    impl EccSynd140 {
+        #[doc = "desc S1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S1."]
+        #[inline(always)]
+        pub const fn set_s1(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S2."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S2."]
+        #[inline(always)]
+        pub const fn set_s2(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd140 {
+        #[inline(always)]
+        fn default() -> EccSynd140 {
+            EccSynd140(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd140 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd140")
+                .field("s1", &self.s1())
+                .field("s2", &self.s2())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND14_1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd141(pub u32);
+    impl EccSynd141 {
+        #[doc = "desc S3."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s3(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S3."]
+        #[inline(always)]
+        pub const fn set_s3(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S4."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s4(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S4."]
+        #[inline(always)]
+        pub const fn set_s4(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd141 {
+        #[inline(always)]
+        fn default() -> EccSynd141 {
+            EccSynd141(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd141 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd141")
+                .field("s3", &self.s3())
+                .field("s4", &self.s4())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND14_2."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd142(pub u32);
+    impl EccSynd142 {
+        #[doc = "desc S5."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s5(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S5."]
+        #[inline(always)]
+        pub const fn set_s5(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S6."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s6(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S6."]
+        #[inline(always)]
+        pub const fn set_s6(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd142 {
+        #[inline(always)]
+        fn default() -> EccSynd142 {
+            EccSynd142(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd142 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd142")
+                .field("s5", &self.s5())
+                .field("s6", &self.s6())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND14_3."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd143(pub u32);
+    impl EccSynd143 {
+        #[doc = "desc S7."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s7(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S7."]
+        #[inline(always)]
+        pub const fn set_s7(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S8."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s8(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S8."]
+        #[inline(always)]
+        pub const fn set_s8(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd143 {
+        #[inline(always)]
+        fn default() -> EccSynd143 {
+            EccSynd143(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd143 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd143")
+                .field("s7", &self.s7())
+                .field("s8", &self.s8())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND15_0."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd150(pub u32);
+    impl EccSynd150 {
+        #[doc = "desc S1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S1."]
+        #[inline(always)]
+        pub const fn set_s1(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S2."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S2."]
+        #[inline(always)]
+        pub const fn set_s2(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd150 {
+        #[inline(always)]
+        fn default() -> EccSynd150 {
+            EccSynd150(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd150 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd150")
+                .field("s1", &self.s1())
+                .field("s2", &self.s2())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND15_1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd151(pub u32);
+    impl EccSynd151 {
+        #[doc = "desc S3."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s3(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S3."]
+        #[inline(always)]
+        pub const fn set_s3(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S4."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s4(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S4."]
+        #[inline(always)]
+        pub const fn set_s4(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd151 {
+        #[inline(always)]
+        fn default() -> EccSynd151 {
+            EccSynd151(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd151 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd151")
+                .field("s3", &self.s3())
+                .field("s4", &self.s4())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND15_2."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd152(pub u32);
+    impl EccSynd152 {
+        #[doc = "desc S5."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s5(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S5."]
+        #[inline(always)]
+        pub const fn set_s5(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S6."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s6(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S6."]
+        #[inline(always)]
+        pub const fn set_s6(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd152 {
+        #[inline(always)]
+        fn default() -> EccSynd152 {
+            EccSynd152(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd152 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd152")
+                .field("s5", &self.s5())
+                .field("s6", &self.s6())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND15_3."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd153(pub u32);
+    impl EccSynd153 {
+        #[doc = "desc S7."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s7(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S7."]
+        #[inline(always)]
+        pub const fn set_s7(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S8."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s8(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S8."]
+        #[inline(always)]
+        pub const fn set_s8(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd153 {
+        #[inline(always)]
+        fn default() -> EccSynd153 {
+            EccSynd153(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd153 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd153")
+                .field("s7", &self.s7())
+                .field("s8", &self.s8())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND2_0."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd20(pub u32);
+    impl EccSynd20 {
+        #[doc = "desc S1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S1."]
+        #[inline(always)]
+        pub const fn set_s1(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S2."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S2."]
+        #[inline(always)]
+        pub const fn set_s2(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd20 {
+        #[inline(always)]
+        fn default() -> EccSynd20 {
+            EccSynd20(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd20 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd20")
+                .field("s1", &self.s1())
+                .field("s2", &self.s2())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND2_1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd21(pub u32);
+    impl EccSynd21 {
+        #[doc = "desc S3."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s3(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S3."]
+        #[inline(always)]
+        pub const fn set_s3(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S4."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s4(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S4."]
+        #[inline(always)]
+        pub const fn set_s4(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd21 {
+        #[inline(always)]
+        fn default() -> EccSynd21 {
+            EccSynd21(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd21 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd21")
+                .field("s3", &self.s3())
+                .field("s4", &self.s4())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND2_2."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd22(pub u32);
+    impl EccSynd22 {
+        #[doc = "desc S5."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s5(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S5."]
+        #[inline(always)]
+        pub const fn set_s5(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S6."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s6(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S6."]
+        #[inline(always)]
+        pub const fn set_s6(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd22 {
+        #[inline(always)]
+        fn default() -> EccSynd22 {
+            EccSynd22(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd22 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd22")
+                .field("s5", &self.s5())
+                .field("s6", &self.s6())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND2_3."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd23(pub u32);
+    impl EccSynd23 {
+        #[doc = "desc S7."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s7(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S7."]
+        #[inline(always)]
+        pub const fn set_s7(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S8."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s8(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S8."]
+        #[inline(always)]
+        pub const fn set_s8(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd23 {
+        #[inline(always)]
+        fn default() -> EccSynd23 {
+            EccSynd23(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd23 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd23")
+                .field("s7", &self.s7())
+                .field("s8", &self.s8())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND3_0."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd30(pub u32);
+    impl EccSynd30 {
+        #[doc = "desc S1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S1."]
+        #[inline(always)]
+        pub const fn set_s1(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S2."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S2."]
+        #[inline(always)]
+        pub const fn set_s2(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd30 {
+        #[inline(always)]
+        fn default() -> EccSynd30 {
+            EccSynd30(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd30 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd30")
+                .field("s1", &self.s1())
+                .field("s2", &self.s2())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND3_1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd31(pub u32);
+    impl EccSynd31 {
+        #[doc = "desc S3."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s3(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S3."]
+        #[inline(always)]
+        pub const fn set_s3(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S4."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s4(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S4."]
+        #[inline(always)]
+        pub const fn set_s4(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd31 {
+        #[inline(always)]
+        fn default() -> EccSynd31 {
+            EccSynd31(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd31 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd31")
+                .field("s3", &self.s3())
+                .field("s4", &self.s4())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND3_2."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd32(pub u32);
+    impl EccSynd32 {
+        #[doc = "desc S5."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s5(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S5."]
+        #[inline(always)]
+        pub const fn set_s5(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S6."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s6(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S6."]
+        #[inline(always)]
+        pub const fn set_s6(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd32 {
+        #[inline(always)]
+        fn default() -> EccSynd32 {
+            EccSynd32(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd32 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd32")
+                .field("s5", &self.s5())
+                .field("s6", &self.s6())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND3_3."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd33(pub u32);
+    impl EccSynd33 {
+        #[doc = "desc S7."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s7(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S7."]
+        #[inline(always)]
+        pub const fn set_s7(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S8."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s8(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S8."]
+        #[inline(always)]
+        pub const fn set_s8(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd33 {
+        #[inline(always)]
+        fn default() -> EccSynd33 {
+            EccSynd33(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd33 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd33")
+                .field("s7", &self.s7())
+                .field("s8", &self.s8())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND4_0."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd40(pub u32);
+    impl EccSynd40 {
+        #[doc = "desc S1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S1."]
+        #[inline(always)]
+        pub const fn set_s1(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S2."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S2."]
+        #[inline(always)]
+        pub const fn set_s2(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd40 {
+        #[inline(always)]
+        fn default() -> EccSynd40 {
+            EccSynd40(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd40 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd40")
+                .field("s1", &self.s1())
+                .field("s2", &self.s2())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND4_1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd41(pub u32);
+    impl EccSynd41 {
+        #[doc = "desc S3."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s3(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S3."]
+        #[inline(always)]
+        pub const fn set_s3(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S4."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s4(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S4."]
+        #[inline(always)]
+        pub const fn set_s4(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd41 {
+        #[inline(always)]
+        fn default() -> EccSynd41 {
+            EccSynd41(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd41 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd41")
+                .field("s3", &self.s3())
+                .field("s4", &self.s4())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND4_2."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd42(pub u32);
+    impl EccSynd42 {
+        #[doc = "desc S5."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s5(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S5."]
+        #[inline(always)]
+        pub const fn set_s5(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S6."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s6(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S6."]
+        #[inline(always)]
+        pub const fn set_s6(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd42 {
+        #[inline(always)]
+        fn default() -> EccSynd42 {
+            EccSynd42(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd42 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd42")
+                .field("s5", &self.s5())
+                .field("s6", &self.s6())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND4_3."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd43(pub u32);
+    impl EccSynd43 {
+        #[doc = "desc S7."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s7(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S7."]
+        #[inline(always)]
+        pub const fn set_s7(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S8."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s8(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S8."]
+        #[inline(always)]
+        pub const fn set_s8(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd43 {
+        #[inline(always)]
+        fn default() -> EccSynd43 {
+            EccSynd43(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd43 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd43")
+                .field("s7", &self.s7())
+                .field("s8", &self.s8())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND5_0."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd50(pub u32);
+    impl EccSynd50 {
+        #[doc = "desc S1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S1."]
+        #[inline(always)]
+        pub const fn set_s1(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S2."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S2."]
+        #[inline(always)]
+        pub const fn set_s2(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd50 {
+        #[inline(always)]
+        fn default() -> EccSynd50 {
+            EccSynd50(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd50 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd50")
+                .field("s1", &self.s1())
+                .field("s2", &self.s2())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND5_1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd51(pub u32);
+    impl EccSynd51 {
+        #[doc = "desc S3."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s3(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S3."]
+        #[inline(always)]
+        pub const fn set_s3(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S4."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s4(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S4."]
+        #[inline(always)]
+        pub const fn set_s4(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd51 {
+        #[inline(always)]
+        fn default() -> EccSynd51 {
+            EccSynd51(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd51 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd51")
+                .field("s3", &self.s3())
+                .field("s4", &self.s4())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND5_2."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd52(pub u32);
+    impl EccSynd52 {
+        #[doc = "desc S5."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s5(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S5."]
+        #[inline(always)]
+        pub const fn set_s5(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S6."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s6(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S6."]
+        #[inline(always)]
+        pub const fn set_s6(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd52 {
+        #[inline(always)]
+        fn default() -> EccSynd52 {
+            EccSynd52(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd52 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd52")
+                .field("s5", &self.s5())
+                .field("s6", &self.s6())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND5_3."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd53(pub u32);
+    impl EccSynd53 {
+        #[doc = "desc S7."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s7(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S7."]
+        #[inline(always)]
+        pub const fn set_s7(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S8."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s8(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S8."]
+        #[inline(always)]
+        pub const fn set_s8(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd53 {
+        #[inline(always)]
+        fn default() -> EccSynd53 {
+            EccSynd53(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd53 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd53")
+                .field("s7", &self.s7())
+                .field("s8", &self.s8())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND6_0."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd60(pub u32);
+    impl EccSynd60 {
+        #[doc = "desc S1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S1."]
+        #[inline(always)]
+        pub const fn set_s1(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S2."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S2."]
+        #[inline(always)]
+        pub const fn set_s2(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd60 {
+        #[inline(always)]
+        fn default() -> EccSynd60 {
+            EccSynd60(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd60 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd60")
+                .field("s1", &self.s1())
+                .field("s2", &self.s2())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND6_1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd61(pub u32);
+    impl EccSynd61 {
+        #[doc = "desc S3."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s3(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S3."]
+        #[inline(always)]
+        pub const fn set_s3(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S4."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s4(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S4."]
+        #[inline(always)]
+        pub const fn set_s4(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd61 {
+        #[inline(always)]
+        fn default() -> EccSynd61 {
+            EccSynd61(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd61 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd61")
+                .field("s3", &self.s3())
+                .field("s4", &self.s4())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND6_2."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd62(pub u32);
+    impl EccSynd62 {
+        #[doc = "desc S5."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s5(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S5."]
+        #[inline(always)]
+        pub const fn set_s5(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S6."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s6(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S6."]
+        #[inline(always)]
+        pub const fn set_s6(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd62 {
+        #[inline(always)]
+        fn default() -> EccSynd62 {
+            EccSynd62(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd62 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd62")
+                .field("s5", &self.s5())
+                .field("s6", &self.s6())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND6_3."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd63(pub u32);
+    impl EccSynd63 {
+        #[doc = "desc S7."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s7(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S7."]
+        #[inline(always)]
+        pub const fn set_s7(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S8."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s8(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S8."]
+        #[inline(always)]
+        pub const fn set_s8(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd63 {
+        #[inline(always)]
+        fn default() -> EccSynd63 {
+            EccSynd63(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd63 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd63")
+                .field("s7", &self.s7())
+                .field("s8", &self.s8())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND7_0."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd70(pub u32);
+    impl EccSynd70 {
+        #[doc = "desc S1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S1."]
+        #[inline(always)]
+        pub const fn set_s1(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S2."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S2."]
+        #[inline(always)]
+        pub const fn set_s2(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd70 {
+        #[inline(always)]
+        fn default() -> EccSynd70 {
+            EccSynd70(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd70 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd70")
+                .field("s1", &self.s1())
+                .field("s2", &self.s2())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND7_1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd71(pub u32);
+    impl EccSynd71 {
+        #[doc = "desc S3."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s3(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S3."]
+        #[inline(always)]
+        pub const fn set_s3(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S4."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s4(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S4."]
+        #[inline(always)]
+        pub const fn set_s4(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd71 {
+        #[inline(always)]
+        fn default() -> EccSynd71 {
+            EccSynd71(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd71 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd71")
+                .field("s3", &self.s3())
+                .field("s4", &self.s4())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND7_2."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd72(pub u32);
+    impl EccSynd72 {
+        #[doc = "desc S5."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s5(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S5."]
+        #[inline(always)]
+        pub const fn set_s5(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S6."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s6(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S6."]
+        #[inline(always)]
+        pub const fn set_s6(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd72 {
+        #[inline(always)]
+        fn default() -> EccSynd72 {
+            EccSynd72(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd72 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd72")
+                .field("s5", &self.s5())
+                .field("s6", &self.s6())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND7_3."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd73(pub u32);
+    impl EccSynd73 {
+        #[doc = "desc S7."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s7(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S7."]
+        #[inline(always)]
+        pub const fn set_s7(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S8."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s8(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S8."]
+        #[inline(always)]
+        pub const fn set_s8(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd73 {
+        #[inline(always)]
+        fn default() -> EccSynd73 {
+            EccSynd73(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd73 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd73")
+                .field("s7", &self.s7())
+                .field("s8", &self.s8())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND8_0."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd80(pub u32);
+    impl EccSynd80 {
+        #[doc = "desc S1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S1."]
+        #[inline(always)]
+        pub const fn set_s1(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S2."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S2."]
+        #[inline(always)]
+        pub const fn set_s2(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd80 {
+        #[inline(always)]
+        fn default() -> EccSynd80 {
+            EccSynd80(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd80 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd80")
+                .field("s1", &self.s1())
+                .field("s2", &self.s2())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND8_1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd81(pub u32);
+    impl EccSynd81 {
+        #[doc = "desc S3."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s3(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S3."]
+        #[inline(always)]
+        pub const fn set_s3(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S4."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s4(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S4."]
+        #[inline(always)]
+        pub const fn set_s4(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd81 {
+        #[inline(always)]
+        fn default() -> EccSynd81 {
+            EccSynd81(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd81 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd81")
+                .field("s3", &self.s3())
+                .field("s4", &self.s4())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND8_2."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd82(pub u32);
+    impl EccSynd82 {
+        #[doc = "desc S5."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s5(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S5."]
+        #[inline(always)]
+        pub const fn set_s5(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S6."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s6(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S6."]
+        #[inline(always)]
+        pub const fn set_s6(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd82 {
+        #[inline(always)]
+        fn default() -> EccSynd82 {
+            EccSynd82(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd82 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd82")
+                .field("s5", &self.s5())
+                .field("s6", &self.s6())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND8_3."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd83(pub u32);
+    impl EccSynd83 {
+        #[doc = "desc S7."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s7(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S7."]
+        #[inline(always)]
+        pub const fn set_s7(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S8."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s8(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S8."]
+        #[inline(always)]
+        pub const fn set_s8(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd83 {
+        #[inline(always)]
+        fn default() -> EccSynd83 {
+            EccSynd83(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd83 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd83")
+                .field("s7", &self.s7())
+                .field("s8", &self.s8())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND9_0."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd90(pub u32);
+    impl EccSynd90 {
+        #[doc = "desc S1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S1."]
+        #[inline(always)]
+        pub const fn set_s1(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S2."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S2."]
+        #[inline(always)]
+        pub const fn set_s2(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd90 {
+        #[inline(always)]
+        fn default() -> EccSynd90 {
+            EccSynd90(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd90 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd90")
+                .field("s1", &self.s1())
+                .field("s2", &self.s2())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND9_1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd91(pub u32);
+    impl EccSynd91 {
+        #[doc = "desc S3."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s3(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S3."]
+        #[inline(always)]
+        pub const fn set_s3(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S4."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s4(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S4."]
+        #[inline(always)]
+        pub const fn set_s4(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd91 {
+        #[inline(always)]
+        fn default() -> EccSynd91 {
+            EccSynd91(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd91 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd91")
+                .field("s3", &self.s3())
+                .field("s4", &self.s4())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND9_2."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd92(pub u32);
+    impl EccSynd92 {
+        #[doc = "desc S5."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s5(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S5."]
+        #[inline(always)]
+        pub const fn set_s5(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S6."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s6(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S6."]
+        #[inline(always)]
+        pub const fn set_s6(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd92 {
+        #[inline(always)]
+        fn default() -> EccSynd92 {
+            EccSynd92(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd92 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd92")
+                .field("s5", &self.s5())
+                .field("s6", &self.s6())
+                .finish()
+        }
+    }
+    #[doc = "desc ECC_SYND9_3."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct EccSynd93(pub u32);
+    impl EccSynd93 {
+        #[doc = "desc S7."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s7(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S7."]
+        #[inline(always)]
+        pub const fn set_s7(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
+        }
+        #[doc = "desc S8."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s8(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x1fff;
+            val as u16
+        }
+        #[doc = "desc S8."]
+        #[inline(always)]
+        pub const fn set_s8(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
+        }
+    }
+    impl Default for EccSynd93 {
+        #[inline(always)]
+        fn default() -> EccSynd93 {
+            EccSynd93(0)
+        }
+    }
+    impl core::fmt::Debug for EccSynd93 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("EccSynd93")
+                .field("s7", &self.s7())
+                .field("s8", &self.s8())
+                .finish()
+        }
+    }
+    #[doc = "desc ECCR0."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Eccr0(pub u32);
+    impl Eccr0 {
+        #[doc = "desc ERRLOC."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn errloc(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x0fff;
+            val as u16
+        }
+        #[doc = "desc ERRLOC."]
+        #[inline(always)]
+        pub const fn set_errloc(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x0fff << 0usize)) | (((val as u32) & 0x0fff) << 0usize);
+        }
+        #[doc = "desc SE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn se(&self) -> bool {
+            let val = (self.0 >> 12usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SE."]
+        #[inline(always)]
+        pub const fn set_se(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        }
+        #[doc = "desc ME."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn me(&self) -> bool {
+            let val = (self.0 >> 13usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ME."]
+        #[inline(always)]
+        pub const fn set_me(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
+        }
+    }
+    impl Default for Eccr0 {
+        #[inline(always)]
+        fn default() -> Eccr0 {
+            Eccr0(0)
+        }
+    }
+    impl core::fmt::Debug for Eccr0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Eccr0")
+                .field("errloc", &self.errloc())
+                .field("se", &self.se())
+                .field("me", &self.me())
+                .finish()
+        }
+    }
+    #[doc = "desc ECCR1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Eccr1(pub u32);
+    impl Eccr1 {
+        #[doc = "desc ERRLOC."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn errloc(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x0fff;
+            val as u16
+        }
+        #[doc = "desc ERRLOC."]
+        #[inline(always)]
+        pub const fn set_errloc(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x0fff << 0usize)) | (((val as u32) & 0x0fff) << 0usize);
+        }
+        #[doc = "desc SE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn se(&self) -> bool {
+            let val = (self.0 >> 12usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SE."]
+        #[inline(always)]
+        pub const fn set_se(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        }
+        #[doc = "desc ME."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn me(&self) -> bool {
+            let val = (self.0 >> 13usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ME."]
+        #[inline(always)]
+        pub const fn set_me(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
+        }
+    }
+    impl Default for Eccr1 {
+        #[inline(always)]
+        fn default() -> Eccr1 {
+            Eccr1(0)
+        }
+    }
+    impl core::fmt::Debug for Eccr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Eccr1")
+                .field("errloc", &self.errloc())
+                .field("se", &self.se())
+                .field("me", &self.me())
+                .finish()
+        }
+    }
+    #[doc = "desc ECCR10."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Eccr10(pub u32);
+    impl Eccr10 {
+        #[doc = "desc ERRLOC."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn errloc(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x0fff;
+            val as u16
+        }
+        #[doc = "desc ERRLOC."]
+        #[inline(always)]
+        pub const fn set_errloc(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x0fff << 0usize)) | (((val as u32) & 0x0fff) << 0usize);
+        }
+        #[doc = "desc SE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn se(&self) -> bool {
+            let val = (self.0 >> 12usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SE."]
+        #[inline(always)]
+        pub const fn set_se(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        }
+        #[doc = "desc ME."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn me(&self) -> bool {
+            let val = (self.0 >> 13usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ME."]
+        #[inline(always)]
+        pub const fn set_me(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
+        }
+    }
+    impl Default for Eccr10 {
+        #[inline(always)]
+        fn default() -> Eccr10 {
+            Eccr10(0)
+        }
+    }
+    impl core::fmt::Debug for Eccr10 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Eccr10")
+                .field("errloc", &self.errloc())
+                .field("se", &self.se())
+                .field("me", &self.me())
+                .finish()
+        }
+    }
+    #[doc = "desc ECCR11."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Eccr11(pub u32);
+    impl Eccr11 {
+        #[doc = "desc ERRLOC."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn errloc(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x0fff;
+            val as u16
+        }
+        #[doc = "desc ERRLOC."]
+        #[inline(always)]
+        pub const fn set_errloc(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x0fff << 0usize)) | (((val as u32) & 0x0fff) << 0usize);
+        }
+        #[doc = "desc SE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn se(&self) -> bool {
+            let val = (self.0 >> 12usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SE."]
+        #[inline(always)]
+        pub const fn set_se(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        }
+        #[doc = "desc ME."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn me(&self) -> bool {
+            let val = (self.0 >> 13usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ME."]
+        #[inline(always)]
+        pub const fn set_me(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
+        }
+    }
+    impl Default for Eccr11 {
+        #[inline(always)]
+        fn default() -> Eccr11 {
+            Eccr11(0)
+        }
+    }
+    impl core::fmt::Debug for Eccr11 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Eccr11")
+                .field("errloc", &self.errloc())
+                .field("se", &self.se())
+                .field("me", &self.me())
+                .finish()
+        }
+    }
+    #[doc = "desc ECCR12."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Eccr12(pub u32);
+    impl Eccr12 {
+        #[doc = "desc ERRLOC."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn errloc(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x0fff;
+            val as u16
+        }
+        #[doc = "desc ERRLOC."]
+        #[inline(always)]
+        pub const fn set_errloc(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x0fff << 0usize)) | (((val as u32) & 0x0fff) << 0usize);
+        }
+        #[doc = "desc SE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn se(&self) -> bool {
+            let val = (self.0 >> 12usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SE."]
+        #[inline(always)]
+        pub const fn set_se(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        }
+        #[doc = "desc ME."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn me(&self) -> bool {
+            let val = (self.0 >> 13usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ME."]
+        #[inline(always)]
+        pub const fn set_me(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
+        }
+    }
+    impl Default for Eccr12 {
+        #[inline(always)]
+        fn default() -> Eccr12 {
+            Eccr12(0)
+        }
+    }
+    impl core::fmt::Debug for Eccr12 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Eccr12")
+                .field("errloc", &self.errloc())
+                .field("se", &self.se())
+                .field("me", &self.me())
+                .finish()
+        }
+    }
+    #[doc = "desc ECCR13."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Eccr13(pub u32);
+    impl Eccr13 {
+        #[doc = "desc ERRLOC."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn errloc(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x0fff;
+            val as u16
+        }
+        #[doc = "desc ERRLOC."]
+        #[inline(always)]
+        pub const fn set_errloc(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x0fff << 0usize)) | (((val as u32) & 0x0fff) << 0usize);
+        }
+        #[doc = "desc SE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn se(&self) -> bool {
+            let val = (self.0 >> 12usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SE."]
+        #[inline(always)]
+        pub const fn set_se(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        }
+        #[doc = "desc ME."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn me(&self) -> bool {
+            let val = (self.0 >> 13usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ME."]
+        #[inline(always)]
+        pub const fn set_me(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
+        }
+    }
+    impl Default for Eccr13 {
+        #[inline(always)]
+        fn default() -> Eccr13 {
+            Eccr13(0)
+        }
+    }
+    impl core::fmt::Debug for Eccr13 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Eccr13")
+                .field("errloc", &self.errloc())
+                .field("se", &self.se())
+                .field("me", &self.me())
+                .finish()
+        }
+    }
+    #[doc = "desc ECCR14."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Eccr14(pub u32);
+    impl Eccr14 {
+        #[doc = "desc ERRLOC."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn errloc(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x0fff;
+            val as u16
+        }
+        #[doc = "desc ERRLOC."]
+        #[inline(always)]
+        pub const fn set_errloc(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x0fff << 0usize)) | (((val as u32) & 0x0fff) << 0usize);
+        }
+        #[doc = "desc SE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn se(&self) -> bool {
+            let val = (self.0 >> 12usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SE."]
+        #[inline(always)]
+        pub const fn set_se(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        }
+        #[doc = "desc ME."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn me(&self) -> bool {
+            let val = (self.0 >> 13usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ME."]
+        #[inline(always)]
+        pub const fn set_me(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
+        }
+    }
+    impl Default for Eccr14 {
+        #[inline(always)]
+        fn default() -> Eccr14 {
+            Eccr14(0)
+        }
+    }
+    impl core::fmt::Debug for Eccr14 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Eccr14")
+                .field("errloc", &self.errloc())
+                .field("se", &self.se())
+                .field("me", &self.me())
+                .finish()
+        }
+    }
+    #[doc = "desc ECCR15."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Eccr15(pub u32);
+    impl Eccr15 {
+        #[doc = "desc ERRLOC."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn errloc(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x0fff;
+            val as u16
+        }
+        #[doc = "desc ERRLOC."]
+        #[inline(always)]
+        pub const fn set_errloc(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x0fff << 0usize)) | (((val as u32) & 0x0fff) << 0usize);
+        }
+        #[doc = "desc SE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn se(&self) -> bool {
+            let val = (self.0 >> 12usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SE."]
+        #[inline(always)]
+        pub const fn set_se(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        }
+        #[doc = "desc ME."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn me(&self) -> bool {
+            let val = (self.0 >> 13usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ME."]
+        #[inline(always)]
+        pub const fn set_me(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
+        }
+    }
+    impl Default for Eccr15 {
+        #[inline(always)]
+        fn default() -> Eccr15 {
+            Eccr15(0)
+        }
+    }
+    impl core::fmt::Debug for Eccr15 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Eccr15")
+                .field("errloc", &self.errloc())
+                .field("se", &self.se())
+                .field("me", &self.me())
+                .finish()
+        }
+    }
+    #[doc = "desc ECCR2."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Eccr2(pub u32);
+    impl Eccr2 {
+        #[doc = "desc ERRLOC."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn errloc(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x0fff;
+            val as u16
+        }
+        #[doc = "desc ERRLOC."]
+        #[inline(always)]
+        pub const fn set_errloc(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x0fff << 0usize)) | (((val as u32) & 0x0fff) << 0usize);
+        }
+        #[doc = "desc SE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn se(&self) -> bool {
+            let val = (self.0 >> 12usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SE."]
+        #[inline(always)]
+        pub const fn set_se(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        }
+        #[doc = "desc ME."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn me(&self) -> bool {
+            let val = (self.0 >> 13usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ME."]
+        #[inline(always)]
+        pub const fn set_me(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
+        }
+    }
+    impl Default for Eccr2 {
+        #[inline(always)]
+        fn default() -> Eccr2 {
+            Eccr2(0)
+        }
+    }
+    impl core::fmt::Debug for Eccr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Eccr2")
+                .field("errloc", &self.errloc())
+                .field("se", &self.se())
+                .field("me", &self.me())
+                .finish()
+        }
+    }
+    #[doc = "desc ECCR3."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Eccr3(pub u32);
+    impl Eccr3 {
+        #[doc = "desc ERRLOC."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn errloc(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x0fff;
+            val as u16
+        }
+        #[doc = "desc ERRLOC."]
+        #[inline(always)]
+        pub const fn set_errloc(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x0fff << 0usize)) | (((val as u32) & 0x0fff) << 0usize);
+        }
+        #[doc = "desc SE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn se(&self) -> bool {
+            let val = (self.0 >> 12usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SE."]
+        #[inline(always)]
+        pub const fn set_se(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        }
+        #[doc = "desc ME."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn me(&self) -> bool {
+            let val = (self.0 >> 13usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ME."]
+        #[inline(always)]
+        pub const fn set_me(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
+        }
+    }
+    impl Default for Eccr3 {
+        #[inline(always)]
+        fn default() -> Eccr3 {
+            Eccr3(0)
+        }
+    }
+    impl core::fmt::Debug for Eccr3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Eccr3")
+                .field("errloc", &self.errloc())
+                .field("se", &self.se())
+                .field("me", &self.me())
+                .finish()
+        }
+    }
+    #[doc = "desc ECCR4."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Eccr4(pub u32);
+    impl Eccr4 {
+        #[doc = "desc ERRLOC."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn errloc(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x0fff;
+            val as u16
+        }
+        #[doc = "desc ERRLOC."]
+        #[inline(always)]
+        pub const fn set_errloc(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x0fff << 0usize)) | (((val as u32) & 0x0fff) << 0usize);
+        }
+        #[doc = "desc SE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn se(&self) -> bool {
+            let val = (self.0 >> 12usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SE."]
+        #[inline(always)]
+        pub const fn set_se(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        }
+        #[doc = "desc ME."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn me(&self) -> bool {
+            let val = (self.0 >> 13usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ME."]
+        #[inline(always)]
+        pub const fn set_me(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
+        }
+    }
+    impl Default for Eccr4 {
+        #[inline(always)]
+        fn default() -> Eccr4 {
+            Eccr4(0)
+        }
+    }
+    impl core::fmt::Debug for Eccr4 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Eccr4")
+                .field("errloc", &self.errloc())
+                .field("se", &self.se())
+                .field("me", &self.me())
+                .finish()
+        }
+    }
+    #[doc = "desc ECCR5."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Eccr5(pub u32);
+    impl Eccr5 {
+        #[doc = "desc ERRLOC."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn errloc(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x0fff;
+            val as u16
+        }
+        #[doc = "desc ERRLOC."]
+        #[inline(always)]
+        pub const fn set_errloc(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x0fff << 0usize)) | (((val as u32) & 0x0fff) << 0usize);
+        }
+        #[doc = "desc SE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn se(&self) -> bool {
+            let val = (self.0 >> 12usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SE."]
+        #[inline(always)]
+        pub const fn set_se(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        }
+        #[doc = "desc ME."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn me(&self) -> bool {
+            let val = (self.0 >> 13usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ME."]
+        #[inline(always)]
+        pub const fn set_me(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
+        }
+    }
+    impl Default for Eccr5 {
+        #[inline(always)]
+        fn default() -> Eccr5 {
+            Eccr5(0)
+        }
+    }
+    impl core::fmt::Debug for Eccr5 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Eccr5")
+                .field("errloc", &self.errloc())
+                .field("se", &self.se())
+                .field("me", &self.me())
+                .finish()
+        }
+    }
+    #[doc = "desc ECCR6."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Eccr6(pub u32);
+    impl Eccr6 {
+        #[doc = "desc ERRLOC."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn errloc(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x0fff;
+            val as u16
+        }
+        #[doc = "desc ERRLOC."]
+        #[inline(always)]
+        pub const fn set_errloc(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x0fff << 0usize)) | (((val as u32) & 0x0fff) << 0usize);
+        }
+        #[doc = "desc SE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn se(&self) -> bool {
+            let val = (self.0 >> 12usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SE."]
+        #[inline(always)]
+        pub const fn set_se(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        }
+        #[doc = "desc ME."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn me(&self) -> bool {
+            let val = (self.0 >> 13usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ME."]
+        #[inline(always)]
+        pub const fn set_me(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
+        }
+    }
+    impl Default for Eccr6 {
+        #[inline(always)]
+        fn default() -> Eccr6 {
+            Eccr6(0)
+        }
+    }
+    impl core::fmt::Debug for Eccr6 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Eccr6")
+                .field("errloc", &self.errloc())
+                .field("se", &self.se())
+                .field("me", &self.me())
+                .finish()
+        }
+    }
+    #[doc = "desc ECCR7."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Eccr7(pub u32);
+    impl Eccr7 {
+        #[doc = "desc ERRLOC."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn errloc(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x0fff;
+            val as u16
+        }
+        #[doc = "desc ERRLOC."]
+        #[inline(always)]
+        pub const fn set_errloc(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x0fff << 0usize)) | (((val as u32) & 0x0fff) << 0usize);
+        }
+        #[doc = "desc SE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn se(&self) -> bool {
+            let val = (self.0 >> 12usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SE."]
+        #[inline(always)]
+        pub const fn set_se(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        }
+        #[doc = "desc ME."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn me(&self) -> bool {
+            let val = (self.0 >> 13usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ME."]
+        #[inline(always)]
+        pub const fn set_me(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
+        }
+    }
+    impl Default for Eccr7 {
+        #[inline(always)]
+        fn default() -> Eccr7 {
+            Eccr7(0)
+        }
+    }
+    impl core::fmt::Debug for Eccr7 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Eccr7")
+                .field("errloc", &self.errloc())
+                .field("se", &self.se())
+                .field("me", &self.me())
+                .finish()
+        }
+    }
+    #[doc = "desc ECCR8."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Eccr8(pub u32);
+    impl Eccr8 {
+        #[doc = "desc ERRLOC."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn errloc(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x0fff;
+            val as u16
+        }
+        #[doc = "desc ERRLOC."]
+        #[inline(always)]
+        pub const fn set_errloc(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x0fff << 0usize)) | (((val as u32) & 0x0fff) << 0usize);
+        }
+        #[doc = "desc SE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn se(&self) -> bool {
+            let val = (self.0 >> 12usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SE."]
+        #[inline(always)]
+        pub const fn set_se(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        }
+        #[doc = "desc ME."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn me(&self) -> bool {
+            let val = (self.0 >> 13usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ME."]
+        #[inline(always)]
+        pub const fn set_me(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
+        }
+    }
+    impl Default for Eccr8 {
+        #[inline(always)]
+        fn default() -> Eccr8 {
+            Eccr8(0)
+        }
+    }
+    impl core::fmt::Debug for Eccr8 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Eccr8")
+                .field("errloc", &self.errloc())
+                .field("se", &self.se())
+                .field("me", &self.me())
+                .finish()
+        }
+    }
+    #[doc = "desc ECCR9."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Eccr9(pub u32);
+    impl Eccr9 {
+        #[doc = "desc ERRLOC."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn errloc(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x0fff;
+            val as u16
+        }
+        #[doc = "desc ERRLOC."]
+        #[inline(always)]
+        pub const fn set_errloc(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x0fff << 0usize)) | (((val as u32) & 0x0fff) << 0usize);
+        }
+        #[doc = "desc SE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn se(&self) -> bool {
+            let val = (self.0 >> 12usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SE."]
+        #[inline(always)]
+        pub const fn set_se(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        }
+        #[doc = "desc ME."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn me(&self) -> bool {
+            let val = (self.0 >> 13usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ME."]
+        #[inline(always)]
+        pub const fn set_me(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
+        }
+    }
+    impl Default for Eccr9 {
+        #[inline(always)]
+        fn default() -> Eccr9 {
+            Eccr9(0)
+        }
+    }
+    impl core::fmt::Debug for Eccr9 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Eccr9")
+                .field("errloc", &self.errloc())
+                .field("se", &self.se())
+                .field("me", &self.me())
+                .finish()
+        }
+    }
+    #[doc = "desc IDXR1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Idxr1(pub u32);
+    impl Idxr1 {
+        #[doc = "desc IDX1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn idx1(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0xff;
+            val as u8
+        }
+        #[doc = "desc IDX1."]
+        #[inline(always)]
+        pub const fn set_idx1(&mut self, val: u8) {
+            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
+        }
+    }
+    impl Default for Idxr1 {
+        #[inline(always)]
+        fn default() -> Idxr1 {
+            Idxr1(0)
+        }
+    }
+    impl core::fmt::Debug for Idxr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Idxr1").field("idx1", &self.idx1()).finish()
+        }
+    }
+    #[doc = "desc IENR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ienr(pub u32);
+    impl Ienr {
+        #[doc = "desc ECCEUEN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ecceuen(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ECCEUEN."]
+        #[inline(always)]
+        pub const fn set_ecceuen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc ECCECEN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn eccecen(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ECCECEN."]
+        #[inline(always)]
+        pub const fn set_eccecen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc ECCCEN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ecccen(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ECCCEN."]
+        #[inline(always)]
+        pub const fn set_ecccen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc ECCEEN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ecceen(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ECCEEN."]
+        #[inline(always)]
+        pub const fn set_ecceen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+        #[doc = "desc ECCDIS."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn eccdis(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ECCDIS."]
+        #[inline(always)]
+        pub const fn set_eccdis(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "desc RBEN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rben(&self) -> u8 {
+            let val = (self.0 >> 8usize) & 0xff;
+            val as u8
+        }
+        #[doc = "desc RBEN."]
+        #[inline(always)]
+        pub const fn set_rben(&mut self, val: u8) {
+            self.0 = (self.0 & !(0xff << 8usize)) | (((val as u32) & 0xff) << 8usize);
+        }
+    }
+    impl Default for Ienr {
+        #[inline(always)]
+        fn default() -> Ienr {
+            Ienr(0)
+        }
+    }
+    impl core::fmt::Debug for Ienr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ienr")
+                .field("ecceuen", &self.ecceuen())
+                .field("eccecen", &self.eccecen())
+                .field("ecccen", &self.ecccen())
+                .field("ecceen", &self.ecceen())
+                .field("eccdis", &self.eccdis())
+                .field("rben", &self.rben())
+                .finish()
+        }
+    }
+    #[doc = "desc IRSR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Irsr(pub u32);
+    impl Irsr {
+        #[doc = "desc ECCEURS."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ecceurs(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ECCEURS."]
+        #[inline(always)]
+        pub const fn set_ecceurs(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc ECCECRS."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn eccecrs(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ECCECRS."]
+        #[inline(always)]
+        pub const fn set_eccecrs(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc ECCCRS."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ecccrs(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ECCCRS."]
+        #[inline(always)]
+        pub const fn set_ecccrs(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc ECCERS."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn eccers(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ECCERS."]
+        #[inline(always)]
+        pub const fn set_eccers(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+        #[doc = "desc RBRS."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rbrs(&self) -> u8 {
+            let val = (self.0 >> 8usize) & 0xff;
+            val as u8
+        }
+        #[doc = "desc RBRS."]
+        #[inline(always)]
+        pub const fn set_rbrs(&mut self, val: u8) {
+            self.0 = (self.0 & !(0xff << 8usize)) | (((val as u32) & 0xff) << 8usize);
+        }
+    }
+    impl Default for Irsr {
+        #[inline(always)]
+        fn default() -> Irsr {
+            Irsr(0)
+        }
+    }
+    impl core::fmt::Debug for Irsr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Irsr")
+                .field("ecceurs", &self.ecceurs())
+                .field("eccecrs", &self.eccecrs())
+                .field("ecccrs", &self.ecccrs())
+                .field("eccers", &self.eccers())
+                .field("rbrs", &self.rbrs())
+                .finish()
+        }
+    }
+    #[doc = "desc ISTR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Istr(pub u32);
+    impl Istr {
+        #[doc = "desc ECCEUST."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ecceust(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ECCEUST."]
+        #[inline(always)]
+        pub const fn set_ecceust(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc ECCECST."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn eccecst(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ECCECST."]
+        #[inline(always)]
+        pub const fn set_eccecst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc ECCCST."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ecccst(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ECCCST."]
+        #[inline(always)]
+        pub const fn set_ecccst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc ECCEST."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn eccest(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ECCEST."]
+        #[inline(always)]
+        pub const fn set_eccest(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+        #[doc = "desc RBST."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rbst(&self) -> u8 {
+            let val = (self.0 >> 8usize) & 0xff;
+            val as u8
+        }
+        #[doc = "desc RBST."]
+        #[inline(always)]
+        pub const fn set_rbst(&mut self, val: u8) {
+            self.0 = (self.0 & !(0xff << 8usize)) | (((val as u32) & 0xff) << 8usize);
+        }
+    }
+    impl Default for Istr {
+        #[inline(always)]
+        fn default() -> Istr {
+            Istr(0)
+        }
+    }
+    impl core::fmt::Debug for Istr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Istr")
+                .field("ecceust", &self.ecceust())
+                .field("eccecst", &self.eccecst())
+                .field("ecccst", &self.ecccst())
+                .field("eccest", &self.eccest())
+                .field("rbst", &self.rbst())
+                .finish()
+        }
+    }
+    #[doc = "desc TMCR0."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Tmcr0(pub u32);
+    impl Tmcr0 {
+        #[doc = "desc TS."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ts(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0xff;
+            val as u8
+        }
+        #[doc = "desc TS."]
+        #[inline(always)]
+        pub const fn set_ts(&mut self, val: u8) {
+            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
+        }
+        #[doc = "desc TWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn twp(&self) -> u8 {
+            let val = (self.0 >> 8usize) & 0xff;
+            val as u8
+        }
+        #[doc = "desc TWP."]
+        #[inline(always)]
+        pub const fn set_twp(&mut self, val: u8) {
+            self.0 = (self.0 & !(0xff << 8usize)) | (((val as u32) & 0xff) << 8usize);
+        }
+        #[doc = "desc TRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn trp(&self) -> u8 {
+            let val = (self.0 >> 16usize) & 0xff;
+            val as u8
+        }
+        #[doc = "desc TRP."]
+        #[inline(always)]
+        pub const fn set_trp(&mut self, val: u8) {
+            self.0 = (self.0 & !(0xff << 16usize)) | (((val as u32) & 0xff) << 16usize);
+        }
+        #[doc = "desc TH."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn th(&self) -> u8 {
+            let val = (self.0 >> 24usize) & 0xff;
+            val as u8
+        }
+        #[doc = "desc TH."]
+        #[inline(always)]
+        pub const fn set_th(&mut self, val: u8) {
+            self.0 = (self.0 & !(0xff << 24usize)) | (((val as u32) & 0xff) << 24usize);
+        }
+    }
+    impl Default for Tmcr0 {
+        #[inline(always)]
+        fn default() -> Tmcr0 {
+            Tmcr0(0)
+        }
+    }
+    impl core::fmt::Debug for Tmcr0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Tmcr0")
+                .field("ts", &self.ts())
+                .field("twp", &self.twp())
+                .field("trp", &self.trp())
+                .field("th", &self.th())
+                .finish()
+        }
+    }
+    #[doc = "desc TMCR1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Tmcr1(pub u32);
+    impl Tmcr1 {
+        #[doc = "desc TWH."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn twh(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0xff;
+            val as u8
+        }
+        #[doc = "desc TWH."]
+        #[inline(always)]
+        pub const fn set_twh(&mut self, val: u8) {
+            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
+        }
+        #[doc = "desc TRH."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn trh(&self) -> u8 {
+            let val = (self.0 >> 8usize) & 0xff;
+            val as u8
+        }
+        #[doc = "desc TRH."]
+        #[inline(always)]
+        pub const fn set_trh(&mut self, val: u8) {
+            self.0 = (self.0 & !(0xff << 8usize)) | (((val as u32) & 0xff) << 8usize);
+        }
+        #[doc = "desc TRR."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn trr(&self) -> u8 {
+            let val = (self.0 >> 16usize) & 0xff;
+            val as u8
+        }
+        #[doc = "desc TRR."]
+        #[inline(always)]
+        pub const fn set_trr(&mut self, val: u8) {
+            self.0 = (self.0 & !(0xff << 16usize)) | (((val as u32) & 0xff) << 16usize);
+        }
+        #[doc = "desc TWB."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn twb(&self) -> u8 {
+            let val = (self.0 >> 24usize) & 0xff;
+            val as u8
+        }
+        #[doc = "desc TWB."]
+        #[inline(always)]
+        pub const fn set_twb(&mut self, val: u8) {
+            self.0 = (self.0 & !(0xff << 24usize)) | (((val as u32) & 0xff) << 24usize);
+        }
+    }
+    impl Default for Tmcr1 {
+        #[inline(always)]
+        fn default() -> Tmcr1 {
+            Tmcr1(0)
+        }
+    }
+    impl core::fmt::Debug for Tmcr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Tmcr1")
+                .field("twh", &self.twh())
+                .field("trh", &self.trh())
+                .field("trr", &self.trr())
+                .field("twb", &self.twb())
+                .finish()
+        }
+    }
+    #[doc = "desc TMCR2."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Tmcr2(pub u32);
+    impl Tmcr2 {
+        #[doc = "desc TCCS."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tccs(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0xff;
+            val as u8
+        }
+        #[doc = "desc TCCS."]
+        #[inline(always)]
+        pub const fn set_tccs(&mut self, val: u8) {
+            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
+        }
+        #[doc = "desc TWTR."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn twtr(&self) -> u8 {
+            let val = (self.0 >> 8usize) & 0xff;
+            val as u8
+        }
+        #[doc = "desc TWTR."]
+        #[inline(always)]
+        pub const fn set_twtr(&mut self, val: u8) {
+            self.0 = (self.0 & !(0xff << 8usize)) | (((val as u32) & 0xff) << 8usize);
+        }
+        #[doc = "desc TRTW."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn trtw(&self) -> u8 {
+            let val = (self.0 >> 16usize) & 0xff;
+            val as u8
+        }
+        #[doc = "desc TRTW."]
+        #[inline(always)]
+        pub const fn set_trtw(&mut self, val: u8) {
+            self.0 = (self.0 & !(0xff << 16usize)) | (((val as u32) & 0xff) << 16usize);
+        }
+        #[doc = "desc TADL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tadl(&self) -> u8 {
+            let val = (self.0 >> 24usize) & 0xff;
+            val as u8
+        }
+        #[doc = "desc TADL."]
+        #[inline(always)]
+        pub const fn set_tadl(&mut self, val: u8) {
+            self.0 = (self.0 & !(0xff << 24usize)) | (((val as u32) & 0xff) << 24usize);
+        }
+    }
+    impl Default for Tmcr2 {
+        #[inline(always)]
+        fn default() -> Tmcr2 {
+            Tmcr2(0)
+        }
+    }
+    impl core::fmt::Debug for Tmcr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Tmcr2")
+                .field("tccs", &self.tccs())
+                .field("twtr", &self.twtr())
+                .field("trtw", &self.trtw())
+                .field("tadl", &self.tadl())
+                .finish()
+        }
+    }
+}

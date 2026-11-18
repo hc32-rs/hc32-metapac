@@ -1,0 +1,5273 @@
+#![allow(clippy::missing_safety_doc)]
+#![allow(clippy::identity_op)]
+#![allow(clippy::unnecessary_cast)]
+#![allow(clippy::erasing_op)]
+
+#[doc = "desc GPIO."]
+#[derive(Copy, Clone, Eq, PartialEq)]
+pub struct Gpio {
+    ptr: *mut u8,
+}
+unsafe impl Send for Gpio {}
+unsafe impl Sync for Gpio {}
+impl Gpio {
+    #[inline(always)]
+    pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
+        Self { ptr: ptr as _ }
+    }
+    #[inline(always)]
+    pub const fn as_ptr(&self) -> *mut () {
+        self.ptr as _
+    }
+    #[doc = "desc P01_SEL."]
+    #[inline(always)]
+    pub const fn p01_sel(self) -> crate::common::Reg<regs::P01Sel, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
+    }
+    #[doc = "desc P02_SEL."]
+    #[inline(always)]
+    pub const fn p02_sel(self) -> crate::common::Reg<regs::P02Sel, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
+    }
+    #[doc = "desc P03_SEL."]
+    #[inline(always)]
+    pub const fn p03_sel(self) -> crate::common::Reg<regs::P03Sel, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
+    }
+    #[doc = "desc P14_SEL."]
+    #[inline(always)]
+    pub const fn p14_sel(self) -> crate::common::Reg<regs::P14Sel, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x50usize) as _) }
+    }
+    #[doc = "desc P15_SEL."]
+    #[inline(always)]
+    pub const fn p15_sel(self) -> crate::common::Reg<regs::P15Sel, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x54usize) as _) }
+    }
+    #[doc = "desc P23_SEL."]
+    #[inline(always)]
+    pub const fn p23_sel(self) -> crate::common::Reg<regs::P23Sel, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8cusize) as _) }
+    }
+    #[doc = "desc P24_SEL."]
+    #[inline(always)]
+    pub const fn p24_sel(self) -> crate::common::Reg<regs::P24Sel, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x90usize) as _) }
+    }
+    #[doc = "desc P25_SEL."]
+    #[inline(always)]
+    pub const fn p25_sel(self) -> crate::common::Reg<regs::P25Sel, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x94usize) as _) }
+    }
+    #[doc = "desc P26_SEL."]
+    #[inline(always)]
+    pub const fn p26_sel(self) -> crate::common::Reg<regs::P26Sel, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x98usize) as _) }
+    }
+    #[doc = "desc P27_SEL."]
+    #[inline(always)]
+    pub const fn p27_sel(self) -> crate::common::Reg<regs::P27Sel, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x9cusize) as _) }
+    }
+    #[doc = "desc P31_SEL."]
+    #[inline(always)]
+    pub const fn p31_sel(self) -> crate::common::Reg<regs::P31Sel, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xc4usize) as _) }
+    }
+    #[doc = "desc P32_SEL."]
+    #[inline(always)]
+    pub const fn p32_sel(self) -> crate::common::Reg<regs::P32Sel, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xc8usize) as _) }
+    }
+    #[doc = "desc P33_SEL."]
+    #[inline(always)]
+    pub const fn p33_sel(self) -> crate::common::Reg<regs::P33Sel, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xccusize) as _) }
+    }
+    #[doc = "desc P34_SEL."]
+    #[inline(always)]
+    pub const fn p34_sel(self) -> crate::common::Reg<regs::P34Sel, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xd0usize) as _) }
+    }
+    #[doc = "desc P35_SEL."]
+    #[inline(always)]
+    pub const fn p35_sel(self) -> crate::common::Reg<regs::P35Sel, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xd4usize) as _) }
+    }
+    #[doc = "desc P36_SEL."]
+    #[inline(always)]
+    pub const fn p36_sel(self) -> crate::common::Reg<regs::P36Sel, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xd8usize) as _) }
+    }
+    #[doc = "desc P0DIR."]
+    #[inline(always)]
+    pub const fn p0dir(self) -> crate::common::Reg<regs::P0dir, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0100usize) as _) }
+    }
+    #[doc = "desc P0IN."]
+    #[inline(always)]
+    pub const fn p0in(self) -> crate::common::Reg<regs::P0in, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0104usize) as _) }
+    }
+    #[doc = "desc P0OUT."]
+    #[inline(always)]
+    pub const fn p0out(self) -> crate::common::Reg<regs::P0out, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0108usize) as _) }
+    }
+    #[doc = "desc P0ADS."]
+    #[inline(always)]
+    pub const fn p0ads(self) -> crate::common::Reg<regs::P0ads, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x010cusize) as _) }
+    }
+    #[doc = "desc P0DR."]
+    #[inline(always)]
+    pub const fn p0dr(self) -> crate::common::Reg<regs::P0dr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x011cusize) as _) }
+    }
+    #[doc = "desc P0PU."]
+    #[inline(always)]
+    pub const fn p0pu(self) -> crate::common::Reg<regs::P0pu, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0120usize) as _) }
+    }
+    #[doc = "desc P0PD."]
+    #[inline(always)]
+    pub const fn p0pd(self) -> crate::common::Reg<regs::P0pd, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0124usize) as _) }
+    }
+    #[doc = "desc P0OD."]
+    #[inline(always)]
+    pub const fn p0od(self) -> crate::common::Reg<regs::P0od, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x012cusize) as _) }
+    }
+    #[doc = "desc P0HIE."]
+    #[inline(always)]
+    pub const fn p0hie(self) -> crate::common::Reg<regs::P0hie, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0130usize) as _) }
+    }
+    #[doc = "desc P0LIE."]
+    #[inline(always)]
+    pub const fn p0lie(self) -> crate::common::Reg<regs::P0lie, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0134usize) as _) }
+    }
+    #[doc = "desc P0RIE."]
+    #[inline(always)]
+    pub const fn p0rie(self) -> crate::common::Reg<regs::P0rie, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0138usize) as _) }
+    }
+    #[doc = "desc P0FIE."]
+    #[inline(always)]
+    pub const fn p0fie(self) -> crate::common::Reg<regs::P0fie, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x013cusize) as _) }
+    }
+    #[doc = "desc P1DIR."]
+    #[inline(always)]
+    pub const fn p1dir(self) -> crate::common::Reg<regs::P1dir, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0140usize) as _) }
+    }
+    #[doc = "desc P1IN."]
+    #[inline(always)]
+    pub const fn p1in(self) -> crate::common::Reg<regs::P1in, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0144usize) as _) }
+    }
+    #[doc = "desc P1OUT."]
+    #[inline(always)]
+    pub const fn p1out(self) -> crate::common::Reg<regs::P1out, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0148usize) as _) }
+    }
+    #[doc = "desc P1ADS."]
+    #[inline(always)]
+    pub const fn p1ads(self) -> crate::common::Reg<regs::P1ads, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x014cusize) as _) }
+    }
+    #[doc = "desc P1DR."]
+    #[inline(always)]
+    pub const fn p1dr(self) -> crate::common::Reg<regs::P1dr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x015cusize) as _) }
+    }
+    #[doc = "desc P1PU."]
+    #[inline(always)]
+    pub const fn p1pu(self) -> crate::common::Reg<regs::P1pu, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0160usize) as _) }
+    }
+    #[doc = "desc P1PD."]
+    #[inline(always)]
+    pub const fn p1pd(self) -> crate::common::Reg<regs::P1pd, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0164usize) as _) }
+    }
+    #[doc = "desc P1OD."]
+    #[inline(always)]
+    pub const fn p1od(self) -> crate::common::Reg<regs::P1od, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x016cusize) as _) }
+    }
+    #[doc = "desc P1HIE."]
+    #[inline(always)]
+    pub const fn p1hie(self) -> crate::common::Reg<regs::P1hie, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0170usize) as _) }
+    }
+    #[doc = "desc P1LIE."]
+    #[inline(always)]
+    pub const fn p1lie(self) -> crate::common::Reg<regs::P1lie, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0174usize) as _) }
+    }
+    #[doc = "desc P1RIE."]
+    #[inline(always)]
+    pub const fn p1rie(self) -> crate::common::Reg<regs::P1rie, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0178usize) as _) }
+    }
+    #[doc = "desc P1FIE."]
+    #[inline(always)]
+    pub const fn p1fie(self) -> crate::common::Reg<regs::P1fie, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x017cusize) as _) }
+    }
+    #[doc = "desc P2DIR."]
+    #[inline(always)]
+    pub const fn p2dir(self) -> crate::common::Reg<regs::P2dir, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0180usize) as _) }
+    }
+    #[doc = "desc P2IN."]
+    #[inline(always)]
+    pub const fn p2in(self) -> crate::common::Reg<regs::P2in, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0184usize) as _) }
+    }
+    #[doc = "desc P2OUT."]
+    #[inline(always)]
+    pub const fn p2out(self) -> crate::common::Reg<regs::P2out, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0188usize) as _) }
+    }
+    #[doc = "desc P2ADS."]
+    #[inline(always)]
+    pub const fn p2ads(self) -> crate::common::Reg<regs::P2ads, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x018cusize) as _) }
+    }
+    #[doc = "desc P2DR."]
+    #[inline(always)]
+    pub const fn p2dr(self) -> crate::common::Reg<regs::P2dr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x019cusize) as _) }
+    }
+    #[doc = "desc P2PU."]
+    #[inline(always)]
+    pub const fn p2pu(self) -> crate::common::Reg<regs::P2pu, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x01a0usize) as _) }
+    }
+    #[doc = "desc P2PD."]
+    #[inline(always)]
+    pub const fn p2pd(self) -> crate::common::Reg<regs::P2pd, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x01a4usize) as _) }
+    }
+    #[doc = "desc P2OD."]
+    #[inline(always)]
+    pub const fn p2od(self) -> crate::common::Reg<regs::P2od, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x01acusize) as _) }
+    }
+    #[doc = "desc P2HIE."]
+    #[inline(always)]
+    pub const fn p2hie(self) -> crate::common::Reg<regs::P2hie, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x01b0usize) as _) }
+    }
+    #[doc = "desc P2LIE."]
+    #[inline(always)]
+    pub const fn p2lie(self) -> crate::common::Reg<regs::P2lie, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x01b4usize) as _) }
+    }
+    #[doc = "desc P2RIE."]
+    #[inline(always)]
+    pub const fn p2rie(self) -> crate::common::Reg<regs::P2rie, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x01b8usize) as _) }
+    }
+    #[doc = "desc P2FIE."]
+    #[inline(always)]
+    pub const fn p2fie(self) -> crate::common::Reg<regs::P2fie, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x01bcusize) as _) }
+    }
+    #[doc = "desc P3DIR."]
+    #[inline(always)]
+    pub const fn p3dir(self) -> crate::common::Reg<regs::P3dir, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x01c0usize) as _) }
+    }
+    #[doc = "desc P3IN."]
+    #[inline(always)]
+    pub const fn p3in(self) -> crate::common::Reg<regs::P3in, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x01c4usize) as _) }
+    }
+    #[doc = "desc P3OUT."]
+    #[inline(always)]
+    pub const fn p3out(self) -> crate::common::Reg<regs::P3out, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x01c8usize) as _) }
+    }
+    #[doc = "desc P3ADS."]
+    #[inline(always)]
+    pub const fn p3ads(self) -> crate::common::Reg<regs::P3ads, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x01ccusize) as _) }
+    }
+    #[doc = "desc P3DR."]
+    #[inline(always)]
+    pub const fn p3dr(self) -> crate::common::Reg<regs::P3dr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x01dcusize) as _) }
+    }
+    #[doc = "desc P3PU."]
+    #[inline(always)]
+    pub const fn p3pu(self) -> crate::common::Reg<regs::P3pu, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x01e0usize) as _) }
+    }
+    #[doc = "desc P3PD."]
+    #[inline(always)]
+    pub const fn p3pd(self) -> crate::common::Reg<regs::P3pd, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x01e4usize) as _) }
+    }
+    #[doc = "desc P3OD."]
+    #[inline(always)]
+    pub const fn p3od(self) -> crate::common::Reg<regs::P3od, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x01ecusize) as _) }
+    }
+    #[doc = "desc P3HIE."]
+    #[inline(always)]
+    pub const fn p3hie(self) -> crate::common::Reg<regs::P3hie, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x01f0usize) as _) }
+    }
+    #[doc = "desc P3LIE."]
+    #[inline(always)]
+    pub const fn p3lie(self) -> crate::common::Reg<regs::P3lie, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x01f4usize) as _) }
+    }
+    #[doc = "desc P3RIE."]
+    #[inline(always)]
+    pub const fn p3rie(self) -> crate::common::Reg<regs::P3rie, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x01f8usize) as _) }
+    }
+    #[doc = "desc P3FIE."]
+    #[inline(always)]
+    pub const fn p3fie(self) -> crate::common::Reg<regs::P3fie, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x01fcusize) as _) }
+    }
+    #[doc = "desc P0STAT."]
+    #[inline(always)]
+    pub const fn p0stat(self) -> crate::common::Reg<regs::P0stat, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0200usize) as _) }
+    }
+    #[doc = "desc P0ICLR."]
+    #[inline(always)]
+    pub const fn p0iclr(self) -> crate::common::Reg<regs::P0iclr, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0210usize) as _) }
+    }
+    #[doc = "desc P1STAT."]
+    #[inline(always)]
+    pub const fn p1stat(self) -> crate::common::Reg<regs::P1stat, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0240usize) as _) }
+    }
+    #[doc = "desc P1ICLR."]
+    #[inline(always)]
+    pub const fn p1iclr(self) -> crate::common::Reg<regs::P1iclr, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0250usize) as _) }
+    }
+    #[doc = "desc P2STAT."]
+    #[inline(always)]
+    pub const fn p2stat(self) -> crate::common::Reg<regs::P2stat, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0280usize) as _) }
+    }
+    #[doc = "desc P2ICLR."]
+    #[inline(always)]
+    pub const fn p2iclr(self) -> crate::common::Reg<regs::P2iclr, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0290usize) as _) }
+    }
+    #[doc = "desc P3STAT."]
+    #[inline(always)]
+    pub const fn p3stat(self) -> crate::common::Reg<regs::P3stat, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x02c0usize) as _) }
+    }
+    #[doc = "desc P3ICLR."]
+    #[inline(always)]
+    pub const fn p3iclr(self) -> crate::common::Reg<regs::P3iclr, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x02d0usize) as _) }
+    }
+    #[doc = "desc CTRL0."]
+    #[inline(always)]
+    pub const fn ctrl0(self) -> crate::common::Reg<regs::Ctrl0, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0300usize) as _) }
+    }
+    #[doc = "desc CTRL1."]
+    #[inline(always)]
+    pub const fn ctrl1(self) -> crate::common::Reg<regs::Ctrl1, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0304usize) as _) }
+    }
+    #[doc = "desc CTRL2."]
+    #[inline(always)]
+    pub const fn ctrl2(self) -> crate::common::Reg<regs::Ctrl2, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0308usize) as _) }
+    }
+    #[doc = "desc CTRL3."]
+    #[inline(always)]
+    pub const fn ctrl3(self) -> crate::common::Reg<regs::Ctrl3, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x030cusize) as _) }
+    }
+    #[doc = "desc CTRL4."]
+    #[inline(always)]
+    pub const fn ctrl4(self) -> crate::common::Reg<regs::Ctrl4, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0310usize) as _) }
+    }
+}
+pub mod regs {
+    #[doc = "desc CTRL0."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ctrl0(pub u32);
+    impl Ctrl0 {
+        #[doc = "desc IESEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn iesel(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc IESEL."]
+        #[inline(always)]
+        pub const fn set_iesel(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+    }
+    impl Default for Ctrl0 {
+        #[inline(always)]
+        fn default() -> Ctrl0 {
+            Ctrl0(0)
+        }
+    }
+    impl core::fmt::Debug for Ctrl0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ctrl0")
+                .field("iesel", &self.iesel())
+                .finish()
+        }
+    }
+    #[doc = "desc CTRL1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ctrl1(pub u32);
+    impl Ctrl1 {
+        #[doc = "desc EXT_CLK_SEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ext_clk_sel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x0f;
+            val as u8
+        }
+        #[doc = "desc EXT_CLK_SEL."]
+        #[inline(always)]
+        pub const fn set_ext_clk_sel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+        }
+        #[doc = "desc SSN_SEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ssn_sel(&self) -> u8 {
+            let val = (self.0 >> 4usize) & 0x0f;
+            val as u8
+        }
+        #[doc = "desc SSN_SEL."]
+        #[inline(always)]
+        pub const fn set_ssn_sel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
+        }
+        #[doc = "desc PCLK_SEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pclk_sel(&self) -> u8 {
+            let val = (self.0 >> 8usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc PCLK_SEL."]
+        #[inline(always)]
+        pub const fn set_pclk_sel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 8usize)) | (((val as u32) & 0x03) << 8usize);
+        }
+        #[doc = "desc HCLK_SEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn hclk_sel(&self) -> u8 {
+            let val = (self.0 >> 10usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc HCLK_SEL."]
+        #[inline(always)]
+        pub const fn set_hclk_sel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 10usize)) | (((val as u32) & 0x03) << 10usize);
+        }
+        #[doc = "desc PCLK_EN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pclk_en(&self) -> bool {
+            let val = (self.0 >> 12usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc PCLK_EN."]
+        #[inline(always)]
+        pub const fn set_pclk_en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        }
+        #[doc = "desc HCLK_EN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn hclk_en(&self) -> bool {
+            let val = (self.0 >> 13usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc HCLK_EN."]
+        #[inline(always)]
+        pub const fn set_hclk_en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
+        }
+        #[doc = "desc IR_POL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ir_pol(&self) -> bool {
+            let val = (self.0 >> 14usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc IR_POL."]
+        #[inline(always)]
+        pub const fn set_ir_pol(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
+        }
+    }
+    impl Default for Ctrl1 {
+        #[inline(always)]
+        fn default() -> Ctrl1 {
+            Ctrl1(0)
+        }
+    }
+    impl core::fmt::Debug for Ctrl1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ctrl1")
+                .field("ext_clk_sel", &self.ext_clk_sel())
+                .field("ssn_sel", &self.ssn_sel())
+                .field("pclk_sel", &self.pclk_sel())
+                .field("hclk_sel", &self.hclk_sel())
+                .field("pclk_en", &self.pclk_en())
+                .field("hclk_en", &self.hclk_en())
+                .field("ir_pol", &self.ir_pol())
+                .finish()
+        }
+    }
+    #[doc = "desc CTRL2."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ctrl2(pub u32);
+    impl Ctrl2 {
+        #[doc = "desc PCA_CAP0_SEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pca_cap0_sel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc PCA_CAP0_SEL."]
+        #[inline(always)]
+        pub const fn set_pca_cap0_sel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u32) & 0x03) << 0usize);
+        }
+        #[doc = "desc PCA_CAP1_SEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pca_cap1_sel(&self) -> u8 {
+            let val = (self.0 >> 2usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc PCA_CAP1_SEL."]
+        #[inline(always)]
+        pub const fn set_pca_cap1_sel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u32) & 0x03) << 2usize);
+        }
+        #[doc = "desc PCA_CAP2_SEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pca_cap2_sel(&self) -> u8 {
+            let val = (self.0 >> 4usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc PCA_CAP2_SEL."]
+        #[inline(always)]
+        pub const fn set_pca_cap2_sel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
+        }
+        #[doc = "desc PCA_CAP3_SEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pca_cap3_sel(&self) -> u8 {
+            let val = (self.0 >> 6usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc PCA_CAP3_SEL."]
+        #[inline(always)]
+        pub const fn set_pca_cap3_sel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 6usize)) | (((val as u32) & 0x03) << 6usize);
+        }
+        #[doc = "desc PCA_CAP4_SEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pca_cap4_sel(&self) -> u8 {
+            let val = (self.0 >> 8usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc PCA_CAP4_SEL."]
+        #[inline(always)]
+        pub const fn set_pca_cap4_sel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 8usize)) | (((val as u32) & 0x03) << 8usize);
+        }
+    }
+    impl Default for Ctrl2 {
+        #[inline(always)]
+        fn default() -> Ctrl2 {
+            Ctrl2(0)
+        }
+    }
+    impl core::fmt::Debug for Ctrl2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ctrl2")
+                .field("pca_cap0_sel", &self.pca_cap0_sel())
+                .field("pca_cap1_sel", &self.pca_cap1_sel())
+                .field("pca_cap2_sel", &self.pca_cap2_sel())
+                .field("pca_cap3_sel", &self.pca_cap3_sel())
+                .field("pca_cap4_sel", &self.pca_cap4_sel())
+                .finish()
+        }
+    }
+    #[doc = "desc CTRL3."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ctrl3(pub u32);
+    impl Ctrl3 {
+        #[doc = "desc TM4_B_SEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tm4_b_sel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc TM4_B_SEL."]
+        #[inline(always)]
+        pub const fn set_tm4_b_sel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u32) & 0x03) << 0usize);
+        }
+        #[doc = "desc TM5_B_SEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tm5_b_sel(&self) -> u8 {
+            let val = (self.0 >> 2usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc TM5_B_SEL."]
+        #[inline(always)]
+        pub const fn set_tm5_b_sel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u32) & 0x03) << 2usize);
+        }
+        #[doc = "desc TM6_B_SEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tm6_b_sel(&self) -> u8 {
+            let val = (self.0 >> 4usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc TM6_B_SEL."]
+        #[inline(always)]
+        pub const fn set_tm6_b_sel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
+        }
+        #[doc = "desc TM4_A_SEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tm4_a_sel(&self) -> u8 {
+            let val = (self.0 >> 6usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc TM4_A_SEL."]
+        #[inline(always)]
+        pub const fn set_tm4_a_sel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 6usize)) | (((val as u32) & 0x03) << 6usize);
+        }
+        #[doc = "desc TM5_A_SEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tm5_a_sel(&self) -> u8 {
+            let val = (self.0 >> 8usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc TM5_A_SEL."]
+        #[inline(always)]
+        pub const fn set_tm5_a_sel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 8usize)) | (((val as u32) & 0x03) << 8usize);
+        }
+        #[doc = "desc TM6_A_SEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tm6_a_sel(&self) -> u8 {
+            let val = (self.0 >> 10usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc TM6_A_SEL."]
+        #[inline(always)]
+        pub const fn set_tm6_a_sel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 10usize)) | (((val as u32) & 0x03) << 10usize);
+        }
+    }
+    impl Default for Ctrl3 {
+        #[inline(always)]
+        fn default() -> Ctrl3 {
+            Ctrl3(0)
+        }
+    }
+    impl core::fmt::Debug for Ctrl3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ctrl3")
+                .field("tm4_b_sel", &self.tm4_b_sel())
+                .field("tm5_b_sel", &self.tm5_b_sel())
+                .field("tm6_b_sel", &self.tm6_b_sel())
+                .field("tm4_a_sel", &self.tm4_a_sel())
+                .field("tm5_a_sel", &self.tm5_a_sel())
+                .field("tm6_a_sel", &self.tm6_a_sel())
+                .finish()
+        }
+    }
+    #[doc = "desc CTRL4."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ctrl4(pub u32);
+    impl Ctrl4 {
+        #[doc = "desc TM0_GATE_SEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tm0_gate_sel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc TM0_GATE_SEL."]
+        #[inline(always)]
+        pub const fn set_tm0_gate_sel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u32) & 0x03) << 0usize);
+        }
+        #[doc = "desc TM1_GATE_SEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tm1_gate_sel(&self) -> u8 {
+            let val = (self.0 >> 2usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc TM1_GATE_SEL."]
+        #[inline(always)]
+        pub const fn set_tm1_gate_sel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u32) & 0x03) << 2usize);
+        }
+        #[doc = "desc TM2_GATE_SEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tm2_gate_sel(&self) -> u8 {
+            let val = (self.0 >> 4usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc TM2_GATE_SEL."]
+        #[inline(always)]
+        pub const fn set_tm2_gate_sel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
+        }
+        #[doc = "desc TM3_GATE_SEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tm3_gate_sel(&self) -> u8 {
+            let val = (self.0 >> 6usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc TM3_GATE_SEL."]
+        #[inline(always)]
+        pub const fn set_tm3_gate_sel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 6usize)) | (((val as u32) & 0x03) << 6usize);
+        }
+    }
+    impl Default for Ctrl4 {
+        #[inline(always)]
+        fn default() -> Ctrl4 {
+            Ctrl4(0)
+        }
+    }
+    impl core::fmt::Debug for Ctrl4 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ctrl4")
+                .field("tm0_gate_sel", &self.tm0_gate_sel())
+                .field("tm1_gate_sel", &self.tm1_gate_sel())
+                .field("tm2_gate_sel", &self.tm2_gate_sel())
+                .field("tm3_gate_sel", &self.tm3_gate_sel())
+                .finish()
+        }
+    }
+    #[doc = "desc P01_SEL."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P01Sel(pub u32);
+    impl P01Sel {
+        #[doc = "desc SEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x07;
+            val as u8
+        }
+        #[doc = "desc SEL."]
+        #[inline(always)]
+        pub const fn set_sel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
+        }
+    }
+    impl Default for P01Sel {
+        #[inline(always)]
+        fn default() -> P01Sel {
+            P01Sel(0)
+        }
+    }
+    impl core::fmt::Debug for P01Sel {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P01Sel").field("sel", &self.sel()).finish()
+        }
+    }
+    #[doc = "desc P02_SEL."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P02Sel(pub u32);
+    impl P02Sel {
+        #[doc = "desc SEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x07;
+            val as u8
+        }
+        #[doc = "desc SEL."]
+        #[inline(always)]
+        pub const fn set_sel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
+        }
+    }
+    impl Default for P02Sel {
+        #[inline(always)]
+        fn default() -> P02Sel {
+            P02Sel(0)
+        }
+    }
+    impl core::fmt::Debug for P02Sel {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P02Sel").field("sel", &self.sel()).finish()
+        }
+    }
+    #[doc = "desc P03_SEL."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P03Sel(pub u32);
+    impl P03Sel {
+        #[doc = "desc SEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x07;
+            val as u8
+        }
+        #[doc = "desc SEL."]
+        #[inline(always)]
+        pub const fn set_sel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
+        }
+    }
+    impl Default for P03Sel {
+        #[inline(always)]
+        fn default() -> P03Sel {
+            P03Sel(0)
+        }
+    }
+    impl core::fmt::Debug for P03Sel {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P03Sel").field("sel", &self.sel()).finish()
+        }
+    }
+    #[doc = "desc P0ADS."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P0ads(pub u32);
+    impl P0ads {
+        #[doc = "desc P01."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p01(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P01."]
+        #[inline(always)]
+        pub const fn set_p01(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc P02."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p02(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P02."]
+        #[inline(always)]
+        pub const fn set_p02(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc P03."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p03(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P03."]
+        #[inline(always)]
+        pub const fn set_p03(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+    }
+    impl Default for P0ads {
+        #[inline(always)]
+        fn default() -> P0ads {
+            P0ads(0)
+        }
+    }
+    impl core::fmt::Debug for P0ads {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P0ads")
+                .field("p01", &self.p01())
+                .field("p02", &self.p02())
+                .field("p03", &self.p03())
+                .finish()
+        }
+    }
+    #[doc = "desc P0DIR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P0dir(pub u32);
+    impl P0dir {
+        #[doc = "desc P01."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p01(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P01."]
+        #[inline(always)]
+        pub const fn set_p01(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc P02."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p02(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P02."]
+        #[inline(always)]
+        pub const fn set_p02(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc P03."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p03(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P03."]
+        #[inline(always)]
+        pub const fn set_p03(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+    }
+    impl Default for P0dir {
+        #[inline(always)]
+        fn default() -> P0dir {
+            P0dir(0)
+        }
+    }
+    impl core::fmt::Debug for P0dir {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P0dir")
+                .field("p01", &self.p01())
+                .field("p02", &self.p02())
+                .field("p03", &self.p03())
+                .finish()
+        }
+    }
+    #[doc = "desc P0DR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P0dr(pub u32);
+    impl P0dr {
+        #[doc = "desc P01."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p01(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P01."]
+        #[inline(always)]
+        pub const fn set_p01(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc P02."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p02(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P02."]
+        #[inline(always)]
+        pub const fn set_p02(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc P03."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p03(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P03."]
+        #[inline(always)]
+        pub const fn set_p03(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+    }
+    impl Default for P0dr {
+        #[inline(always)]
+        fn default() -> P0dr {
+            P0dr(0)
+        }
+    }
+    impl core::fmt::Debug for P0dr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P0dr")
+                .field("p01", &self.p01())
+                .field("p02", &self.p02())
+                .field("p03", &self.p03())
+                .finish()
+        }
+    }
+    #[doc = "desc P0FIE."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P0fie(pub u32);
+    impl P0fie {
+        #[doc = "desc P00."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p00(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P00."]
+        #[inline(always)]
+        pub const fn set_p00(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc P01."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p01(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P01."]
+        #[inline(always)]
+        pub const fn set_p01(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc P02."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p02(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P02."]
+        #[inline(always)]
+        pub const fn set_p02(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc P03."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p03(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P03."]
+        #[inline(always)]
+        pub const fn set_p03(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+    }
+    impl Default for P0fie {
+        #[inline(always)]
+        fn default() -> P0fie {
+            P0fie(0)
+        }
+    }
+    impl core::fmt::Debug for P0fie {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P0fie")
+                .field("p00", &self.p00())
+                .field("p01", &self.p01())
+                .field("p02", &self.p02())
+                .field("p03", &self.p03())
+                .finish()
+        }
+    }
+    #[doc = "desc P0HIE."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P0hie(pub u32);
+    impl P0hie {
+        #[doc = "desc P00."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p00(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P00."]
+        #[inline(always)]
+        pub const fn set_p00(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc P01."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p01(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P01."]
+        #[inline(always)]
+        pub const fn set_p01(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc P02."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p02(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P02."]
+        #[inline(always)]
+        pub const fn set_p02(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc P03."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p03(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P03."]
+        #[inline(always)]
+        pub const fn set_p03(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+    }
+    impl Default for P0hie {
+        #[inline(always)]
+        fn default() -> P0hie {
+            P0hie(0)
+        }
+    }
+    impl core::fmt::Debug for P0hie {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P0hie")
+                .field("p00", &self.p00())
+                .field("p01", &self.p01())
+                .field("p02", &self.p02())
+                .field("p03", &self.p03())
+                .finish()
+        }
+    }
+    #[doc = "desc P0ICLR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P0iclr(pub u32);
+    impl P0iclr {
+        #[doc = "desc P00."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p00(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P00."]
+        #[inline(always)]
+        pub const fn set_p00(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc P01."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p01(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P01."]
+        #[inline(always)]
+        pub const fn set_p01(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc P02."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p02(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P02."]
+        #[inline(always)]
+        pub const fn set_p02(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc P03."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p03(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P03."]
+        #[inline(always)]
+        pub const fn set_p03(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+    }
+    impl Default for P0iclr {
+        #[inline(always)]
+        fn default() -> P0iclr {
+            P0iclr(0)
+        }
+    }
+    impl core::fmt::Debug for P0iclr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P0iclr")
+                .field("p00", &self.p00())
+                .field("p01", &self.p01())
+                .field("p02", &self.p02())
+                .field("p03", &self.p03())
+                .finish()
+        }
+    }
+    #[doc = "desc P0IN."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P0in(pub u32);
+    impl P0in {
+        #[doc = "desc P00."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p00(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P00."]
+        #[inline(always)]
+        pub const fn set_p00(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc P01."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p01(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P01."]
+        #[inline(always)]
+        pub const fn set_p01(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc P02."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p02(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P02."]
+        #[inline(always)]
+        pub const fn set_p02(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc P03."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p03(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P03."]
+        #[inline(always)]
+        pub const fn set_p03(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+    }
+    impl Default for P0in {
+        #[inline(always)]
+        fn default() -> P0in {
+            P0in(0)
+        }
+    }
+    impl core::fmt::Debug for P0in {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P0in")
+                .field("p00", &self.p00())
+                .field("p01", &self.p01())
+                .field("p02", &self.p02())
+                .field("p03", &self.p03())
+                .finish()
+        }
+    }
+    #[doc = "desc P0LIE."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P0lie(pub u32);
+    impl P0lie {
+        #[doc = "desc P00."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p00(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P00."]
+        #[inline(always)]
+        pub const fn set_p00(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc P01."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p01(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P01."]
+        #[inline(always)]
+        pub const fn set_p01(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc P02."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p02(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P02."]
+        #[inline(always)]
+        pub const fn set_p02(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc P03."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p03(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P03."]
+        #[inline(always)]
+        pub const fn set_p03(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+    }
+    impl Default for P0lie {
+        #[inline(always)]
+        fn default() -> P0lie {
+            P0lie(0)
+        }
+    }
+    impl core::fmt::Debug for P0lie {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P0lie")
+                .field("p00", &self.p00())
+                .field("p01", &self.p01())
+                .field("p02", &self.p02())
+                .field("p03", &self.p03())
+                .finish()
+        }
+    }
+    #[doc = "desc P0OD."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P0od(pub u32);
+    impl P0od {
+        #[doc = "desc P01."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p01(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P01."]
+        #[inline(always)]
+        pub const fn set_p01(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc P02."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p02(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P02."]
+        #[inline(always)]
+        pub const fn set_p02(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc P03."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p03(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P03."]
+        #[inline(always)]
+        pub const fn set_p03(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+    }
+    impl Default for P0od {
+        #[inline(always)]
+        fn default() -> P0od {
+            P0od(0)
+        }
+    }
+    impl core::fmt::Debug for P0od {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P0od")
+                .field("p01", &self.p01())
+                .field("p02", &self.p02())
+                .field("p03", &self.p03())
+                .finish()
+        }
+    }
+    #[doc = "desc P0OUT."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P0out(pub u32);
+    impl P0out {
+        #[doc = "desc P01."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p01(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P01."]
+        #[inline(always)]
+        pub const fn set_p01(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc P02."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p02(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P02."]
+        #[inline(always)]
+        pub const fn set_p02(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc P03."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p03(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P03."]
+        #[inline(always)]
+        pub const fn set_p03(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+    }
+    impl Default for P0out {
+        #[inline(always)]
+        fn default() -> P0out {
+            P0out(0)
+        }
+    }
+    impl core::fmt::Debug for P0out {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P0out")
+                .field("p01", &self.p01())
+                .field("p02", &self.p02())
+                .field("p03", &self.p03())
+                .finish()
+        }
+    }
+    #[doc = "desc P0PD."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P0pd(pub u32);
+    impl P0pd {
+        #[doc = "desc P01."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p01(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P01."]
+        #[inline(always)]
+        pub const fn set_p01(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc P02."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p02(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P02."]
+        #[inline(always)]
+        pub const fn set_p02(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc P03."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p03(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P03."]
+        #[inline(always)]
+        pub const fn set_p03(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+    }
+    impl Default for P0pd {
+        #[inline(always)]
+        fn default() -> P0pd {
+            P0pd(0)
+        }
+    }
+    impl core::fmt::Debug for P0pd {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P0pd")
+                .field("p01", &self.p01())
+                .field("p02", &self.p02())
+                .field("p03", &self.p03())
+                .finish()
+        }
+    }
+    #[doc = "desc P0PU."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P0pu(pub u32);
+    impl P0pu {
+        #[doc = "desc P01."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p01(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P01."]
+        #[inline(always)]
+        pub const fn set_p01(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc P02."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p02(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P02."]
+        #[inline(always)]
+        pub const fn set_p02(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc P03."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p03(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P03."]
+        #[inline(always)]
+        pub const fn set_p03(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+    }
+    impl Default for P0pu {
+        #[inline(always)]
+        fn default() -> P0pu {
+            P0pu(0)
+        }
+    }
+    impl core::fmt::Debug for P0pu {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P0pu")
+                .field("p01", &self.p01())
+                .field("p02", &self.p02())
+                .field("p03", &self.p03())
+                .finish()
+        }
+    }
+    #[doc = "desc P0RIE."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P0rie(pub u32);
+    impl P0rie {
+        #[doc = "desc P00."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p00(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P00."]
+        #[inline(always)]
+        pub const fn set_p00(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc P01."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p01(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P01."]
+        #[inline(always)]
+        pub const fn set_p01(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc P02."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p02(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P02."]
+        #[inline(always)]
+        pub const fn set_p02(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc P03."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p03(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P03."]
+        #[inline(always)]
+        pub const fn set_p03(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+    }
+    impl Default for P0rie {
+        #[inline(always)]
+        fn default() -> P0rie {
+            P0rie(0)
+        }
+    }
+    impl core::fmt::Debug for P0rie {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P0rie")
+                .field("p00", &self.p00())
+                .field("p01", &self.p01())
+                .field("p02", &self.p02())
+                .field("p03", &self.p03())
+                .finish()
+        }
+    }
+    #[doc = "desc P0STAT."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P0stat(pub u32);
+    impl P0stat {
+        #[doc = "desc P00."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p00(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P00."]
+        #[inline(always)]
+        pub const fn set_p00(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc P01."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p01(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P01."]
+        #[inline(always)]
+        pub const fn set_p01(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc P02."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p02(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P02."]
+        #[inline(always)]
+        pub const fn set_p02(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc P03."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p03(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P03."]
+        #[inline(always)]
+        pub const fn set_p03(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+    }
+    impl Default for P0stat {
+        #[inline(always)]
+        fn default() -> P0stat {
+            P0stat(0)
+        }
+    }
+    impl core::fmt::Debug for P0stat {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P0stat")
+                .field("p00", &self.p00())
+                .field("p01", &self.p01())
+                .field("p02", &self.p02())
+                .field("p03", &self.p03())
+                .finish()
+        }
+    }
+    #[doc = "desc P14_SEL."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P14Sel(pub u32);
+    impl P14Sel {
+        #[doc = "desc SEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x07;
+            val as u8
+        }
+        #[doc = "desc SEL."]
+        #[inline(always)]
+        pub const fn set_sel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
+        }
+    }
+    impl Default for P14Sel {
+        #[inline(always)]
+        fn default() -> P14Sel {
+            P14Sel(0)
+        }
+    }
+    impl core::fmt::Debug for P14Sel {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P14Sel").field("sel", &self.sel()).finish()
+        }
+    }
+    #[doc = "desc P15_SEL."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P15Sel(pub u32);
+    impl P15Sel {
+        #[doc = "desc SEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x07;
+            val as u8
+        }
+        #[doc = "desc SEL."]
+        #[inline(always)]
+        pub const fn set_sel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
+        }
+    }
+    impl Default for P15Sel {
+        #[inline(always)]
+        fn default() -> P15Sel {
+            P15Sel(0)
+        }
+    }
+    impl core::fmt::Debug for P15Sel {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P15Sel").field("sel", &self.sel()).finish()
+        }
+    }
+    #[doc = "desc P1ADS."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P1ads(pub u32);
+    impl P1ads {
+        #[doc = "desc P14."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p14(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P14."]
+        #[inline(always)]
+        pub const fn set_p14(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P15."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p15(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P15."]
+        #[inline(always)]
+        pub const fn set_p15(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+    }
+    impl Default for P1ads {
+        #[inline(always)]
+        fn default() -> P1ads {
+            P1ads(0)
+        }
+    }
+    impl core::fmt::Debug for P1ads {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P1ads")
+                .field("p14", &self.p14())
+                .field("p15", &self.p15())
+                .finish()
+        }
+    }
+    #[doc = "desc P1DIR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P1dir(pub u32);
+    impl P1dir {
+        #[doc = "desc P14."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p14(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P14."]
+        #[inline(always)]
+        pub const fn set_p14(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P15."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p15(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P15."]
+        #[inline(always)]
+        pub const fn set_p15(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+    }
+    impl Default for P1dir {
+        #[inline(always)]
+        fn default() -> P1dir {
+            P1dir(0)
+        }
+    }
+    impl core::fmt::Debug for P1dir {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P1dir")
+                .field("p14", &self.p14())
+                .field("p15", &self.p15())
+                .finish()
+        }
+    }
+    #[doc = "desc P1DR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P1dr(pub u32);
+    impl P1dr {
+        #[doc = "desc P14."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p14(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P14."]
+        #[inline(always)]
+        pub const fn set_p14(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P15."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p15(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P15."]
+        #[inline(always)]
+        pub const fn set_p15(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+    }
+    impl Default for P1dr {
+        #[inline(always)]
+        fn default() -> P1dr {
+            P1dr(0)
+        }
+    }
+    impl core::fmt::Debug for P1dr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P1dr")
+                .field("p14", &self.p14())
+                .field("p15", &self.p15())
+                .finish()
+        }
+    }
+    #[doc = "desc P1FIE."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P1fie(pub u32);
+    impl P1fie {
+        #[doc = "desc P14."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p14(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P14."]
+        #[inline(always)]
+        pub const fn set_p14(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P15."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p15(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P15."]
+        #[inline(always)]
+        pub const fn set_p15(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+    }
+    impl Default for P1fie {
+        #[inline(always)]
+        fn default() -> P1fie {
+            P1fie(0)
+        }
+    }
+    impl core::fmt::Debug for P1fie {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P1fie")
+                .field("p14", &self.p14())
+                .field("p15", &self.p15())
+                .finish()
+        }
+    }
+    #[doc = "desc P1HIE."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P1hie(pub u32);
+    impl P1hie {
+        #[doc = "desc P14."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p14(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P14."]
+        #[inline(always)]
+        pub const fn set_p14(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P15."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p15(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P15."]
+        #[inline(always)]
+        pub const fn set_p15(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+    }
+    impl Default for P1hie {
+        #[inline(always)]
+        fn default() -> P1hie {
+            P1hie(0)
+        }
+    }
+    impl core::fmt::Debug for P1hie {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P1hie")
+                .field("p14", &self.p14())
+                .field("p15", &self.p15())
+                .finish()
+        }
+    }
+    #[doc = "desc P1ICLR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P1iclr(pub u32);
+    impl P1iclr {
+        #[doc = "desc P14."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p14(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P14."]
+        #[inline(always)]
+        pub const fn set_p14(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P15."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p15(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P15."]
+        #[inline(always)]
+        pub const fn set_p15(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+    }
+    impl Default for P1iclr {
+        #[inline(always)]
+        fn default() -> P1iclr {
+            P1iclr(0)
+        }
+    }
+    impl core::fmt::Debug for P1iclr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P1iclr")
+                .field("p14", &self.p14())
+                .field("p15", &self.p15())
+                .finish()
+        }
+    }
+    #[doc = "desc P1IN."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P1in(pub u32);
+    impl P1in {
+        #[doc = "desc P14."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p14(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P14."]
+        #[inline(always)]
+        pub const fn set_p14(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P15."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p15(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P15."]
+        #[inline(always)]
+        pub const fn set_p15(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+    }
+    impl Default for P1in {
+        #[inline(always)]
+        fn default() -> P1in {
+            P1in(0)
+        }
+    }
+    impl core::fmt::Debug for P1in {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P1in")
+                .field("p14", &self.p14())
+                .field("p15", &self.p15())
+                .finish()
+        }
+    }
+    #[doc = "desc P1LIE."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P1lie(pub u32);
+    impl P1lie {
+        #[doc = "desc P14."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p14(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P14."]
+        #[inline(always)]
+        pub const fn set_p14(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P15."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p15(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P15."]
+        #[inline(always)]
+        pub const fn set_p15(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+    }
+    impl Default for P1lie {
+        #[inline(always)]
+        fn default() -> P1lie {
+            P1lie(0)
+        }
+    }
+    impl core::fmt::Debug for P1lie {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P1lie")
+                .field("p14", &self.p14())
+                .field("p15", &self.p15())
+                .finish()
+        }
+    }
+    #[doc = "desc P1OD."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P1od(pub u32);
+    impl P1od {
+        #[doc = "desc P14."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p14(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P14."]
+        #[inline(always)]
+        pub const fn set_p14(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P15."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p15(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P15."]
+        #[inline(always)]
+        pub const fn set_p15(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+    }
+    impl Default for P1od {
+        #[inline(always)]
+        fn default() -> P1od {
+            P1od(0)
+        }
+    }
+    impl core::fmt::Debug for P1od {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P1od")
+                .field("p14", &self.p14())
+                .field("p15", &self.p15())
+                .finish()
+        }
+    }
+    #[doc = "desc P1OUT."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P1out(pub u32);
+    impl P1out {
+        #[doc = "desc P14."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p14(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P14."]
+        #[inline(always)]
+        pub const fn set_p14(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P15."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p15(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P15."]
+        #[inline(always)]
+        pub const fn set_p15(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+    }
+    impl Default for P1out {
+        #[inline(always)]
+        fn default() -> P1out {
+            P1out(0)
+        }
+    }
+    impl core::fmt::Debug for P1out {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P1out")
+                .field("p14", &self.p14())
+                .field("p15", &self.p15())
+                .finish()
+        }
+    }
+    #[doc = "desc P1PD."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P1pd(pub u32);
+    impl P1pd {
+        #[doc = "desc P14."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p14(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P14."]
+        #[inline(always)]
+        pub const fn set_p14(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P15."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p15(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P15."]
+        #[inline(always)]
+        pub const fn set_p15(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+    }
+    impl Default for P1pd {
+        #[inline(always)]
+        fn default() -> P1pd {
+            P1pd(0)
+        }
+    }
+    impl core::fmt::Debug for P1pd {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P1pd")
+                .field("p14", &self.p14())
+                .field("p15", &self.p15())
+                .finish()
+        }
+    }
+    #[doc = "desc P1PU."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P1pu(pub u32);
+    impl P1pu {
+        #[doc = "desc P14."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p14(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P14."]
+        #[inline(always)]
+        pub const fn set_p14(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P15."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p15(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P15."]
+        #[inline(always)]
+        pub const fn set_p15(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+    }
+    impl Default for P1pu {
+        #[inline(always)]
+        fn default() -> P1pu {
+            P1pu(0)
+        }
+    }
+    impl core::fmt::Debug for P1pu {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P1pu")
+                .field("p14", &self.p14())
+                .field("p15", &self.p15())
+                .finish()
+        }
+    }
+    #[doc = "desc P1RIE."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P1rie(pub u32);
+    impl P1rie {
+        #[doc = "desc P14."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p14(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P14."]
+        #[inline(always)]
+        pub const fn set_p14(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P15."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p15(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P15."]
+        #[inline(always)]
+        pub const fn set_p15(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+    }
+    impl Default for P1rie {
+        #[inline(always)]
+        fn default() -> P1rie {
+            P1rie(0)
+        }
+    }
+    impl core::fmt::Debug for P1rie {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P1rie")
+                .field("p14", &self.p14())
+                .field("p15", &self.p15())
+                .finish()
+        }
+    }
+    #[doc = "desc P1STAT."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P1stat(pub u32);
+    impl P1stat {
+        #[doc = "desc P14."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p14(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P14."]
+        #[inline(always)]
+        pub const fn set_p14(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P15."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p15(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P15."]
+        #[inline(always)]
+        pub const fn set_p15(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+    }
+    impl Default for P1stat {
+        #[inline(always)]
+        fn default() -> P1stat {
+            P1stat(0)
+        }
+    }
+    impl core::fmt::Debug for P1stat {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P1stat")
+                .field("p14", &self.p14())
+                .field("p15", &self.p15())
+                .finish()
+        }
+    }
+    #[doc = "desc P23_SEL."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P23Sel(pub u32);
+    impl P23Sel {
+        #[doc = "desc SEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x07;
+            val as u8
+        }
+        #[doc = "desc SEL."]
+        #[inline(always)]
+        pub const fn set_sel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
+        }
+    }
+    impl Default for P23Sel {
+        #[inline(always)]
+        fn default() -> P23Sel {
+            P23Sel(0)
+        }
+    }
+    impl core::fmt::Debug for P23Sel {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P23Sel").field("sel", &self.sel()).finish()
+        }
+    }
+    #[doc = "desc P24_SEL."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P24Sel(pub u32);
+    impl P24Sel {
+        #[doc = "desc SEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x07;
+            val as u8
+        }
+        #[doc = "desc SEL."]
+        #[inline(always)]
+        pub const fn set_sel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
+        }
+    }
+    impl Default for P24Sel {
+        #[inline(always)]
+        fn default() -> P24Sel {
+            P24Sel(0)
+        }
+    }
+    impl core::fmt::Debug for P24Sel {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P24Sel").field("sel", &self.sel()).finish()
+        }
+    }
+    #[doc = "desc P25_SEL."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P25Sel(pub u32);
+    impl P25Sel {
+        #[doc = "desc SEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x07;
+            val as u8
+        }
+        #[doc = "desc SEL."]
+        #[inline(always)]
+        pub const fn set_sel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
+        }
+    }
+    impl Default for P25Sel {
+        #[inline(always)]
+        fn default() -> P25Sel {
+            P25Sel(0)
+        }
+    }
+    impl core::fmt::Debug for P25Sel {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P25Sel").field("sel", &self.sel()).finish()
+        }
+    }
+    #[doc = "desc P26_SEL."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P26Sel(pub u32);
+    impl P26Sel {
+        #[doc = "desc SEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x07;
+            val as u8
+        }
+        #[doc = "desc SEL."]
+        #[inline(always)]
+        pub const fn set_sel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
+        }
+    }
+    impl Default for P26Sel {
+        #[inline(always)]
+        fn default() -> P26Sel {
+            P26Sel(0)
+        }
+    }
+    impl core::fmt::Debug for P26Sel {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P26Sel").field("sel", &self.sel()).finish()
+        }
+    }
+    #[doc = "desc P27_SEL."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P27Sel(pub u32);
+    impl P27Sel {
+        #[doc = "desc SEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x07;
+            val as u8
+        }
+        #[doc = "desc SEL."]
+        #[inline(always)]
+        pub const fn set_sel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
+        }
+    }
+    impl Default for P27Sel {
+        #[inline(always)]
+        fn default() -> P27Sel {
+            P27Sel(0)
+        }
+    }
+    impl core::fmt::Debug for P27Sel {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P27Sel").field("sel", &self.sel()).finish()
+        }
+    }
+    #[doc = "desc P2ADS."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P2ads(pub u32);
+    impl P2ads {
+        #[doc = "desc P23."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p23(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P23."]
+        #[inline(always)]
+        pub const fn set_p23(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc P24."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p24(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P24."]
+        #[inline(always)]
+        pub const fn set_p24(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P25."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p25(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P25."]
+        #[inline(always)]
+        pub const fn set_p25(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "desc P26."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p26(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P26."]
+        #[inline(always)]
+        pub const fn set_p26(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+        #[doc = "desc P27."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p27(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P27."]
+        #[inline(always)]
+        pub const fn set_p27(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+    }
+    impl Default for P2ads {
+        #[inline(always)]
+        fn default() -> P2ads {
+            P2ads(0)
+        }
+    }
+    impl core::fmt::Debug for P2ads {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P2ads")
+                .field("p23", &self.p23())
+                .field("p24", &self.p24())
+                .field("p25", &self.p25())
+                .field("p26", &self.p26())
+                .field("p27", &self.p27())
+                .finish()
+        }
+    }
+    #[doc = "desc P2DIR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P2dir(pub u32);
+    impl P2dir {
+        #[doc = "desc P23."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p23(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P23."]
+        #[inline(always)]
+        pub const fn set_p23(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc P24."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p24(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P24."]
+        #[inline(always)]
+        pub const fn set_p24(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P25."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p25(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P25."]
+        #[inline(always)]
+        pub const fn set_p25(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "desc P26."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p26(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P26."]
+        #[inline(always)]
+        pub const fn set_p26(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+        #[doc = "desc P27."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p27(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P27."]
+        #[inline(always)]
+        pub const fn set_p27(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+    }
+    impl Default for P2dir {
+        #[inline(always)]
+        fn default() -> P2dir {
+            P2dir(0)
+        }
+    }
+    impl core::fmt::Debug for P2dir {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P2dir")
+                .field("p23", &self.p23())
+                .field("p24", &self.p24())
+                .field("p25", &self.p25())
+                .field("p26", &self.p26())
+                .field("p27", &self.p27())
+                .finish()
+        }
+    }
+    #[doc = "desc P2DR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P2dr(pub u32);
+    impl P2dr {
+        #[doc = "desc P23."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p23(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P23."]
+        #[inline(always)]
+        pub const fn set_p23(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc P24."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p24(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P24."]
+        #[inline(always)]
+        pub const fn set_p24(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P25."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p25(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P25."]
+        #[inline(always)]
+        pub const fn set_p25(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "desc P26."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p26(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P26."]
+        #[inline(always)]
+        pub const fn set_p26(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+        #[doc = "desc P27."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p27(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P27."]
+        #[inline(always)]
+        pub const fn set_p27(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+    }
+    impl Default for P2dr {
+        #[inline(always)]
+        fn default() -> P2dr {
+            P2dr(0)
+        }
+    }
+    impl core::fmt::Debug for P2dr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P2dr")
+                .field("p23", &self.p23())
+                .field("p24", &self.p24())
+                .field("p25", &self.p25())
+                .field("p26", &self.p26())
+                .field("p27", &self.p27())
+                .finish()
+        }
+    }
+    #[doc = "desc P2FIE."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P2fie(pub u32);
+    impl P2fie {
+        #[doc = "desc P23."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p23(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P23."]
+        #[inline(always)]
+        pub const fn set_p23(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc P24."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p24(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P24."]
+        #[inline(always)]
+        pub const fn set_p24(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P25."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p25(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P25."]
+        #[inline(always)]
+        pub const fn set_p25(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "desc P26."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p26(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P26."]
+        #[inline(always)]
+        pub const fn set_p26(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+        #[doc = "desc P27."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p27(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P27."]
+        #[inline(always)]
+        pub const fn set_p27(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+    }
+    impl Default for P2fie {
+        #[inline(always)]
+        fn default() -> P2fie {
+            P2fie(0)
+        }
+    }
+    impl core::fmt::Debug for P2fie {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P2fie")
+                .field("p23", &self.p23())
+                .field("p24", &self.p24())
+                .field("p25", &self.p25())
+                .field("p26", &self.p26())
+                .field("p27", &self.p27())
+                .finish()
+        }
+    }
+    #[doc = "desc P2HIE."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P2hie(pub u32);
+    impl P2hie {
+        #[doc = "desc P23."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p23(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P23."]
+        #[inline(always)]
+        pub const fn set_p23(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc P24."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p24(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P24."]
+        #[inline(always)]
+        pub const fn set_p24(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P25."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p25(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P25."]
+        #[inline(always)]
+        pub const fn set_p25(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "desc P26."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p26(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P26."]
+        #[inline(always)]
+        pub const fn set_p26(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+        #[doc = "desc P27."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p27(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P27."]
+        #[inline(always)]
+        pub const fn set_p27(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+    }
+    impl Default for P2hie {
+        #[inline(always)]
+        fn default() -> P2hie {
+            P2hie(0)
+        }
+    }
+    impl core::fmt::Debug for P2hie {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P2hie")
+                .field("p23", &self.p23())
+                .field("p24", &self.p24())
+                .field("p25", &self.p25())
+                .field("p26", &self.p26())
+                .field("p27", &self.p27())
+                .finish()
+        }
+    }
+    #[doc = "desc P2ICLR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P2iclr(pub u32);
+    impl P2iclr {
+        #[doc = "desc P23."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p23(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P23."]
+        #[inline(always)]
+        pub const fn set_p23(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc P24."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p24(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P24."]
+        #[inline(always)]
+        pub const fn set_p24(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P25."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p25(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P25."]
+        #[inline(always)]
+        pub const fn set_p25(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "desc P26."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p26(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P26."]
+        #[inline(always)]
+        pub const fn set_p26(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+        #[doc = "desc P27."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p27(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P27."]
+        #[inline(always)]
+        pub const fn set_p27(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+    }
+    impl Default for P2iclr {
+        #[inline(always)]
+        fn default() -> P2iclr {
+            P2iclr(0)
+        }
+    }
+    impl core::fmt::Debug for P2iclr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P2iclr")
+                .field("p23", &self.p23())
+                .field("p24", &self.p24())
+                .field("p25", &self.p25())
+                .field("p26", &self.p26())
+                .field("p27", &self.p27())
+                .finish()
+        }
+    }
+    #[doc = "desc P2IN."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P2in(pub u32);
+    impl P2in {
+        #[doc = "desc P23."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p23(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P23."]
+        #[inline(always)]
+        pub const fn set_p23(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc P24."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p24(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P24."]
+        #[inline(always)]
+        pub const fn set_p24(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P25."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p25(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P25."]
+        #[inline(always)]
+        pub const fn set_p25(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "desc P26."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p26(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P26."]
+        #[inline(always)]
+        pub const fn set_p26(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+        #[doc = "desc P27."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p27(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P27."]
+        #[inline(always)]
+        pub const fn set_p27(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+    }
+    impl Default for P2in {
+        #[inline(always)]
+        fn default() -> P2in {
+            P2in(0)
+        }
+    }
+    impl core::fmt::Debug for P2in {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P2in")
+                .field("p23", &self.p23())
+                .field("p24", &self.p24())
+                .field("p25", &self.p25())
+                .field("p26", &self.p26())
+                .field("p27", &self.p27())
+                .finish()
+        }
+    }
+    #[doc = "desc P2LIE."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P2lie(pub u32);
+    impl P2lie {
+        #[doc = "desc P23."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p23(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P23."]
+        #[inline(always)]
+        pub const fn set_p23(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc P24."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p24(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P24."]
+        #[inline(always)]
+        pub const fn set_p24(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P25."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p25(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P25."]
+        #[inline(always)]
+        pub const fn set_p25(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "desc P26."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p26(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P26."]
+        #[inline(always)]
+        pub const fn set_p26(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+        #[doc = "desc P27."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p27(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P27."]
+        #[inline(always)]
+        pub const fn set_p27(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+    }
+    impl Default for P2lie {
+        #[inline(always)]
+        fn default() -> P2lie {
+            P2lie(0)
+        }
+    }
+    impl core::fmt::Debug for P2lie {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P2lie")
+                .field("p23", &self.p23())
+                .field("p24", &self.p24())
+                .field("p25", &self.p25())
+                .field("p26", &self.p26())
+                .field("p27", &self.p27())
+                .finish()
+        }
+    }
+    #[doc = "desc P2OD."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P2od(pub u32);
+    impl P2od {
+        #[doc = "desc P23."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p23(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P23."]
+        #[inline(always)]
+        pub const fn set_p23(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc P24."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p24(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P24."]
+        #[inline(always)]
+        pub const fn set_p24(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P25."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p25(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P25."]
+        #[inline(always)]
+        pub const fn set_p25(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "desc P26."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p26(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P26."]
+        #[inline(always)]
+        pub const fn set_p26(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+        #[doc = "desc P27."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p27(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P27."]
+        #[inline(always)]
+        pub const fn set_p27(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+    }
+    impl Default for P2od {
+        #[inline(always)]
+        fn default() -> P2od {
+            P2od(0)
+        }
+    }
+    impl core::fmt::Debug for P2od {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P2od")
+                .field("p23", &self.p23())
+                .field("p24", &self.p24())
+                .field("p25", &self.p25())
+                .field("p26", &self.p26())
+                .field("p27", &self.p27())
+                .finish()
+        }
+    }
+    #[doc = "desc P2OUT."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P2out(pub u32);
+    impl P2out {
+        #[doc = "desc P23."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p23(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P23."]
+        #[inline(always)]
+        pub const fn set_p23(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc P24."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p24(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P24."]
+        #[inline(always)]
+        pub const fn set_p24(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P25."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p25(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P25."]
+        #[inline(always)]
+        pub const fn set_p25(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "desc P26."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p26(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P26."]
+        #[inline(always)]
+        pub const fn set_p26(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+        #[doc = "desc P27."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p27(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P27."]
+        #[inline(always)]
+        pub const fn set_p27(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+    }
+    impl Default for P2out {
+        #[inline(always)]
+        fn default() -> P2out {
+            P2out(0)
+        }
+    }
+    impl core::fmt::Debug for P2out {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P2out")
+                .field("p23", &self.p23())
+                .field("p24", &self.p24())
+                .field("p25", &self.p25())
+                .field("p26", &self.p26())
+                .field("p27", &self.p27())
+                .finish()
+        }
+    }
+    #[doc = "desc P2PD."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P2pd(pub u32);
+    impl P2pd {
+        #[doc = "desc P23."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p23(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P23."]
+        #[inline(always)]
+        pub const fn set_p23(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc P24."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p24(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P24."]
+        #[inline(always)]
+        pub const fn set_p24(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P25."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p25(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P25."]
+        #[inline(always)]
+        pub const fn set_p25(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "desc P26."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p26(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P26."]
+        #[inline(always)]
+        pub const fn set_p26(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+        #[doc = "desc P27."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p27(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P27."]
+        #[inline(always)]
+        pub const fn set_p27(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+    }
+    impl Default for P2pd {
+        #[inline(always)]
+        fn default() -> P2pd {
+            P2pd(0)
+        }
+    }
+    impl core::fmt::Debug for P2pd {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P2pd")
+                .field("p23", &self.p23())
+                .field("p24", &self.p24())
+                .field("p25", &self.p25())
+                .field("p26", &self.p26())
+                .field("p27", &self.p27())
+                .finish()
+        }
+    }
+    #[doc = "desc P2PU."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P2pu(pub u32);
+    impl P2pu {
+        #[doc = "desc P23."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p23(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P23."]
+        #[inline(always)]
+        pub const fn set_p23(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc P24."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p24(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P24."]
+        #[inline(always)]
+        pub const fn set_p24(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P25."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p25(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P25."]
+        #[inline(always)]
+        pub const fn set_p25(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "desc P26."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p26(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P26."]
+        #[inline(always)]
+        pub const fn set_p26(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+        #[doc = "desc P27."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p27(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P27."]
+        #[inline(always)]
+        pub const fn set_p27(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+    }
+    impl Default for P2pu {
+        #[inline(always)]
+        fn default() -> P2pu {
+            P2pu(0)
+        }
+    }
+    impl core::fmt::Debug for P2pu {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P2pu")
+                .field("p23", &self.p23())
+                .field("p24", &self.p24())
+                .field("p25", &self.p25())
+                .field("p26", &self.p26())
+                .field("p27", &self.p27())
+                .finish()
+        }
+    }
+    #[doc = "desc P2RIE."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P2rie(pub u32);
+    impl P2rie {
+        #[doc = "desc P23."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p23(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P23."]
+        #[inline(always)]
+        pub const fn set_p23(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc P24."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p24(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P24."]
+        #[inline(always)]
+        pub const fn set_p24(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P25."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p25(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P25."]
+        #[inline(always)]
+        pub const fn set_p25(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "desc P26."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p26(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P26."]
+        #[inline(always)]
+        pub const fn set_p26(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+        #[doc = "desc P27."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p27(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P27."]
+        #[inline(always)]
+        pub const fn set_p27(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+    }
+    impl Default for P2rie {
+        #[inline(always)]
+        fn default() -> P2rie {
+            P2rie(0)
+        }
+    }
+    impl core::fmt::Debug for P2rie {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P2rie")
+                .field("p23", &self.p23())
+                .field("p24", &self.p24())
+                .field("p25", &self.p25())
+                .field("p26", &self.p26())
+                .field("p27", &self.p27())
+                .finish()
+        }
+    }
+    #[doc = "desc P2STAT."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P2stat(pub u32);
+    impl P2stat {
+        #[doc = "desc P23."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p23(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P23."]
+        #[inline(always)]
+        pub const fn set_p23(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc P24."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p24(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P24."]
+        #[inline(always)]
+        pub const fn set_p24(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P25."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p25(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P25."]
+        #[inline(always)]
+        pub const fn set_p25(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "desc P26."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p26(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P26."]
+        #[inline(always)]
+        pub const fn set_p26(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+        #[doc = "desc P27."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p27(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P27."]
+        #[inline(always)]
+        pub const fn set_p27(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+    }
+    impl Default for P2stat {
+        #[inline(always)]
+        fn default() -> P2stat {
+            P2stat(0)
+        }
+    }
+    impl core::fmt::Debug for P2stat {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P2stat")
+                .field("p23", &self.p23())
+                .field("p24", &self.p24())
+                .field("p25", &self.p25())
+                .field("p26", &self.p26())
+                .field("p27", &self.p27())
+                .finish()
+        }
+    }
+    #[doc = "desc P31_SEL."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P31Sel(pub u32);
+    impl P31Sel {
+        #[doc = "desc SEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x07;
+            val as u8
+        }
+        #[doc = "desc SEL."]
+        #[inline(always)]
+        pub const fn set_sel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
+        }
+    }
+    impl Default for P31Sel {
+        #[inline(always)]
+        fn default() -> P31Sel {
+            P31Sel(0)
+        }
+    }
+    impl core::fmt::Debug for P31Sel {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P31Sel").field("sel", &self.sel()).finish()
+        }
+    }
+    #[doc = "desc P32_SEL."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P32Sel(pub u32);
+    impl P32Sel {
+        #[doc = "desc SEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x07;
+            val as u8
+        }
+        #[doc = "desc SEL."]
+        #[inline(always)]
+        pub const fn set_sel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
+        }
+    }
+    impl Default for P32Sel {
+        #[inline(always)]
+        fn default() -> P32Sel {
+            P32Sel(0)
+        }
+    }
+    impl core::fmt::Debug for P32Sel {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P32Sel").field("sel", &self.sel()).finish()
+        }
+    }
+    #[doc = "desc P33_SEL."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P33Sel(pub u32);
+    impl P33Sel {
+        #[doc = "desc SEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x07;
+            val as u8
+        }
+        #[doc = "desc SEL."]
+        #[inline(always)]
+        pub const fn set_sel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
+        }
+    }
+    impl Default for P33Sel {
+        #[inline(always)]
+        fn default() -> P33Sel {
+            P33Sel(0)
+        }
+    }
+    impl core::fmt::Debug for P33Sel {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P33Sel").field("sel", &self.sel()).finish()
+        }
+    }
+    #[doc = "desc P34_SEL."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P34Sel(pub u32);
+    impl P34Sel {
+        #[doc = "desc SEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x07;
+            val as u8
+        }
+        #[doc = "desc SEL."]
+        #[inline(always)]
+        pub const fn set_sel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
+        }
+    }
+    impl Default for P34Sel {
+        #[inline(always)]
+        fn default() -> P34Sel {
+            P34Sel(0)
+        }
+    }
+    impl core::fmt::Debug for P34Sel {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P34Sel").field("sel", &self.sel()).finish()
+        }
+    }
+    #[doc = "desc P35_SEL."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P35Sel(pub u32);
+    impl P35Sel {
+        #[doc = "desc SEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x07;
+            val as u8
+        }
+        #[doc = "desc SEL."]
+        #[inline(always)]
+        pub const fn set_sel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
+        }
+    }
+    impl Default for P35Sel {
+        #[inline(always)]
+        fn default() -> P35Sel {
+            P35Sel(0)
+        }
+    }
+    impl core::fmt::Debug for P35Sel {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P35Sel").field("sel", &self.sel()).finish()
+        }
+    }
+    #[doc = "desc P36_SEL."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P36Sel(pub u32);
+    impl P36Sel {
+        #[doc = "desc SEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x07;
+            val as u8
+        }
+        #[doc = "desc SEL."]
+        #[inline(always)]
+        pub const fn set_sel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
+        }
+    }
+    impl Default for P36Sel {
+        #[inline(always)]
+        fn default() -> P36Sel {
+            P36Sel(0)
+        }
+    }
+    impl core::fmt::Debug for P36Sel {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P36Sel").field("sel", &self.sel()).finish()
+        }
+    }
+    #[doc = "desc P3ADS."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P3ads(pub u32);
+    impl P3ads {
+        #[doc = "desc P31."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p31(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P31."]
+        #[inline(always)]
+        pub const fn set_p31(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc P32."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p32(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P32."]
+        #[inline(always)]
+        pub const fn set_p32(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc P33."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p33(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P33."]
+        #[inline(always)]
+        pub const fn set_p33(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc P34."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p34(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P34."]
+        #[inline(always)]
+        pub const fn set_p34(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P35."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p35(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P35."]
+        #[inline(always)]
+        pub const fn set_p35(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "desc P36."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p36(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P36."]
+        #[inline(always)]
+        pub const fn set_p36(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+    }
+    impl Default for P3ads {
+        #[inline(always)]
+        fn default() -> P3ads {
+            P3ads(0)
+        }
+    }
+    impl core::fmt::Debug for P3ads {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P3ads")
+                .field("p31", &self.p31())
+                .field("p32", &self.p32())
+                .field("p33", &self.p33())
+                .field("p34", &self.p34())
+                .field("p35", &self.p35())
+                .field("p36", &self.p36())
+                .finish()
+        }
+    }
+    #[doc = "desc P3DIR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P3dir(pub u32);
+    impl P3dir {
+        #[doc = "desc P31."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p31(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P31."]
+        #[inline(always)]
+        pub const fn set_p31(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc P32."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p32(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P32."]
+        #[inline(always)]
+        pub const fn set_p32(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc P33."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p33(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P33."]
+        #[inline(always)]
+        pub const fn set_p33(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc P34."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p34(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P34."]
+        #[inline(always)]
+        pub const fn set_p34(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P35."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p35(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P35."]
+        #[inline(always)]
+        pub const fn set_p35(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "desc P36."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p36(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P36."]
+        #[inline(always)]
+        pub const fn set_p36(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+    }
+    impl Default for P3dir {
+        #[inline(always)]
+        fn default() -> P3dir {
+            P3dir(0)
+        }
+    }
+    impl core::fmt::Debug for P3dir {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P3dir")
+                .field("p31", &self.p31())
+                .field("p32", &self.p32())
+                .field("p33", &self.p33())
+                .field("p34", &self.p34())
+                .field("p35", &self.p35())
+                .field("p36", &self.p36())
+                .finish()
+        }
+    }
+    #[doc = "desc P3DR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P3dr(pub u32);
+    impl P3dr {
+        #[doc = "desc P31."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p31(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P31."]
+        #[inline(always)]
+        pub const fn set_p31(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc P32."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p32(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P32."]
+        #[inline(always)]
+        pub const fn set_p32(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc P33."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p33(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P33."]
+        #[inline(always)]
+        pub const fn set_p33(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc P34."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p34(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P34."]
+        #[inline(always)]
+        pub const fn set_p34(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P35."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p35(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P35."]
+        #[inline(always)]
+        pub const fn set_p35(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "desc P36."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p36(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P36."]
+        #[inline(always)]
+        pub const fn set_p36(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+    }
+    impl Default for P3dr {
+        #[inline(always)]
+        fn default() -> P3dr {
+            P3dr(0)
+        }
+    }
+    impl core::fmt::Debug for P3dr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P3dr")
+                .field("p31", &self.p31())
+                .field("p32", &self.p32())
+                .field("p33", &self.p33())
+                .field("p34", &self.p34())
+                .field("p35", &self.p35())
+                .field("p36", &self.p36())
+                .finish()
+        }
+    }
+    #[doc = "desc P3FIE."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P3fie(pub u32);
+    impl P3fie {
+        #[doc = "desc P31."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p31(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P31."]
+        #[inline(always)]
+        pub const fn set_p31(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc P32."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p32(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P32."]
+        #[inline(always)]
+        pub const fn set_p32(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc P33."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p33(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P33."]
+        #[inline(always)]
+        pub const fn set_p33(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc P34."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p34(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P34."]
+        #[inline(always)]
+        pub const fn set_p34(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P35."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p35(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P35."]
+        #[inline(always)]
+        pub const fn set_p35(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "desc P36."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p36(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P36."]
+        #[inline(always)]
+        pub const fn set_p36(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+    }
+    impl Default for P3fie {
+        #[inline(always)]
+        fn default() -> P3fie {
+            P3fie(0)
+        }
+    }
+    impl core::fmt::Debug for P3fie {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P3fie")
+                .field("p31", &self.p31())
+                .field("p32", &self.p32())
+                .field("p33", &self.p33())
+                .field("p34", &self.p34())
+                .field("p35", &self.p35())
+                .field("p36", &self.p36())
+                .finish()
+        }
+    }
+    #[doc = "desc P3HIE."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P3hie(pub u32);
+    impl P3hie {
+        #[doc = "desc P31."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p31(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P31."]
+        #[inline(always)]
+        pub const fn set_p31(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc P32."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p32(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P32."]
+        #[inline(always)]
+        pub const fn set_p32(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc P33."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p33(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P33."]
+        #[inline(always)]
+        pub const fn set_p33(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc P34."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p34(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P34."]
+        #[inline(always)]
+        pub const fn set_p34(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P35."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p35(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P35."]
+        #[inline(always)]
+        pub const fn set_p35(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "desc P36."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p36(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P36."]
+        #[inline(always)]
+        pub const fn set_p36(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+    }
+    impl Default for P3hie {
+        #[inline(always)]
+        fn default() -> P3hie {
+            P3hie(0)
+        }
+    }
+    impl core::fmt::Debug for P3hie {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P3hie")
+                .field("p31", &self.p31())
+                .field("p32", &self.p32())
+                .field("p33", &self.p33())
+                .field("p34", &self.p34())
+                .field("p35", &self.p35())
+                .field("p36", &self.p36())
+                .finish()
+        }
+    }
+    #[doc = "desc P3ICLR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P3iclr(pub u32);
+    impl P3iclr {
+        #[doc = "desc P31."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p31(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P31."]
+        #[inline(always)]
+        pub const fn set_p31(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc P32."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p32(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P32."]
+        #[inline(always)]
+        pub const fn set_p32(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc P33."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p33(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P33."]
+        #[inline(always)]
+        pub const fn set_p33(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc P34."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p34(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P34."]
+        #[inline(always)]
+        pub const fn set_p34(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P35."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p35(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P35."]
+        #[inline(always)]
+        pub const fn set_p35(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "desc P36."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p36(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P36."]
+        #[inline(always)]
+        pub const fn set_p36(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+    }
+    impl Default for P3iclr {
+        #[inline(always)]
+        fn default() -> P3iclr {
+            P3iclr(0)
+        }
+    }
+    impl core::fmt::Debug for P3iclr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P3iclr")
+                .field("p31", &self.p31())
+                .field("p32", &self.p32())
+                .field("p33", &self.p33())
+                .field("p34", &self.p34())
+                .field("p35", &self.p35())
+                .field("p36", &self.p36())
+                .finish()
+        }
+    }
+    #[doc = "desc P3IN."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P3in(pub u32);
+    impl P3in {
+        #[doc = "desc P31."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p31(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P31."]
+        #[inline(always)]
+        pub const fn set_p31(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc P32."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p32(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P32."]
+        #[inline(always)]
+        pub const fn set_p32(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc P33."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p33(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P33."]
+        #[inline(always)]
+        pub const fn set_p33(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc P34."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p34(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P34."]
+        #[inline(always)]
+        pub const fn set_p34(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P35."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p35(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P35."]
+        #[inline(always)]
+        pub const fn set_p35(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "desc P36."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p36(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P36."]
+        #[inline(always)]
+        pub const fn set_p36(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+    }
+    impl Default for P3in {
+        #[inline(always)]
+        fn default() -> P3in {
+            P3in(0)
+        }
+    }
+    impl core::fmt::Debug for P3in {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P3in")
+                .field("p31", &self.p31())
+                .field("p32", &self.p32())
+                .field("p33", &self.p33())
+                .field("p34", &self.p34())
+                .field("p35", &self.p35())
+                .field("p36", &self.p36())
+                .finish()
+        }
+    }
+    #[doc = "desc P3LIE."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P3lie(pub u32);
+    impl P3lie {
+        #[doc = "desc P31."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p31(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P31."]
+        #[inline(always)]
+        pub const fn set_p31(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc P32."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p32(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P32."]
+        #[inline(always)]
+        pub const fn set_p32(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc P33."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p33(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P33."]
+        #[inline(always)]
+        pub const fn set_p33(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc P34."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p34(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P34."]
+        #[inline(always)]
+        pub const fn set_p34(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P35."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p35(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P35."]
+        #[inline(always)]
+        pub const fn set_p35(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "desc P36."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p36(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P36."]
+        #[inline(always)]
+        pub const fn set_p36(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+    }
+    impl Default for P3lie {
+        #[inline(always)]
+        fn default() -> P3lie {
+            P3lie(0)
+        }
+    }
+    impl core::fmt::Debug for P3lie {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P3lie")
+                .field("p31", &self.p31())
+                .field("p32", &self.p32())
+                .field("p33", &self.p33())
+                .field("p34", &self.p34())
+                .field("p35", &self.p35())
+                .field("p36", &self.p36())
+                .finish()
+        }
+    }
+    #[doc = "desc P3OD."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P3od(pub u32);
+    impl P3od {
+        #[doc = "desc P31."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p31(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P31."]
+        #[inline(always)]
+        pub const fn set_p31(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc P32."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p32(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P32."]
+        #[inline(always)]
+        pub const fn set_p32(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc P33."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p33(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P33."]
+        #[inline(always)]
+        pub const fn set_p33(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc P34."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p34(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P34."]
+        #[inline(always)]
+        pub const fn set_p34(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P35."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p35(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P35."]
+        #[inline(always)]
+        pub const fn set_p35(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "desc P36."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p36(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P36."]
+        #[inline(always)]
+        pub const fn set_p36(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+    }
+    impl Default for P3od {
+        #[inline(always)]
+        fn default() -> P3od {
+            P3od(0)
+        }
+    }
+    impl core::fmt::Debug for P3od {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P3od")
+                .field("p31", &self.p31())
+                .field("p32", &self.p32())
+                .field("p33", &self.p33())
+                .field("p34", &self.p34())
+                .field("p35", &self.p35())
+                .field("p36", &self.p36())
+                .finish()
+        }
+    }
+    #[doc = "desc P3OUT."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P3out(pub u32);
+    impl P3out {
+        #[doc = "desc P31."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p31(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P31."]
+        #[inline(always)]
+        pub const fn set_p31(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc P32."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p32(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P32."]
+        #[inline(always)]
+        pub const fn set_p32(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc P33."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p33(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P33."]
+        #[inline(always)]
+        pub const fn set_p33(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc P34."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p34(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P34."]
+        #[inline(always)]
+        pub const fn set_p34(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P35."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p35(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P35."]
+        #[inline(always)]
+        pub const fn set_p35(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "desc P36."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p36(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P36."]
+        #[inline(always)]
+        pub const fn set_p36(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+    }
+    impl Default for P3out {
+        #[inline(always)]
+        fn default() -> P3out {
+            P3out(0)
+        }
+    }
+    impl core::fmt::Debug for P3out {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P3out")
+                .field("p31", &self.p31())
+                .field("p32", &self.p32())
+                .field("p33", &self.p33())
+                .field("p34", &self.p34())
+                .field("p35", &self.p35())
+                .field("p36", &self.p36())
+                .finish()
+        }
+    }
+    #[doc = "desc P3PD."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P3pd(pub u32);
+    impl P3pd {
+        #[doc = "desc P31."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p31(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P31."]
+        #[inline(always)]
+        pub const fn set_p31(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc P32."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p32(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P32."]
+        #[inline(always)]
+        pub const fn set_p32(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc P33."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p33(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P33."]
+        #[inline(always)]
+        pub const fn set_p33(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc P34."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p34(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P34."]
+        #[inline(always)]
+        pub const fn set_p34(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P35."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p35(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P35."]
+        #[inline(always)]
+        pub const fn set_p35(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "desc P36."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p36(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P36."]
+        #[inline(always)]
+        pub const fn set_p36(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+    }
+    impl Default for P3pd {
+        #[inline(always)]
+        fn default() -> P3pd {
+            P3pd(0)
+        }
+    }
+    impl core::fmt::Debug for P3pd {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P3pd")
+                .field("p31", &self.p31())
+                .field("p32", &self.p32())
+                .field("p33", &self.p33())
+                .field("p34", &self.p34())
+                .field("p35", &self.p35())
+                .field("p36", &self.p36())
+                .finish()
+        }
+    }
+    #[doc = "desc P3PU."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P3pu(pub u32);
+    impl P3pu {
+        #[doc = "desc P31."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p31(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P31."]
+        #[inline(always)]
+        pub const fn set_p31(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc P32."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p32(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P32."]
+        #[inline(always)]
+        pub const fn set_p32(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc P33."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p33(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P33."]
+        #[inline(always)]
+        pub const fn set_p33(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc P34."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p34(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P34."]
+        #[inline(always)]
+        pub const fn set_p34(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P35."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p35(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P35."]
+        #[inline(always)]
+        pub const fn set_p35(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "desc P36."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p36(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P36."]
+        #[inline(always)]
+        pub const fn set_p36(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+    }
+    impl Default for P3pu {
+        #[inline(always)]
+        fn default() -> P3pu {
+            P3pu(0)
+        }
+    }
+    impl core::fmt::Debug for P3pu {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P3pu")
+                .field("p31", &self.p31())
+                .field("p32", &self.p32())
+                .field("p33", &self.p33())
+                .field("p34", &self.p34())
+                .field("p35", &self.p35())
+                .field("p36", &self.p36())
+                .finish()
+        }
+    }
+    #[doc = "desc P3RIE."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P3rie(pub u32);
+    impl P3rie {
+        #[doc = "desc P31."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p31(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P31."]
+        #[inline(always)]
+        pub const fn set_p31(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc P32."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p32(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P32."]
+        #[inline(always)]
+        pub const fn set_p32(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc P33."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p33(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P33."]
+        #[inline(always)]
+        pub const fn set_p33(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc P34."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p34(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P34."]
+        #[inline(always)]
+        pub const fn set_p34(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P35."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p35(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P35."]
+        #[inline(always)]
+        pub const fn set_p35(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "desc P36."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p36(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P36."]
+        #[inline(always)]
+        pub const fn set_p36(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+    }
+    impl Default for P3rie {
+        #[inline(always)]
+        fn default() -> P3rie {
+            P3rie(0)
+        }
+    }
+    impl core::fmt::Debug for P3rie {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P3rie")
+                .field("p31", &self.p31())
+                .field("p32", &self.p32())
+                .field("p33", &self.p33())
+                .field("p34", &self.p34())
+                .field("p35", &self.p35())
+                .field("p36", &self.p36())
+                .finish()
+        }
+    }
+    #[doc = "desc P3STAT."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct P3stat(pub u32);
+    impl P3stat {
+        #[doc = "desc P31."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p31(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P31."]
+        #[inline(always)]
+        pub const fn set_p31(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc P32."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p32(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P32."]
+        #[inline(always)]
+        pub const fn set_p32(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc P33."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p33(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P33."]
+        #[inline(always)]
+        pub const fn set_p33(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc P34."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p34(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P34."]
+        #[inline(always)]
+        pub const fn set_p34(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc P35."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p35(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P35."]
+        #[inline(always)]
+        pub const fn set_p35(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "desc P36."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn p36(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc P36."]
+        #[inline(always)]
+        pub const fn set_p36(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+    }
+    impl Default for P3stat {
+        #[inline(always)]
+        fn default() -> P3stat {
+            P3stat(0)
+        }
+    }
+    impl core::fmt::Debug for P3stat {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("P3stat")
+                .field("p31", &self.p31())
+                .field("p32", &self.p32())
+                .field("p33", &self.p33())
+                .field("p34", &self.p34())
+                .field("p35", &self.p35())
+                .field("p36", &self.p36())
+                .finish()
+        }
+    }
+}

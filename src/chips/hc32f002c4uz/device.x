@@ -1,0 +1,15 @@
+PROVIDE(PORTA = DefaultHandler);
+PROVIDE(PORTB = DefaultHandler);
+PROVIDE(PORTC = DefaultHandler);
+PROVIDE(PORTD = DefaultHandler);
+PROVIDE(ATIM3 = DefaultHandler);
+PROVIDE(LPUART0 = DefaultHandler);
+PROVIDE(LPUART1 = DefaultHandler);
+PROVIDE(SPI0 = DefaultHandler);
+PROVIDE(I2C = DefaultHandler);
+PROVIDE(BTIM3_4_5 = DefaultHandler);
+PROVIDE(IWDT_WWDT = DefaultHandler);
+PROVIDE(ADC = DefaultHandler);
+PROVIDE(LVD = DefaultHandler);
+PROVIDE(FLASH = DefaultHandler);
+PROVIDE(CTRIM = DefaultHandler);

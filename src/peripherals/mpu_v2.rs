@@ -1,0 +1,3800 @@
+#![allow(clippy::missing_safety_doc)]
+#![allow(clippy::identity_op)]
+#![allow(clippy::unnecessary_cast)]
+#![allow(clippy::erasing_op)]
+
+#[doc = "desc MPU."]
+#[derive(Copy, Clone, Eq, PartialEq)]
+pub struct Mpu {
+    ptr: *mut u8,
+}
+unsafe impl Send for Mpu {}
+unsafe impl Sync for Mpu {}
+impl Mpu {
+    #[inline(always)]
+    pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
+        Self { ptr: ptr as _ }
+    }
+    #[inline(always)]
+    pub const fn as_ptr(&self) -> *mut () {
+        self.ptr as _
+    }
+    #[doc = "desc RGD0."]
+    #[inline(always)]
+    pub const fn rgd0(self) -> crate::common::Reg<regs::Rgd0, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
+    }
+    #[doc = "desc RGD1."]
+    #[inline(always)]
+    pub const fn rgd1(self) -> crate::common::Reg<regs::Rgd1, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
+    }
+    #[doc = "desc RGD2."]
+    #[inline(always)]
+    pub const fn rgd2(self) -> crate::common::Reg<regs::Rgd2, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
+    }
+    #[doc = "desc RGD3."]
+    #[inline(always)]
+    pub const fn rgd3(self) -> crate::common::Reg<regs::Rgd3, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
+    }
+    #[doc = "desc RGD4."]
+    #[inline(always)]
+    pub const fn rgd4(self) -> crate::common::Reg<regs::Rgd4, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
+    }
+    #[doc = "desc RGD5."]
+    #[inline(always)]
+    pub const fn rgd5(self) -> crate::common::Reg<regs::Rgd5, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize) as _) }
+    }
+    #[doc = "desc RGD6."]
+    #[inline(always)]
+    pub const fn rgd6(self) -> crate::common::Reg<regs::Rgd6, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x18usize) as _) }
+    }
+    #[doc = "desc RGD7."]
+    #[inline(always)]
+    pub const fn rgd7(self) -> crate::common::Reg<regs::Rgd7, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1cusize) as _) }
+    }
+    #[doc = "desc RGD8."]
+    #[inline(always)]
+    pub const fn rgd8(self) -> crate::common::Reg<regs::Rgd8, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20usize) as _) }
+    }
+    #[doc = "desc RGD9."]
+    #[inline(always)]
+    pub const fn rgd9(self) -> crate::common::Reg<regs::Rgd9, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x24usize) as _) }
+    }
+    #[doc = "desc RGD10."]
+    #[inline(always)]
+    pub const fn rgd10(self) -> crate::common::Reg<regs::Rgd10, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x28usize) as _) }
+    }
+    #[doc = "desc RGD11."]
+    #[inline(always)]
+    pub const fn rgd11(self) -> crate::common::Reg<regs::Rgd11, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2cusize) as _) }
+    }
+    #[doc = "desc RGD12."]
+    #[inline(always)]
+    pub const fn rgd12(self) -> crate::common::Reg<regs::Rgd12, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x30usize) as _) }
+    }
+    #[doc = "desc RGD13."]
+    #[inline(always)]
+    pub const fn rgd13(self) -> crate::common::Reg<regs::Rgd13, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x34usize) as _) }
+    }
+    #[doc = "desc RGD14."]
+    #[inline(always)]
+    pub const fn rgd14(self) -> crate::common::Reg<regs::Rgd14, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x38usize) as _) }
+    }
+    #[doc = "desc RGD15."]
+    #[inline(always)]
+    pub const fn rgd15(self) -> crate::common::Reg<regs::Rgd15, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3cusize) as _) }
+    }
+    #[doc = "desc RGCR0."]
+    #[inline(always)]
+    pub const fn rgcr0(self) -> crate::common::Reg<regs::Rgcr0, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x40usize) as _) }
+    }
+    #[doc = "desc RGCR1."]
+    #[inline(always)]
+    pub const fn rgcr1(self) -> crate::common::Reg<regs::Rgcr1, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x44usize) as _) }
+    }
+    #[doc = "desc RGCR2."]
+    #[inline(always)]
+    pub const fn rgcr2(self) -> crate::common::Reg<regs::Rgcr2, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x48usize) as _) }
+    }
+    #[doc = "desc RGCR3."]
+    #[inline(always)]
+    pub const fn rgcr3(self) -> crate::common::Reg<regs::Rgcr3, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x4cusize) as _) }
+    }
+    #[doc = "desc RGCR4."]
+    #[inline(always)]
+    pub const fn rgcr4(self) -> crate::common::Reg<regs::Rgcr4, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x50usize) as _) }
+    }
+    #[doc = "desc RGCR5."]
+    #[inline(always)]
+    pub const fn rgcr5(self) -> crate::common::Reg<regs::Rgcr5, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x54usize) as _) }
+    }
+    #[doc = "desc RGCR6."]
+    #[inline(always)]
+    pub const fn rgcr6(self) -> crate::common::Reg<regs::Rgcr6, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x58usize) as _) }
+    }
+    #[doc = "desc RGCR7."]
+    #[inline(always)]
+    pub const fn rgcr7(self) -> crate::common::Reg<regs::Rgcr7, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x5cusize) as _) }
+    }
+    #[doc = "desc RGCR8."]
+    #[inline(always)]
+    pub const fn rgcr8(self) -> crate::common::Reg<regs::Rgcr8, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x60usize) as _) }
+    }
+    #[doc = "desc RGCR9."]
+    #[inline(always)]
+    pub const fn rgcr9(self) -> crate::common::Reg<regs::Rgcr9, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x64usize) as _) }
+    }
+    #[doc = "desc RGCR10."]
+    #[inline(always)]
+    pub const fn rgcr10(self) -> crate::common::Reg<regs::Rgcr10, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x68usize) as _) }
+    }
+    #[doc = "desc RGCR11."]
+    #[inline(always)]
+    pub const fn rgcr11(self) -> crate::common::Reg<regs::Rgcr11, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x6cusize) as _) }
+    }
+    #[doc = "desc RGCR12."]
+    #[inline(always)]
+    pub const fn rgcr12(self) -> crate::common::Reg<regs::Rgcr12, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x70usize) as _) }
+    }
+    #[doc = "desc RGCR13."]
+    #[inline(always)]
+    pub const fn rgcr13(self) -> crate::common::Reg<regs::Rgcr13, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x74usize) as _) }
+    }
+    #[doc = "desc RGCR14."]
+    #[inline(always)]
+    pub const fn rgcr14(self) -> crate::common::Reg<regs::Rgcr14, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x78usize) as _) }
+    }
+    #[doc = "desc RGCR15."]
+    #[inline(always)]
+    pub const fn rgcr15(self) -> crate::common::Reg<regs::Rgcr15, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x7cusize) as _) }
+    }
+    #[doc = "desc CR."]
+    #[inline(always)]
+    pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x80usize) as _) }
+    }
+    #[doc = "desc SR."]
+    #[inline(always)]
+    pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x84usize) as _) }
+    }
+    #[doc = "desc ECLR."]
+    #[inline(always)]
+    pub const fn eclr(self) -> crate::common::Reg<regs::Eclr, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x88usize) as _) }
+    }
+    #[doc = "desc WP."]
+    #[inline(always)]
+    pub const fn wp(self) -> crate::common::Reg<regs::Wp, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8cusize) as _) }
+    }
+    #[doc = "desc IPPR."]
+    #[inline(always)]
+    pub const fn ippr(self) -> crate::common::Reg<regs::Ippr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x401cusize) as _) }
+    }
+}
+pub mod regs {
+    #[doc = "desc CR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cr(pub u32);
+    impl Cr {
+        #[doc = "desc SMPU2BRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn smpu2brp(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SMPU2BRP."]
+        #[inline(always)]
+        pub const fn set_smpu2brp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc SMPU2BWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn smpu2bwp(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SMPU2BWP."]
+        #[inline(always)]
+        pub const fn set_smpu2bwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc SMPU2ACT."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn smpu2act(&self) -> u8 {
+            let val = (self.0 >> 2usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc SMPU2ACT."]
+        #[inline(always)]
+        pub const fn set_smpu2act(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u32) & 0x03) << 2usize);
+        }
+        #[doc = "desc SMPU2E."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn smpu2e(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SMPU2E."]
+        #[inline(always)]
+        pub const fn set_smpu2e(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "desc SMPU1BRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn smpu1brp(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SMPU1BRP."]
+        #[inline(always)]
+        pub const fn set_smpu1brp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "desc SMPU1BWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn smpu1bwp(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SMPU1BWP."]
+        #[inline(always)]
+        pub const fn set_smpu1bwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
+        #[doc = "desc SMPU1ACT."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn smpu1act(&self) -> u8 {
+            let val = (self.0 >> 10usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc SMPU1ACT."]
+        #[inline(always)]
+        pub const fn set_smpu1act(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 10usize)) | (((val as u32) & 0x03) << 10usize);
+        }
+        #[doc = "desc SMPU1E."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn smpu1e(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SMPU1E."]
+        #[inline(always)]
+        pub const fn set_smpu1e(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        }
+        #[doc = "desc FMPUBRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fmpubrp(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FMPUBRP."]
+        #[inline(always)]
+        pub const fn set_fmpubrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "desc FMPUBWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fmpubwp(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FMPUBWP."]
+        #[inline(always)]
+        pub const fn set_fmpubwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
+        #[doc = "desc FMPUACT."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fmpuact(&self) -> u8 {
+            let val = (self.0 >> 18usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc FMPUACT."]
+        #[inline(always)]
+        pub const fn set_fmpuact(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 18usize)) | (((val as u32) & 0x03) << 18usize);
+        }
+        #[doc = "desc FMPUE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fmpue(&self) -> bool {
+            let val = (self.0 >> 23usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FMPUE."]
+        #[inline(always)]
+        pub const fn set_fmpue(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
+        }
+    }
+    impl Default for Cr {
+        #[inline(always)]
+        fn default() -> Cr {
+            Cr(0)
+        }
+    }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("smpu2brp", &self.smpu2brp())
+                .field("smpu2bwp", &self.smpu2bwp())
+                .field("smpu2act", &self.smpu2act())
+                .field("smpu2e", &self.smpu2e())
+                .field("smpu1brp", &self.smpu1brp())
+                .field("smpu1bwp", &self.smpu1bwp())
+                .field("smpu1act", &self.smpu1act())
+                .field("smpu1e", &self.smpu1e())
+                .field("fmpubrp", &self.fmpubrp())
+                .field("fmpubwp", &self.fmpubwp())
+                .field("fmpuact", &self.fmpuact())
+                .field("fmpue", &self.fmpue())
+                .finish()
+        }
+    }
+    #[doc = "desc ECLR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Eclr(pub u32);
+    impl Eclr {
+        #[doc = "desc SMPU2ECLR."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn smpu2eclr(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SMPU2ECLR."]
+        #[inline(always)]
+        pub const fn set_smpu2eclr(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc SMPU1ECLR."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn smpu1eclr(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SMPU1ECLR."]
+        #[inline(always)]
+        pub const fn set_smpu1eclr(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "desc FMPUECLR."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fmpueclr(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FMPUECLR."]
+        #[inline(always)]
+        pub const fn set_fmpueclr(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+    }
+    impl Default for Eclr {
+        #[inline(always)]
+        fn default() -> Eclr {
+            Eclr(0)
+        }
+    }
+    impl core::fmt::Debug for Eclr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Eclr")
+                .field("smpu2eclr", &self.smpu2eclr())
+                .field("smpu1eclr", &self.smpu1eclr())
+                .field("fmpueclr", &self.fmpueclr())
+                .finish()
+        }
+    }
+    #[doc = "desc IPPR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ippr(pub u32);
+    impl Ippr {
+        #[doc = "desc AESRDP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn aesrdp(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc AESRDP."]
+        #[inline(always)]
+        pub const fn set_aesrdp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc AESWRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn aeswrp(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc AESWRP."]
+        #[inline(always)]
+        pub const fn set_aeswrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc HASHRDP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn hashrdp(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc HASHRDP."]
+        #[inline(always)]
+        pub const fn set_hashrdp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc HASHWRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn hashwrp(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc HASHWRP."]
+        #[inline(always)]
+        pub const fn set_hashwrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "desc TRNGRDP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn trngrdp(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc TRNGRDP."]
+        #[inline(always)]
+        pub const fn set_trngrdp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "desc TRNGWRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn trngwrp(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc TRNGWRP."]
+        #[inline(always)]
+        pub const fn set_trngwrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "desc CRCRDP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn crcrdp(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc CRCRDP."]
+        #[inline(always)]
+        pub const fn set_crcrdp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+        #[doc = "desc CRCWRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn crcwrp(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc CRCWRP."]
+        #[inline(always)]
+        pub const fn set_crcwrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "desc EFMRDP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn efmrdp(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc EFMRDP."]
+        #[inline(always)]
+        pub const fn set_efmrdp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "desc EFMWRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn efmwrp(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc EFMWRP."]
+        #[inline(always)]
+        pub const fn set_efmwrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
+        #[doc = "desc WDTRDP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn wdtrdp(&self) -> bool {
+            let val = (self.0 >> 12usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc WDTRDP."]
+        #[inline(always)]
+        pub const fn set_wdtrdp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        }
+        #[doc = "desc WDTWRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn wdtwrp(&self) -> bool {
+            let val = (self.0 >> 13usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc WDTWRP."]
+        #[inline(always)]
+        pub const fn set_wdtwrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
+        }
+        #[doc = "desc SWDTRDP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn swdtrdp(&self) -> bool {
+            let val = (self.0 >> 14usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SWDTRDP."]
+        #[inline(always)]
+        pub const fn set_swdtrdp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
+        }
+        #[doc = "desc SWDTWRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn swdtwrp(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SWDTWRP."]
+        #[inline(always)]
+        pub const fn set_swdtwrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        }
+        #[doc = "desc BKSRAMRDP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn bksramrdp(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc BKSRAMRDP."]
+        #[inline(always)]
+        pub const fn set_bksramrdp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "desc BKSRAMWRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn bksramwrp(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc BKSRAMWRP."]
+        #[inline(always)]
+        pub const fn set_bksramwrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
+        #[doc = "desc RTCRDP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rtcrdp(&self) -> bool {
+            let val = (self.0 >> 18usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RTCRDP."]
+        #[inline(always)]
+        pub const fn set_rtcrdp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
+        }
+        #[doc = "desc RTCWRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rtcwrp(&self) -> bool {
+            let val = (self.0 >> 19usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RTCWRP."]
+        #[inline(always)]
+        pub const fn set_rtcwrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
+        }
+        #[doc = "desc DMPURDP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dmpurdp(&self) -> bool {
+            let val = (self.0 >> 20usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc DMPURDP."]
+        #[inline(always)]
+        pub const fn set_dmpurdp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
+        }
+        #[doc = "desc DMPUWRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dmpuwrp(&self) -> bool {
+            let val = (self.0 >> 21usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc DMPUWRP."]
+        #[inline(always)]
+        pub const fn set_dmpuwrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
+        }
+        #[doc = "desc SRAMCRDP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sramcrdp(&self) -> bool {
+            let val = (self.0 >> 22usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SRAMCRDP."]
+        #[inline(always)]
+        pub const fn set_sramcrdp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
+        }
+        #[doc = "desc SRAMCWRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sramcwrp(&self) -> bool {
+            let val = (self.0 >> 23usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SRAMCWRP."]
+        #[inline(always)]
+        pub const fn set_sramcwrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
+        }
+        #[doc = "desc INTCRDP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn intcrdp(&self) -> bool {
+            let val = (self.0 >> 24usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc INTCRDP."]
+        #[inline(always)]
+        pub const fn set_intcrdp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
+        }
+        #[doc = "desc INTCWRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn intcwrp(&self) -> bool {
+            let val = (self.0 >> 25usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc INTCWRP."]
+        #[inline(always)]
+        pub const fn set_intcwrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
+        }
+        #[doc = "desc SYSCRDP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn syscrdp(&self) -> bool {
+            let val = (self.0 >> 26usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SYSCRDP."]
+        #[inline(always)]
+        pub const fn set_syscrdp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
+        }
+        #[doc = "desc SYSCWRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn syscwrp(&self) -> bool {
+            let val = (self.0 >> 27usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SYSCWRP."]
+        #[inline(always)]
+        pub const fn set_syscwrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
+        }
+        #[doc = "desc MSTPRDP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mstprdp(&self) -> bool {
+            let val = (self.0 >> 28usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc MSTPRDP."]
+        #[inline(always)]
+        pub const fn set_mstprdp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
+        }
+        #[doc = "desc MSTPWRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mstpwrp(&self) -> bool {
+            let val = (self.0 >> 29usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc MSTPWRP."]
+        #[inline(always)]
+        pub const fn set_mstpwrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
+        }
+        #[doc = "desc BUSERRE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn buserre(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc BUSERRE."]
+        #[inline(always)]
+        pub const fn set_buserre(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Ippr {
+        #[inline(always)]
+        fn default() -> Ippr {
+            Ippr(0)
+        }
+    }
+    impl core::fmt::Debug for Ippr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ippr")
+                .field("aesrdp", &self.aesrdp())
+                .field("aeswrp", &self.aeswrp())
+                .field("hashrdp", &self.hashrdp())
+                .field("hashwrp", &self.hashwrp())
+                .field("trngrdp", &self.trngrdp())
+                .field("trngwrp", &self.trngwrp())
+                .field("crcrdp", &self.crcrdp())
+                .field("crcwrp", &self.crcwrp())
+                .field("efmrdp", &self.efmrdp())
+                .field("efmwrp", &self.efmwrp())
+                .field("wdtrdp", &self.wdtrdp())
+                .field("wdtwrp", &self.wdtwrp())
+                .field("swdtrdp", &self.swdtrdp())
+                .field("swdtwrp", &self.swdtwrp())
+                .field("bksramrdp", &self.bksramrdp())
+                .field("bksramwrp", &self.bksramwrp())
+                .field("rtcrdp", &self.rtcrdp())
+                .field("rtcwrp", &self.rtcwrp())
+                .field("dmpurdp", &self.dmpurdp())
+                .field("dmpuwrp", &self.dmpuwrp())
+                .field("sramcrdp", &self.sramcrdp())
+                .field("sramcwrp", &self.sramcwrp())
+                .field("intcrdp", &self.intcrdp())
+                .field("intcwrp", &self.intcwrp())
+                .field("syscrdp", &self.syscrdp())
+                .field("syscwrp", &self.syscwrp())
+                .field("mstprdp", &self.mstprdp())
+                .field("mstpwrp", &self.mstpwrp())
+                .field("buserre", &self.buserre())
+                .finish()
+        }
+    }
+    #[doc = "desc RGCR0."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rgcr0(pub u32);
+    impl Rgcr0 {
+        #[doc = "desc S2RGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rgrp(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGRP."]
+        #[inline(always)]
+        pub const fn set_s2rgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc S2RGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rgwp(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGWP."]
+        #[inline(always)]
+        pub const fn set_s2rgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc S2RGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rge(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGE."]
+        #[inline(always)]
+        pub const fn set_s2rge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "desc S1RGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rgrp(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGRP."]
+        #[inline(always)]
+        pub const fn set_s1rgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "desc S1RGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rgwp(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGWP."]
+        #[inline(always)]
+        pub const fn set_s1rgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
+        #[doc = "desc S1RGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rge(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGE."]
+        #[inline(always)]
+        pub const fn set_s1rge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        }
+        #[doc = "desc FRGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frgrp(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGRP."]
+        #[inline(always)]
+        pub const fn set_frgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "desc FRGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frgwp(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGWP."]
+        #[inline(always)]
+        pub const fn set_frgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
+        #[doc = "desc FRGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frge(&self) -> bool {
+            let val = (self.0 >> 23usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGE."]
+        #[inline(always)]
+        pub const fn set_frge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
+        }
+    }
+    impl Default for Rgcr0 {
+        #[inline(always)]
+        fn default() -> Rgcr0 {
+            Rgcr0(0)
+        }
+    }
+    impl core::fmt::Debug for Rgcr0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rgcr0")
+                .field("s2rgrp", &self.s2rgrp())
+                .field("s2rgwp", &self.s2rgwp())
+                .field("s2rge", &self.s2rge())
+                .field("s1rgrp", &self.s1rgrp())
+                .field("s1rgwp", &self.s1rgwp())
+                .field("s1rge", &self.s1rge())
+                .field("frgrp", &self.frgrp())
+                .field("frgwp", &self.frgwp())
+                .field("frge", &self.frge())
+                .finish()
+        }
+    }
+    #[doc = "desc RGCR1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rgcr1(pub u32);
+    impl Rgcr1 {
+        #[doc = "desc S2RGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rgrp(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGRP."]
+        #[inline(always)]
+        pub const fn set_s2rgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc S2RGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rgwp(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGWP."]
+        #[inline(always)]
+        pub const fn set_s2rgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc S2RGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rge(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGE."]
+        #[inline(always)]
+        pub const fn set_s2rge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "desc S1RGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rgrp(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGRP."]
+        #[inline(always)]
+        pub const fn set_s1rgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "desc S1RGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rgwp(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGWP."]
+        #[inline(always)]
+        pub const fn set_s1rgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
+        #[doc = "desc S1RGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rge(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGE."]
+        #[inline(always)]
+        pub const fn set_s1rge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        }
+        #[doc = "desc FRGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frgrp(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGRP."]
+        #[inline(always)]
+        pub const fn set_frgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "desc FRGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frgwp(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGWP."]
+        #[inline(always)]
+        pub const fn set_frgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
+        #[doc = "desc FRGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frge(&self) -> bool {
+            let val = (self.0 >> 23usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGE."]
+        #[inline(always)]
+        pub const fn set_frge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
+        }
+    }
+    impl Default for Rgcr1 {
+        #[inline(always)]
+        fn default() -> Rgcr1 {
+            Rgcr1(0)
+        }
+    }
+    impl core::fmt::Debug for Rgcr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rgcr1")
+                .field("s2rgrp", &self.s2rgrp())
+                .field("s2rgwp", &self.s2rgwp())
+                .field("s2rge", &self.s2rge())
+                .field("s1rgrp", &self.s1rgrp())
+                .field("s1rgwp", &self.s1rgwp())
+                .field("s1rge", &self.s1rge())
+                .field("frgrp", &self.frgrp())
+                .field("frgwp", &self.frgwp())
+                .field("frge", &self.frge())
+                .finish()
+        }
+    }
+    #[doc = "desc RGCR10."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rgcr10(pub u32);
+    impl Rgcr10 {
+        #[doc = "desc S2RGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rgrp(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGRP."]
+        #[inline(always)]
+        pub const fn set_s2rgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc S2RGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rgwp(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGWP."]
+        #[inline(always)]
+        pub const fn set_s2rgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc S2RGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rge(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGE."]
+        #[inline(always)]
+        pub const fn set_s2rge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "desc S1RGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rgrp(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGRP."]
+        #[inline(always)]
+        pub const fn set_s1rgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "desc S1RGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rgwp(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGWP."]
+        #[inline(always)]
+        pub const fn set_s1rgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
+        #[doc = "desc S1RGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rge(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGE."]
+        #[inline(always)]
+        pub const fn set_s1rge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        }
+        #[doc = "desc FRGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frgrp(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGRP."]
+        #[inline(always)]
+        pub const fn set_frgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "desc FRGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frgwp(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGWP."]
+        #[inline(always)]
+        pub const fn set_frgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
+        #[doc = "desc FRGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frge(&self) -> bool {
+            let val = (self.0 >> 23usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGE."]
+        #[inline(always)]
+        pub const fn set_frge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
+        }
+    }
+    impl Default for Rgcr10 {
+        #[inline(always)]
+        fn default() -> Rgcr10 {
+            Rgcr10(0)
+        }
+    }
+    impl core::fmt::Debug for Rgcr10 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rgcr10")
+                .field("s2rgrp", &self.s2rgrp())
+                .field("s2rgwp", &self.s2rgwp())
+                .field("s2rge", &self.s2rge())
+                .field("s1rgrp", &self.s1rgrp())
+                .field("s1rgwp", &self.s1rgwp())
+                .field("s1rge", &self.s1rge())
+                .field("frgrp", &self.frgrp())
+                .field("frgwp", &self.frgwp())
+                .field("frge", &self.frge())
+                .finish()
+        }
+    }
+    #[doc = "desc RGCR11."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rgcr11(pub u32);
+    impl Rgcr11 {
+        #[doc = "desc S2RGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rgrp(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGRP."]
+        #[inline(always)]
+        pub const fn set_s2rgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc S2RGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rgwp(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGWP."]
+        #[inline(always)]
+        pub const fn set_s2rgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc S2RGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rge(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGE."]
+        #[inline(always)]
+        pub const fn set_s2rge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "desc S1RGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rgrp(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGRP."]
+        #[inline(always)]
+        pub const fn set_s1rgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "desc S1RGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rgwp(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGWP."]
+        #[inline(always)]
+        pub const fn set_s1rgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
+        #[doc = "desc S1RGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rge(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGE."]
+        #[inline(always)]
+        pub const fn set_s1rge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        }
+        #[doc = "desc FRGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frgrp(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGRP."]
+        #[inline(always)]
+        pub const fn set_frgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "desc FRGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frgwp(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGWP."]
+        #[inline(always)]
+        pub const fn set_frgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
+        #[doc = "desc FRGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frge(&self) -> bool {
+            let val = (self.0 >> 23usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGE."]
+        #[inline(always)]
+        pub const fn set_frge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
+        }
+    }
+    impl Default for Rgcr11 {
+        #[inline(always)]
+        fn default() -> Rgcr11 {
+            Rgcr11(0)
+        }
+    }
+    impl core::fmt::Debug for Rgcr11 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rgcr11")
+                .field("s2rgrp", &self.s2rgrp())
+                .field("s2rgwp", &self.s2rgwp())
+                .field("s2rge", &self.s2rge())
+                .field("s1rgrp", &self.s1rgrp())
+                .field("s1rgwp", &self.s1rgwp())
+                .field("s1rge", &self.s1rge())
+                .field("frgrp", &self.frgrp())
+                .field("frgwp", &self.frgwp())
+                .field("frge", &self.frge())
+                .finish()
+        }
+    }
+    #[doc = "desc RGCR12."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rgcr12(pub u32);
+    impl Rgcr12 {
+        #[doc = "desc S2RGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rgrp(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGRP."]
+        #[inline(always)]
+        pub const fn set_s2rgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc S2RGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rgwp(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGWP."]
+        #[inline(always)]
+        pub const fn set_s2rgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc S2RGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rge(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGE."]
+        #[inline(always)]
+        pub const fn set_s2rge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "desc S1RGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rgrp(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGRP."]
+        #[inline(always)]
+        pub const fn set_s1rgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "desc S1RGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rgwp(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGWP."]
+        #[inline(always)]
+        pub const fn set_s1rgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
+        #[doc = "desc S1RGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rge(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGE."]
+        #[inline(always)]
+        pub const fn set_s1rge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        }
+        #[doc = "desc FRGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frgrp(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGRP."]
+        #[inline(always)]
+        pub const fn set_frgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "desc FRGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frgwp(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGWP."]
+        #[inline(always)]
+        pub const fn set_frgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
+        #[doc = "desc FRGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frge(&self) -> bool {
+            let val = (self.0 >> 23usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGE."]
+        #[inline(always)]
+        pub const fn set_frge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
+        }
+    }
+    impl Default for Rgcr12 {
+        #[inline(always)]
+        fn default() -> Rgcr12 {
+            Rgcr12(0)
+        }
+    }
+    impl core::fmt::Debug for Rgcr12 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rgcr12")
+                .field("s2rgrp", &self.s2rgrp())
+                .field("s2rgwp", &self.s2rgwp())
+                .field("s2rge", &self.s2rge())
+                .field("s1rgrp", &self.s1rgrp())
+                .field("s1rgwp", &self.s1rgwp())
+                .field("s1rge", &self.s1rge())
+                .field("frgrp", &self.frgrp())
+                .field("frgwp", &self.frgwp())
+                .field("frge", &self.frge())
+                .finish()
+        }
+    }
+    #[doc = "desc RGCR13."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rgcr13(pub u32);
+    impl Rgcr13 {
+        #[doc = "desc S2RGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rgrp(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGRP."]
+        #[inline(always)]
+        pub const fn set_s2rgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc S2RGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rgwp(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGWP."]
+        #[inline(always)]
+        pub const fn set_s2rgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc S2RGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rge(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGE."]
+        #[inline(always)]
+        pub const fn set_s2rge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "desc S1RGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rgrp(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGRP."]
+        #[inline(always)]
+        pub const fn set_s1rgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "desc S1RGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rgwp(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGWP."]
+        #[inline(always)]
+        pub const fn set_s1rgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
+        #[doc = "desc S1RGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rge(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGE."]
+        #[inline(always)]
+        pub const fn set_s1rge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        }
+        #[doc = "desc FRGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frgrp(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGRP."]
+        #[inline(always)]
+        pub const fn set_frgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "desc FRGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frgwp(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGWP."]
+        #[inline(always)]
+        pub const fn set_frgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
+        #[doc = "desc FRGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frge(&self) -> bool {
+            let val = (self.0 >> 23usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGE."]
+        #[inline(always)]
+        pub const fn set_frge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
+        }
+    }
+    impl Default for Rgcr13 {
+        #[inline(always)]
+        fn default() -> Rgcr13 {
+            Rgcr13(0)
+        }
+    }
+    impl core::fmt::Debug for Rgcr13 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rgcr13")
+                .field("s2rgrp", &self.s2rgrp())
+                .field("s2rgwp", &self.s2rgwp())
+                .field("s2rge", &self.s2rge())
+                .field("s1rgrp", &self.s1rgrp())
+                .field("s1rgwp", &self.s1rgwp())
+                .field("s1rge", &self.s1rge())
+                .field("frgrp", &self.frgrp())
+                .field("frgwp", &self.frgwp())
+                .field("frge", &self.frge())
+                .finish()
+        }
+    }
+    #[doc = "desc RGCR14."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rgcr14(pub u32);
+    impl Rgcr14 {
+        #[doc = "desc S2RGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rgrp(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGRP."]
+        #[inline(always)]
+        pub const fn set_s2rgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc S2RGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rgwp(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGWP."]
+        #[inline(always)]
+        pub const fn set_s2rgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc S2RGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rge(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGE."]
+        #[inline(always)]
+        pub const fn set_s2rge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "desc S1RGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rgrp(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGRP."]
+        #[inline(always)]
+        pub const fn set_s1rgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "desc S1RGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rgwp(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGWP."]
+        #[inline(always)]
+        pub const fn set_s1rgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
+        #[doc = "desc S1RGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rge(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGE."]
+        #[inline(always)]
+        pub const fn set_s1rge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        }
+        #[doc = "desc FRGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frgrp(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGRP."]
+        #[inline(always)]
+        pub const fn set_frgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "desc FRGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frgwp(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGWP."]
+        #[inline(always)]
+        pub const fn set_frgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
+        #[doc = "desc FRGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frge(&self) -> bool {
+            let val = (self.0 >> 23usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGE."]
+        #[inline(always)]
+        pub const fn set_frge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
+        }
+    }
+    impl Default for Rgcr14 {
+        #[inline(always)]
+        fn default() -> Rgcr14 {
+            Rgcr14(0)
+        }
+    }
+    impl core::fmt::Debug for Rgcr14 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rgcr14")
+                .field("s2rgrp", &self.s2rgrp())
+                .field("s2rgwp", &self.s2rgwp())
+                .field("s2rge", &self.s2rge())
+                .field("s1rgrp", &self.s1rgrp())
+                .field("s1rgwp", &self.s1rgwp())
+                .field("s1rge", &self.s1rge())
+                .field("frgrp", &self.frgrp())
+                .field("frgwp", &self.frgwp())
+                .field("frge", &self.frge())
+                .finish()
+        }
+    }
+    #[doc = "desc RGCR15."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rgcr15(pub u32);
+    impl Rgcr15 {
+        #[doc = "desc S2RGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rgrp(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGRP."]
+        #[inline(always)]
+        pub const fn set_s2rgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc S2RGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rgwp(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGWP."]
+        #[inline(always)]
+        pub const fn set_s2rgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc S2RGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rge(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGE."]
+        #[inline(always)]
+        pub const fn set_s2rge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "desc S1RGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rgrp(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGRP."]
+        #[inline(always)]
+        pub const fn set_s1rgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "desc S1RGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rgwp(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGWP."]
+        #[inline(always)]
+        pub const fn set_s1rgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
+        #[doc = "desc S1RGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rge(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGE."]
+        #[inline(always)]
+        pub const fn set_s1rge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        }
+        #[doc = "desc FRGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frgrp(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGRP."]
+        #[inline(always)]
+        pub const fn set_frgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "desc FRGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frgwp(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGWP."]
+        #[inline(always)]
+        pub const fn set_frgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
+        #[doc = "desc FRGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frge(&self) -> bool {
+            let val = (self.0 >> 23usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGE."]
+        #[inline(always)]
+        pub const fn set_frge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
+        }
+    }
+    impl Default for Rgcr15 {
+        #[inline(always)]
+        fn default() -> Rgcr15 {
+            Rgcr15(0)
+        }
+    }
+    impl core::fmt::Debug for Rgcr15 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rgcr15")
+                .field("s2rgrp", &self.s2rgrp())
+                .field("s2rgwp", &self.s2rgwp())
+                .field("s2rge", &self.s2rge())
+                .field("s1rgrp", &self.s1rgrp())
+                .field("s1rgwp", &self.s1rgwp())
+                .field("s1rge", &self.s1rge())
+                .field("frgrp", &self.frgrp())
+                .field("frgwp", &self.frgwp())
+                .field("frge", &self.frge())
+                .finish()
+        }
+    }
+    #[doc = "desc RGCR2."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rgcr2(pub u32);
+    impl Rgcr2 {
+        #[doc = "desc S2RGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rgrp(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGRP."]
+        #[inline(always)]
+        pub const fn set_s2rgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc S2RGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rgwp(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGWP."]
+        #[inline(always)]
+        pub const fn set_s2rgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc S2RGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rge(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGE."]
+        #[inline(always)]
+        pub const fn set_s2rge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "desc S1RGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rgrp(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGRP."]
+        #[inline(always)]
+        pub const fn set_s1rgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "desc S1RGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rgwp(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGWP."]
+        #[inline(always)]
+        pub const fn set_s1rgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
+        #[doc = "desc S1RGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rge(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGE."]
+        #[inline(always)]
+        pub const fn set_s1rge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        }
+        #[doc = "desc FRGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frgrp(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGRP."]
+        #[inline(always)]
+        pub const fn set_frgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "desc FRGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frgwp(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGWP."]
+        #[inline(always)]
+        pub const fn set_frgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
+        #[doc = "desc FRGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frge(&self) -> bool {
+            let val = (self.0 >> 23usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGE."]
+        #[inline(always)]
+        pub const fn set_frge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
+        }
+    }
+    impl Default for Rgcr2 {
+        #[inline(always)]
+        fn default() -> Rgcr2 {
+            Rgcr2(0)
+        }
+    }
+    impl core::fmt::Debug for Rgcr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rgcr2")
+                .field("s2rgrp", &self.s2rgrp())
+                .field("s2rgwp", &self.s2rgwp())
+                .field("s2rge", &self.s2rge())
+                .field("s1rgrp", &self.s1rgrp())
+                .field("s1rgwp", &self.s1rgwp())
+                .field("s1rge", &self.s1rge())
+                .field("frgrp", &self.frgrp())
+                .field("frgwp", &self.frgwp())
+                .field("frge", &self.frge())
+                .finish()
+        }
+    }
+    #[doc = "desc RGCR3."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rgcr3(pub u32);
+    impl Rgcr3 {
+        #[doc = "desc S2RGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rgrp(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGRP."]
+        #[inline(always)]
+        pub const fn set_s2rgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc S2RGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rgwp(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGWP."]
+        #[inline(always)]
+        pub const fn set_s2rgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc S2RGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rge(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGE."]
+        #[inline(always)]
+        pub const fn set_s2rge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "desc S1RGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rgrp(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGRP."]
+        #[inline(always)]
+        pub const fn set_s1rgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "desc S1RGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rgwp(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGWP."]
+        #[inline(always)]
+        pub const fn set_s1rgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
+        #[doc = "desc S1RGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rge(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGE."]
+        #[inline(always)]
+        pub const fn set_s1rge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        }
+        #[doc = "desc FRGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frgrp(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGRP."]
+        #[inline(always)]
+        pub const fn set_frgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "desc FRGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frgwp(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGWP."]
+        #[inline(always)]
+        pub const fn set_frgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
+        #[doc = "desc FRGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frge(&self) -> bool {
+            let val = (self.0 >> 23usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGE."]
+        #[inline(always)]
+        pub const fn set_frge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
+        }
+    }
+    impl Default for Rgcr3 {
+        #[inline(always)]
+        fn default() -> Rgcr3 {
+            Rgcr3(0)
+        }
+    }
+    impl core::fmt::Debug for Rgcr3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rgcr3")
+                .field("s2rgrp", &self.s2rgrp())
+                .field("s2rgwp", &self.s2rgwp())
+                .field("s2rge", &self.s2rge())
+                .field("s1rgrp", &self.s1rgrp())
+                .field("s1rgwp", &self.s1rgwp())
+                .field("s1rge", &self.s1rge())
+                .field("frgrp", &self.frgrp())
+                .field("frgwp", &self.frgwp())
+                .field("frge", &self.frge())
+                .finish()
+        }
+    }
+    #[doc = "desc RGCR4."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rgcr4(pub u32);
+    impl Rgcr4 {
+        #[doc = "desc S2RGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rgrp(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGRP."]
+        #[inline(always)]
+        pub const fn set_s2rgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc S2RGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rgwp(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGWP."]
+        #[inline(always)]
+        pub const fn set_s2rgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc S2RGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rge(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGE."]
+        #[inline(always)]
+        pub const fn set_s2rge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "desc S1RGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rgrp(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGRP."]
+        #[inline(always)]
+        pub const fn set_s1rgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "desc S1RGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rgwp(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGWP."]
+        #[inline(always)]
+        pub const fn set_s1rgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
+        #[doc = "desc S1RGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rge(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGE."]
+        #[inline(always)]
+        pub const fn set_s1rge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        }
+        #[doc = "desc FRGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frgrp(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGRP."]
+        #[inline(always)]
+        pub const fn set_frgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "desc FRGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frgwp(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGWP."]
+        #[inline(always)]
+        pub const fn set_frgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
+        #[doc = "desc FRGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frge(&self) -> bool {
+            let val = (self.0 >> 23usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGE."]
+        #[inline(always)]
+        pub const fn set_frge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
+        }
+    }
+    impl Default for Rgcr4 {
+        #[inline(always)]
+        fn default() -> Rgcr4 {
+            Rgcr4(0)
+        }
+    }
+    impl core::fmt::Debug for Rgcr4 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rgcr4")
+                .field("s2rgrp", &self.s2rgrp())
+                .field("s2rgwp", &self.s2rgwp())
+                .field("s2rge", &self.s2rge())
+                .field("s1rgrp", &self.s1rgrp())
+                .field("s1rgwp", &self.s1rgwp())
+                .field("s1rge", &self.s1rge())
+                .field("frgrp", &self.frgrp())
+                .field("frgwp", &self.frgwp())
+                .field("frge", &self.frge())
+                .finish()
+        }
+    }
+    #[doc = "desc RGCR5."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rgcr5(pub u32);
+    impl Rgcr5 {
+        #[doc = "desc S2RGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rgrp(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGRP."]
+        #[inline(always)]
+        pub const fn set_s2rgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc S2RGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rgwp(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGWP."]
+        #[inline(always)]
+        pub const fn set_s2rgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc S2RGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rge(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGE."]
+        #[inline(always)]
+        pub const fn set_s2rge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "desc S1RGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rgrp(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGRP."]
+        #[inline(always)]
+        pub const fn set_s1rgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "desc S1RGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rgwp(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGWP."]
+        #[inline(always)]
+        pub const fn set_s1rgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
+        #[doc = "desc S1RGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rge(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGE."]
+        #[inline(always)]
+        pub const fn set_s1rge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        }
+        #[doc = "desc FRGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frgrp(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGRP."]
+        #[inline(always)]
+        pub const fn set_frgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "desc FRGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frgwp(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGWP."]
+        #[inline(always)]
+        pub const fn set_frgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
+        #[doc = "desc FRGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frge(&self) -> bool {
+            let val = (self.0 >> 23usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGE."]
+        #[inline(always)]
+        pub const fn set_frge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
+        }
+    }
+    impl Default for Rgcr5 {
+        #[inline(always)]
+        fn default() -> Rgcr5 {
+            Rgcr5(0)
+        }
+    }
+    impl core::fmt::Debug for Rgcr5 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rgcr5")
+                .field("s2rgrp", &self.s2rgrp())
+                .field("s2rgwp", &self.s2rgwp())
+                .field("s2rge", &self.s2rge())
+                .field("s1rgrp", &self.s1rgrp())
+                .field("s1rgwp", &self.s1rgwp())
+                .field("s1rge", &self.s1rge())
+                .field("frgrp", &self.frgrp())
+                .field("frgwp", &self.frgwp())
+                .field("frge", &self.frge())
+                .finish()
+        }
+    }
+    #[doc = "desc RGCR6."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rgcr6(pub u32);
+    impl Rgcr6 {
+        #[doc = "desc S2RGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rgrp(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGRP."]
+        #[inline(always)]
+        pub const fn set_s2rgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc S2RGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rgwp(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGWP."]
+        #[inline(always)]
+        pub const fn set_s2rgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc S2RGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rge(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGE."]
+        #[inline(always)]
+        pub const fn set_s2rge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "desc S1RGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rgrp(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGRP."]
+        #[inline(always)]
+        pub const fn set_s1rgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "desc S1RGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rgwp(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGWP."]
+        #[inline(always)]
+        pub const fn set_s1rgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
+        #[doc = "desc S1RGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rge(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGE."]
+        #[inline(always)]
+        pub const fn set_s1rge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        }
+        #[doc = "desc FRGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frgrp(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGRP."]
+        #[inline(always)]
+        pub const fn set_frgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "desc FRGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frgwp(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGWP."]
+        #[inline(always)]
+        pub const fn set_frgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
+        #[doc = "desc FRGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frge(&self) -> bool {
+            let val = (self.0 >> 23usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGE."]
+        #[inline(always)]
+        pub const fn set_frge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
+        }
+    }
+    impl Default for Rgcr6 {
+        #[inline(always)]
+        fn default() -> Rgcr6 {
+            Rgcr6(0)
+        }
+    }
+    impl core::fmt::Debug for Rgcr6 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rgcr6")
+                .field("s2rgrp", &self.s2rgrp())
+                .field("s2rgwp", &self.s2rgwp())
+                .field("s2rge", &self.s2rge())
+                .field("s1rgrp", &self.s1rgrp())
+                .field("s1rgwp", &self.s1rgwp())
+                .field("s1rge", &self.s1rge())
+                .field("frgrp", &self.frgrp())
+                .field("frgwp", &self.frgwp())
+                .field("frge", &self.frge())
+                .finish()
+        }
+    }
+    #[doc = "desc RGCR7."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rgcr7(pub u32);
+    impl Rgcr7 {
+        #[doc = "desc S2RGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rgrp(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGRP."]
+        #[inline(always)]
+        pub const fn set_s2rgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc S2RGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rgwp(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGWP."]
+        #[inline(always)]
+        pub const fn set_s2rgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc S2RGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rge(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGE."]
+        #[inline(always)]
+        pub const fn set_s2rge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "desc S1RGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rgrp(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGRP."]
+        #[inline(always)]
+        pub const fn set_s1rgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "desc S1RGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rgwp(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGWP."]
+        #[inline(always)]
+        pub const fn set_s1rgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
+        #[doc = "desc S1RGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rge(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGE."]
+        #[inline(always)]
+        pub const fn set_s1rge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        }
+        #[doc = "desc FRGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frgrp(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGRP."]
+        #[inline(always)]
+        pub const fn set_frgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "desc FRGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frgwp(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGWP."]
+        #[inline(always)]
+        pub const fn set_frgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
+        #[doc = "desc FRGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frge(&self) -> bool {
+            let val = (self.0 >> 23usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGE."]
+        #[inline(always)]
+        pub const fn set_frge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
+        }
+    }
+    impl Default for Rgcr7 {
+        #[inline(always)]
+        fn default() -> Rgcr7 {
+            Rgcr7(0)
+        }
+    }
+    impl core::fmt::Debug for Rgcr7 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rgcr7")
+                .field("s2rgrp", &self.s2rgrp())
+                .field("s2rgwp", &self.s2rgwp())
+                .field("s2rge", &self.s2rge())
+                .field("s1rgrp", &self.s1rgrp())
+                .field("s1rgwp", &self.s1rgwp())
+                .field("s1rge", &self.s1rge())
+                .field("frgrp", &self.frgrp())
+                .field("frgwp", &self.frgwp())
+                .field("frge", &self.frge())
+                .finish()
+        }
+    }
+    #[doc = "desc RGCR8."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rgcr8(pub u32);
+    impl Rgcr8 {
+        #[doc = "desc S2RGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rgrp(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGRP."]
+        #[inline(always)]
+        pub const fn set_s2rgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc S2RGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rgwp(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGWP."]
+        #[inline(always)]
+        pub const fn set_s2rgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc S2RGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rge(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGE."]
+        #[inline(always)]
+        pub const fn set_s2rge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "desc S1RGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rgrp(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGRP."]
+        #[inline(always)]
+        pub const fn set_s1rgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "desc S1RGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rgwp(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGWP."]
+        #[inline(always)]
+        pub const fn set_s1rgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
+        #[doc = "desc S1RGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rge(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGE."]
+        #[inline(always)]
+        pub const fn set_s1rge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        }
+        #[doc = "desc FRGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frgrp(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGRP."]
+        #[inline(always)]
+        pub const fn set_frgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "desc FRGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frgwp(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGWP."]
+        #[inline(always)]
+        pub const fn set_frgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
+        #[doc = "desc FRGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frge(&self) -> bool {
+            let val = (self.0 >> 23usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGE."]
+        #[inline(always)]
+        pub const fn set_frge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
+        }
+    }
+    impl Default for Rgcr8 {
+        #[inline(always)]
+        fn default() -> Rgcr8 {
+            Rgcr8(0)
+        }
+    }
+    impl core::fmt::Debug for Rgcr8 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rgcr8")
+                .field("s2rgrp", &self.s2rgrp())
+                .field("s2rgwp", &self.s2rgwp())
+                .field("s2rge", &self.s2rge())
+                .field("s1rgrp", &self.s1rgrp())
+                .field("s1rgwp", &self.s1rgwp())
+                .field("s1rge", &self.s1rge())
+                .field("frgrp", &self.frgrp())
+                .field("frgwp", &self.frgwp())
+                .field("frge", &self.frge())
+                .finish()
+        }
+    }
+    #[doc = "desc RGCR9."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rgcr9(pub u32);
+    impl Rgcr9 {
+        #[doc = "desc S2RGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rgrp(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGRP."]
+        #[inline(always)]
+        pub const fn set_s2rgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc S2RGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rgwp(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGWP."]
+        #[inline(always)]
+        pub const fn set_s2rgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc S2RGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s2rge(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S2RGE."]
+        #[inline(always)]
+        pub const fn set_s2rge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "desc S1RGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rgrp(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGRP."]
+        #[inline(always)]
+        pub const fn set_s1rgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "desc S1RGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rgwp(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGWP."]
+        #[inline(always)]
+        pub const fn set_s1rgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
+        #[doc = "desc S1RGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn s1rge(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc S1RGE."]
+        #[inline(always)]
+        pub const fn set_s1rge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        }
+        #[doc = "desc FRGRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frgrp(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGRP."]
+        #[inline(always)]
+        pub const fn set_frgrp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "desc FRGWP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frgwp(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGWP."]
+        #[inline(always)]
+        pub const fn set_frgwp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
+        #[doc = "desc FRGE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frge(&self) -> bool {
+            let val = (self.0 >> 23usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FRGE."]
+        #[inline(always)]
+        pub const fn set_frge(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
+        }
+    }
+    impl Default for Rgcr9 {
+        #[inline(always)]
+        fn default() -> Rgcr9 {
+            Rgcr9(0)
+        }
+    }
+    impl core::fmt::Debug for Rgcr9 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rgcr9")
+                .field("s2rgrp", &self.s2rgrp())
+                .field("s2rgwp", &self.s2rgwp())
+                .field("s2rge", &self.s2rge())
+                .field("s1rgrp", &self.s1rgrp())
+                .field("s1rgwp", &self.s1rgwp())
+                .field("s1rge", &self.s1rge())
+                .field("frgrp", &self.frgrp())
+                .field("frgwp", &self.frgwp())
+                .field("frge", &self.frge())
+                .finish()
+        }
+    }
+    #[doc = "desc RGD0."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rgd0(pub u32);
+    impl Rgd0 {
+        #[doc = "desc MPURGSIZE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mpurgsize(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x1f;
+            val as u8
+        }
+        #[doc = "desc MPURGSIZE."]
+        #[inline(always)]
+        pub const fn set_mpurgsize(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
+        }
+        #[doc = "desc MPURGADDR."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mpurgaddr(&self) -> u32 {
+            let val = (self.0 >> 5usize) & 0x07ff_ffff;
+            val as u32
+        }
+        #[doc = "desc MPURGADDR."]
+        #[inline(always)]
+        pub const fn set_mpurgaddr(&mut self, val: u32) {
+            self.0 = (self.0 & !(0x07ff_ffff << 5usize)) | (((val as u32) & 0x07ff_ffff) << 5usize);
+        }
+    }
+    impl Default for Rgd0 {
+        #[inline(always)]
+        fn default() -> Rgd0 {
+            Rgd0(0)
+        }
+    }
+    impl core::fmt::Debug for Rgd0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rgd0")
+                .field("mpurgsize", &self.mpurgsize())
+                .field("mpurgaddr", &self.mpurgaddr())
+                .finish()
+        }
+    }
+    #[doc = "desc RGD1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rgd1(pub u32);
+    impl Rgd1 {
+        #[doc = "desc MPURGSIZE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mpurgsize(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x1f;
+            val as u8
+        }
+        #[doc = "desc MPURGSIZE."]
+        #[inline(always)]
+        pub const fn set_mpurgsize(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
+        }
+        #[doc = "desc MPURGADDR."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mpurgaddr(&self) -> u32 {
+            let val = (self.0 >> 5usize) & 0x07ff_ffff;
+            val as u32
+        }
+        #[doc = "desc MPURGADDR."]
+        #[inline(always)]
+        pub const fn set_mpurgaddr(&mut self, val: u32) {
+            self.0 = (self.0 & !(0x07ff_ffff << 5usize)) | (((val as u32) & 0x07ff_ffff) << 5usize);
+        }
+    }
+    impl Default for Rgd1 {
+        #[inline(always)]
+        fn default() -> Rgd1 {
+            Rgd1(0)
+        }
+    }
+    impl core::fmt::Debug for Rgd1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rgd1")
+                .field("mpurgsize", &self.mpurgsize())
+                .field("mpurgaddr", &self.mpurgaddr())
+                .finish()
+        }
+    }
+    #[doc = "desc RGD10."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rgd10(pub u32);
+    impl Rgd10 {
+        #[doc = "desc MPURGSIZE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mpurgsize(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x1f;
+            val as u8
+        }
+        #[doc = "desc MPURGSIZE."]
+        #[inline(always)]
+        pub const fn set_mpurgsize(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
+        }
+        #[doc = "desc MPURGADDR."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mpurgaddr(&self) -> u32 {
+            let val = (self.0 >> 5usize) & 0x07ff_ffff;
+            val as u32
+        }
+        #[doc = "desc MPURGADDR."]
+        #[inline(always)]
+        pub const fn set_mpurgaddr(&mut self, val: u32) {
+            self.0 = (self.0 & !(0x07ff_ffff << 5usize)) | (((val as u32) & 0x07ff_ffff) << 5usize);
+        }
+    }
+    impl Default for Rgd10 {
+        #[inline(always)]
+        fn default() -> Rgd10 {
+            Rgd10(0)
+        }
+    }
+    impl core::fmt::Debug for Rgd10 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rgd10")
+                .field("mpurgsize", &self.mpurgsize())
+                .field("mpurgaddr", &self.mpurgaddr())
+                .finish()
+        }
+    }
+    #[doc = "desc RGD11."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rgd11(pub u32);
+    impl Rgd11 {
+        #[doc = "desc MPURGSIZE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mpurgsize(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x1f;
+            val as u8
+        }
+        #[doc = "desc MPURGSIZE."]
+        #[inline(always)]
+        pub const fn set_mpurgsize(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
+        }
+        #[doc = "desc MPURGADDR."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mpurgaddr(&self) -> u32 {
+            let val = (self.0 >> 5usize) & 0x07ff_ffff;
+            val as u32
+        }
+        #[doc = "desc MPURGADDR."]
+        #[inline(always)]
+        pub const fn set_mpurgaddr(&mut self, val: u32) {
+            self.0 = (self.0 & !(0x07ff_ffff << 5usize)) | (((val as u32) & 0x07ff_ffff) << 5usize);
+        }
+    }
+    impl Default for Rgd11 {
+        #[inline(always)]
+        fn default() -> Rgd11 {
+            Rgd11(0)
+        }
+    }
+    impl core::fmt::Debug for Rgd11 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rgd11")
+                .field("mpurgsize", &self.mpurgsize())
+                .field("mpurgaddr", &self.mpurgaddr())
+                .finish()
+        }
+    }
+    #[doc = "desc RGD12."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rgd12(pub u32);
+    impl Rgd12 {
+        #[doc = "desc MPURGSIZE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mpurgsize(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x1f;
+            val as u8
+        }
+        #[doc = "desc MPURGSIZE."]
+        #[inline(always)]
+        pub const fn set_mpurgsize(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
+        }
+        #[doc = "desc MPURGADDR."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mpurgaddr(&self) -> u32 {
+            let val = (self.0 >> 5usize) & 0x07ff_ffff;
+            val as u32
+        }
+        #[doc = "desc MPURGADDR."]
+        #[inline(always)]
+        pub const fn set_mpurgaddr(&mut self, val: u32) {
+            self.0 = (self.0 & !(0x07ff_ffff << 5usize)) | (((val as u32) & 0x07ff_ffff) << 5usize);
+        }
+    }
+    impl Default for Rgd12 {
+        #[inline(always)]
+        fn default() -> Rgd12 {
+            Rgd12(0)
+        }
+    }
+    impl core::fmt::Debug for Rgd12 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rgd12")
+                .field("mpurgsize", &self.mpurgsize())
+                .field("mpurgaddr", &self.mpurgaddr())
+                .finish()
+        }
+    }
+    #[doc = "desc RGD13."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rgd13(pub u32);
+    impl Rgd13 {
+        #[doc = "desc MPURGSIZE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mpurgsize(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x1f;
+            val as u8
+        }
+        #[doc = "desc MPURGSIZE."]
+        #[inline(always)]
+        pub const fn set_mpurgsize(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
+        }
+        #[doc = "desc MPURGADDR."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mpurgaddr(&self) -> u32 {
+            let val = (self.0 >> 5usize) & 0x07ff_ffff;
+            val as u32
+        }
+        #[doc = "desc MPURGADDR."]
+        #[inline(always)]
+        pub const fn set_mpurgaddr(&mut self, val: u32) {
+            self.0 = (self.0 & !(0x07ff_ffff << 5usize)) | (((val as u32) & 0x07ff_ffff) << 5usize);
+        }
+    }
+    impl Default for Rgd13 {
+        #[inline(always)]
+        fn default() -> Rgd13 {
+            Rgd13(0)
+        }
+    }
+    impl core::fmt::Debug for Rgd13 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rgd13")
+                .field("mpurgsize", &self.mpurgsize())
+                .field("mpurgaddr", &self.mpurgaddr())
+                .finish()
+        }
+    }
+    #[doc = "desc RGD14."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rgd14(pub u32);
+    impl Rgd14 {
+        #[doc = "desc MPURGSIZE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mpurgsize(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x1f;
+            val as u8
+        }
+        #[doc = "desc MPURGSIZE."]
+        #[inline(always)]
+        pub const fn set_mpurgsize(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
+        }
+        #[doc = "desc MPURGADDR."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mpurgaddr(&self) -> u32 {
+            let val = (self.0 >> 5usize) & 0x07ff_ffff;
+            val as u32
+        }
+        #[doc = "desc MPURGADDR."]
+        #[inline(always)]
+        pub const fn set_mpurgaddr(&mut self, val: u32) {
+            self.0 = (self.0 & !(0x07ff_ffff << 5usize)) | (((val as u32) & 0x07ff_ffff) << 5usize);
+        }
+    }
+    impl Default for Rgd14 {
+        #[inline(always)]
+        fn default() -> Rgd14 {
+            Rgd14(0)
+        }
+    }
+    impl core::fmt::Debug for Rgd14 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rgd14")
+                .field("mpurgsize", &self.mpurgsize())
+                .field("mpurgaddr", &self.mpurgaddr())
+                .finish()
+        }
+    }
+    #[doc = "desc RGD15."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rgd15(pub u32);
+    impl Rgd15 {
+        #[doc = "desc MPURGSIZE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mpurgsize(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x1f;
+            val as u8
+        }
+        #[doc = "desc MPURGSIZE."]
+        #[inline(always)]
+        pub const fn set_mpurgsize(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
+        }
+        #[doc = "desc MPURGADDR."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mpurgaddr(&self) -> u32 {
+            let val = (self.0 >> 5usize) & 0x07ff_ffff;
+            val as u32
+        }
+        #[doc = "desc MPURGADDR."]
+        #[inline(always)]
+        pub const fn set_mpurgaddr(&mut self, val: u32) {
+            self.0 = (self.0 & !(0x07ff_ffff << 5usize)) | (((val as u32) & 0x07ff_ffff) << 5usize);
+        }
+    }
+    impl Default for Rgd15 {
+        #[inline(always)]
+        fn default() -> Rgd15 {
+            Rgd15(0)
+        }
+    }
+    impl core::fmt::Debug for Rgd15 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rgd15")
+                .field("mpurgsize", &self.mpurgsize())
+                .field("mpurgaddr", &self.mpurgaddr())
+                .finish()
+        }
+    }
+    #[doc = "desc RGD2."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rgd2(pub u32);
+    impl Rgd2 {
+        #[doc = "desc MPURGSIZE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mpurgsize(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x1f;
+            val as u8
+        }
+        #[doc = "desc MPURGSIZE."]
+        #[inline(always)]
+        pub const fn set_mpurgsize(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
+        }
+        #[doc = "desc MPURGADDR."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mpurgaddr(&self) -> u32 {
+            let val = (self.0 >> 5usize) & 0x07ff_ffff;
+            val as u32
+        }
+        #[doc = "desc MPURGADDR."]
+        #[inline(always)]
+        pub const fn set_mpurgaddr(&mut self, val: u32) {
+            self.0 = (self.0 & !(0x07ff_ffff << 5usize)) | (((val as u32) & 0x07ff_ffff) << 5usize);
+        }
+    }
+    impl Default for Rgd2 {
+        #[inline(always)]
+        fn default() -> Rgd2 {
+            Rgd2(0)
+        }
+    }
+    impl core::fmt::Debug for Rgd2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rgd2")
+                .field("mpurgsize", &self.mpurgsize())
+                .field("mpurgaddr", &self.mpurgaddr())
+                .finish()
+        }
+    }
+    #[doc = "desc RGD3."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rgd3(pub u32);
+    impl Rgd3 {
+        #[doc = "desc MPURGSIZE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mpurgsize(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x1f;
+            val as u8
+        }
+        #[doc = "desc MPURGSIZE."]
+        #[inline(always)]
+        pub const fn set_mpurgsize(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
+        }
+        #[doc = "desc MPURGADDR."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mpurgaddr(&self) -> u32 {
+            let val = (self.0 >> 5usize) & 0x07ff_ffff;
+            val as u32
+        }
+        #[doc = "desc MPURGADDR."]
+        #[inline(always)]
+        pub const fn set_mpurgaddr(&mut self, val: u32) {
+            self.0 = (self.0 & !(0x07ff_ffff << 5usize)) | (((val as u32) & 0x07ff_ffff) << 5usize);
+        }
+    }
+    impl Default for Rgd3 {
+        #[inline(always)]
+        fn default() -> Rgd3 {
+            Rgd3(0)
+        }
+    }
+    impl core::fmt::Debug for Rgd3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rgd3")
+                .field("mpurgsize", &self.mpurgsize())
+                .field("mpurgaddr", &self.mpurgaddr())
+                .finish()
+        }
+    }
+    #[doc = "desc RGD4."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rgd4(pub u32);
+    impl Rgd4 {
+        #[doc = "desc MPURGSIZE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mpurgsize(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x1f;
+            val as u8
+        }
+        #[doc = "desc MPURGSIZE."]
+        #[inline(always)]
+        pub const fn set_mpurgsize(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
+        }
+        #[doc = "desc MPURGADDR."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mpurgaddr(&self) -> u32 {
+            let val = (self.0 >> 5usize) & 0x07ff_ffff;
+            val as u32
+        }
+        #[doc = "desc MPURGADDR."]
+        #[inline(always)]
+        pub const fn set_mpurgaddr(&mut self, val: u32) {
+            self.0 = (self.0 & !(0x07ff_ffff << 5usize)) | (((val as u32) & 0x07ff_ffff) << 5usize);
+        }
+    }
+    impl Default for Rgd4 {
+        #[inline(always)]
+        fn default() -> Rgd4 {
+            Rgd4(0)
+        }
+    }
+    impl core::fmt::Debug for Rgd4 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rgd4")
+                .field("mpurgsize", &self.mpurgsize())
+                .field("mpurgaddr", &self.mpurgaddr())
+                .finish()
+        }
+    }
+    #[doc = "desc RGD5."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rgd5(pub u32);
+    impl Rgd5 {
+        #[doc = "desc MPURGSIZE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mpurgsize(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x1f;
+            val as u8
+        }
+        #[doc = "desc MPURGSIZE."]
+        #[inline(always)]
+        pub const fn set_mpurgsize(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
+        }
+        #[doc = "desc MPURGADDR."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mpurgaddr(&self) -> u32 {
+            let val = (self.0 >> 5usize) & 0x07ff_ffff;
+            val as u32
+        }
+        #[doc = "desc MPURGADDR."]
+        #[inline(always)]
+        pub const fn set_mpurgaddr(&mut self, val: u32) {
+            self.0 = (self.0 & !(0x07ff_ffff << 5usize)) | (((val as u32) & 0x07ff_ffff) << 5usize);
+        }
+    }
+    impl Default for Rgd5 {
+        #[inline(always)]
+        fn default() -> Rgd5 {
+            Rgd5(0)
+        }
+    }
+    impl core::fmt::Debug for Rgd5 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rgd5")
+                .field("mpurgsize", &self.mpurgsize())
+                .field("mpurgaddr", &self.mpurgaddr())
+                .finish()
+        }
+    }
+    #[doc = "desc RGD6."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rgd6(pub u32);
+    impl Rgd6 {
+        #[doc = "desc MPURGSIZE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mpurgsize(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x1f;
+            val as u8
+        }
+        #[doc = "desc MPURGSIZE."]
+        #[inline(always)]
+        pub const fn set_mpurgsize(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
+        }
+        #[doc = "desc MPURGADDR."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mpurgaddr(&self) -> u32 {
+            let val = (self.0 >> 5usize) & 0x07ff_ffff;
+            val as u32
+        }
+        #[doc = "desc MPURGADDR."]
+        #[inline(always)]
+        pub const fn set_mpurgaddr(&mut self, val: u32) {
+            self.0 = (self.0 & !(0x07ff_ffff << 5usize)) | (((val as u32) & 0x07ff_ffff) << 5usize);
+        }
+    }
+    impl Default for Rgd6 {
+        #[inline(always)]
+        fn default() -> Rgd6 {
+            Rgd6(0)
+        }
+    }
+    impl core::fmt::Debug for Rgd6 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rgd6")
+                .field("mpurgsize", &self.mpurgsize())
+                .field("mpurgaddr", &self.mpurgaddr())
+                .finish()
+        }
+    }
+    #[doc = "desc RGD7."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rgd7(pub u32);
+    impl Rgd7 {
+        #[doc = "desc MPURGSIZE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mpurgsize(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x1f;
+            val as u8
+        }
+        #[doc = "desc MPURGSIZE."]
+        #[inline(always)]
+        pub const fn set_mpurgsize(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
+        }
+        #[doc = "desc MPURGADDR."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mpurgaddr(&self) -> u32 {
+            let val = (self.0 >> 5usize) & 0x07ff_ffff;
+            val as u32
+        }
+        #[doc = "desc MPURGADDR."]
+        #[inline(always)]
+        pub const fn set_mpurgaddr(&mut self, val: u32) {
+            self.0 = (self.0 & !(0x07ff_ffff << 5usize)) | (((val as u32) & 0x07ff_ffff) << 5usize);
+        }
+    }
+    impl Default for Rgd7 {
+        #[inline(always)]
+        fn default() -> Rgd7 {
+            Rgd7(0)
+        }
+    }
+    impl core::fmt::Debug for Rgd7 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rgd7")
+                .field("mpurgsize", &self.mpurgsize())
+                .field("mpurgaddr", &self.mpurgaddr())
+                .finish()
+        }
+    }
+    #[doc = "desc RGD8."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rgd8(pub u32);
+    impl Rgd8 {
+        #[doc = "desc MPURGSIZE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mpurgsize(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x1f;
+            val as u8
+        }
+        #[doc = "desc MPURGSIZE."]
+        #[inline(always)]
+        pub const fn set_mpurgsize(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
+        }
+        #[doc = "desc MPURGADDR."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mpurgaddr(&self) -> u32 {
+            let val = (self.0 >> 5usize) & 0x07ff_ffff;
+            val as u32
+        }
+        #[doc = "desc MPURGADDR."]
+        #[inline(always)]
+        pub const fn set_mpurgaddr(&mut self, val: u32) {
+            self.0 = (self.0 & !(0x07ff_ffff << 5usize)) | (((val as u32) & 0x07ff_ffff) << 5usize);
+        }
+    }
+    impl Default for Rgd8 {
+        #[inline(always)]
+        fn default() -> Rgd8 {
+            Rgd8(0)
+        }
+    }
+    impl core::fmt::Debug for Rgd8 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rgd8")
+                .field("mpurgsize", &self.mpurgsize())
+                .field("mpurgaddr", &self.mpurgaddr())
+                .finish()
+        }
+    }
+    #[doc = "desc RGD9."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rgd9(pub u32);
+    impl Rgd9 {
+        #[doc = "desc MPURGSIZE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mpurgsize(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x1f;
+            val as u8
+        }
+        #[doc = "desc MPURGSIZE."]
+        #[inline(always)]
+        pub const fn set_mpurgsize(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
+        }
+        #[doc = "desc MPURGADDR."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mpurgaddr(&self) -> u32 {
+            let val = (self.0 >> 5usize) & 0x07ff_ffff;
+            val as u32
+        }
+        #[doc = "desc MPURGADDR."]
+        #[inline(always)]
+        pub const fn set_mpurgaddr(&mut self, val: u32) {
+            self.0 = (self.0 & !(0x07ff_ffff << 5usize)) | (((val as u32) & 0x07ff_ffff) << 5usize);
+        }
+    }
+    impl Default for Rgd9 {
+        #[inline(always)]
+        fn default() -> Rgd9 {
+            Rgd9(0)
+        }
+    }
+    impl core::fmt::Debug for Rgd9 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rgd9")
+                .field("mpurgsize", &self.mpurgsize())
+                .field("mpurgaddr", &self.mpurgaddr())
+                .finish()
+        }
+    }
+    #[doc = "desc SR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Sr(pub u32);
+    impl Sr {
+        #[doc = "desc SMPU2EAF."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn smpu2eaf(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SMPU2EAF."]
+        #[inline(always)]
+        pub const fn set_smpu2eaf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc SMPU1EAF."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn smpu1eaf(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SMPU1EAF."]
+        #[inline(always)]
+        pub const fn set_smpu1eaf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "desc FMPUEAF."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fmpueaf(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FMPUEAF."]
+        #[inline(always)]
+        pub const fn set_fmpueaf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+    }
+    impl Default for Sr {
+        #[inline(always)]
+        fn default() -> Sr {
+            Sr(0)
+        }
+    }
+    impl core::fmt::Debug for Sr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sr")
+                .field("smpu2eaf", &self.smpu2eaf())
+                .field("smpu1eaf", &self.smpu1eaf())
+                .field("fmpueaf", &self.fmpueaf())
+                .finish()
+        }
+    }
+    #[doc = "desc WP."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Wp(pub u32);
+    impl Wp {
+        #[doc = "desc MPUWE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mpuwe(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc MPUWE."]
+        #[inline(always)]
+        pub const fn set_mpuwe(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc WKEY."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn wkey(&self) -> u16 {
+            let val = (self.0 >> 1usize) & 0x7fff;
+            val as u16
+        }
+        #[doc = "desc WKEY."]
+        #[inline(always)]
+        pub const fn set_wkey(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x7fff << 1usize)) | (((val as u32) & 0x7fff) << 1usize);
+        }
+    }
+    impl Default for Wp {
+        #[inline(always)]
+        fn default() -> Wp {
+            Wp(0)
+        }
+    }
+    impl core::fmt::Debug for Wp {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Wp")
+                .field("mpuwe", &self.mpuwe())
+                .field("wkey", &self.wkey())
+                .finish()
+        }
+    }
+}

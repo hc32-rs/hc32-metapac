@@ -1,0 +1,148 @@
+#![allow(clippy::missing_safety_doc)]
+#![allow(clippy::identity_op)]
+#![allow(clippy::unnecessary_cast)]
+#![allow(clippy::erasing_op)]
+
+#[doc = "desc GPIOAUX."]
+#[derive(Copy, Clone, Eq, PartialEq)]
+pub struct Gpioaux {
+    ptr: *mut u8,
+}
+unsafe impl Send for Gpioaux {}
+unsafe impl Sync for Gpioaux {}
+impl Gpioaux {
+    #[inline(always)]
+    pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
+        Self { ptr: ptr as _ }
+    }
+    #[inline(always)]
+    pub const fn as_ptr(&self) -> *mut () {
+        self.ptr as _
+    }
+    #[doc = "desc CR1."]
+    #[inline(always)]
+    pub const fn cr1(self) -> crate::common::Reg<regs::Cr1, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
+    }
+    #[doc = "desc CR4."]
+    #[inline(always)]
+    pub const fn cr4(self) -> crate::common::Reg<regs::Cr4, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
+    }
+}
+pub mod regs {
+    #[doc = "desc CR1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cr1(pub u32);
+    impl Cr1 {
+        #[doc = "desc TCLKSRC."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tclksrc(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc TCLKSRC."]
+        #[inline(always)]
+        pub const fn set_tclksrc(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u32) & 0x03) << 0usize);
+        }
+        #[doc = "desc TCLKDIV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tclkdiv(&self) -> u8 {
+            let val = (self.0 >> 3usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc TCLKDIV."]
+        #[inline(always)]
+        pub const fn set_tclkdiv(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 3usize)) | (((val as u32) & 0x03) << 3usize);
+        }
+        #[doc = "desc RSV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rsv(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RSV."]
+        #[inline(always)]
+        pub const fn set_rsv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Cr1 {
+        #[inline(always)]
+        fn default() -> Cr1 {
+            Cr1(0)
+        }
+    }
+    impl core::fmt::Debug for Cr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr1")
+                .field("tclksrc", &self.tclksrc())
+                .field("tclkdiv", &self.tclkdiv())
+                .field("rsv", &self.rsv())
+                .finish()
+        }
+    }
+    #[doc = "desc CR4."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cr4(pub u32);
+    impl Cr4 {
+        #[doc = "desc ATIM3CH0A."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn atim3ch0a(&self) -> u8 {
+            let val = (self.0 >> 4usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc ATIM3CH0A."]
+        #[inline(always)]
+        pub const fn set_atim3ch0a(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
+        }
+        #[doc = "desc GTIMCH1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn gtimch1(&self) -> u8 {
+            let val = (self.0 >> 8usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc GTIMCH1."]
+        #[inline(always)]
+        pub const fn set_gtimch1(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 8usize)) | (((val as u32) & 0x03) << 8usize);
+        }
+        #[doc = "desc RSV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rsv(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc RSV."]
+        #[inline(always)]
+        pub const fn set_rsv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Cr4 {
+        #[inline(always)]
+        fn default() -> Cr4 {
+            Cr4(0)
+        }
+    }
+    impl core::fmt::Debug for Cr4 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr4")
+                .field("atim3ch0a", &self.atim3ch0a())
+                .field("gtimch1", &self.gtimch1())
+                .field("rsv", &self.rsv())
+                .finish()
+        }
+    }
+}

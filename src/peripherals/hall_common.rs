@@ -1,0 +1,290 @@
+#![allow(clippy::missing_safety_doc)]
+#![allow(clippy::identity_op)]
+#![allow(clippy::unnecessary_cast)]
+#![allow(clippy::erasing_op)]
+
+#[doc = "desc HALL."]
+#[derive(Copy, Clone, Eq, PartialEq)]
+pub struct Hall {
+    ptr: *mut u8,
+}
+unsafe impl Send for Hall {}
+unsafe impl Sync for Hall {}
+impl Hall {
+    #[inline(always)]
+    pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
+        Self { ptr: ptr as _ }
+    }
+    #[inline(always)]
+    pub const fn as_ptr(&self) -> *mut () {
+        self.ptr as _
+    }
+    #[doc = "desc CTLR."]
+    #[inline(always)]
+    pub const fn ctlr(self) -> crate::common::Reg<regs::Ctlr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
+    }
+    #[doc = "desc FILR."]
+    #[inline(always)]
+    pub const fn filr(self) -> crate::common::Reg<regs::Filr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
+    }
+    #[doc = "desc INFR."]
+    #[inline(always)]
+    pub const fn infr(self) -> crate::common::Reg<regs::Infr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
+    }
+    #[doc = "desc CAPR."]
+    #[inline(always)]
+    pub const fn capr(self) -> crate::common::Reg<u32, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
+    }
+    #[doc = "desc THDR."]
+    #[inline(always)]
+    pub const fn thdr(self) -> crate::common::Reg<u32, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20usize) as _) }
+    }
+    #[doc = "desc CNTR."]
+    #[inline(always)]
+    pub const fn cntr(self) -> crate::common::Reg<u32, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x30usize) as _) }
+    }
+}
+pub mod regs {
+    #[doc = "desc CTLR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ctlr(pub u16);
+    impl Ctlr {
+        #[doc = "desc HALLEN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn hallen(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc HALLEN."]
+        #[inline(always)]
+        pub const fn set_hallen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u16) & 0x01) << 0usize);
+        }
+        #[doc = "desc CKDIV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ckdiv(&self) -> u8 {
+            let val = (self.0 >> 4usize) & 0x0f;
+            val as u8
+        }
+        #[doc = "desc CKDIV."]
+        #[inline(always)]
+        pub const fn set_ckdiv(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u16) & 0x0f) << 4usize);
+        }
+        #[doc = "desc ITENCHG."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn itenchg(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ITENCHG."]
+        #[inline(always)]
+        pub const fn set_itenchg(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u16) & 0x01) << 8usize);
+        }
+        #[doc = "desc ITENOVF."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn itenovf(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ITENOVF."]
+        #[inline(always)]
+        pub const fn set_itenovf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u16) & 0x01) << 9usize);
+        }
+        #[doc = "desc ITENSW."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn itensw(&self) -> bool {
+            let val = (self.0 >> 10usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ITENSW."]
+        #[inline(always)]
+        pub const fn set_itensw(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u16) & 0x01) << 10usize);
+        }
+        #[doc = "desc CAPCLR."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn capclr(&self) -> bool {
+            let val = (self.0 >> 12usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc CAPCLR."]
+        #[inline(always)]
+        pub const fn set_capclr(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u16) & 0x01) << 12usize);
+        }
+        #[doc = "desc SWCLR."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn swclr(&self) -> bool {
+            let val = (self.0 >> 13usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SWCLR."]
+        #[inline(always)]
+        pub const fn set_swclr(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u16) & 0x01) << 13usize);
+        }
+    }
+    impl Default for Ctlr {
+        #[inline(always)]
+        fn default() -> Ctlr {
+            Ctlr(0)
+        }
+    }
+    impl core::fmt::Debug for Ctlr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ctlr")
+                .field("hallen", &self.hallen())
+                .field("ckdiv", &self.ckdiv())
+                .field("itenchg", &self.itenchg())
+                .field("itenovf", &self.itenovf())
+                .field("itensw", &self.itensw())
+                .field("capclr", &self.capclr())
+                .field("swclr", &self.swclr())
+                .finish()
+        }
+    }
+    #[doc = "desc FILR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Filr(pub u32);
+    impl Filr {
+        #[doc = "desc FILLEN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fillen(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x7fff;
+            val as u16
+        }
+        #[doc = "desc FILLEN."]
+        #[inline(always)]
+        pub const fn set_fillen(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x7fff << 0usize)) | (((val as u32) & 0x7fff) << 0usize);
+        }
+        #[doc = "desc FIL75."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fil75(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FIL75."]
+        #[inline(always)]
+        pub const fn set_fil75(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+    }
+    impl Default for Filr {
+        #[inline(always)]
+        fn default() -> Filr {
+            Filr(0)
+        }
+    }
+    impl core::fmt::Debug for Filr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Filr")
+                .field("fillen", &self.fillen())
+                .field("fil75", &self.fil75())
+                .finish()
+        }
+    }
+    #[doc = "desc INFR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Infr(pub u32);
+    impl Infr {
+        #[doc = "desc FILDAT."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fildat(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x07;
+            val as u8
+        }
+        #[doc = "desc FILDAT."]
+        #[inline(always)]
+        pub const fn set_fildat(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
+        }
+        #[doc = "desc RAWDAT."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rawdat(&self) -> u8 {
+            let val = (self.0 >> 8usize) & 0x07;
+            val as u8
+        }
+        #[doc = "desc RAWDAT."]
+        #[inline(always)]
+        pub const fn set_rawdat(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 8usize)) | (((val as u32) & 0x07) << 8usize);
+        }
+        #[doc = "desc CHGF."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn chgf(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc CHGF."]
+        #[inline(always)]
+        pub const fn set_chgf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "desc OVRFF."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ovrff(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc OVRFF."]
+        #[inline(always)]
+        pub const fn set_ovrff(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
+        #[doc = "desc SWF."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn swf(&self) -> bool {
+            let val = (self.0 >> 18usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SWF."]
+        #[inline(always)]
+        pub const fn set_swf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
+        }
+    }
+    impl Default for Infr {
+        #[inline(always)]
+        fn default() -> Infr {
+            Infr(0)
+        }
+    }
+    impl core::fmt::Debug for Infr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Infr")
+                .field("fildat", &self.fildat())
+                .field("rawdat", &self.rawdat())
+                .field("chgf", &self.chgf())
+                .field("ovrff", &self.ovrff())
+                .field("swf", &self.swf())
+                .finish()
+        }
+    }
+}
