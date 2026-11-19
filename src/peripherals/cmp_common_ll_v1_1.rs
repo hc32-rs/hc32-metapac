@@ -1,0 +1,216 @@
+#![allow(clippy::missing_safety_doc)]
+#![allow(clippy::identity_op)]
+#![allow(clippy::unnecessary_cast)]
+#![allow(clippy::erasing_op)]
+
+#[doc = "desc CMP_COMMON."]
+#[derive(Copy, Clone, Eq, PartialEq)]
+pub struct CmpCommon {
+    ptr: *mut u8,
+}
+unsafe impl Send for CmpCommon {}
+unsafe impl Sync for CmpCommon {}
+impl CmpCommon {
+    #[inline(always)]
+    pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
+        Self { ptr: ptr as _ }
+    }
+    #[inline(always)]
+    pub const fn as_ptr(&self) -> *mut () {
+        self.ptr as _
+    }
+    #[doc = "desc DADR1."]
+    #[inline(always)]
+    pub const fn dadr1(self) -> crate::common::Reg<regs::Dadr1, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0100usize) as _) }
+    }
+    #[doc = "desc DADR2."]
+    #[inline(always)]
+    pub const fn dadr2(self) -> crate::common::Reg<regs::Dadr2, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0102usize) as _) }
+    }
+    #[doc = "desc DACR."]
+    #[inline(always)]
+    pub const fn dacr(self) -> crate::common::Reg<regs::Dacr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0108usize) as _) }
+    }
+    #[doc = "desc RVADC."]
+    #[inline(always)]
+    pub const fn rvadc(self) -> crate::common::Reg<regs::Rvadc, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x010cusize) as _) }
+    }
+}
+pub mod regs {
+    #[doc = "desc DACR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Dacr(pub u16);
+    impl Dacr {
+        #[doc = "desc DA1EN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn da1en(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc DA1EN."]
+        #[inline(always)]
+        pub const fn set_da1en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u16) & 0x01) << 0usize);
+        }
+        #[doc = "desc DA2EN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn da2en(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc DA2EN."]
+        #[inline(always)]
+        pub const fn set_da2en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u16) & 0x01) << 1usize);
+        }
+    }
+    impl Default for Dacr {
+        #[inline(always)]
+        fn default() -> Dacr {
+            Dacr(0)
+        }
+    }
+    impl core::fmt::Debug for Dacr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dacr")
+                .field("da1en", &self.da1en())
+                .field("da2en", &self.da2en())
+                .finish()
+        }
+    }
+    #[doc = "desc DADR1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Dadr1(pub u16);
+    impl Dadr1 {
+        #[doc = "desc DATA."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn data(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0xff;
+            val as u8
+        }
+        #[doc = "desc DATA."]
+        #[inline(always)]
+        pub const fn set_data(&mut self, val: u8) {
+            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u16) & 0xff) << 0usize);
+        }
+    }
+    impl Default for Dadr1 {
+        #[inline(always)]
+        fn default() -> Dadr1 {
+            Dadr1(0)
+        }
+    }
+    impl core::fmt::Debug for Dadr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dadr1").field("data", &self.data()).finish()
+        }
+    }
+    #[doc = "desc DADR2."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Dadr2(pub u16);
+    impl Dadr2 {
+        #[doc = "desc DATA."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn data(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0xff;
+            val as u8
+        }
+        #[doc = "desc DATA."]
+        #[inline(always)]
+        pub const fn set_data(&mut self, val: u8) {
+            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u16) & 0xff) << 0usize);
+        }
+    }
+    impl Default for Dadr2 {
+        #[inline(always)]
+        fn default() -> Dadr2 {
+            Dadr2(0)
+        }
+    }
+    impl core::fmt::Debug for Dadr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dadr2").field("data", &self.data()).finish()
+        }
+    }
+    #[doc = "desc RVADC."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rvadc(pub u16);
+    impl Rvadc {
+        #[doc = "desc DA1SW."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn da1sw(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc DA1SW."]
+        #[inline(always)]
+        pub const fn set_da1sw(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u16) & 0x01) << 0usize);
+        }
+        #[doc = "desc DA2SW."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn da2sw(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc DA2SW."]
+        #[inline(always)]
+        pub const fn set_da2sw(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u16) & 0x01) << 1usize);
+        }
+        #[doc = "desc VREFSW."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn vrefsw(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc VREFSW."]
+        #[inline(always)]
+        pub const fn set_vrefsw(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u16) & 0x01) << 4usize);
+        }
+        #[doc = "desc WPRT."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn wprt(&self) -> u8 {
+            let val = (self.0 >> 8usize) & 0xff;
+            val as u8
+        }
+        #[doc = "desc WPRT."]
+        #[inline(always)]
+        pub const fn set_wprt(&mut self, val: u8) {
+            self.0 = (self.0 & !(0xff << 8usize)) | (((val as u16) & 0xff) << 8usize);
+        }
+    }
+    impl Default for Rvadc {
+        #[inline(always)]
+        fn default() -> Rvadc {
+            Rvadc(0)
+        }
+    }
+    impl core::fmt::Debug for Rvadc {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rvadc")
+                .field("da1sw", &self.da1sw())
+                .field("da2sw", &self.da2sw())
+                .field("vrefsw", &self.vrefsw())
+                .field("wprt", &self.wprt())
+                .finish()
+        }
+    }
+}
