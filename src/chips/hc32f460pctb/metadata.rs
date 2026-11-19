@@ -1,0 +1,9 @@
+include!("../metadata_0019.rs");
+pub static METADATA: Metadata = Metadata {
+    name: "HC32F460PCTB",
+    family: "HC32F460",
+    memory: crate::memory_select::MEMORY,
+    peripherals: PERIPHERALS,
+    interrupts: INTERRUPTS,
+    dma_channels: DMA_CHANNELS,
+};

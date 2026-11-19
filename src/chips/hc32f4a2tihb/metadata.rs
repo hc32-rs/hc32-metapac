@@ -1,0 +1,9 @@
+include!("../metadata_0022.rs");
+pub static METADATA: Metadata = Metadata {
+    name: "HC32F4A2TIHB",
+    family: "HC32F4A2",
+    memory: crate::memory_select::MEMORY,
+    peripherals: PERIPHERALS,
+    interrupts: INTERRUPTS,
+    dma_channels: DMA_CHANNELS,
+};

@@ -1,0 +1,310 @@
+#![allow(clippy::missing_safety_doc)]
+#![allow(clippy::identity_op)]
+#![allow(clippy::unnecessary_cast)]
+#![allow(clippy::erasing_op)]
+
+#[doc = "desc HASH."]
+#[derive(Copy, Clone, Eq, PartialEq)]
+pub struct Hash {
+    ptr: *mut u8,
+}
+unsafe impl Send for Hash {}
+unsafe impl Sync for Hash {}
+impl Hash {
+    #[inline(always)]
+    pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
+        Self { ptr: ptr as _ }
+    }
+    #[inline(always)]
+    pub const fn as_ptr(&self) -> *mut () {
+        self.ptr as _
+    }
+    #[doc = "desc CR."]
+    #[inline(always)]
+    pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
+    }
+    #[doc = "desc HR7."]
+    #[inline(always)]
+    pub const fn hr7(self) -> crate::common::Reg<u32, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
+    }
+    #[doc = "desc HR6."]
+    #[inline(always)]
+    pub const fn hr6(self) -> crate::common::Reg<u32, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize) as _) }
+    }
+    #[doc = "desc HR5."]
+    #[inline(always)]
+    pub const fn hr5(self) -> crate::common::Reg<u32, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x18usize) as _) }
+    }
+    #[doc = "desc HR4."]
+    #[inline(always)]
+    pub const fn hr4(self) -> crate::common::Reg<u32, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1cusize) as _) }
+    }
+    #[doc = "desc HR3."]
+    #[inline(always)]
+    pub const fn hr3(self) -> crate::common::Reg<u32, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20usize) as _) }
+    }
+    #[doc = "desc HR2."]
+    #[inline(always)]
+    pub const fn hr2(self) -> crate::common::Reg<u32, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x24usize) as _) }
+    }
+    #[doc = "desc HR1."]
+    #[inline(always)]
+    pub const fn hr1(self) -> crate::common::Reg<u32, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x28usize) as _) }
+    }
+    #[doc = "desc HR0."]
+    #[inline(always)]
+    pub const fn hr0(self) -> crate::common::Reg<u32, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2cusize) as _) }
+    }
+    #[doc = "desc DR15."]
+    #[inline(always)]
+    pub const fn dr15(self) -> crate::common::Reg<u32, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x40usize) as _) }
+    }
+    #[doc = "desc DR14."]
+    #[inline(always)]
+    pub const fn dr14(self) -> crate::common::Reg<u32, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x44usize) as _) }
+    }
+    #[doc = "desc DR13."]
+    #[inline(always)]
+    pub const fn dr13(self) -> crate::common::Reg<u32, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x48usize) as _) }
+    }
+    #[doc = "desc DR12."]
+    #[inline(always)]
+    pub const fn dr12(self) -> crate::common::Reg<u32, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x4cusize) as _) }
+    }
+    #[doc = "desc DR11."]
+    #[inline(always)]
+    pub const fn dr11(self) -> crate::common::Reg<u32, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x50usize) as _) }
+    }
+    #[doc = "desc DR10."]
+    #[inline(always)]
+    pub const fn dr10(self) -> crate::common::Reg<u32, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x54usize) as _) }
+    }
+    #[doc = "desc DR9."]
+    #[inline(always)]
+    pub const fn dr9(self) -> crate::common::Reg<u32, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x58usize) as _) }
+    }
+    #[doc = "desc DR8."]
+    #[inline(always)]
+    pub const fn dr8(self) -> crate::common::Reg<u32, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x5cusize) as _) }
+    }
+    #[doc = "desc DR7."]
+    #[inline(always)]
+    pub const fn dr7(self) -> crate::common::Reg<u32, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x60usize) as _) }
+    }
+    #[doc = "desc DR6."]
+    #[inline(always)]
+    pub const fn dr6(self) -> crate::common::Reg<u32, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x64usize) as _) }
+    }
+    #[doc = "desc DR5."]
+    #[inline(always)]
+    pub const fn dr5(self) -> crate::common::Reg<u32, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x68usize) as _) }
+    }
+    #[doc = "desc DR4."]
+    #[inline(always)]
+    pub const fn dr4(self) -> crate::common::Reg<u32, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x6cusize) as _) }
+    }
+    #[doc = "desc DR3."]
+    #[inline(always)]
+    pub const fn dr3(self) -> crate::common::Reg<u32, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x70usize) as _) }
+    }
+    #[doc = "desc DR2."]
+    #[inline(always)]
+    pub const fn dr2(self) -> crate::common::Reg<u32, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x74usize) as _) }
+    }
+    #[doc = "desc DR1."]
+    #[inline(always)]
+    pub const fn dr1(self) -> crate::common::Reg<u32, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x78usize) as _) }
+    }
+    #[doc = "desc DR0."]
+    #[inline(always)]
+    pub const fn dr0(self) -> crate::common::Reg<u32, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x7cusize) as _) }
+    }
+}
+pub mod regs {
+    #[doc = "desc CR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cr(pub u32);
+    impl Cr {
+        #[doc = "desc START."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn start(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc START."]
+        #[inline(always)]
+        pub const fn set_start(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc FST_GRP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fst_grp(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc FST_GRP."]
+        #[inline(always)]
+        pub const fn set_fst_grp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc KMSG_END."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn kmsg_end(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc KMSG_END."]
+        #[inline(always)]
+        pub const fn set_kmsg_end(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "desc MODE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mode(&self) -> u8 {
+            let val = (self.0 >> 4usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc MODE."]
+        #[inline(always)]
+        pub const fn set_mode(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
+        }
+        #[doc = "desc LKEY."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn lkey(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc LKEY."]
+        #[inline(always)]
+        pub const fn set_lkey(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+        #[doc = "desc BUSY."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn busy(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc BUSY."]
+        #[inline(always)]
+        pub const fn set_busy(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "desc CYC_END."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn cyc_end(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc CYC_END."]
+        #[inline(always)]
+        pub const fn set_cyc_end(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
+        #[doc = "desc HMAC_END."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn hmac_end(&self) -> bool {
+            let val = (self.0 >> 10usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc HMAC_END."]
+        #[inline(always)]
+        pub const fn set_hmac_end(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
+        }
+        #[doc = "desc HCIE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn hcie(&self) -> bool {
+            let val = (self.0 >> 14usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc HCIE."]
+        #[inline(always)]
+        pub const fn set_hcie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
+        }
+        #[doc = "desc HEIE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn heie(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc HEIE."]
+        #[inline(always)]
+        pub const fn set_heie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        }
+        #[doc = "desc DATATYPE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn datatype(&self) -> u8 {
+            let val = (self.0 >> 16usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc DATATYPE."]
+        #[inline(always)]
+        pub const fn set_datatype(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 16usize)) | (((val as u32) & 0x03) << 16usize);
+        }
+    }
+    impl Default for Cr {
+        #[inline(always)]
+        fn default() -> Cr {
+            Cr(0)
+        }
+    }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("start", &self.start())
+                .field("fst_grp", &self.fst_grp())
+                .field("kmsg_end", &self.kmsg_end())
+                .field("mode", &self.mode())
+                .field("lkey", &self.lkey())
+                .field("busy", &self.busy())
+                .field("cyc_end", &self.cyc_end())
+                .field("hmac_end", &self.hmac_end())
+                .field("hcie", &self.hcie())
+                .field("heie", &self.heie())
+                .field("datatype", &self.datatype())
+                .finish()
+        }
+    }
+}
