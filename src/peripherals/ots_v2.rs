@@ -1,0 +1,261 @@
+#![allow(clippy::missing_safety_doc)]
+#![allow(clippy::identity_op)]
+#![allow(clippy::unnecessary_cast)]
+#![allow(clippy::erasing_op)]
+
+#[doc = "desc OTS."]
+#[derive(Copy, Clone, Eq, PartialEq)]
+pub struct Ots {
+    ptr: *mut u8,
+}
+unsafe impl Send for Ots {}
+unsafe impl Sync for Ots {}
+impl Ots {
+    #[inline(always)]
+    pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
+        Self { ptr: ptr as _ }
+    }
+    #[inline(always)]
+    pub const fn as_ptr(&self) -> *mut () {
+        self.ptr as _
+    }
+    #[doc = "desc PDR1."]
+    #[inline(always)]
+    pub const fn pdr1(self) -> crate::common::Reg<regs::Pdr1, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xe0usize) as _) }
+    }
+    #[doc = "desc PDR2."]
+    #[inline(always)]
+    pub const fn pdr2(self) -> crate::common::Reg<regs::Pdr2, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xf4usize) as _) }
+    }
+    #[doc = "desc PDR3."]
+    #[inline(always)]
+    pub const fn pdr3(self) -> crate::common::Reg<regs::Pdr3, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xf8usize) as _) }
+    }
+    #[doc = "desc CTL."]
+    #[inline(always)]
+    pub const fn ctl(self) -> crate::common::Reg<regs::Ctl, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0003_a200usize) as _) }
+    }
+    #[doc = "desc DR1."]
+    #[inline(always)]
+    pub const fn dr1(self) -> crate::common::Reg<u16, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0003_a202usize) as _) }
+    }
+    #[doc = "desc DR2."]
+    #[inline(always)]
+    pub const fn dr2(self) -> crate::common::Reg<u16, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0003_a204usize) as _) }
+    }
+    #[doc = "desc ECR."]
+    #[inline(always)]
+    pub const fn ecr(self) -> crate::common::Reg<u16, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0003_a206usize) as _) }
+    }
+}
+pub mod regs {
+    #[doc = "desc CTL."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ctl(pub u16);
+    impl Ctl {
+        #[doc = "desc OTSST."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn otsst(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc OTSST."]
+        #[inline(always)]
+        pub const fn set_otsst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u16) & 0x01) << 0usize);
+        }
+        #[doc = "desc OTSCK."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn otsck(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc OTSCK."]
+        #[inline(always)]
+        pub const fn set_otsck(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u16) & 0x01) << 1usize);
+        }
+        #[doc = "desc OTSIE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn otsie(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc OTSIE."]
+        #[inline(always)]
+        pub const fn set_otsie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u16) & 0x01) << 2usize);
+        }
+        #[doc = "desc TSSTP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tsstp(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc TSSTP."]
+        #[inline(always)]
+        pub const fn set_tsstp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u16) & 0x01) << 3usize);
+        }
+    }
+    impl Default for Ctl {
+        #[inline(always)]
+        fn default() -> Ctl {
+            Ctl(0)
+        }
+    }
+    impl core::fmt::Debug for Ctl {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ctl")
+                .field("otsst", &self.otsst())
+                .field("otsck", &self.otsck())
+                .field("otsie", &self.otsie())
+                .field("tsstp", &self.tsstp())
+                .finish()
+        }
+    }
+    #[doc = "desc PDR1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pdr1(pub u32);
+    impl Pdr1 {
+        #[doc = "desc TSPD1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tspd1(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "desc TSPD1."]
+        #[inline(always)]
+        pub const fn set_tspd1(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+        #[doc = "desc TSPD2."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tspd2(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "desc TSPD2."]
+        #[inline(always)]
+        pub const fn set_tspd2(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 16usize)) | (((val as u32) & 0xffff) << 16usize);
+        }
+    }
+    impl Default for Pdr1 {
+        #[inline(always)]
+        fn default() -> Pdr1 {
+            Pdr1(0)
+        }
+    }
+    impl core::fmt::Debug for Pdr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pdr1")
+                .field("tspd1", &self.tspd1())
+                .field("tspd2", &self.tspd2())
+                .finish()
+        }
+    }
+    #[doc = "desc PDR2."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pdr2(pub u32);
+    impl Pdr2 {
+        #[doc = "desc TSPD1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tspd1(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "desc TSPD1."]
+        #[inline(always)]
+        pub const fn set_tspd1(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+        #[doc = "desc TSPD2."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tspd2(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "desc TSPD2."]
+        #[inline(always)]
+        pub const fn set_tspd2(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 16usize)) | (((val as u32) & 0xffff) << 16usize);
+        }
+    }
+    impl Default for Pdr2 {
+        #[inline(always)]
+        fn default() -> Pdr2 {
+            Pdr2(0)
+        }
+    }
+    impl core::fmt::Debug for Pdr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pdr2")
+                .field("tspd1", &self.tspd1())
+                .field("tspd2", &self.tspd2())
+                .finish()
+        }
+    }
+    #[doc = "desc PDR3."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pdr3(pub u32);
+    impl Pdr3 {
+        #[doc = "desc TSPD1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tspd1(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "desc TSPD1."]
+        #[inline(always)]
+        pub const fn set_tspd1(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+        #[doc = "desc TSPD2."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tspd2(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "desc TSPD2."]
+        #[inline(always)]
+        pub const fn set_tspd2(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 16usize)) | (((val as u32) & 0xffff) << 16usize);
+        }
+    }
+    impl Default for Pdr3 {
+        #[inline(always)]
+        fn default() -> Pdr3 {
+            Pdr3(0)
+        }
+    }
+    impl core::fmt::Debug for Pdr3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pdr3")
+                .field("tspd1", &self.tspd1())
+                .field("tspd2", &self.tspd2())
+                .finish()
+        }
+    }
+}

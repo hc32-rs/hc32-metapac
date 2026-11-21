@@ -1,0 +1,406 @@
+#![allow(clippy::missing_safety_doc)]
+#![allow(clippy::identity_op)]
+#![allow(clippy::unnecessary_cast)]
+#![allow(clippy::erasing_op)]
+
+#[doc = "desc DAC."]
+#[derive(Copy, Clone, Eq, PartialEq)]
+pub struct Dac {
+    ptr: *mut u8,
+}
+unsafe impl Send for Dac {}
+unsafe impl Sync for Dac {}
+impl Dac {
+    #[inline(always)]
+    pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
+        Self { ptr: ptr as _ }
+    }
+    #[inline(always)]
+    pub const fn as_ptr(&self) -> *mut () {
+        self.ptr as _
+    }
+    #[doc = "desc DADR1."]
+    #[inline(always)]
+    pub const fn dadr1(self) -> crate::common::Reg<u16, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
+    }
+    #[doc = "desc DADR2."]
+    #[inline(always)]
+    pub const fn dadr2(self) -> crate::common::Reg<u16, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x02usize) as _) }
+    }
+    #[doc = "desc DACR."]
+    #[inline(always)]
+    pub const fn dacr(self) -> crate::common::Reg<regs::Dacr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
+    }
+    #[doc = "desc DAADPCR."]
+    #[inline(always)]
+    pub const fn daadpcr(self) -> crate::common::Reg<regs::Daadpcr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x06usize) as _) }
+    }
+    #[doc = "desc DAOCR."]
+    #[inline(always)]
+    pub const fn daocr(self) -> crate::common::Reg<regs::Daocr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1cusize) as _) }
+    }
+    #[doc = "desc DACR2."]
+    #[inline(always)]
+    pub const fn dacr2(self) -> crate::common::Reg<regs::Dacr2, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20usize) as _) }
+    }
+    #[doc = "desc DADACTR1."]
+    #[inline(always)]
+    pub const fn dadactr1(self) -> crate::common::Reg<regs::Dadactr1, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2cusize) as _) }
+    }
+    #[doc = "desc DADACTR2."]
+    #[inline(always)]
+    pub const fn dadactr2(self) -> crate::common::Reg<regs::Dadactr2, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2eusize) as _) }
+    }
+}
+pub mod regs {
+    #[doc = "desc DAADPCR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Daadpcr(pub u16);
+    impl Daadpcr {
+        #[doc = "desc ADCSL1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn adcsl1(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ADCSL1."]
+        #[inline(always)]
+        pub const fn set_adcsl1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u16) & 0x01) << 0usize);
+        }
+        #[doc = "desc ADCSL2."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn adcsl2(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ADCSL2."]
+        #[inline(always)]
+        pub const fn set_adcsl2(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u16) & 0x01) << 1usize);
+        }
+        #[doc = "desc ADCSL3."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn adcsl3(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ADCSL3."]
+        #[inline(always)]
+        pub const fn set_adcsl3(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u16) & 0x01) << 2usize);
+        }
+        #[doc = "desc DA1SF."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn da1sf(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc DA1SF."]
+        #[inline(always)]
+        pub const fn set_da1sf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u16) & 0x01) << 8usize);
+        }
+        #[doc = "desc DA2SF."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn da2sf(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc DA2SF."]
+        #[inline(always)]
+        pub const fn set_da2sf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u16) & 0x01) << 9usize);
+        }
+        #[doc = "desc ADPEN."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn adpen(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc ADPEN."]
+        #[inline(always)]
+        pub const fn set_adpen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u16) & 0x01) << 15usize);
+        }
+    }
+    impl Default for Daadpcr {
+        #[inline(always)]
+        fn default() -> Daadpcr {
+            Daadpcr(0)
+        }
+    }
+    impl core::fmt::Debug for Daadpcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Daadpcr")
+                .field("adcsl1", &self.adcsl1())
+                .field("adcsl2", &self.adcsl2())
+                .field("adcsl3", &self.adcsl3())
+                .field("da1sf", &self.da1sf())
+                .field("da2sf", &self.da2sf())
+                .field("adpen", &self.adpen())
+                .finish()
+        }
+    }
+    #[doc = "desc DACR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Dacr(pub u16);
+    impl Dacr {
+        #[doc = "desc DAE."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dae(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc DAE."]
+        #[inline(always)]
+        pub const fn set_dae(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u16) & 0x01) << 0usize);
+        }
+        #[doc = "desc DA1E."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn da1e(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc DA1E."]
+        #[inline(always)]
+        pub const fn set_da1e(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u16) & 0x01) << 1usize);
+        }
+        #[doc = "desc DA2E."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn da2e(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc DA2E."]
+        #[inline(always)]
+        pub const fn set_da2e(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u16) & 0x01) << 2usize);
+        }
+        #[doc = "desc DPSEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dpsel(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc DPSEL."]
+        #[inline(always)]
+        pub const fn set_dpsel(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u16) & 0x01) << 8usize);
+        }
+        #[doc = "desc DAAMP1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn daamp1(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc DAAMP1."]
+        #[inline(always)]
+        pub const fn set_daamp1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u16) & 0x01) << 9usize);
+        }
+        #[doc = "desc DAAMP2."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn daamp2(&self) -> bool {
+            let val = (self.0 >> 10usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc DAAMP2."]
+        #[inline(always)]
+        pub const fn set_daamp2(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u16) & 0x01) << 10usize);
+        }
+    }
+    impl Default for Dacr {
+        #[inline(always)]
+        fn default() -> Dacr {
+            Dacr(0)
+        }
+    }
+    impl core::fmt::Debug for Dacr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dacr")
+                .field("dae", &self.dae())
+                .field("da1e", &self.da1e())
+                .field("da2e", &self.da2e())
+                .field("dpsel", &self.dpsel())
+                .field("daamp1", &self.daamp1())
+                .field("daamp2", &self.daamp2())
+                .finish()
+        }
+    }
+    #[doc = "desc DACR2."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Dacr2(pub u16);
+    impl Dacr2 {
+        #[doc = "desc LDMD1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ldmd1(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc LDMD1."]
+        #[inline(always)]
+        pub const fn set_ldmd1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u16) & 0x01) << 7usize);
+        }
+        #[doc = "desc LDMD2."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ldmd2(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc LDMD2."]
+        #[inline(always)]
+        pub const fn set_ldmd2(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u16) & 0x01) << 15usize);
+        }
+    }
+    impl Default for Dacr2 {
+        #[inline(always)]
+        fn default() -> Dacr2 {
+            Dacr2(0)
+        }
+    }
+    impl core::fmt::Debug for Dacr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dacr2")
+                .field("ldmd1", &self.ldmd1())
+                .field("ldmd2", &self.ldmd2())
+                .finish()
+        }
+    }
+    #[doc = "desc DADACTR1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Dadactr1(pub u16);
+    impl Dadactr1 {
+        #[doc = "desc DATAACT."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dataact(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x0fff;
+            val as u16
+        }
+        #[doc = "desc DATAACT."]
+        #[inline(always)]
+        pub const fn set_dataact(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x0fff << 0usize)) | (((val as u16) & 0x0fff) << 0usize);
+        }
+    }
+    impl Default for Dadactr1 {
+        #[inline(always)]
+        fn default() -> Dadactr1 {
+            Dadactr1(0)
+        }
+    }
+    impl core::fmt::Debug for Dadactr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dadactr1")
+                .field("dataact", &self.dataact())
+                .finish()
+        }
+    }
+    #[doc = "desc DADACTR2."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Dadactr2(pub u16);
+    impl Dadactr2 {
+        #[doc = "desc DATAACT."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dataact(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x0fff;
+            val as u16
+        }
+        #[doc = "desc DATAACT."]
+        #[inline(always)]
+        pub const fn set_dataact(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x0fff << 0usize)) | (((val as u16) & 0x0fff) << 0usize);
+        }
+    }
+    impl Default for Dadactr2 {
+        #[inline(always)]
+        fn default() -> Dadactr2 {
+            Dadactr2(0)
+        }
+    }
+    impl core::fmt::Debug for Dadactr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dadactr2")
+                .field("dataact", &self.dataact())
+                .finish()
+        }
+    }
+    #[doc = "desc DAOCR."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Daocr(pub u16);
+    impl Daocr {
+        #[doc = "desc DAODIS1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn daodis1(&self) -> bool {
+            let val = (self.0 >> 14usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc DAODIS1."]
+        #[inline(always)]
+        pub const fn set_daodis1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u16) & 0x01) << 14usize);
+        }
+        #[doc = "desc DAODIS2."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn daodis2(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc DAODIS2."]
+        #[inline(always)]
+        pub const fn set_daodis2(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u16) & 0x01) << 15usize);
+        }
+    }
+    impl Default for Daocr {
+        #[inline(always)]
+        fn default() -> Daocr {
+            Daocr(0)
+        }
+    }
+    impl core::fmt::Debug for Daocr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Daocr")
+                .field("daodis1", &self.daodis1())
+                .field("daodis2", &self.daodis2())
+                .finish()
+        }
+    }
+}

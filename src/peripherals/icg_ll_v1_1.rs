@@ -1,0 +1,327 @@
+#![allow(clippy::missing_safety_doc)]
+#![allow(clippy::identity_op)]
+#![allow(clippy::unnecessary_cast)]
+#![allow(clippy::erasing_op)]
+
+#[doc = "desc ICG."]
+#[derive(Copy, Clone, Eq, PartialEq)]
+pub struct Icg {
+    ptr: *mut u8,
+}
+unsafe impl Send for Icg {}
+unsafe impl Sync for Icg {}
+impl Icg {
+    #[inline(always)]
+    pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
+        Self { ptr: ptr as _ }
+    }
+    #[inline(always)]
+    pub const fn as_ptr(&self) -> *mut () {
+        self.ptr as _
+    }
+    #[doc = "desc ICG0."]
+    #[inline(always)]
+    pub const fn icg0(self) -> crate::common::Reg<regs::Icg0, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
+    }
+    #[doc = "desc ICG1."]
+    #[inline(always)]
+    pub const fn icg1(self) -> crate::common::Reg<regs::Icg1, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
+    }
+    #[doc = "desc ICG3."]
+    #[inline(always)]
+    pub const fn icg3(self) -> crate::common::Reg<regs::Icg3, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
+    }
+}
+pub mod regs {
+    #[doc = "desc ICG0."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Icg0(pub u32);
+    impl Icg0 {
+        #[doc = "desc SWDTAUTS."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn swdtauts(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SWDTAUTS."]
+        #[inline(always)]
+        pub const fn set_swdtauts(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc SWDTITS."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn swdtits(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SWDTITS."]
+        #[inline(always)]
+        pub const fn set_swdtits(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "desc SWDTPERI."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn swdtperi(&self) -> u8 {
+            let val = (self.0 >> 2usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc SWDTPERI."]
+        #[inline(always)]
+        pub const fn set_swdtperi(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u32) & 0x03) << 2usize);
+        }
+        #[doc = "desc SWDTCKS."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn swdtcks(&self) -> u8 {
+            let val = (self.0 >> 4usize) & 0x0f;
+            val as u8
+        }
+        #[doc = "desc SWDTCKS."]
+        #[inline(always)]
+        pub const fn set_swdtcks(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
+        }
+        #[doc = "desc SWDTWDPT."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn swdtwdpt(&self) -> u8 {
+            let val = (self.0 >> 8usize) & 0x0f;
+            val as u8
+        }
+        #[doc = "desc SWDTWDPT."]
+        #[inline(always)]
+        pub const fn set_swdtwdpt(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 8usize)) | (((val as u32) & 0x0f) << 8usize);
+        }
+        #[doc = "desc SWDTSLPOFF."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn swdtslpoff(&self) -> bool {
+            let val = (self.0 >> 12usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc SWDTSLPOFF."]
+        #[inline(always)]
+        pub const fn set_swdtslpoff(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        }
+        #[doc = "desc WDTAUTS."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn wdtauts(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc WDTAUTS."]
+        #[inline(always)]
+        pub const fn set_wdtauts(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "desc WDTITS."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn wdtits(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc WDTITS."]
+        #[inline(always)]
+        pub const fn set_wdtits(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
+        #[doc = "desc WDTPERI."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn wdtperi(&self) -> u8 {
+            let val = (self.0 >> 18usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc WDTPERI."]
+        #[inline(always)]
+        pub const fn set_wdtperi(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 18usize)) | (((val as u32) & 0x03) << 18usize);
+        }
+        #[doc = "desc WDTCKS."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn wdtcks(&self) -> u8 {
+            let val = (self.0 >> 20usize) & 0x0f;
+            val as u8
+        }
+        #[doc = "desc WDTCKS."]
+        #[inline(always)]
+        pub const fn set_wdtcks(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 20usize)) | (((val as u32) & 0x0f) << 20usize);
+        }
+        #[doc = "desc WDTWDPT."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn wdtwdpt(&self) -> u8 {
+            let val = (self.0 >> 24usize) & 0x0f;
+            val as u8
+        }
+        #[doc = "desc WDTWDPT."]
+        #[inline(always)]
+        pub const fn set_wdtwdpt(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 24usize)) | (((val as u32) & 0x0f) << 24usize);
+        }
+        #[doc = "desc WDTSLPOFF."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn wdtslpoff(&self) -> bool {
+            let val = (self.0 >> 28usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc WDTSLPOFF."]
+        #[inline(always)]
+        pub const fn set_wdtslpoff(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
+        }
+    }
+    impl Default for Icg0 {
+        #[inline(always)]
+        fn default() -> Icg0 {
+            Icg0(0)
+        }
+    }
+    impl core::fmt::Debug for Icg0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Icg0")
+                .field("swdtauts", &self.swdtauts())
+                .field("swdtits", &self.swdtits())
+                .field("swdtperi", &self.swdtperi())
+                .field("swdtcks", &self.swdtcks())
+                .field("swdtwdpt", &self.swdtwdpt())
+                .field("swdtslpoff", &self.swdtslpoff())
+                .field("wdtauts", &self.wdtauts())
+                .field("wdtits", &self.wdtits())
+                .field("wdtperi", &self.wdtperi())
+                .field("wdtcks", &self.wdtcks())
+                .field("wdtwdpt", &self.wdtwdpt())
+                .field("wdtslpoff", &self.wdtslpoff())
+                .finish()
+        }
+    }
+    #[doc = "desc ICG1."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Icg1(pub u32);
+    impl Icg1 {
+        #[doc = "desc HRCFREQSEL."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn hrcfreqsel(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc HRCFREQSEL."]
+        #[inline(always)]
+        pub const fn set_hrcfreqsel(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "desc HRCSTOP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn hrcstop(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc HRCSTOP."]
+        #[inline(always)]
+        pub const fn set_hrcstop(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "desc BOR_LEV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn bor_lev(&self) -> u8 {
+            let val = (self.0 >> 16usize) & 0x03;
+            val as u8
+        }
+        #[doc = "desc BOR_LEV."]
+        #[inline(always)]
+        pub const fn set_bor_lev(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 16usize)) | (((val as u32) & 0x03) << 16usize);
+        }
+        #[doc = "desc BORDIS."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn bordis(&self) -> bool {
+            let val = (self.0 >> 18usize) & 0x01;
+            val != 0
+        }
+        #[doc = "desc BORDIS."]
+        #[inline(always)]
+        pub const fn set_bordis(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
+        }
+    }
+    impl Default for Icg1 {
+        #[inline(always)]
+        fn default() -> Icg1 {
+            Icg1(0)
+        }
+    }
+    impl core::fmt::Debug for Icg1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Icg1")
+                .field("hrcfreqsel", &self.hrcfreqsel())
+                .field("hrcstop", &self.hrcstop())
+                .field("bor_lev", &self.bor_lev())
+                .field("bordis", &self.bordis())
+                .finish()
+        }
+    }
+    #[doc = "desc ICG3."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Icg3(pub u32);
+    impl Icg3 {
+        #[doc = "desc DBUSPRT."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dbusprt(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "desc DBUSPRT."]
+        #[inline(always)]
+        pub const fn set_dbusprt(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+        #[doc = "desc DBUSPSZ."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dbuspsz(&self) -> u8 {
+            let val = (self.0 >> 16usize) & 0x1f;
+            val as u8
+        }
+        #[doc = "desc DBUSPSZ."]
+        #[inline(always)]
+        pub const fn set_dbuspsz(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x1f << 16usize)) | (((val as u32) & 0x1f) << 16usize);
+        }
+    }
+    impl Default for Icg3 {
+        #[inline(always)]
+        fn default() -> Icg3 {
+            Icg3(0)
+        }
+    }
+    impl core::fmt::Debug for Icg3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Icg3")
+                .field("dbusprt", &self.dbusprt())
+                .field("dbuspsz", &self.dbuspsz())
+                .finish()
+        }
+    }
+}
